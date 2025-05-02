@@ -19,11 +19,9 @@ library(scales)
 
 ## Goal
 
-Reads original data assessment as a CSV file (`data` folder) and creates various CSV files (`data-clean` folder):
+Reads original data assessment as a CSV file (`data` folder) and creates a CSV file (`data-clean` folder):
 
 - `all-data.csv` file: all data items collected initially. Some transformations applied.
-- `assessment.csv` file: data items required to explore feedback form reviewers during the assessment process. Individual scores (and notes) from two reviewers and types of disagreement between reviewers are relevant here
-- `hypothesis.csv` file: data items required to explore [initial hyphotheses](https://doi.org/10.17605/OSF.IO/XZJCH). Consolidated scores are relevant here. 
 
 
 ```{r}
@@ -37,7 +35,6 @@ data <- readr::read_csv(
   show_col_types = FALSE)
 ```
 
-## `all-data` dataset
 
 ```{r}
 #| label: all-data
@@ -66,7 +63,7 @@ all_data <-
 
 ```
 
-### UDAO naming scheme
+## UDAO naming scheme
 
 Numeric levels of each category in past rubrics have been replaced by textual descriptions with a single letter shorthand to avoid confusion about scale, i.e., the difference between “D” and “A” is not the same as between “A” and “O”:
 
@@ -170,7 +167,7 @@ all_data <-
 
 
 
-### Type of disagreements
+## Type of disagreements
 
 List of disagreements during the assessment phase:
 
@@ -206,7 +203,7 @@ all_data <-
 ```
 
 
-### Save full dataset
+## Save full dataset
 
 Clean dataset stored in `data-clean/all-data.csv`. Check `README` file in the `data-clean` folder to find description of each column.
 
@@ -220,30 +217,6 @@ readr::write_csv(
     append = FALSE, 
     col_names = TRUE)
 ```
-
-
-## `assessment` dataset
-
-Selected columns based on the `all-data` dataset.
-
-```{r}
-#| label: assessment-data
-
-
-
-```
-
-## `hyphothesis` dataset
-
-Selected columns based on the `all-data` dataset.
-
-```{r}
-#| label: hyphotesis-data
-
-
-
-```
-
 
 
 
