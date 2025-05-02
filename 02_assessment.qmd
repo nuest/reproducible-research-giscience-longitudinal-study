@@ -1,0 +1,54 @@
+---
+title: "02_assessment"
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+    code-tools: true
+---
+
+The majority of the work has been the evaluation of the papers, the consolidation of the assessments, and the still-to-do **synthesis of the rich feedback** as well as interpretation of our findings. 
+
+
+- When a paper has `NA` in the three columns `consolidated_data`, `consolidated_methods` and `consolidated_results`, this mans it is a conceptual paper (`consolidated_cp` is `TRUE`).
+- still-to-do synthesis of the rich feedback as well as interpretation of our findings.
+
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(here)
+library(tidyverse)
+library(scales)
+```
+
+```{r}
+#| label: load-data
+#| message: false
+
+assessment <- readr::read_csv(here::here("data-clean", "assessment.csv"))
+
+# TODO: forcats: "udao_" columns
+
+
+```
+
+Some basic facts & checks:
+
+```{r}
+#| label: basic-indicators
+#| message: false
+
+n_papers <- nrow(assessment)
+
+
+n_cp <- nrow(filter(assessment, consolidated_cp == TRUE))
+p_cp <- n_cp / n_papers
+
+
+```
+
+- Total number of assessed papers: `{r} n_papers`
+- Number of `CP` papers: `{r} n_cp` (`{r} scales::label_percent(accuracy = 0.1)(p_cp)`)
+- Number of eligible papers for analysis: `{r} n_papers - n_cp` (`{r} scales::label_percent(accuracy = 0.1)(1 - p_cp)`)

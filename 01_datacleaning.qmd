@@ -1,0 +1,127 @@
+---
+title: "01_datacleaning"
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+    code-tools: true
+---
+
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(here)
+library(tidyverse)
+library(scales)
+```
+
+## Goal
+
+Reads original data assessment as a CSV file (`data` folder) and creates a new CSV file (`data-clean` folder) with the following transformations
+
+
+```{r}
+#| label: load-data
+#| code-overflow: wrap
+
+
+# Read CSV data based on the final assessment Google Sheet in our shared GDrive folder.
+data <- readr::read_csv(
+  here::here("data", "Both Reviewers step 5 WiP - AGILE & GIScience Reproducibility Assessment - assessment.csv"),
+  show_col_types = FALSE)
+```
+
+## UDAO naming scheme
+
+Numeric levels of each category in past rubrics have been replaced by textual descriptions with a single letter shorthand to avoid confusion about scale, i.e., the difference between “D” and “A” is not the same as between “A” and “O”:
+
+- NA remains **not applicable**
+- 0 becomes undocumented (**U**)
+- 1 becomes documented (**D**)
+- 2 becomes documented and available (**A**)
+- 3 becomes documented, available and open (**O**)
+
+New columns that start with  "`udao_` use UDAO naming scheme. Factors?
+
+```{r}
+#| label: udao-schema
+#| message: false
+
+.data <- 
+  data |>
+  dplyr::select(conf, paper, year, title, OA, DASA, REV1, REV2,
+                consolidated_cp, 
+                consolidated_data,
+                consolidated_methods,
+                consolidated_results,
+                consolidated_CE,
+                consolidated_notes,
+                AGILE_badge = `AGILE Reproducible badge`) |>
+    dplyr::rename_with(tolower)
+
+
+.data <- 
+  .data |>
+  dplyr::mutate(udao_data = case_when(
+    consolidated_data == "0 undocumented" ~ "U",
+    consolidated_data == "1 documented" ~ "D",
+    consolidated_data == "2 available" ~ "A",
+    consolidated_data == "3 available & open" ~ "O",
+    is.na(consolidated_data) ~ "Not applicable"))
+
+
+.data <- 
+  .data |>
+  dplyr::mutate(udao_methods = case_when(
+    consolidated_methods == "0 undocumented" ~ "U",
+    consolidated_methods == "1 documented" ~ "D",
+    consolidated_methods == "2 available" ~ "A",
+    consolidated_methods == "3 available & open" ~ "O",
+    is.na(consolidated_methods) ~ "Not applicable")) 
+
+.data <-
+  .data |>
+  dplyr::mutate(udao_results = case_when(
+    consolidated_results == "0 undocumented" ~ "U",
+    consolidated_results == "1 documented" ~ "D",
+    consolidated_results == "2 available" ~ "A",
+    consolidated_results == "3 available & open" ~ "O",
+    is.na(consolidated_results) ~ "Not applicable"))
+
+```
+
+## Type of disagreements
+
+List of disagreements during the assessment phase:
+
+- **no disagreement**: Reviewers' scores are the same. Perfect match.
+- **uncertainty about correct assessment (according to protocol assessment)**: either reviewer wrote that they are unsure about level x or y, so we could just change that to the level matching the other reviewer. 
+- **borderline conceptual paper**: Disagreement are due to a different understanding whether a paper is completely conceptual; some reviewers may see a paper that only has demonstrative, synthetic example data as not “data-based” or empirical and exclude it from the assessment; the assessment protocol is actually pretty clear here:
+
+> [Examples of such out-of-scope papers are: purely conceptual papers, literature studies, review/state-of-the-art papers, or proposed methodologies, guidelines, or opinions/reflections. However, even a small case study to support the main (conceptual) argument or descriptive statistics about literature turn this into a paper within scope!](https://docs.google.com/document/d/1WVvn3evxfUbHQ7kP8LdZiHE2firmWS1XIMuyh5sDEhs/edit?usp=drive_link)
+
+- **annotation inconsistencies**: Disagreements are due to errors in the level/score selected given the written notes of either reviewer.
+- **major disagreement**: when reviewers' notes (or lack of notes) cannot explain differences in assessement and conversation to get an agreement is necessary and/or checking again the paper is required.
+
+
+
+
+## TODO
+
+- links (paper title, some OSF reports) are lost when downloading the Google Sheet as a CSV file.  
+
+## Save clean data
+
+```{r}
+#| label: save-data
+#| message: false
+
+readr::write_csv2(
+    x = .data,
+    file = here::here("data-clean", "assessment.csv"), 
+    append = FALSE, 
+    col_names = TRUE)
+```
+
