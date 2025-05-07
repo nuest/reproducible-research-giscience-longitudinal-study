@@ -1,0 +1,1 @@
+This folder contains all the necessary files for the hypothesis testing. It is self-contained except for ../data-clean folder which contains the necessary input data. 
