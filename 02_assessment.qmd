@@ -26,6 +26,7 @@ The majority of the work happened during the assessment process: evaluation of t
 
 library(here)
 library(tidyverse)
+library(dplyr)
 library(scales)
 library(stringr)
 library(gt)
@@ -121,7 +122,7 @@ These are the types of disagreements (`disagr_type`) between the individual revi
 
 - **uncertain assessment (according to protocol assessment)**: either reviewer wrote that they are unsure about level x or y, so we could just change that to the level matching the other reviewer. 
 
-- **major disagreement**: when reviewers' notes (or lack of notes) cannot explain differences in assessment and conversation to get an agreement is necessary and/or checking again the paper is required.
+- **significant disagreement**: when reviewers' notes (or lack of notes) cannot explain differences in assessment and conversation to get an agreement is necessary and/or checking again the paper is required. **TODO: Replace `major disagreement` by `significant disagreement` in dataset**
 
 
 
@@ -368,8 +369,8 @@ disagr_agile |>
   ) |>
   gt::data_color(
     columns = c(everything(), -year),
-    method = "numeric",
-    palette = "viridis",
+    method = "bin",
+    palette = "RdBu",
     reverse = TRUE
   )
 
@@ -395,24 +396,130 @@ disagr_giscience |>
   ) |>
   gt::data_color(
     columns = c(everything(), -year),
-    method = "numeric",
-    palette = "viridis",
+    method = "bin",
+    palette = "RdBu",
     reverse = TRUE
   )
 ```
 
+
+
+@tbl-3top-disagr-types-conf-year "zooms" in @@tbl-disagr-types-conf-year to show in detail the 3-top disagreement types.
+
+- it's pretty clear that `no disagreement` has steadily declined since the beginning of the series, reaching its lowest percentage in the final year of the series for both conferences. However this common pattern develops differently for each conference: `no dissagrement` halved in AGILE 2018 and remained stable at this trend until AGILE 2024. 
+
+- For the same year of AGILE papers, the highest percentages (in red) of `uncertain assessment` coincide with the lowest percentages (blue) of `major disagreement` (in blue). And the opposite is true too. However, this pattern, although present, is not repeated as clearly in the GIScience articles.
+
+
 ## Looking at individdual types of disagreements
 
-The idea is to explore scores (data, methods, and results) for each type of disagreement...
-
-
-### Type: `borderline conceptual paper`
-
-
-### Type: `no disagreement`
+We explore the scores (data, methods, and results) of the two reviewers for each type of disagreement, excluding `no disagrement`, `borderline conceptual paper`, and `annotation inconsistencies`.
 
 
 ### Type: `uncertain assessment`
+
+```{r}
+#| label: disagr-uncertain
+
+n_disagr_uncertain <- 
+  assessment |>
+  filter(disagr_type == "uncertain assessment") |>
+  count() |>
+  pull(n)
+
+n_disagr_uncertain_agile <-
+  assessment |>
+  filter(conf == "agile", disagr_type == "uncertain assessment") |>
+  count() |>
+  pull(n)
+
+n_disagr_uncertain_giscience <-
+  assessment |>
+  filter(conf == "giscience", disagr_type == "uncertain assessment") |>
+  count() |>
+  pull(n)
+
+
+disagr_uncertain <- 
+  assessment |>
+  dplyr::select(-paper, -rev1, -rev2, -rev1_cp, -rev2_cp, -rev1_notes, -rev2_notes) |>
+  dplyr::filter(disagr_type == "uncertain assessment") |>
+  dplyr::mutate(disagr_dat = (rev1_data != rev2_data)) |>
+  dplyr::mutate(disagr_met = (rev1_methods != rev2_methods)) |>
+  dplyr::mutate(disagr_res = (rev1_results != rev2_results)) 
+
+
+
+disagr_uncertain |>
+  dplyr::group_by(disagr_dat) |>
+  dplyr::count()
+
+
+
+
+```
+
+```{r}
+#| label: disagr-uncertain-conf-year
+
+
+tbl_disagr_uncertain <-
+  bind_cols(
+    disagr_uncertain |>
+    dplyr::group_by(conf, disagr_dat) |>
+    dplyr::count(name = "n_dat") |>
+    dplyr::ungroup(disagr_dat) |>
+    dplyr::mutate(p_dat = n_dat / sum(n_dat)) |>
+    dplyr::ungroup(),
+    
+    disagr_uncertain |>
+    dplyr::group_by(conf, disagr_met) |>
+    dplyr::count(name = "n_met") |>
+    dplyr::ungroup(disagr_met) |>
+    dplyr::mutate(p_met = n_met / sum(n_met)) |>
+    dplyr::ungroup() |>
+    dplyr::select(-conf),
+    
+    disagr_uncertain |>
+    dplyr::group_by(conf, disagr_res) |>
+    dplyr::count(name = "n_res") |>
+    dplyr::ungroup(disagr_res) |>
+    dplyr::mutate(p_res = n_res / sum(n_res)) |>
+    dplyr::ungroup() |>
+    dplyr::select(-conf)
+  )
+
+tbl_disagr_uncertain |>
+  gt::gt() |>
+  gt::tab_header(
+    title = stringr::str_glue("Uncertain disagreement (N={n_disagr_uncertain})"),
+    subtitle = "Applied to Data, Methods and Results scores"
+  ) |>
+  gt::tab_spanner(
+    label = md("**Data**"),
+    columns = ends_with("_dat"),
+  ) |>
+  gt::tab_spanner(
+    label = md("**Methods**"),
+    columns = ends_with("_met"),
+  ) |>
+  gt::tab_spanner(
+    label = md("**Results**"),
+    columns = ends_with("_res"),
+  ) |>
+  gt::fmt_percent(
+    columns = c(p_dat, p_met, p_res),
+    decimals = 1
+  ) |>
+  gt::cols_label(
+    conf = md("**Conf Series**"),
+    disagr_dat = md("*Distinct scores?*"),
+    disagr_met = md("*Distinct scores?*"),
+    disagr_res = md("*Distinct scores?*"))
+
+```
+
+
 
 
 ### Type: `major disagreement`
