@@ -1,0 +1,222 @@
+---
+title: "01_datacleaning"
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+    code-tools: true
+---
+
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(here)
+library(tidyverse)
+library(scales)
+```
+
+## Goal
+
+Reads original data assessment as a CSV file (`data` folder) and creates a CSV file (`data-clean` folder):
+
+- `all-data.csv` file: all data items collected initially. Some transformations applied.
+
+
+```{r}
+#| label: load-data
+#| code-overflow: wrap
+
+
+# Read CSV data based on the final assessment Google Sheet in our shared GDrive folder.
+data <- readr::read_csv(
+  here::here("data", "Both Reviewers step 5 WiP - AGILE & GIScience Reproducibility Assessment - assessment.csv"),
+  show_col_types = FALSE)
+```
+
+
+```{r}
+#| label: all-data
+
+all_data <- 
+  data |>
+  dplyr::select(conf, paper, year, title, link, OA, DASA,
+                REV1, REV2,
+                REV1_CP = `REV1 CP?`, REV2_CP = `REV2 CP?`,
+                REV1_data = `REV1 input data`, REV2_data = `REV2 input data`, 
+                REV1_methods = `REV1 methods`, REV2_methods = `REV2 methods`,
+                REV1_results = `REV1 results`, REV2_results = `REV2 results`,
+                REV1_CE = `REV1 CE`, REV2_CE = `REV2 CE`,
+                REV1_notes = `REV1 notes`, REV2_notes = `REV2 notes`,
+                consolidated_cp, 
+                consolidated_data,
+                consolidated_methods,
+                consolidated_results,
+                consolidated_CE,
+                consolidated_notes,
+                disagr_type,
+                AGILE_badge = `AGILE Reproducible badge`,
+                AGILE_reproreport = `AGILE Reproducible report`) |>
+  dplyr::mutate(AGILE_badge = na_if(AGILE_badge, FALSE)) |> # No badge is codified as NA and FALSE -> consolidate to FALSE
+  dplyr::rename_with(tolower)
+
+```
+
+## UDAO naming scheme
+
+Numeric levels of each category in past rubrics have been replaced by textual descriptions with a single letter shorthand to avoid confusion about scale, i.e., the difference between “D” and “A” is not the same as between “A” and “O”:
+
+- NA remains **not applicable**
+- 0 becomes undocumented (**U**)
+- 1 becomes documented (**D**)
+- 2 becomes documented and available (**A**)
+- 3 becomes documented, available and open (**O**)
+
+*Refactor* all columns that refer to scores (data, methods, and results) from reviewer1, reviewer2 and consolidated scores according to the UDAI naming scheme: `rev1_data`, `rev1_methods`, `rev1_results`, `rev2_data`, `rev2_methods`, `rev2_results`, `consolidated_data`, `consolidated_methods`, and `consolidated_results`.
+
+```{r}
+#| label: udao-schema
+#| message: false
+
+
+all_data <- 
+  all_data |>
+  dplyr::mutate(rev1_data = case_when(
+    rev1_data == "0 undocumented" ~ "U",
+    rev1_data == "1 documented" ~ "D",
+    rev1_data == "2 available" ~ "A",
+    rev1_data == "3 available & open" ~ "O",
+    is.na(rev1_data) ~ "Not applicable"))
+
+
+all_data <- 
+  all_data |>
+  dplyr::mutate(rev1_methods = case_when(
+    rev1_methods == "0 undocumented" ~ "U",
+    rev1_methods == "1 documented" ~ "D",
+    rev1_methods == "2 available" ~ "A",
+    rev1_methods == "3 available & open" ~ "O",
+    is.na(rev1_methods) ~ "Not applicable"))
+
+all_data <- 
+  all_data |>
+  dplyr::mutate(rev1_results = case_when(
+    rev1_results == "0 undocumented" ~ "U",
+    rev1_results == "1 documented" ~ "D",
+    rev1_results == "2 available" ~ "A",
+    rev1_results == "3 available & open" ~ "O",
+    is.na(rev1_results) ~ "Not applicable"))
+
+all_data <- 
+  all_data |>
+  dplyr::mutate(rev2_data = case_when(
+    rev2_data == "0 undocumented" ~ "U",
+    rev2_data == "1 documented" ~ "D",
+    rev2_data == "2 available" ~ "A",
+    rev2_data == "3 available & open" ~ "O",
+    is.na(rev2_data) ~ "Not applicable"))
+
+all_data <- 
+  all_data |>
+  dplyr::mutate(rev2_methods = case_when(
+    rev2_methods == "0 undocumented" ~ "U",
+    rev2_methods == "1 documented" ~ "D",
+    rev2_methods == "2 available" ~ "A",
+    rev2_methods == "3 available & open" ~ "O",
+    is.na(rev2_methods) ~ "Not applicable"))
+
+all_data <- 
+  all_data |>
+  dplyr::mutate(rev2_results = case_when(
+    rev2_results == "0 undocumented" ~ "U",
+    rev2_results == "1 documented" ~ "D",
+    rev2_results == "2 available" ~ "A",
+    rev2_results == "3 available & open" ~ "O",
+    is.na(rev2_results) ~ "Not applicable"))
+
+all_data <- 
+  all_data |>
+  dplyr::mutate(consolidated_data = case_when(
+    consolidated_data == "0 undocumented" ~ "U",
+    consolidated_data == "1 documented" ~ "D",
+    consolidated_data == "2 available" ~ "A",
+    consolidated_data == "3 available & open" ~ "O",
+    is.na(consolidated_data) ~ "Not applicable"))
+
+
+all_data <- 
+  all_data |>
+  dplyr::mutate(consolidated_methods = case_when(
+    consolidated_methods == "0 undocumented" ~ "U",
+    consolidated_methods == "1 documented" ~ "D",
+    consolidated_methods == "2 available" ~ "A",
+    consolidated_methods == "3 available & open" ~ "O",
+    is.na(consolidated_methods) ~ "Not applicable")) 
+
+all_data <-
+  all_data |>
+  dplyr::mutate(consolidated_results = case_when(
+    consolidated_results == "0 undocumented" ~ "U",
+    consolidated_results == "1 documented" ~ "D",
+    consolidated_results == "2 available" ~ "A",
+    consolidated_results == "3 available & open" ~ "O",
+    is.na(consolidated_results) ~ "Not applicable"))
+
+```
+
+
+
+## Type of disagreements
+
+List of disagreements during the assessment phase:
+
+- **no disagreement**: Reviewers' scores are the same. Perfect match.
+
+- **borderline conceptual paper**: Disagreement are due to a different understanding whether a paper is completely conceptual; some reviewers may see a paper that only has demonstrative, synthetic example data as not “data-based” or empirical and exclude it from the assessment; the assessment protocol is actually pretty clear here:
+
+> [Examples of such out-of-scope papers are: purely conceptual papers, literature studies, review/state-of-the-art papers, or proposed methodologies, guidelines, or opinions/reflections. However, even a small case study to support the main (conceptual) argument or descriptive statistics about literature turn this into a paper within scope!](https://docs.google.com/document/d/1WVvn3evxfUbHQ7kP8LdZiHE2firmWS1XIMuyh5sDEhs/edit?usp=drive_link)
+
+- **annotation inconsistencies**: Disagreements are due to errors in the level/score selected given the written notes of either reviewer.
+
+- **uncertain assessment (according to protocol assessment)**: either reviewer wrote that they are unsure about level x or y, so we could just change that to the level matching the other reviewer. 
+
+- **major disagreement**: when reviewers' notes (or lack of notes) cannot explain differences in assessment and conversation to get an agreement is necessary and/or checking again the paper is required.
+
+
+
+```{r}
+#| label: disagr-type
+#| message: false
+
+
+all_data <- 
+  all_data |>
+  dplyr::mutate(disagr_id = case_when(
+    disagr_type == "no disagreement" ~ 0,
+    disagr_type == "borderline conceptual paper" ~ 1,
+    disagr_type == "annotation inconsistencies" ~ 2,
+    disagr_type == "uncertain assessment" ~ 3,
+    disagr_type == "major disagreement" ~ 4))
+
+
+```
+
+
+## Save full dataset
+
+Clean dataset stored in `data-clean/all-data.csv`. Check `README` file in the `data-clean` folder to find description of each column.
+
+```{r}
+#| label: save-all-data
+#| message: false
+
+readr::write_csv(
+    x = all_data,
+    file = here::here("data-clean", "all-data.csv"), 
+    append = FALSE, 
+    col_names = TRUE)
+```
+
+
+
