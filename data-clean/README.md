@@ -13,20 +13,20 @@ Columns of the `all-data.csv` file
  - `rev2`: reviewer2 id
  - `rev1_cp`: True/False
  - `rev2_cp`: True/False
- - `rev1_data`: Values factored to UDAI naming scheme
- - `rev2_data`: Values factored to UDAI naming scheme
- - `rev1_methods`. Values factored to UDAI naming scheme
- - `rev2_methods`: Values factored to UDAI naming scheme
- - `rev1_results`: Values factored to UDAI naming scheme
- - `rev2_results`: Values factored to UDAI naming scheme
+ - `rev1_data`: Values factored to UDAO naming scheme
+ - `rev2_data`: Values factored to UDAO naming scheme
+ - `rev1_methods`. Values factored to UDAO naming scheme
+ - `rev2_methods`: Values factored to UDAO naming scheme
+ - `rev1_results`: Values factored to UDAO naming scheme
+ - `rev2_results`: Values factored to UDAO naming scheme
  - `rev1_ce`: True/False
  - `rev2_ce`: True/False
  - `rev1_notes`
  - `rev2_notes`
  - `consolidated_cp`: True/False
- - `consolidated_data`: Values factored to UDAI naming scheme
- - `consolidated_methods`: Values factored to UDAI naming scheme
- - `consolidated_results`: Values factored to UDAI naming scheme
+ - `consolidated_data`: Values factored to UDAO naming scheme
+ - `consolidated_methods`: Values factored to UDAO naming scheme
+ - `consolidated_results`: Values factored to UDAO naming scheme
  - `consolidated_ce`: True/False
  - `consolidated_notes`
  - `disagr_type`: Values: "no disagreement", "borderline conceptual paper", "annotation inconsistencies", "uncertain assessment", "major disagreement".

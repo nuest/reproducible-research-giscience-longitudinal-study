@@ -14,11 +14,9 @@ format:
     code-tools: true
 ---
 
+## Introduction
 
-## Introduction 
-
-The majority of the work happened during the assessment process: evaluation of the papers, consolidation of the assessments, and **synthesis of the rich feedback** as well as interpretation of the findings. Here, we retrieve data items required to explore feedback from reviewers during the assessment process. Individual scores of conceptual paper, data, methods, results (computational environment is not useful at the reviewer level), and notes from the two reviewers as well as **types of disagreement** between reviewers are relevant here. 
-
+The majority of the work happened during the assessment process: evaluation of the papers, consolidation of the assessments, and **synthesis of the rich feedback** as well as interpretation of the findings. Here, we retrieve data items required to explore feedback from reviewers during the assessment process. Individual scores of conceptual paper, data, methods, results (computational environment is not useful at the reviewer level), and notes from the two reviewers as well as **types of disagreement** between reviewers are relevant here.
 
 ```{r}
 #| label: load-packages
@@ -32,7 +30,6 @@ library(stringr)
 library(gt)
 library(ggplot2)
 ```
-
 
 ```{r}
 #| label: functions
@@ -57,9 +54,6 @@ criteriaBarplot = function(category, main, colour) {
 }
 ```
 
-
-
-
 ```{r}
 #| label: load-data
 #| message: false
@@ -81,7 +75,6 @@ assessment <-
 ```
 
 Selected/relevant columns are: `{r} stringr::str_flatten_comma(names(assessment))`. More details [here](https://github.com/nuest/reproducible-research-giscience-longitudinal-study/tree/main/data-clean).
-
 
 ```{r}
 #| label: basic-counts
@@ -106,25 +99,21 @@ n_papers_giscience <-
 
 ```
 
-
 ## Types of disagreements
 
-
-### Overview: all disagreement types together 
+### Overview: all disagreement types together
 
 These are the types of disagreements (`disagr_type`) between the individual reviewers' scores.
 
-- **no disagreement**: Reviewers' scores are the same in all dimensions (conceptual paper, data, methods, results)
+-   **no disagreement**: Reviewers' scores are the same in all dimensions (conceptual paper, data, methods, results)
 
-- **borderline conceptual paper**: Disagreement are due to a different understanding whether a paper is completely conceptual; some reviewers may see a paper that only has demonstrative, synthetic example data as not “data-based” or empirical and exclude it from the assessment.
+-   **borderline conceptual paper**: Disagreement are due to a different understanding whether a paper is completely conceptual; some reviewers may see a paper that only has demonstrative, synthetic example data as not “data-based” or empirical and exclude it from the assessment.
 
-- **annotation inconsistencies**: Disagreements are due to errors in the level/score selected given the written notes of either reviewer. No matter the dimension where inconsistencies are.
+-   **annotation inconsistencies**: Disagreements are due to errors in the level/score selected given the written notes of either reviewer. No matter the dimension where inconsistencies are.
 
-- **uncertain assessment (according to protocol assessment)**: either reviewer wrote that they are unsure about level x or y, so we could just change that to the level matching the other reviewer. 
+-   **uncertain assessment (according to protocol assessment)**: either reviewer wrote that they are unsure about level x or y, so we could just change that to the level matching the other reviewer.
 
-- **significant disagreement**: when reviewers' notes (or lack of notes) cannot explain differences in assessment and conversation to get an agreement is necessary and/or checking again the paper is required. **TODO: Replace `major disagreement` by `significant disagreement` in dataset**
-
-
+-   **significant disagreement**: when reviewers' notes (or lack of notes) cannot explain differences in assessment and conversation to get an agreement is necessary and/or checking again the paper is required. **TODO: Replace `major disagreement` by `significant disagreement` in dataset**
 
 ```{r}
 #| label: tbl-disagr-types
@@ -173,7 +162,6 @@ assessment |>
 
 ```
 
-
 @tbl-disagr-types shows the two most common disagreement types cover (**`{r} scales::label_percent(accuracy = 0.1)(p_disagr_top2)`**). This represents almost three-quarters of all evaluations, which were easily resolved as they did not imply serious discrepancies, but rather slightly different interpretations of how the evaluation criteria were applied. However, this is important because the uncertainty in the application/interpretation of the assessment criteria covers a large proportion of the disagreements (**`{r} scales::label_percent(accuracy = 0.1)(p_disagr_top1)`**), so there is room to improve and clarify aspects of the *Assessment Protocol* document to avoid ambiguities.
 
 ```{r}
@@ -209,10 +197,7 @@ assessment |>
 
 ```
 
-
-In general, @tbl-disagr-types-conf shows no remarkable differences between disagreement types per conference. Let's focus on the three intermediate disagreement types which have different percentages. AGILE papers present greater percentage of `major disagreement`, while GIScience papers have more papers assigned to `borderline conceptual paper ` and `no disagreement`. Speculating a bit, we can say that GIScience papers tend to be more theoretical than AGILE articles, which are typically classified as applied research or application papers. Following this line of argument, GIScience papers may be much easier to evaluate than AGILE papers, in which  greater uncertainty may arise when scoring the level of reproducibility for data, methods, and results. That is, more theoretical papers often use fewer computational methods and data artifacts than applied research papers, so it makes sense that `borderline conceptual paper` and `no disagreement` are common disagreement types in theory-oriented papers. Therefore, the nature of research (I mean, the number of theory-oriented papers vs the number of application-oriented papers) between the two conferences could be one of the factor that explain these small, but still significant, differences in `no disagreement`, `major disagreement`, and `borderline conceptual paper`.
-
-
+In general, @tbl-disagr-types-conf shows no remarkable differences between disagreement types per conference. Let's focus on the three intermediate disagreement types which have different percentages. AGILE papers present greater percentage of `major disagreement`, while GIScience papers have more papers assigned to `borderline conceptual paper` and `no disagreement`. Speculating a bit, we can say that GIScience papers tend to be more theoretical than AGILE articles, which are typically classified as applied research or application papers. Following this line of argument, GIScience papers may be much easier to evaluate than AGILE papers, in which greater uncertainty may arise when scoring the level of reproducibility for data, methods, and results. That is, more theoretical papers often use fewer computational methods and data artifacts than applied research papers, so it makes sense that `borderline conceptual paper` and `no disagreement` are common disagreement types in theory-oriented papers. Therefore, the nature of research (I mean, the number of theory-oriented papers vs the number of application-oriented papers) between the two conferences could be one of the factor that explain these small, but still significant, differences in `no disagreement`, `major disagreement`, and `borderline conceptual paper`.
 
 ```{r}
 #| label: tbl-disagr-types-conf-year
@@ -274,7 +259,6 @@ disagr_giscience |>
 
 ```
 
-
 ```{r}
 #| label: fig-disagr-types-conf-year
 #| fig-cap: "Distribution of disagreement types per conference and year (plots)"
@@ -282,7 +266,7 @@ disagr_giscience |>
 #|     - "AGILE"
 #|     - "GIScience"
 #| layout-ncol: 2
-#| column: page
+#| fig-column: page
 
 
 disagrLinePlot <- function(data, main) {
@@ -323,22 +307,22 @@ fig_giscience
 #fig_barplot
 ```
 
-Looking into the data over years, @tbl-disagr-types-conf-year breaks disagreement types per conference and year. @fig-disagr-types-conf-year represents the same data as line charts. 
+Looking into the data over years, @tbl-disagr-types-conf-year breaks disagreement types per conference and year. @fig-disagr-types-conf-year represents the same data as line charts.
 
-- `borderline conceptual paper` disagreements follow similar trend in both conferences. It is almost residual in recent years (1 paper per year/conference). It was different in the first year of the series (AGILE 2017, GIScience 2016) where more disagreements of this type occurred.
-- `annotation inconsistencies` is residual.
-- `no disagreement`, `uncertain assessment` and `major disagreement` appear to be somewhat related. In general, when `no disagreement` increases, the other two decrease. And viceversa.
-- `no disagreement` tends to decrease over time in both conferences, suggesting that agreement between reviewers in assessing the level of reproducibility in the first years of the series (AGILE 2017, GIScience 2026, GIScience 2018) was *much easier* than in recent years. Why? Possible reasons:
+-   `borderline conceptual paper` disagreements follow similar trend in both conferences. It is almost residual in recent years (1 paper per year/conference). It was different in the first year of the series (AGILE 2017, GIScience 2016) where more disagreements of this type occurred.
 
-  - Authors have increasingly adopted best practices for describing or including other research resources used in their articles, which were often omitted in articles in earlier conferences.
-  - The number of computational papers at recent conferences tends to be higher than in previous years.
-  
-- `uncertain assessment` and `major disagreement`. Together, it is hard to interpret them. Well, a pattern is visible over the last three conference editions: From a maximum peak (AGILE 2022, GIScience 2020), percentage of `uncertain assessment` decreases while that of  `major disagreement` increases for both conferences. Yet, the increase of `major disagrement` is greater in the last GIScience conference. Why: Perhaps the lack of explicit reproducibility guidelines for GIScience authors may have a factor as the number of computational papers in GIScience goes up.
-  
+-   `annotation inconsistencies` is residual.
+
+-   `no disagreement`, `uncertain assessment` and `major disagreement` appear to be somewhat related. In general, when `no disagreement` increases, the other two decrease. And viceversa.
+
+-   `no disagreement` tends to decrease over time in both conferences, suggesting that agreement between reviewers in assessing the level of reproducibility in the first years of the series (AGILE 2017, GIScience 2026, GIScience 2018) was *much easier* than in recent years. Why? Possible reasons:
+
+    -   Authors have increasingly adopted best practices for describing or including other research resources used in their articles, which were often omitted in articles in earlier conferences.
+    -   The number of computational papers at recent conferences tends to be higher than in previous years.
+
+-   `uncertain assessment` and `major disagreement`. Together, it is hard to interpret them. Well, a pattern is visible over the last three conference editions: From a maximum peak (AGILE 2022, GIScience 2020), percentage of `uncertain assessment` decreases while that of `major disagreement` increases for both conferences. Yet, the increase of `major disagrement` is greater in the last GIScience conference. Why: Perhaps the lack of explicit reproducibility guidelines for GIScience authors may have a factor as the number of computational papers in GIScience goes up.
 
 ### Only `no disagreement`, `uncertain assessment` and `major disagreement`
-
-
 
 ```{r}
 #| label: tbl-3top-disagr-types-conf-year
@@ -402,19 +386,15 @@ disagr_giscience |>
   )
 ```
 
+@tbl-3top-disagr-types-conf-year "zooms" in @tbl-disagr-types-conf-year to show in detail the 3-top disagreement types.
 
+-   it's pretty clear that `no disagreement` has steadily declined since the beginning of the series, reaching its lowest percentage in the final year of the series for both conferences. However this common pattern develops differently for each conference: `no dissagrement` halved in AGILE 2018 and remained stable at this trend until AGILE 2024.
 
-@tbl-3top-disagr-types-conf-year "zooms" in @@tbl-disagr-types-conf-year to show in detail the 3-top disagreement types.
-
-- it's pretty clear that `no disagreement` has steadily declined since the beginning of the series, reaching its lowest percentage in the final year of the series for both conferences. However this common pattern develops differently for each conference: `no dissagrement` halved in AGILE 2018 and remained stable at this trend until AGILE 2024. 
-
-- For the same year of AGILE papers, the highest percentages (in red) of `uncertain assessment` coincide with the lowest percentages (blue) of `major disagreement` (in blue). And the opposite is true too. However, this pattern, although present, is not repeated as clearly in the GIScience articles.
-
+-   For the same year of AGILE papers, the highest percentages (in red) of `uncertain assessment` coincide with the lowest percentages (blue) of `major disagreement` (in blue). And the opposite is true too. However, this pattern, although present, is not repeated as clearly in the GIScience articles.
 
 ## Looking at individdual types of disagreements
 
 We explore the scores (data, methods, and results) of the two reviewers for each type of disagreement, excluding `no disagrement`, `borderline conceptual paper`, and `annotation inconsistencies`.
-
 
 ### Type: `uncertain assessment`
 
@@ -460,8 +440,8 @@ disagr_uncertain |>
 ```
 
 ```{r}
-#| label: disagr-uncertain-conf-year
-
+#| label: tbl-disagr-uncertain-conf
+#| tbl-cap: "Distribution of 'Uncertain disagreement'"
 
 tbl_disagr_uncertain <-
   bind_cols(
@@ -493,7 +473,7 @@ tbl_disagr_uncertain |>
   gt::gt() |>
   gt::tab_header(
     title = stringr::str_glue("Uncertain disagreement (N={n_disagr_uncertain})"),
-    subtitle = "Applied to Data, Methods and Results scores"
+    subtitle = md("Applied to *Data*, *Methods* and *Results* scores (of the two reviewers).<br>The lowest disagreements are in cyan, the highest disagreements in red.")
   ) |>
   gt::tab_spanner(
     label = md("**Data**"),
@@ -507,24 +487,141 @@ tbl_disagr_uncertain |>
     label = md("**Results**"),
     columns = ends_with("_res"),
   ) |>
+  gt::tab_style(
+    style = list(
+      cell_fill(color = "lightcyan"),
+      cell_text(weight = "bold")
+      ),
+    locations = list(
+      cells_body(
+        columns = p_met,
+        rows = p_met <= 0.3),
+      cells_body(
+        columns = p_res,
+        rows = p_res <= 0.2)
+    )
+  ) |>
+  gt::tab_style(
+    style = list(
+      cell_fill(color = "indianred"),
+      cell_text(color = "white")
+      ),
+    locations = cells_body(
+        columns = p_dat,
+        rows = p_dat >= 0.6
+    )
+  ) |>
   gt::fmt_percent(
     columns = c(p_dat, p_met, p_res),
     decimals = 1
   ) |>
   gt::cols_label(
     conf = md("**Conf Series**"),
-    disagr_dat = md("*Distinct scores?*"),
-    disagr_met = md("*Distinct scores?*"),
-    disagr_res = md("*Distinct scores?*"))
+    disagr_dat = md("*Disagreement?*"),
+    disagr_met = md("*Disagreement?*"),
+    disagr_res = md("*Disagreement?*"))
 
 ```
 
+What we observe in @tbl-disagr-uncertain-conf: 
+
+- AGILE: 
+  - Lowest proportion of `uncertain assessment` disagreements is in Methods, under 30%. 
+  - Highest proportion of `uncertain assessment` disagreements is in Data, close to 65%.
+  - From higher to lower proportion of disagreements: Data -> Results -> Methods
+  
+- GIScience:
+  - Lowest proportion of `uncertain assessment` disagreements is in Results, just 20%. 
+  - Highest proportion of `uncertain assessment` disagreements is in Data, just 80%.
+  - From higher to lower proportion of disagreements: Data -> Methods -> Results 
+
+In @fig-disagr-uncertain-heatmap, we look now at the individual scores (UDAO naming scheme) for each of the dimensions (data, methods, results). 
+
+```{r}
+#| label: fig-disagr-uncertain-heatmap
+#| fig-cap: "AGILE only: Counts of disagraments (UDAI level) between reviewers (heatmap)"
+#| fig-subcap: 
+#|     - "Data"
+#|     - "Methods"
+#|     - "Results"
+#| layout-ncol: 3
+#| column: page-right
+
+# TODO: https://www.sthda.com/english/wiki/ggplot2-quick-correlation-matrix-heatmap-r-software-and-data-visualization
+
+udao_levels <-  c("U", "D", "A", "O")
+
+heatmap_dat <-
+  disagr_uncertain |>
+    dplyr::filter(conf=="agile") |>
+    dplyr::select(year, rev1_data, rev2_data) |>
+    dplyr::mutate(rev1_data = factor(rev1_data, levels = udao_levels)) |>
+    dplyr::mutate(rev2_data = factor(rev2_data, levels = udao_levels)) |>
+    dplyr::group_by(rev1_data,rev2_data) %>%
+    dplyr::tally()
 
 
+heatmap_met <-
+  disagr_uncertain |>
+    dplyr::filter(conf=="agile") |>
+    dplyr::select(year, rev1_methods, rev2_methods) |>
+    dplyr::mutate(rev1_methods = factor(rev1_methods, levels = udao_levels)) |>
+    dplyr::mutate(rev2_methods  = factor(rev2_methods, levels = udao_levels)) |>
+    dplyr::group_by(rev1_methods,rev2_methods) %>%
+    dplyr::tally()
+
+
+heatmap_res <-
+  disagr_uncertain |>
+    dplyr::filter(conf=="agile") |>
+    dplyr::select(year, rev1_results, rev2_results) |>
+    dplyr::mutate(rev1_results = factor(rev1_results, levels = udao_levels)) |>
+    dplyr::mutate(rev2_results = factor(rev2_results, levels = udao_levels)) |>
+    dplyr::group_by(rev1_results,rev2_results) %>%
+    dplyr::tally()
+
+
+heatmap_dat |>
+  ggplot2::ggplot(aes(x = rev1_data, y = rev2_data, fill = n)) +
+  ggplot2::geom_tile(color = "white") +
+  ggplot2::geom_text(aes(label = n), color = "white", size = 4) +
+  ggplot2::scale_fill_gradient(low = "blue", high = "red") + 
+  ggplot2::coord_fixed() +
+  ggplot2::labs(title = "Data disagreement",
+       x = "Reviewer 1",
+       y = "Reviewer 2") +
+  ggplot2::theme_minimal()
+
+heatmap_met |>
+  ggplot2::ggplot(aes(x = rev1_methods, y = rev2_methods, fill = n)) +
+  ggplot2::geom_tile(color = "white") +
+  ggplot2::geom_text(aes(label = n), color = "white", size = 4) +
+  ggplot2::scale_fill_gradient(low = "blue", high = "red") + 
+  ggplot2::coord_fixed() +
+  ggplot2::labs(title = "Methods disagreement",
+       x = "Reviewer 1",
+       y = "Reviewer 2") +
+  ggplot2::theme_minimal()
+
+
+heatmap_res |>
+  ggplot2::ggplot(aes(x = rev1_results, y = rev2_results, fill = n)) +
+  ggplot2::geom_tile(color = "white") +
+  ggplot2::geom_text(aes(label = n), color = "white", size = 4) +
+  ggplot2::scale_fill_gradient(low = "blue", high = "red") + 
+  ggplot2::coord_fixed() +
+  ggplot2::labs(title = "Results disagreement",
+       x = "Reviewer 1",
+       y = "Reviewer 2") +
+  ggplot2::theme_minimal()
+
+
+```
+
+  
 
 ### Type: `major disagreement`
 
 
-
-
+## Remarks
 
