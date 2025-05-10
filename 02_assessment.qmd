@@ -132,14 +132,6 @@ assessment |>
     columns = p,
     decimals = 1
   ) |>
-  gt::tab_style(
-    style = cell_text(color = "#ae8b2d", weight = "bold"),
-    locations = cells_body(
-      columns = everything(),
-      #rows = n == max(n)
-      rows = n >= 50
-    )
-  ) |>
   gt::cols_label(
     disagr_type = md("**Disagreement type**"),
     n = md("**#**"),
@@ -152,17 +144,28 @@ assessment |>
   dplyr::slice_max(order_by = p, n = 1) |>
   pull(p) -> p_disagr_top1
 
+assessment |>
+  dplyr::count(disagr_type) |>
+  dplyr::mutate(p = n /sum(n)) |>
+  dplyr::filter(disagr_type != "no disagreement") |> # Exclude agreement, of course
+  dplyr::slice_max(order_by = p, n = 2) |>
+  dplyr::summarize(sum = sum(p)) |>
+  dplyr::pull(sum) -> p_disagr_top2
 
 assessment |>
   dplyr::count(disagr_type) |>
   dplyr::mutate(p = n /sum(n)) |>
-  dplyr::slice_max(order_by = p, n = 2) |>
-  dplyr::summarize(total = sum(p)) |>
-  dplyr::pull(total) -> p_disagr_top2
+  dplyr::filter(disagr_type == "no disagreement") |> # Only total agreement
+  dplyr::pull(p) -> p_no_disagr
 
 ```
 
-@tbl-disagr-types shows the two most common disagreement types cover (**`{r} scales::label_percent(accuracy = 0.1)(p_disagr_top2)`**). This represents almost three-quarters of all evaluations, which were easily resolved as they did not imply serious discrepancies, but rather slightly different interpretations of how the evaluation criteria were applied. However, this is important because the uncertainty in the application/interpretation of the assessment criteria covers a large proportion of the disagreements (**`{r} scales::label_percent(accuracy = 0.1)(p_disagr_top1)`**), so there is room to improve and clarify aspects of the *Assessment Protocol* document to avoid ambiguities.
+
+First, the reviewers made the same assessment in **`{r} scales::label_percent(accuracy = 0.1)(p_no_disagr)`** of the papers. Reviewers disagreed in more than 70% of the total number of papers (N=`{r} n_papers`)!
+
+Second, @tbl-disagr-types also shows that, after excluding `no disagreement` (well, it means perfect match between reviewers!), the two most common disagreement types cover (**`{r} scales::label_percent(accuracy = 0.1)(p_disagr_top2)`**). Uncertainty in the application/interpretation of the assessment criteria covers a large proportion of the disagreements (**`{r} scales::label_percent(accuracy = 0.1)(p_disagr_top1)`**), so there is room to improve and clarify aspects of the *Assessment Protocol* document to avoid slightly different interpretations of how the evaluation criteria have to be applied.
+
+
 
 ```{r}
 #| label: tbl-disagr-types-conf
@@ -325,7 +328,7 @@ Looking into the data over years, @tbl-disagr-types-conf-year breaks disagreemen
 ### Only `no disagreement`, `uncertain assessment` and `major disagreement`
 
 ```{r}
-#| label: tbl-3top-disagr-types-conf-year
+#| label: tbl-top3-disagr-types-conf-year
 #| tbl-cap: "Distribution of 3-top disagreement types per conference and year"
 #| tbl-subcap: 
 #|     - "AGILE"
@@ -386,7 +389,7 @@ disagr_giscience |>
   )
 ```
 
-@tbl-3top-disagr-types-conf-year "zooms" in @tbl-disagr-types-conf-year to show in detail the 3-top disagreement types.
+@tbl-top3-disagr-types-conf-year "zooms" in @tbl-disagr-types-conf-year to show in detail the 3-top disagreement types.
 
 -   it's pretty clear that `no disagreement` has steadily declined since the beginning of the series, reaching its lowest percentage in the final year of the series for both conferences. However this common pattern develops differently for each conference: `no dissagrement` halved in AGILE 2018 and remained stable at this trend until AGILE 2024.
 
@@ -427,15 +430,6 @@ disagr_uncertain <-
   dplyr::mutate(disagr_dat = (rev1_data != rev2_data)) |>
   dplyr::mutate(disagr_met = (rev1_methods != rev2_methods)) |>
   dplyr::mutate(disagr_res = (rev1_results != rev2_results)) 
-
-
-
-disagr_uncertain |>
-  dplyr::group_by(disagr_dat) |>
-  dplyr::count()
-
-
-
 
 ```
 
@@ -488,10 +482,13 @@ tbl_disagr_uncertain |>
     columns = ends_with("_res"),
   ) |>
   gt::tab_style(
-    style = list(
-      cell_fill(color = "lightcyan"),
-      cell_text(weight = "bold")
-      ),
+    style = cell_text(weight = "bold"),
+    locations = 
+      cells_body(
+        rows = disagr_dat == TRUE)
+  ) |>
+  gt::tab_style(
+    style = cell_fill(color = "lightcyan"),
     locations = list(
       cells_body(
         columns = p_met,
@@ -523,35 +520,40 @@ tbl_disagr_uncertain |>
 
 ```
 
-What we observe in @tbl-disagr-uncertain-conf: 
+What we observe in @tbl-disagr-uncertain-conf (rows in **bold** only): 
 
 - AGILE: 
-  - Lowest proportion of `uncertain assessment` disagreements is in Methods, under 30%. 
-  - Highest proportion of `uncertain assessment` disagreements is in Data, close to 65%.
+  - Lowest proportion of `uncertain assessment` disagreements is in **Methods**, under 30%. 
+  - Highest proportion of `uncertain assessment` disagreements is in **Data**, close to 65%.
   - From higher to lower proportion of disagreements: Data -> Results -> Methods
   
 - GIScience:
-  - Lowest proportion of `uncertain assessment` disagreements is in Results, just 20%. 
-  - Highest proportion of `uncertain assessment` disagreements is in Data, just 80%.
+  - Lowest proportion of `uncertain assessment` disagreements is in **Results**, just 20%. 
+  - Highest proportion of `uncertain assessment` disagreements is in **Data**, just 80%.
   - From higher to lower proportion of disagreements: Data -> Methods -> Results 
 
-In @fig-disagr-uncertain-heatmap, we look now at the individual scores (UDAO naming scheme) for each of the dimensions (data, methods, results). 
+
+
+In @fig-disagr-uncertain-heatmap, we look now at the individual scores (UDAI levels) for each of the dimensions (data, methods, results), considering AGILE (top row) and GIScience (bottom row).
 
 ```{r}
 #| label: fig-disagr-uncertain-heatmap
-#| fig-cap: "AGILE only: Counts of disagraments (UDAI level) between reviewers (heatmap)"
+#| fig-cap: "Counts UDAI score for 'uncertain disagreement' between reviewers (heatmap): AGILE vs GIScience"
 #| fig-subcap: 
-#|     - "Data"
-#|     - "Methods"
-#|     - "Results"
-#| layout-ncol: 3
-#| column: page-right
+#|     - "AGILE: Data"
+#|     - "AGILE: Methods"
+#|     - "AGILE: Results"
+#|     - "GIScience: Data"
+#|     - "GIScience: Methods"
+#|     - "GIScience: Results"
+#| layout: [[30, 30, 30], [30, 30, 30]]
+#| fig-column: page
 
 # TODO: https://www.sthda.com/english/wiki/ggplot2-quick-correlation-matrix-heatmap-r-software-and-data-visualization
 
 udao_levels <-  c("U", "D", "A", "O")
 
-heatmap_dat <-
+heatmap_agile_dat <-
   disagr_uncertain |>
     dplyr::filter(conf=="agile") |>
     dplyr::select(year, rev1_data, rev2_data) |>
@@ -561,7 +563,7 @@ heatmap_dat <-
     dplyr::tally()
 
 
-heatmap_met <-
+heatmap_agile_met <-
   disagr_uncertain |>
     dplyr::filter(conf=="agile") |>
     dplyr::select(year, rev1_methods, rev2_methods) |>
@@ -571,7 +573,7 @@ heatmap_met <-
     dplyr::tally()
 
 
-heatmap_res <-
+heatmap_agile_res <-
   disagr_uncertain |>
     dplyr::filter(conf=="agile") |>
     dplyr::select(year, rev1_results, rev2_results) |>
@@ -581,47 +583,251 @@ heatmap_res <-
     dplyr::tally()
 
 
-heatmap_dat |>
+heatmap_giscience_dat <-
+  disagr_uncertain |>
+    dplyr::filter(conf=="giscience") |>
+    dplyr::select(year, rev1_data, rev2_data) |>
+    dplyr::mutate(rev1_data = factor(rev1_data, levels = udao_levels)) |>
+    dplyr::mutate(rev2_data = factor(rev2_data, levels = udao_levels)) |>
+    dplyr::group_by(rev1_data,rev2_data) %>%
+    dplyr::tally()
+
+
+heatmap_giscience_met <-
+  disagr_uncertain |>
+    dplyr::filter(conf=="giscience") |>
+    dplyr::select(year, rev1_methods, rev2_methods) |>
+    dplyr::mutate(rev1_methods = factor(rev1_methods, levels = udao_levels)) |>
+    dplyr::mutate(rev2_methods  = factor(rev2_methods, levels = udao_levels)) |>
+    dplyr::group_by(rev1_methods,rev2_methods) %>%
+    dplyr::tally()
+
+
+heatmap_giscience_res <-
+  disagr_uncertain |>
+    dplyr::filter(conf=="giscience") |>
+    dplyr::select(year, rev1_results, rev2_results) |>
+    dplyr::mutate(rev1_results = factor(rev1_results, levels = udao_levels)) |>
+    dplyr::mutate(rev2_results = factor(rev2_results, levels = udao_levels)) |>
+    dplyr::group_by(rev1_results,rev2_results) %>%
+    dplyr::tally()
+
+
+heatmap_agile_dat |>
   ggplot2::ggplot(aes(x = rev1_data, y = rev2_data, fill = n)) +
   ggplot2::geom_tile(color = "white") +
   ggplot2::geom_text(aes(label = n), color = "white", size = 4) +
   ggplot2::scale_fill_gradient(low = "blue", high = "red") + 
   ggplot2::coord_fixed() +
-  ggplot2::labs(title = "Data disagreement",
+  ggplot2::labs(title = "AGILE: Data disagreement",
        x = "Reviewer 1",
        y = "Reviewer 2") +
   ggplot2::theme_minimal()
 
-heatmap_met |>
+heatmap_agile_met |>
   ggplot2::ggplot(aes(x = rev1_methods, y = rev2_methods, fill = n)) +
   ggplot2::geom_tile(color = "white") +
   ggplot2::geom_text(aes(label = n), color = "white", size = 4) +
   ggplot2::scale_fill_gradient(low = "blue", high = "red") + 
   ggplot2::coord_fixed() +
-  ggplot2::labs(title = "Methods disagreement",
+  ggplot2::labs(title = "AGILE: Methods disagreement",
        x = "Reviewer 1",
        y = "Reviewer 2") +
   ggplot2::theme_minimal()
 
 
-heatmap_res |>
+heatmap_agile_res |>
   ggplot2::ggplot(aes(x = rev1_results, y = rev2_results, fill = n)) +
   ggplot2::geom_tile(color = "white") +
   ggplot2::geom_text(aes(label = n), color = "white", size = 4) +
   ggplot2::scale_fill_gradient(low = "blue", high = "red") + 
   ggplot2::coord_fixed() +
-  ggplot2::labs(title = "Results disagreement",
+  ggplot2::labs(title = "AGILE: Results disagreement",
        x = "Reviewer 1",
        y = "Reviewer 2") +
   ggplot2::theme_minimal()
 
 
+heatmap_giscience_dat |>
+  ggplot2::ggplot(aes(x = rev1_data, y = rev2_data, fill = n)) +
+  ggplot2::geom_tile(color = "white") +
+  ggplot2::geom_text(aes(label = n), color = "white", size = 4) +
+  ggplot2::scale_fill_gradient(low = "blue", high = "red") + 
+  ggplot2::coord_fixed() +
+  ggplot2::labs(title = "GIScience: Data disagreement",
+       x = "Reviewer 1",
+       y = "Reviewer 2") +
+  ggplot2::theme_minimal()
+
+heatmap_giscience_met |>
+  ggplot2::ggplot(aes(x = rev1_methods, y = rev2_methods, fill = n)) +
+  ggplot2::geom_tile(color = "white") +
+  ggplot2::geom_text(aes(label = n), color = "white", size = 4) +
+  ggplot2::scale_fill_gradient(low = "blue", high = "red") + 
+  ggplot2::coord_fixed() +
+  ggplot2::labs(title = "GIScience: Methods disagreement",
+       x = "Reviewer 1",
+       y = "Reviewer 2") +
+  ggplot2::theme_minimal()
+
+
+heatmap_giscience_res |>
+  ggplot2::ggplot(aes(x = rev1_results, y = rev2_results, fill = n)) +
+  ggplot2::geom_tile(color = "white") +
+  ggplot2::geom_text(aes(label = n), color = "white", size = 4) +
+  ggplot2::scale_fill_gradient(low = "blue", high = "red") + 
+  ggplot2::coord_fixed() +
+  ggplot2::labs(title = "GIScience: Results disagreement",
+       x = "Reviewer 1",
+       y = "Reviewer 2") +
+  ggplot2::theme_minimal()
+
 ```
 
   
 
-### Type: `major disagreement`
+### Type: `major disagreement` (to be replaced by `significant disagreement`)
+
+
+```{r}
+#| label: disagr-significant
+
+n_disagr_significant <- 
+  assessment |>
+  dplyr::filter(disagr_type == "major disagreement") |>
+  dplyr::count() |>
+  dplyr::pull(n)
+
+n_disagr_significant_agile <-
+  assessment |>
+  dplyr::filter(conf == "agile", disagr_type == "major disagreement") |>
+  dplyr::count() |>
+  dplyr::pull(n)
+
+n_disagr_significant_giscience <-
+  assessment |>
+  dplyr::filter(conf == "giscience", disagr_type == "major disagreement") |>
+  dplyr::count() |>
+  dplyr::pull(n)
+
+
+disagr_significant <- 
+  assessment |>
+  dplyr::select(-paper, -rev1, -rev2, -rev1_cp, -rev2_cp, -rev1_notes, -rev2_notes) |>
+  dplyr::filter(disagr_type == "major disagreement") |>
+  dplyr::mutate(disagr_dat = (rev1_data != rev2_data)) |>
+  dplyr::mutate(disagr_met = (rev1_methods != rev2_methods)) |>
+  dplyr::mutate(disagr_res = (rev1_results != rev2_results)) 
+
+
+```
+
+
+```{r}
+#| label: tbl-disagr-significant-conf
+#| tbl-cap: "Distribution of 'major disagreement'"
+
+tbl_disagr_significant <-
+  bind_cols(
+    disagr_significant |>
+    dplyr::group_by(conf, disagr_dat) |>
+    dplyr::count(name = "n_dat") |>
+    dplyr::ungroup(disagr_dat) |>
+    dplyr::mutate(p_dat = n_dat / sum(n_dat)) |>
+    dplyr::ungroup(),
+    
+    disagr_significant |>
+    dplyr::group_by(conf, disagr_met) |>
+    dplyr::count(name = "n_met") |>
+    dplyr::ungroup(disagr_met) |>
+    dplyr::mutate(p_met = n_met / sum(n_met)) |>
+    dplyr::ungroup() |>
+    dplyr::select(-conf),
+    
+    disagr_significant |>
+    dplyr::group_by(conf, disagr_res) |>
+    dplyr::count(name = "n_res") |>
+    dplyr::ungroup(disagr_res) |>
+    dplyr::mutate(p_res = n_res / sum(n_res)) |>
+    dplyr::ungroup() |>
+    dplyr::select(-conf)
+  )
+
+tbl_disagr_significant |>
+  gt::gt() |>
+  gt::tab_header(
+    title = stringr::str_glue("Major disagreement (N={n_disagr_significant})"),
+    subtitle = md("Applied to *Data*, *Methods* and *Results* scores (of the two reviewers).<br>The lowest disagreements are in cyan, the highest disagreements in red.")
+  ) |>
+  gt::tab_spanner(
+    label = md("**Data**"),
+    columns = ends_with("_dat"),
+  ) |>
+  gt::tab_spanner(
+    label = md("**Methods**"),
+    columns = ends_with("_met"),
+  ) |>
+  gt::tab_spanner(
+    label = md("**Results**"),
+    columns = ends_with("_res"),
+  ) |>
+  gt::tab_style(
+    style = cell_text(weight = "bold"),
+    locations = 
+      cells_body(
+        rows = disagr_dat == TRUE)
+  ) |>
+  gt::tab_style(
+    style = list(
+      cell_fill(color = "indianred"),
+      cell_text(color = "white")
+      ),
+    locations = cells_body(
+        columns = p_dat,
+        rows = p_dat >= 0.7
+    )
+  ) |>
+  gt::fmt_percent(
+    columns = c(p_dat, p_met, p_res),
+    decimals = 1
+  ) |>
+  gt::cols_label(
+    conf = md("**Conf Series**"),
+    disagr_dat = md("*Disagreement?*"),
+    disagr_met = md("*Disagreement?*"),
+    disagr_res = md("*Disagreement?*"))
+
+```
+
+What we observe in @tbl-disagr-significant-conf (rows in **bold** only): 
+
+- AGILE: 
+  - Lowest proportion of `major disagreement` is in **Results**. 
+  - Highest proportion of `major disagreement` is in **Data**. 
+  - From higher to lower proportion of disagreements: Data -> Methods -> Results
+  
+- GIScience:
+  - Lowest proportion of `major disagreement` is in **Methods and Results**, same proportion. 
+  - Highest proportion of `uncertain disagreement` is in **Data**.
+  - From higher to lower proportion of disagreements: Data -> Methods/Results 
 
 
 ## Remarks
+ 
+The exploratory analysis above discerns some observations (unsure if we can term them as *patterns*) about the disagreements found between reviewers while evaluating the level of reproducibility of AGILE/GIScience papers. The following observations should be considered simply as factual information (which can be converted into recommendations) to improve the clarity of the AGILE Guidelines and the Assessment Protocol.
+
+- Reviewers disagreed in more than 70% of the total number of papers (N=`{r} n_papers`)! See @tbl-disagr-types
+
+- On the positive side, **`{r} scales::label_percent(accuracy = 0.1)(p_disagr_top2)`** of disagreements where due to slightly different interpretations of the evaluation criteria, suggesting that improving the Assessment Protocol could drastically reduce it. On the contrary, `significant disagreement` (almost 20%) denotes that reviewers had not enough information on the assessed paper to obtain a similar score. That is, determining the root causes of disagreement is difficult and, in most cases, is due to several factors. The most relevant could be a lack of detail in the original paper, along with some imprecise instructions in the Assessment Protocol.
+ 
+- Similar proportions of disagreement types per conference - see @tbl-disagr-types-conf.
+
+- See comments above regarding @tbl-disagr-types-conf-year and @fig-disagr-types-conf-year, where disagreement types are divided by conference and year. 
+ 
+- See comments above regarding @tbl-top3-disagr-types-conf-year. 
+
+- Regardless of the conference, the data dimension accounts for the largest proportion of `uncertain assessment` disagreements when analyzing individual scores (see @tbl-disagr-uncertain-conf). That is, the reviewers disagreed primarily on the data dimension. Therefore, although the disagreements discussed (`uncertain assessment`) stem from slightly subjective interpretations of the assessment protocol, the data dimension remains the controversial one. **Therefore**, efforts to improve guidelines on how to clearly evaluate (by reviewers/readers) and unambiguously describe (by authors) input data are crucial.
+ 
+- Regardless of the conference, the data dimension accounts for the largest proportion of `major disagreement` when analyzing individual scores (see @tbl-disagr-significant-conf). 
+
 
