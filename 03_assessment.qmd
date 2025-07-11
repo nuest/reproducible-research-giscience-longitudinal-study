@@ -1,7 +1,7 @@
 ---
-title: "02_assessment (IN PROGRESS)"
+title: "03_assessment (IN PROGRESS)"
 description: |
-    Analyzing the results of the assessment process helps uncover the reasons behind disagreements found among reviewers, so that documents such as the AGILE Guidelines and the Assessemnt Protocol can be updated accordingly.
+    Analyzing the results of the assessment process helps uncover the reasons behind disagreements found among reviewers, so that documents such as the AGILE Guidelines and the Assessemnt Protocol can be updated accordingly. This notebook refers to section 3.2 (*Results related to the assessment process*). 
 
 #execute:
 #  echo: false
