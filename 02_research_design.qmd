@@ -15,10 +15,6 @@ format:
 ---
 
 
-
-## Introduction
-
-
 ```{r}
 #| label: load-packages
 #| message: false

@@ -1,3 +1,6 @@
 install.packages("here")
 install.packages("tidyverse")
 install.packages("gt")
+install.packages("ggthemes")
+install.packages("patchwork")
+install.packages("svglite")

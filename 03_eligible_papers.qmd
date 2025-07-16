@@ -1,0 +1,593 @@
+---
+title: "03_eligible_papers"
+description: |
+    Support notebook to compute basic stats related to eligible papers, which is connected to section 3.1 (*Paper selection*) within results. 
+
+#execute:
+#  echo: false
+format: 
+  html:
+    toc: true
+    embed-resources: true  # Self-contained
+    code-fold: true
+    code-summary: "Show the code"
+    code-tools: true
+---
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(here)
+library(tidyverse)
+library(dplyr)
+library(scales)
+library(stringr)
+library(gt)
+library(ggplot2)
+library(ggthemes)
+library(patchwork)
+library(svglite)
+```
+
+
+```{r}
+#| label: functions
+
+# Taken from https://github.com/nuest/reproducible-research-at-giscience/blob/master/giscience-reproducibility-assessment.Rmd
+
+criteriaBarplot = function(df, col, main, colour) {
+  col <- enquo(col)
+
+  ggplot2::ggplot(df,
+                    aes(x=!!col),
+                    show.legend = FALSE) +
+    ggplot2::geom_bar(fill = colour, color = "black") +
+    ggplot2::ggtitle(main) +
+    ggplot2::xlab("Level") +
+    ggplot2::xlim(udoa_levels) +
+    ggplot2::ylab("") +
+    ggplot2::scale_y_continuous(breaks = breaks,
+                                limits = range(breaks)) +
+    ggthemes::theme_tufte(base_size = 10) + ggplot2::theme(axis.ticks.x = element_blank())
+}
+```
+
+```{r}
+#| label: load-data
+#| message: false
+
+
+udoa_levels <- c("U", "D", "A", "O", NA)
+
+
+paper_evaluation <- 
+  readr::read_csv(here::here("data-clean", "all-data.csv"),
+                  col_types = readr::cols(
+                    conf = readr::col_character(),
+                    year = readr::col_integer(),
+                    consolidated_cp = readr::col_logical(),
+                    consolidated_data = readr::col_factor(levels = udoa_levels),
+                    consolidated_methods = readr::col_factor(levels = udoa_levels),
+                    consolidated_results = readr::col_factor(levels = udoa_levels),
+                    consolidated_ce = readr::col_logical()
+                  ),
+                  na = c("NA", "Not applicable")) |>
+  dplyr::arrange(conf, year)
+                    
+
+paper_evaluation <- 
+  paper_evaluation |>
+  dplyr::select(conf, year, 
+                consolidated_cp,
+                consolidated_data,
+                consolidated_methods,
+                consolidated_results,
+                consolidated_ce,
+                agile_badge) |>
+  dplyr::arrange(conf, year)
+
+
+```
+
+# Introduction
+
+```{r}
+#| label: basic-counts
+#| message: false
+
+n_papers <- nrow(paper_evaluation)
+
+paper_evaluation_wo_conceptual <- filter(paper_evaluation, consolidated_cp == FALSE)
+
+n_papers_wo_conceptual <- nrow(paper_evaluation_wo_conceptual)
+
+paper_evaluation_conceptual <- filter(paper_evaluation, consolidated_cp == TRUE)
+  
+n_papers_conceptual <- nrow(paper_evaluation_conceptual)
+```
+
+## Assessment of conceptual papers
+
+```{r}
+
+paper_evaluation_conceptual |> 
+  dplyr::count(conf) |>
+  dplyr::mutate(p = n /sum(n)) |>
+  dplyr::filter(conf == "agile") |>
+  dplyr::select(n, p) -> agile_conceptual
+  
+
+paper_evaluation_conceptual |> 
+  dplyr::count(conf) |>
+  dplyr::mutate(p = n /sum(n)) |>
+  dplyr::filter(conf == "giscience") |>
+  dplyr::select(n, p) -> giscience_conceptual
+
+```
+
+Out of the `{r} n_papers`, **`{r} n_papers_conceptual`** were assigned as conceptual papers and they were e excluded from the reproducibility analysis. This represents
+`{r} scales::label_percent(accuracy = 0.1)(n_papers_conceptual / n_papers)` of the total papers assessed. 
+
+If we look at the distribution of conceptual papers per conference, we find that, `{r} scales::label_percent(accuracy = 0.1)(agile_conceptual$p)` (`{r} agile_conceptual$n` / `{r} n_papers_conceptual`) corresponds to AGILE conference papers, while the remaining  `{r} scales::label_percent(accuracy = 0.1)(giscience_conceptual$p)` corresponds to GIScience conference papers (`{r} giscience_conceptual$n` / `{r} n_papers_conceptual`). Since the number of AGILE papers (148) is almost double that of GIScience (78), there are no significant differences in the distribution of conceptual papers between conferences. However, a practical observation during the evaluation process is that theoretically oriented papers that included a short case study to demonstrate the value of the reported theory were more common at GIScience conferences. These types of papers were classified as nonconceptual, as input data, even small datasets for demonstration/validation purpose, was part of the study.
+
+If we look at the distribution of conceptual papers over time, there is no clear pattern in @fig-conceptual-years; only that the number of conceptual papers in the first two years (2016-2017), four in each year, has not been reached again in the rest of the period.
+
+
+```{r}
+#| label: fig-conceptual-years
+#| warning: false
+#| fig-cap: "Number of conceptual papers per year, counted for both conferences."
+#| fig-width: 6
+#| fig-asp: 0.4
+#| out-width: 100%
+#| fig-align: center
+
+paper_evaluation_conceptual |> 
+  dplyr::count(year) |>
+  ggplot2::ggplot(aes(x=year, y=n),
+                    show.legend = FALSE) +
+    ggplot2::geom_line(color = "black") +
+    ggplot2::xlab("Years") + 
+    ggplot2::theme_bw()
+
+```
+
+
+## Reproducibility assessment of non-conceptual papers
+
+There are **`{r} n_papers_wo_conceptual`** non-conceptual papers. This represents `{r} scales::label_percent(accuracy = 0.1)(n_papers_wo_conceptual / n_papers)` of the total papers assessed. This is the number of papers considered analysed in this section.
+
+### GIScience barplots
+
+```{r}
+#| label: GIScience-globals
+#| warning: false
+
+papers_giscience <- 
+  paper_evaluation_wo_conceptual |>
+  dplyr::filter (conf =="giscience")
+
+n_papers_giscience <- nrow(papers_giscience)
+
+categoryColumns <- c("consolidated_data", 
+                     "consolidated_methods",
+                     "consolidated_results")
+
+# match the colours to time series plot below
+colours <- RColorBrewer::brewer.pal(length(categoryColumns), "Set1")
+
+papers_giscience |>
+  dplyr::count(consolidated_data) |>
+  dplyr::mutate(p = n /sum(n)) -> papers_giscience_inputdata
+
+papers_giscience |>
+  dplyr::count(consolidated_methods) |>
+  dplyr::mutate(p = n /sum(n)) -> papers_giscience_methods
+
+papers_giscience |>
+  dplyr::count(consolidated_results) |>
+  dplyr::mutate(p = n /sum(n)) -> papers_giscience_results
+
+```
+
+
+Of the total number of non-conceptual papers, GIScience papers represent `{r} scales::label_percent(accuracy = 0.1)(n_papers_giscience / n_papers_wo_conceptual)` (`{r} n_papers_giscience`).
+
+
+```{r}
+#| label: tbl-GIScience
+#| warning: false
+#| tbl-cap: "GIScience paper assessment "
+#| tbl-subcap: 
+#|   - "Data"
+#|   - "Methods"
+#|   - "Results"
+#| layout-ncol: 3
+#| tbl-align: center
+papers_giscience_inputdata |> 
+  gt::gt() |>
+  gt::tab_header(
+    title = md("Distribution of UDAO levels in *Input Data* criterion"),
+    subtitle = stringr::str_glue("GIScience papers (N={n_papers_giscience})")
+  ) |>
+  gt::fmt_percent(
+    columns = p,
+    decimals = 1
+  ) |>
+  gt::cols_label(
+    consolidated_data = md("**UDAO**"),
+    n = md("**#**"),
+    p = md("**%**")
+  ) 
+
+papers_giscience_methods |> 
+  gt::gt() |>
+  gt::tab_header(
+    title = md("Distribution of UDAO levels in *Methods* criterion"),
+    subtitle = stringr::str_glue("GIScience papers (N={nrow(papers_giscience)})")
+  ) |>
+  gt::fmt_percent(
+    columns = p,
+    decimals = 1
+  ) |>
+  gt::cols_label(
+    consolidated_methods = md("**UDAO**"),
+    n = md("**#**"),
+    p = md("**%**")
+  ) 
+
+papers_giscience_results |> 
+  gt::gt() |>
+  gt::tab_header(
+    title = md("Distribution of UDAO levels in *Result* criterion"),
+    subtitle = stringr::str_glue("GIScience papers (N={nrow(papers_giscience)})")
+  ) |>
+  gt::fmt_percent(
+    columns = p,
+    decimals = 1
+  ) |>
+  gt::cols_label(
+    consolidated_results = md("**UDAO**"),
+    n = md("**#**"),
+    p = md("**%**")
+  ) 
+```
+
+
+```{r}
+#| label: barplots-GIScience
+#| warning: false
+
+
+papers_giscience |>
+  dplyr::count(consolidated_methods) |>
+  dplyr::slice_max(order_by = n, n = 1) |>
+  pull(n) -> n_max_pre
+
+# "60" below is computed manually
+breaks <- seq(from = 0, to = 65, by = 5)
+
+
+plot1 <- criteriaBarplot(papers_giscience, col = consolidated_data, main = "Data", colour = colours[1])
+
+plot2 <- criteriaBarplot(papers_giscience, col = consolidated_methods, main = "Methods", colour = colours[2])
+
+plot3 <- criteriaBarplot(papers_giscience, col = consolidated_results, main = "Results", colour = colours[3])
+
+```
+
+
+@fig-GIScience shows the distribution of the reproducibility levels of the GIScience papers for each criterion. As regards the *Input Data* criterion, a bunch of papers reached the highest reproducibility level of Available and **O**pen (`{r} papers_giscience_inputdata[4,]$n` - `{r} scales::label_percent(accuracy = 0.1)(papers_giscience_inputdata[4,]$p)`). Only `{r} papers_giscience_inputdata[3,]$n` papers (`{r} scales::label_percent(accuracy = 0.1)(papers_giscience_inputdata[3,]$p)`) reached level **A**vailable in the Input Data criterion. The number of papers with level **U**ndocumented for Input Data was especially high `{r} papers_giscience_inputdata[1,]$n` ((`{r} scales::label_percent(accuracy = 0.1)(papers_giscience_inputdata[1,]$p)`)). These percentages accurately reflect the same results of a previous study focused on the GIScience conference series for the 2012, 2014, 2016, and 2018 editions (GIScience 2021). The problem we identified at that time remains exactly the same: the large proportion of papers with undocumented input datasets represents a significant barrier to reproduction, as the input data are not only unavailable but also cannot be recreated from the information provided in the paper.
+
+
+*Methods* and *Results* criteria show a similar distribution (see @fig-GIScience). Indeed, `{r} papers_giscience_methods[2,]$n` publications (`{r} scales::label_percent(accuracy = 0.1)(papers_giscience_methods[2,]$p)`) for methods and `{r} papers_giscience_results[2,]$n` (`{r} scales::label_percent(accuracy = 0.1)(papers_giscience_results[2,]$p)`) for results have the level Documented. In this sense, most of the assessed papers fall below the minimum standard for reproduction in the methods and results criteria. All papers except two reached level Documented for the Results criterion, which shows that the peer review worked as expected for almost all papers In other words authors are concerned with making the results understandable to the reviewers, which is not always the case for the other criteria. Again, these results are perfectly in line with what we stated in the previous study for the *Methods* and *Results* criteria.
+
+
+```{r}
+#| label: fig-GIScience
+#| warning: false
+#| fig-cap: "Evaluation of the reproducibility level of GIScience papers for each criterion: Data (A), Methods (B) and Results (C)"
+#| fig-width: 8
+#| fig-asp: 0.8
+#| out-width: 100%
+#| fig-align: center
+
+(plot1 + plot2 + plot3) + 
+  plot_layout(widths = c(1,1,1)) +
+ plot_annotation(
+    title = "GIScience paper assessment according to the dimensions Data, Methods and Results.",
+    subtitle = stringr::str_glue("N={n_papers_giscience}. All conference series (2016-2023)."), 
+    tag_levels = 'A') & 
+  theme(plot.tag = element_text(size = 8))
+
+```
+
+```{r}
+#| label: fig-GIScience-save
+#| warning: false
+
+#ggplot2::ggsave(file = here::here("figs", "GIScience_pre_post.svg"),
+#       width = 10, height = 7, dpi = 300)
+ggplot2::ggsave(file = here::here("figs", "GIScience_pre_post.png"),
+       width = 8, height = 6.4, dpi = 300)
+
+```
+
+
+### AGILE barplots
+
+```{r}
+#| label: AGILE-globals
+#| warning: false
+
+papers_agile <- 
+  paper_evaluation_wo_conceptual |>
+  dplyr::filter (conf =="agile")
+
+n_papers_agile <- nrow(papers_agile)
+
+categoryColumns <- c("consolidated_data", 
+                     "consolidated_methods",
+                     "consolidated_results")
+
+# match the colours to time series plot below
+colours <- RColorBrewer::brewer.pal(length(categoryColumns), "Set1")
+
+papers_agile_pre <-
+  papers_agile |>  
+  dplyr::filter(year < 2020)
+
+n_papers_agile_pre = nrow(papers_agile_pre)
+
+papers_agile_pre |>
+  dplyr::count(consolidated_data) |>
+  dplyr::mutate(p = n /sum(n)) -> papers_agile_data_pre
+
+papers_agile_pre |>
+  dplyr::count(consolidated_methods) |>
+  dplyr::mutate(p = n /sum(n)) -> papers_agile_methods_pre
+
+papers_agile_pre |>
+  dplyr::count(consolidated_results) |>
+  dplyr::mutate(p = n /sum(n)) -> papers_agile_results_pre
+
+
+papers_agile_post <-
+  papers_agile |>  
+  dplyr::filter(year > 2020)
+
+n_papers_agile_post = nrow(papers_agile_post)
+
+papers_agile_post |>
+  dplyr::count(consolidated_data) |>
+  dplyr::mutate(p = n /sum(n)) -> papers_agile_data_post
+
+papers_agile_post |>
+  dplyr::count(consolidated_methods) |>
+  dplyr::mutate(p = n /sum(n)) -> papers_agile_methods_post
+
+papers_agile_post |>
+  dplyr::count(consolidated_results) |>
+  dplyr::mutate(p = n /sum(n)) -> papers_agile_results_post
+
+```
+
+
+Of the total number of non-conceptual papers, AGILE papers represent `{r} scales::label_percent(accuracy = 0.1)(n_papers_agile / n_papers_wo_conceptual)` (`{r} n_papers_agile`).
+
+
+#### Pre-intervention (2017-2019)
+
+```{r}
+#| label: tbl-AGILE-pre
+#| warning: false
+#| tbl-cap: "AGILE paper assessment (pre-intervention) "
+#| tbl-subcap: 
+#|   - "Data"
+#|   - "Methods"
+#|   - "Results"
+#| layout-ncol: 3
+#| tbl-align: center
+papers_agile_data_pre |> 
+  gt::gt() |>
+  gt::tab_header(
+    title = md("Distribution of UDAO levels in *Input Data* criterion"),
+    subtitle = stringr::str_glue("AGILE papers pre-intervention (N={n_papers_agile_pre})")
+  ) |>
+  gt::fmt_percent(
+    columns = p,
+    decimals = 1
+  ) |>
+  gt::cols_label(
+    consolidated_data = md("**UDAO**"),
+    n = md("**#**"),
+    p = md("**%**")
+  ) 
+
+papers_agile_methods_pre |> 
+  gt::gt() |>
+  gt::tab_header(
+    title = md("Distribution of UDAO levels in *Methods* criterion"),
+    subtitle = stringr::str_glue("AGILE papers pre-intervention (N={n_papers_agile_pre})")
+  ) |>
+  gt::fmt_percent(
+    columns = p,
+    decimals = 1
+  ) |>
+  gt::cols_label(
+    consolidated_methods = md("**UDAO**"),
+    n = md("**#**"),
+    p = md("**%**")
+  ) 
+
+papers_agile_results_pre |> 
+  gt::gt() |>
+  gt::tab_header(
+    title = md("Distribution of UDAO levels in *Result* criterion"),
+    subtitle = stringr::str_glue("AGILE papers pre-intervention (N={n_papers_agile_pre})")
+  ) |>
+  gt::fmt_percent(
+    columns = p,
+    decimals = 1
+  ) |>
+  gt::cols_label(
+    consolidated_results = md("**UDAO**"),
+    n = md("**#**"),
+    p = md("**%**")
+  ) 
+```
+
+
+#### Post-intervention (2021-2024)
+
+
+```{r}
+#| label: tbl-AGILE-post
+#| warning: false
+#| tbl-cap: "AGILE paper assessment (post-intervention) "
+#| tbl-subcap: 
+#|   - "Data"
+#|   - "Methods"
+#|   - "Results"
+#| layout-ncol: 3
+#| tbl-align: center
+papers_agile_data_post |> 
+  gt::gt() |>
+  gt::tab_header(
+    title = md("Distribution of UDAO levels in *Input Data* criterion"),
+    subtitle = stringr::str_glue("AGILE papers post-intervention (N={n_papers_agile_post})")
+  ) |>
+  gt::fmt_percent(
+    columns = p,
+    decimals = 1
+  ) |>
+  gt::cols_label(
+    consolidated_data = md("**UDAO**"),
+    n = md("**#**"),
+    p = md("**%**")
+  ) 
+
+papers_agile_methods_pre |> 
+  gt::gt() |>
+  gt::tab_header(
+    title = md("Distribution of UDAO levels in *Methods* criterion"),
+    subtitle = stringr::str_glue("AGILE papers post-intervention (N={n_papers_agile_post})")
+  ) |>
+  gt::fmt_percent(
+    columns = p,
+    decimals = 1
+  ) |>
+  gt::cols_label(
+    consolidated_methods = md("**UDAO**"),
+    n = md("**#**"),
+    p = md("**%**")
+  ) 
+
+papers_agile_results_pre |> 
+  gt::gt() |>
+  gt::tab_header(
+    title = md("Distribution of UDAO levels in *Result* criterion"),
+    subtitle = stringr::str_glue("AGILE papers post-intervention (N={n_papers_agile_post})")
+  ) |>
+  gt::fmt_percent(
+    columns = p,
+    decimals = 1
+  ) |>
+  gt::cols_label(
+    consolidated_results = md("**UDAO**"),
+    n = md("**#**"),
+    p = md("**%**")
+  ) 
+```
+
+#### Figure: pre-intervention *vs.* post-intervention
+
+```{r}
+#| label: barplots-AGILE-pre
+#| warning: false
+
+
+#papers_agile_pre |> 
+#  dplyr::count(consolidated_results)
+#  dplyr::slice_max(order_by = n, n = 1) |>
+#  pull(n) -> n_max_pre
+
+# "45" below is computed manually
+breaks <- seq(from = 0, to = 45, by = 5)
+
+
+plotA <- criteriaBarplot(papers_agile_pre, col = consolidated_data, main = "Data", colour = colours[1])
+
+plotB <- criteriaBarplot(papers_agile_pre, col = consolidated_methods, main = "Methods", colour = colours[2])
+
+plotC <- criteriaBarplot(papers_agile_pre, col = consolidated_results, main = "Results", colour = colours[3])
+
+```
+
+```{r}
+#| label: barplots-AGILE-post
+#| warning: false
+
+papers_agile_post |> 
+  dplyr::count(consolidated_results) |>
+  dplyr::slice_max(order_by = n, n = 1) |>
+  pull(n) -> n_max_post
+
+# "30" below is computed manually
+breaks <- seq(from = 0, to = 30, by = 5)
+
+
+plotD <- criteriaBarplot(papers_agile_post, col = consolidated_data, main = "Data", colour = colours[1])
+
+plotE <- criteriaBarplot(papers_agile_post, col = consolidated_methods, main = "Methods", colour = colours[2])
+
+plotF <- criteriaBarplot(papers_agile_post, col = consolidated_results, main = "Results", colour = colours[3])
+
+```
+
+
+@fig-AGILE shows the distribution of the reproducibility levels for each criterion, dividing the conference series between two groups: 2017-2019 conference years refer to papers published before intervention (i.e., when the Guidelines became mandatory) and 2021-2024 conference years correspond to papers after the intervention. Therefore, AGILE 2020 papers are excluded (when the Guidelines were optional - transition year).
+
+Assessment results of the AGILE pre-intervention AGILE papers (@fig-AGILE, top) are pretty similar to the results of the GIScience conference series (@fig-GIScience) and also accurately mimic the same results of a previous study focused on the AGILE conference series for the best papers session in the 2010, and 2012 to 2017 editions (PeerJ 2018). Again, none of the pre-intervention AGILE papers reached the highest reproducibility level of Available and Open on any criterion. The problematic aspect encountered in the previous study (PeerJ 2018) persists in the pool of pre-intervention AGILE papers (2017-2019): the high proportion of papers (`{r} papers_agile_data_pre[1,]$n`, `{r} scales::label_percent(accuracy = 0.1)(papers_agile_data_pre[1,]$p)`) with level **U**ndocumented for input data, meaning that the input datasets used in the reported study were never available, but cannot even be re-created today from the information included in the published paper. 
+
+The *Methods* and *Results* criteria show a similar distribution (@fig-AGILE, top), as did the GIScience papers (@fig-GIScience). In both criteria, the proportion of papers with *D*ocumented level is remarkably high: `{r} papers_agile_methods_pre[2,]$n` publications (`{r} scales::label_percent(accuracy = 0.1)(papers_agile_methods_pre[2,]$p)`) for methods and `{r} papers_agile_results_pre[2,]$n` (`{r} scales::label_percent(accuracy = 0.1)(papers_agile_results_pre[2,]$p)`) for results. Again, these percentages suggest that authors provide understandable documentation in their articles for reviewers and readers. What differs from previous studies (PeerJ2018) is that there are cases, although still few, that reach the level of *A*vailability. This represents a change in trend, since in the previous study none of the papers evaluated achieved a similar level of potential reproducibility in the *Methods* and *Results* criteria.
+
+Assessment results of the post-intervention AGILE papers (@fig-AGILE, bottom) present a completely different picture. To complete... 
+
+
+```{r}
+#| label: fig-AGILE
+#| warning: false
+#| fig-cap: "Evaluation of the reproducibility level of AGILE papers (pre- vs post-intervention) for each criterion: Data (A, D), Methods (B, E) and Results (C, F)."
+#| fig-width: 10
+#| fig-asp: 0.8
+#| out-width: 100%
+#| fig-align: center
+
+(plotA + plotB + plotC) / (plotD + plotE + plotF) + 
+  plot_layout(widths = c(1,1,1)) + 
+  plot_annotation(
+    title = "AGILE paper assessment according to the dimensions Data, Methods and Results.",
+    subtitle = stringr::str_glue("Top: N={n_papers_agile_pre}. Pre-intervention papers (2017-2019); Bottom: N={n_papers_agile_post}. Post-intervention papers (2021-2024)."),
+    caption = "Note: AGILE 2020 papers excluded (transition year).", 
+    tag_levels = 'A') & 
+  theme(plot.tag = element_text(size = 8))
+
+
+```
+
+
+```{r}
+#| label: fig-AGILE-save
+#| warning: false
+
+#ggplot2::ggsave(file = here::here("figs", "AGILE_pre_post.svg"),
+#       width = 10, height = 7, dpi = 300)
+ggplot2::ggsave(file = here::here("figs", "AGILE_pre_post.png"),
+       width = 10, height = 8, dpi = 300)
+
+```
+
+
+
