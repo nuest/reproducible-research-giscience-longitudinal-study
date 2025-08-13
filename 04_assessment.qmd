@@ -1,7 +1,7 @@
 ---
-title: "02_assessment (IN PROGRESS)"
+title: "04_assessment (IN PROGRESS)"
 description: |
-    Analyzing the results of the assessment process helps uncover the reasons behind disagreements found among reviewers, so that documents such as the AGILE Guidelines and the Assessemnt Protocol can be updated accordingly.
+    Analyzing the results of the assessment process helps uncover the reasons behind disagreements found among reviewers, so that documents such as the AGILE Guidelines and the Assessemnt Protocol can be updated accordingly. This notebook refers to section 3.2 (*Results related to the assessment process*). 
 
 #execute:
 #  echo: false
@@ -31,28 +31,6 @@ library(gt)
 library(ggplot2)
 ```
 
-```{r}
-#| label: functions
-#| eval: false
-#| echo: false
-
-# Taken from https://github.com/nuest/reproducible-research-at-giscience/blob/master/giscience-reproducibility-assessment.Rmd
-
-criteriaBarplot = function(category, main, colour) {
-  cat <- enquo(category)
-  ggplot2::ggplot(data = paper_evaluation_wo_conceptual,
-                aes(!!cat),
-                show.legend = FALSE) +
-    ggplot2::geom_bar(fill = colours[colour], color = "black") +
-    ggplot2::ggtitle(main) +
-    ggplot2::xlab("Level") +
-    ggplot2::xlim(level_names) +
-    ggplot2::ylab("") +
-    ggplot2::scale_y_continuous(breaks = breaks,
-                                limits = range(breaks)) # +
-    #ggthemes::theme_tufte(base_size = 8) + theme(axis.ticks.x = element_blank())
-}
-```
 
 ```{r}
 #| label: load-data
@@ -68,8 +46,6 @@ assessment <-
                 rev2, rev2_cp, rev2_data, rev2_methods, rev2_results, rev2_notes,
                 disagr_type, disagr_id) |>
   dplyr::arrange(conf, year)
-
-  
 
 
 ```
@@ -94,8 +70,6 @@ n_papers_giscience <-
   filter(conf == "giscience") |>
   pull(n)
 
-#n_cp <- nrow(filter(assessment, consolidated_cp == TRUE))
-#p_cp <- n_cp / n_papers
 
 ```
 
@@ -298,16 +272,6 @@ fig_agile
 fig_giscience
 
 
-# Taken from https://github.com/nuest/reproducible-research-at-giscience/blob/master/giscience-reproducibility-assessment.Rmd
-#fig_barplot <- patchwork::wrap_plots(
-#  ncol = 5,
-#  criteriaBarplot(`input data`,    main = "Input data",    colour = 1),
-#  criteriaBarplot(`method/analysis/processing`,
-#                  main = "Methods/Analysis/\nProcessing",  colour = 3),
-#  criteriaBarplot(`computational environment`,
-#)
-
-#fig_barplot
 ```
 
 Looking into the data over years, @tbl-disagr-types-conf-year breaks disagreement types per conference and year. @fig-disagr-types-conf-year represents the same data as line charts.
