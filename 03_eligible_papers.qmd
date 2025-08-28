@@ -416,7 +416,7 @@ papers_giscience_results_pre |>
 
 papers_giscience_post <-
   papers_giscience |>  
-  dplyr::filter(year >= 2020)
+  dplyr::filter(year > 2020)
 
 n_papers_giscience_post = nrow(papers_giscience_post)
 
@@ -550,7 +550,7 @@ plot3B <- criteriaBarplot(papers_giscience_post, col = consolidated_results, mai
   plot_annotation(
     title = "GIScience paper assessment according to the dimensions Data, Methods and Results.",
     subtitle = stringr::str_glue("Top: N={n_papers_giscience_pre}. 2016 and 2018 papers; Bottom: N={n_papers_giscience_post}. 2021 and 2023 papers."),
-    caption = "Note: GIScience 2021 proceedings have two volumes. Volume I includes papers published in 2020.", 
+    caption = "Note: GIScience 2021 Part I papers excluded (transition year).", 
     tag_levels = 'A') & 
   theme(plot.tag = element_text(size = 8))
 
