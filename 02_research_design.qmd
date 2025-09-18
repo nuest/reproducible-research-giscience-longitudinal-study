@@ -44,6 +44,7 @@ papers <-
 
 ```
 
+## Data collection and paper corpus
 
 Selected/relevant columns are: `{r} stringr::str_flatten_comma(names(papers))`. More details [here](https://github.com/nuest/reproducible-research-giscience-longitudinal-study/tree/main/data-clean).
 
@@ -78,22 +79,35 @@ papers |>
   gt::gt() |>
   gt::tab_header(
     title = stringr::str_glue("Distribution of conference papers (N={n_papers})"),
-    subtitle = md("(Section 2.1 *Data collection process and corpus*)")
+    subtitle = md("(Section *Data collection process and corpus*)")
   ) |>
   gt::summary_rows(
     groups = everything(),
     columns = n,
     fns = list(
-      total = "sum"
-    )
-  ) |> 
+      label = md("**Total**"),
+      fn = "sum")
+  ) |>
+  ## Draft solution Instead, create own func to give total of papers per group without transitions year
+  gt::summary_rows(
+    groups = c("agile"),
+    columns = n,
+    fns = list(label = md("**Total w/o transition year**"), id = "transition_agile") ~ (sum(.)-22)  
+  ) |>
+  gt::summary_rows(
+    groups = c("giscience"),
+    columns = n,
+    fns = list(label = md("**Total w/o transition year**"), id = "transition_agile") ~ (sum(.)-16)  
+  ) |>
   gt::cols_label(
     year = md("**Year**"),
     n = md("**#**"),
+    
   )
 
 ```
 
+## Assessing potential reproducibility
 
 ```{r}
 #| label: tbl-batches
@@ -123,7 +137,7 @@ papers |>
   gt::gt() |>
   gt::tab_header(
     title = stringr::str_glue("Distribution of conference papers in batches (N={n_papers})"),
-    subtitle = md("(Section 2.2 *Assessing potential reproducibility*)")
+    subtitle = md("(Section *Assessing potential reproducibility*)")
   ) |>
   gt::cols_label(
     batch = md("**Batch**"),
