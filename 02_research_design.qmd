@@ -1,7 +1,7 @@
 ---
 title: "02_research_design"
 description: |
-    Support notebook to compute basic stats related to the materials and methods used in the study, which is connected to section 2 (*Research design*). 
+    Support notebook to compute basic stats related to the materials and methods used in the study, which is connected to section *Methods*. 
 
 #execute:
 #  echo: false

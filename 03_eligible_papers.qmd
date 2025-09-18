@@ -27,7 +27,7 @@ library(gt)
 library(ggplot2)
 library(ggthemes)
 library(patchwork)
-library(svglite)
+#library(svglite)
 ```
 
 

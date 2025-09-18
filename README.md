@@ -1,5 +1,9 @@
 # reproducible-research-giscience-longitudinal-study
 
+
+This is the data and software repo to support the computational analysis related to the paper "Impact of reproducible paper
+guidelines on computational papers: A longitudinal study on the AGILE and GIScience conference series".
+
 ## Input data
 
 - AGILE "averages" dataset as csv from previous paper
