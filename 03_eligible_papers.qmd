@@ -51,6 +51,30 @@ criteriaBarplot = function(df, col, main, colour) {
                                 limits = range(breaks)) +
     ggthemes::theme_tufte(base_size = 10) + ggplot2::theme(axis.ticks.x = element_blank())
 }
+
+criteriaBarplot2 = function(df, col, main, colour) {
+  col <- enquo(col)
+
+  ggplot2::ggplot(df,
+                    aes(x=!!col, y = n),
+                    show.legend = FALSE) +
+    ggplot2::geom_col(fill = colour, color = "black") +
+    ggplot2::geom_text(
+      # Mapeamos la etiqueta al texto que queremos mostrar (el porcentaje)
+      aes(label = scales::label_percent(accuracy = 0.1)(p)),
+      # Ajustamos la posición vertical para que esté por encima de la barra
+      vjust = -0.5,
+      size = 3.5,
+      color = "black"
+    ) +
+    ggplot2::ggtitle(main) +
+    ggplot2::xlab("Level") +
+    ggplot2::xlim(udoa_levels) +
+    ggplot2::ylab("") +
+    ggplot2::scale_y_continuous(breaks = breaks,
+                                limits = range(breaks)) +
+    ggthemes::theme_tufte(base_size = 10) + ggplot2::theme(axis.ticks.x = element_blank())
+}
 ```
 
 ```{r}
@@ -198,7 +222,7 @@ Of the total number of non-conceptual papers, GIScience papers represent `{r} sc
 
 
 
-### Figure: all years (2016, 2018, 2021, 2023)
+### Figure: all years (2016, 2018, 2020, 2021, 2023)
 
 ```{r}
 #| label: tbl-GIScience
@@ -506,13 +530,18 @@ papers_giscience_results_post |>
 breaks <- seq(from = 0, to = 35, by = 5)
 
 
-plot1A <- criteriaBarplot(papers_giscience_pre, col = consolidated_data, main = "Input data", colour = colours[1])
+#plot1A <- criteriaBarplot(papers_giscience_pre, col = consolidated_data, main = "Input data", colour = colours[1])
+plot1A <- criteriaBarplot2(papers_giscience_data_pre, col = consolidated_data, main = "Input data", colour = colours[1])
 
-plot2A <- criteriaBarplot(papers_giscience_pre, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
+#plot2A <- criteriaBarplot(papers_giscience_pre, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
+plot2A <- criteriaBarplot2(papers_giscience_methods_pre, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
 
-plot3A <- criteriaBarplot(papers_giscience_pre, col = consolidated_results, main = "Results", colour = colours[3])
+
+#plot3A <- criteriaBarplot(papers_giscience_pre, col = consolidated_results, main = "Results", colour = colours[3])
+plot3A <- criteriaBarplot2(papers_giscience_results_pre, col = consolidated_results, main = "Results", colour = colours[3])
 
 ```
+
 
 ```{r}
 #| label: barplots-GIScience-post
@@ -523,17 +552,20 @@ plot3A <- criteriaBarplot(papers_giscience_pre, col = consolidated_results, main
 breaks <- seq(from = 0, to = 35, by = 5)
 
 
-plot1B <- criteriaBarplot(papers_giscience_post, col = consolidated_data, main = "Input data", colour = colours[1])
+#plot1B <- criteriaBarplot(papers_giscience_post, col = consolidated_data, main = "Input data", colour = colours[1])
+plot1B <- criteriaBarplot2(papers_giscience_data_post, col = consolidated_data, main = "Input data", colour = colours[1])
 
-plot2B <- criteriaBarplot(papers_giscience_post, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
+#plot2B <- criteriaBarplot(papers_giscience_post, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
+plot2B <- criteriaBarplot2(papers_giscience_methods_post, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
 
-plot3B <- criteriaBarplot(papers_giscience_post, col = consolidated_results, main = "Results", colour = colours[3])
+#plot3B <- criteriaBarplot(papers_giscience_post, col = consolidated_results, main = "Results", colour = colours[3])
+plot3B <- criteriaBarplot2(papers_giscience_results_post, col = consolidated_results, main = "Results", colour = colours[3])
 
 ```
 
 
 
-@fig-GIScience-groups shows the distribution of reproducibility levels of GIScience papers for each criterion, dividing the conference series into two groups: the 2016 and 2018 editions, and the 2021 and 2023 editions. A trend toward higher reproducibility levels is observed in the 2021 and 2023 editions, which may be partly due to a greater awareness of reproducibility among the research community. However, this shift may also be affected by the indirect impact of the AGILE guidelines, as both conferences share a portion of the contributing authors (GIScience paper).
+@fig-GIScience-groups shows the distribution of reproducibility levels of GIScience papers for each criterion, dividing the conference series into two groups: the 2016 and 2018 editions, and the 2021 and 2023 editions. The total number of GIScience papers after exclusion (conceptual, transition year) is **`{r} n_papers_giscience_pre + n_papers_giscience_post`**. A trend toward higher reproducibility levels is observed in the 2021 and 2023 editions, which may be partly due to a greater awareness of reproducibility among the research community. However, this shift may also be affected by the indirect impact of the AGILE guidelines, as both conferences share a portion of the contributing authors (GIScience paper).
 
 
 ```{r}
@@ -837,11 +869,14 @@ papers_agile_results_pre |>
 breaks <- seq(from = 0, to = 45, by = 5)
 
 
-plotA <- criteriaBarplot(papers_agile_pre, col = consolidated_data, main = "Input data", colour = colours[1])
+#plotA <- criteriaBarplot(papers_agile_pre, col = consolidated_data, main = "Input data", colour = colours[1])
+plotA <- criteriaBarplot2(papers_agile_data_pre, col = consolidated_data, main = "Input data", colour = colours[1])
 
-plotB <- criteriaBarplot(papers_agile_pre, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
+#plotB <- criteriaBarplot(papers_agile_pre, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
+plotB <- criteriaBarplot2(papers_agile_methods_pre, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
 
-plotC <- criteriaBarplot(papers_agile_pre, col = consolidated_results, main = "Results", colour = colours[3])
+#plotC <- criteriaBarplot(papers_agile_pre, col = consolidated_results, main = "Results", colour = colours[3])
+plotC <- criteriaBarplot2(papers_agile_results_pre, col = consolidated_results, main = "Results", colour = colours[3])
 
 ```
 
@@ -858,16 +893,19 @@ papers_agile_post |>
 breaks <- seq(from = 0, to = 45, by = 5)
 
 
-plotD <- criteriaBarplot(papers_agile_post, col = consolidated_data, main = "Input data", colour = colours[1])
+#plotD <- criteriaBarplot(papers_agile_post, col = consolidated_data, main = "Input data", colour = colours[1])
+plotD <- criteriaBarplot2(papers_agile_data_post, col = consolidated_data, main = "Input data", colour = colours[1])
 
-plotE <- criteriaBarplot(papers_agile_post, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
+#plotE <- criteriaBarplot(papers_agile_post, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
+plotE <- criteriaBarplot2(papers_agile_methods_post, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
 
-plotF <- criteriaBarplot(papers_agile_post, col = consolidated_results, main = "Results", colour = colours[3])
+#plotF <- criteriaBarplot(papers_agile_post, col = consolidated_results, main = "Results", colour = colours[3])
+plotF <- criteriaBarplot2(papers_agile_results_post, col = consolidated_results, main = "Results", colour = colours[3])
 
 ```
 
 
-@fig-AGILE shows the distribution of the reproducibility levels for each criterion, dividing the conference series between two groups: 2017-2019 conference years refer to papers published before intervention (i.e., when the Guidelines became mandatory) and 2021-2024 conference years correspond to papers after the intervention. Therefore, AGILE 2020 papers are excluded (when the Guidelines were optional - transition year).
+@fig-AGILE shows the distribution of the reproducibility levels for each criterion, dividing the conference series between two groups: 2017-2019 conference years refer to papers published before intervention (i.e., when the Guidelines became mandatory) and 2021-2024 conference years correspond to papers after the intervention. Therefore, AGILE 2020 papers are excluded (when the Guidelines were optional - transition year). The total number of AGILE papers after exclusion (conceptual, transition year) is **`{r} n_papers_agile_pre + n_papers_agile_post`**.
 
 Assessment results of the AGILE pre-intervention AGILE papers (@fig-AGILE, top) are pretty similar to the results of the GIScience conference series (@fig-GIScience) and also accurately mimic the same results of a previous study focused on the AGILE conference series for the best papers session in the 2010, and 2012 to 2017 editions (PeerJ 2018). Again, none of the pre-intervention AGILE papers reached the highest reproducibility level of Available and Open on any criterion. The problematic aspect encountered in the previous study (PeerJ 2018) persists in the pool of pre-intervention AGILE papers (2017-2019): the high proportion of papers (`{r} papers_agile_data_pre[1,]$n`, `{r} scales::label_percent(accuracy = 0.1)(papers_agile_data_pre[1,]$p)`) with level **U**ndocumented for input data, meaning that the input datasets used in the reported study were never available, but cannot even be re-created today from the information included in the published paper. 
 

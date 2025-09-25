@@ -3087,6 +3087,7 @@ vertical-align: -.125em;
   <ul>
   <li><a href="#data-collection-and-paper-corpus" id="toc-data-collection-and-paper-corpus" class="nav-link active" data-scroll-target="#data-collection-and-paper-corpus">Data collection and paper corpus</a></li>
   <li><a href="#assessing-potential-reproducibility" id="toc-assessing-potential-reproducibility" class="nav-link" data-scroll-target="#assessing-potential-reproducibility">Assessing potential reproducibility</a></li>
+  <li><a href="#assessment-limitation" id="toc-assessment-limitation" class="nav-link" data-scroll-target="#assessment-limitation">Assessment limitation</a></li>
   </ul>
 </nav>
 </div>
@@ -3179,7 +3180,7 @@ vertical-align: -.125em;
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> <span class="fu">md</span>(<span class="st">&quot;**Total**&quot;</span>),</span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">fn =</span> <span class="st">&quot;sum&quot;</span>)</span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Draft solution Instead, create own func to give total of papers per group without transitions year</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Dirty solution. Instead, create own func to give total of papers per group without transitions year</span></span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">summary_rows</span>(</span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">groups =</span> <span class="fu">c</span>(<span class="st">&quot;agile&quot;</span>),</span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> n,</span>
@@ -3203,20 +3204,20 @@ Table 1: Distribution of conference papers
 </figcaption>
 <div aria-describedby="tbl-papers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="lhocvwlsfp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lhocvwlsfp table {
+<div id="mtuemlagnj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mtuemlagnj table {
 font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-#lhocvwlsfp thead, #lhocvwlsfp tbody, #lhocvwlsfp tfoot, #lhocvwlsfp tr, #lhocvwlsfp td, #lhocvwlsfp th {
+#mtuemlagnj thead, #mtuemlagnj tbody, #mtuemlagnj tfoot, #mtuemlagnj tr, #mtuemlagnj td, #mtuemlagnj th {
 border-style: none;
 }
-#lhocvwlsfp p {
+#mtuemlagnj p {
 margin: 0;
 padding: 0;
 }
-#lhocvwlsfp .gt_table {
+#mtuemlagnj .gt_table {
 display: table;
 border-collapse: collapse;
 line-height: normal;
@@ -3241,11 +3242,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#lhocvwlsfp .gt_caption {
+#mtuemlagnj .gt_caption {
 padding-top: 4px;
 padding-bottom: 4px;
 }
-#lhocvwlsfp .gt_title {
+#mtuemlagnj .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -3256,7 +3257,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#lhocvwlsfp .gt_subtitle {
+#mtuemlagnj .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
@@ -3267,7 +3268,7 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#lhocvwlsfp .gt_heading {
+#mtuemlagnj .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -3278,12 +3279,12 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#lhocvwlsfp .gt_bottom_border {
+#mtuemlagnj .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#lhocvwlsfp .gt_col_headings {
+#mtuemlagnj .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -3297,7 +3298,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#lhocvwlsfp .gt_col_heading {
+#mtuemlagnj .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3316,7 +3317,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#lhocvwlsfp .gt_column_spanner_outer {
+#mtuemlagnj .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3327,13 +3328,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#lhocvwlsfp .gt_column_spanner_outer:first-child {
+#mtuemlagnj .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#lhocvwlsfp .gt_column_spanner_outer:last-child {
+#mtuemlagnj .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#lhocvwlsfp .gt_column_spanner {
+#mtuemlagnj .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -3344,10 +3345,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#lhocvwlsfp .gt_spanner_row {
+#mtuemlagnj .gt_spanner_row {
 border-bottom-style: hidden;
 }
-#lhocvwlsfp .gt_group_heading {
+#mtuemlagnj .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3372,7 +3373,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 text-align: left;
 }
-#lhocvwlsfp .gt_empty_group_heading {
+#mtuemlagnj .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -3386,13 +3387,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#lhocvwlsfp .gt_from_md > :first-child {
+#mtuemlagnj .gt_from_md > :first-child {
 margin-top: 0;
 }
-#lhocvwlsfp .gt_from_md > :last-child {
+#mtuemlagnj .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#lhocvwlsfp .gt_row {
+#mtuemlagnj .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3410,7 +3411,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#lhocvwlsfp .gt_stub {
+#mtuemlagnj .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3422,7 +3423,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#lhocvwlsfp .gt_stub_row_group {
+#mtuemlagnj .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3435,13 +3436,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#lhocvwlsfp .gt_row_group_first td {
+#mtuemlagnj .gt_row_group_first td {
 border-top-width: 2px;
 }
-#lhocvwlsfp .gt_row_group_first th {
+#mtuemlagnj .gt_row_group_first th {
 border-top-width: 2px;
 }
-#lhocvwlsfp .gt_summary_row {
+#mtuemlagnj .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -3450,14 +3451,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#lhocvwlsfp .gt_first_summary_row {
+#mtuemlagnj .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#lhocvwlsfp .gt_first_summary_row.thick {
+#mtuemlagnj .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#lhocvwlsfp .gt_last_summary_row {
+#mtuemlagnj .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3466,7 +3467,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#lhocvwlsfp .gt_grand_summary_row {
+#mtuemlagnj .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -3475,7 +3476,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#lhocvwlsfp .gt_first_grand_summary_row {
+#mtuemlagnj .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3484,7 +3485,7 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#lhocvwlsfp .gt_last_grand_summary_row_top {
+#mtuemlagnj .gt_last_grand_summary_row_top {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3493,10 +3494,10 @@ border-bottom-style: double;
 border-bottom-width: 6px;
 border-bottom-color: #D3D3D3;
 }
-#lhocvwlsfp .gt_striped {
+#mtuemlagnj .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#lhocvwlsfp .gt_table_body {
+#mtuemlagnj .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -3504,7 +3505,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#lhocvwlsfp .gt_footnotes {
+#mtuemlagnj .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -3517,7 +3518,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#lhocvwlsfp .gt_footnote {
+#mtuemlagnj .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-top: 4px;
@@ -3525,7 +3526,7 @@ padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#lhocvwlsfp .gt_sourcenotes {
+#mtuemlagnj .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -3538,64 +3539,64 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#lhocvwlsfp .gt_sourcenote {
+#mtuemlagnj .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#lhocvwlsfp .gt_left {
+#mtuemlagnj .gt_left {
 text-align: left;
 }
-#lhocvwlsfp .gt_center {
+#mtuemlagnj .gt_center {
 text-align: center;
 }
-#lhocvwlsfp .gt_right {
+#mtuemlagnj .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#lhocvwlsfp .gt_font_normal {
+#mtuemlagnj .gt_font_normal {
 font-weight: normal;
 }
-#lhocvwlsfp .gt_font_bold {
+#mtuemlagnj .gt_font_bold {
 font-weight: bold;
 }
-#lhocvwlsfp .gt_font_italic {
+#mtuemlagnj .gt_font_italic {
 font-style: italic;
 }
-#lhocvwlsfp .gt_super {
+#mtuemlagnj .gt_super {
 font-size: 65%;
 }
-#lhocvwlsfp .gt_footnote_marks {
+#mtuemlagnj .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
 position: initial;
 }
-#lhocvwlsfp .gt_asterisk {
+#mtuemlagnj .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#lhocvwlsfp .gt_indent_1 {
+#mtuemlagnj .gt_indent_1 {
 text-indent: 5px;
 }
-#lhocvwlsfp .gt_indent_2 {
+#mtuemlagnj .gt_indent_2 {
 text-indent: 10px;
 }
-#lhocvwlsfp .gt_indent_3 {
+#mtuemlagnj .gt_indent_3 {
 text-indent: 15px;
 }
-#lhocvwlsfp .gt_indent_4 {
+#mtuemlagnj .gt_indent_4 {
 text-indent: 20px;
 }
-#lhocvwlsfp .gt_indent_5 {
+#mtuemlagnj .gt_indent_5 {
 text-indent: 25px;
 }
-#lhocvwlsfp .katex-display {
+#mtuemlagnj .katex-display {
 display: inline-flex !important;
 margin-bottom: 0.75em !important;
 }
-#lhocvwlsfp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mtuemlagnj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
 height: 0px !important;
 }
 </style>
@@ -3752,20 +3753,20 @@ height: 0px !important;
 <span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="ybgqtzipxt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ybgqtzipxt table {
+<div id="pvezpodrdu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pvezpodrdu table {
 font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-#ybgqtzipxt thead, #ybgqtzipxt tbody, #ybgqtzipxt tfoot, #ybgqtzipxt tr, #ybgqtzipxt td, #ybgqtzipxt th {
+#pvezpodrdu thead, #pvezpodrdu tbody, #pvezpodrdu tfoot, #pvezpodrdu tr, #pvezpodrdu td, #pvezpodrdu th {
 border-style: none;
 }
-#ybgqtzipxt p {
+#pvezpodrdu p {
 margin: 0;
 padding: 0;
 }
-#ybgqtzipxt .gt_table {
+#pvezpodrdu .gt_table {
 display: table;
 border-collapse: collapse;
 line-height: normal;
@@ -3790,11 +3791,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#ybgqtzipxt .gt_caption {
+#pvezpodrdu .gt_caption {
 padding-top: 4px;
 padding-bottom: 4px;
 }
-#ybgqtzipxt .gt_title {
+#pvezpodrdu .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -3805,7 +3806,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#ybgqtzipxt .gt_subtitle {
+#pvezpodrdu .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
@@ -3816,7 +3817,7 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#ybgqtzipxt .gt_heading {
+#pvezpodrdu .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -3827,12 +3828,12 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#ybgqtzipxt .gt_bottom_border {
+#pvezpodrdu .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#ybgqtzipxt .gt_col_headings {
+#pvezpodrdu .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -3846,7 +3847,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#ybgqtzipxt .gt_col_heading {
+#pvezpodrdu .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3865,7 +3866,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#ybgqtzipxt .gt_column_spanner_outer {
+#pvezpodrdu .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3876,13 +3877,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#ybgqtzipxt .gt_column_spanner_outer:first-child {
+#pvezpodrdu .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#ybgqtzipxt .gt_column_spanner_outer:last-child {
+#pvezpodrdu .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#ybgqtzipxt .gt_column_spanner {
+#pvezpodrdu .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -3893,10 +3894,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#ybgqtzipxt .gt_spanner_row {
+#pvezpodrdu .gt_spanner_row {
 border-bottom-style: hidden;
 }
-#ybgqtzipxt .gt_group_heading {
+#pvezpodrdu .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3921,7 +3922,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 text-align: left;
 }
-#ybgqtzipxt .gt_empty_group_heading {
+#pvezpodrdu .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -3935,13 +3936,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#ybgqtzipxt .gt_from_md > :first-child {
+#pvezpodrdu .gt_from_md > :first-child {
 margin-top: 0;
 }
-#ybgqtzipxt .gt_from_md > :last-child {
+#pvezpodrdu .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#ybgqtzipxt .gt_row {
+#pvezpodrdu .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3959,7 +3960,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#ybgqtzipxt .gt_stub {
+#pvezpodrdu .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3971,7 +3972,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ybgqtzipxt .gt_stub_row_group {
+#pvezpodrdu .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3984,13 +3985,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#ybgqtzipxt .gt_row_group_first td {
+#pvezpodrdu .gt_row_group_first td {
 border-top-width: 2px;
 }
-#ybgqtzipxt .gt_row_group_first th {
+#pvezpodrdu .gt_row_group_first th {
 border-top-width: 2px;
 }
-#ybgqtzipxt .gt_summary_row {
+#pvezpodrdu .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -3999,14 +4000,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ybgqtzipxt .gt_first_summary_row {
+#pvezpodrdu .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#ybgqtzipxt .gt_first_summary_row.thick {
+#pvezpodrdu .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#ybgqtzipxt .gt_last_summary_row {
+#pvezpodrdu .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -4015,7 +4016,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#ybgqtzipxt .gt_grand_summary_row {
+#pvezpodrdu .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -4024,7 +4025,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ybgqtzipxt .gt_first_grand_summary_row {
+#pvezpodrdu .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -4033,7 +4034,7 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#ybgqtzipxt .gt_last_grand_summary_row_top {
+#pvezpodrdu .gt_last_grand_summary_row_top {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -4042,10 +4043,10 @@ border-bottom-style: double;
 border-bottom-width: 6px;
 border-bottom-color: #D3D3D3;
 }
-#ybgqtzipxt .gt_striped {
+#pvezpodrdu .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#ybgqtzipxt .gt_table_body {
+#pvezpodrdu .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -4053,7 +4054,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#ybgqtzipxt .gt_footnotes {
+#pvezpodrdu .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -4066,7 +4067,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#ybgqtzipxt .gt_footnote {
+#pvezpodrdu .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-top: 4px;
@@ -4074,7 +4075,7 @@ padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ybgqtzipxt .gt_sourcenotes {
+#pvezpodrdu .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -4087,64 +4088,64 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#ybgqtzipxt .gt_sourcenote {
+#pvezpodrdu .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ybgqtzipxt .gt_left {
+#pvezpodrdu .gt_left {
 text-align: left;
 }
-#ybgqtzipxt .gt_center {
+#pvezpodrdu .gt_center {
 text-align: center;
 }
-#ybgqtzipxt .gt_right {
+#pvezpodrdu .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#ybgqtzipxt .gt_font_normal {
+#pvezpodrdu .gt_font_normal {
 font-weight: normal;
 }
-#ybgqtzipxt .gt_font_bold {
+#pvezpodrdu .gt_font_bold {
 font-weight: bold;
 }
-#ybgqtzipxt .gt_font_italic {
+#pvezpodrdu .gt_font_italic {
 font-style: italic;
 }
-#ybgqtzipxt .gt_super {
+#pvezpodrdu .gt_super {
 font-size: 65%;
 }
-#ybgqtzipxt .gt_footnote_marks {
+#pvezpodrdu .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
 position: initial;
 }
-#ybgqtzipxt .gt_asterisk {
+#pvezpodrdu .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#ybgqtzipxt .gt_indent_1 {
+#pvezpodrdu .gt_indent_1 {
 text-indent: 5px;
 }
-#ybgqtzipxt .gt_indent_2 {
+#pvezpodrdu .gt_indent_2 {
 text-indent: 10px;
 }
-#ybgqtzipxt .gt_indent_3 {
+#pvezpodrdu .gt_indent_3 {
 text-indent: 15px;
 }
-#ybgqtzipxt .gt_indent_4 {
+#pvezpodrdu .gt_indent_4 {
 text-indent: 20px;
 }
-#ybgqtzipxt .gt_indent_5 {
+#pvezpodrdu .gt_indent_5 {
 text-indent: 25px;
 }
-#ybgqtzipxt .katex-display {
+#pvezpodrdu .katex-display {
 display: inline-flex !important;
 margin-bottom: 0.75em !important;
 }
-#ybgqtzipxt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pvezpodrdu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
 height: 0px !important;
 }
 </style>
@@ -4185,6 +4186,1422 @@ height: 0px !important;
 </div>
 </div>
 </div>
+</section>
+<section id="assessment-limitation" class="level2">
+<h2 class="anchored" data-anchor-id="assessment-limitation">Assessment limitation</h2>
+<p>Here, we show that the level of potential reproducibility is a fairly good indicator (without <em>actually</em> reproducing a paper) because most articles that earned a reproducibility AGILE badge also had high levels of reproducibility scores (<strong>Available</strong> and above) across all criteria.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>udoa_levels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;U&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;O&quot;</span>, <span class="cn">NA</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>papers_agile_post <span class="ot">&lt;-</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data-clean&quot;</span>, <span class="st">&quot;all-data.csv&quot;</span>),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">col_types =</span> readr<span class="sc">::</span><span class="fu">cols</span>(</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">conf =</span> readr<span class="sc">::</span><span class="fu">col_character</span>(),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">year =</span> readr<span class="sc">::</span><span class="fu">col_integer</span>(),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">paper =</span> readr<span class="sc">::</span><span class="fu">col_character</span>(),</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                    <span class="at">title =</span> readr<span class="sc">::</span><span class="fu">col_character</span>(),</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">consolidated_cp =</span> readr<span class="sc">::</span><span class="fu">col_logical</span>(),</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">consolidated_data =</span> readr<span class="sc">::</span><span class="fu">col_factor</span>(<span class="at">levels =</span> udoa_levels),</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>                    <span class="at">consolidated_methods =</span> readr<span class="sc">::</span><span class="fu">col_factor</span>(<span class="at">levels =</span> udoa_levels),</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>                    <span class="at">consolidated_results =</span> readr<span class="sc">::</span><span class="fu">col_factor</span>(<span class="at">levels =</span> udoa_levels),</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>                    <span class="at">agile_badge =</span> readr<span class="sc">::</span><span class="fu">col_logical</span>()</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                  ),</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                  <span class="at">na =</span> <span class="fu">c</span>(<span class="st">&quot;NA&quot;</span>, <span class="st">&quot;Not applicable&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">&gt;</span> <span class="dv">2020</span> <span class="sc">&amp;</span> consolidated_cp <span class="sc">==</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(year, paper, consolidated_data, consolidated_methods, consolidated_results, agile_badge) <span class="sc">|&gt;</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>n_papers_agile_post_with_badge <span class="ot">&lt;-</span> <span class="fu">nrow</span>(<span class="fu">filter</span>(papers_agile_post, agile_badge <span class="sc">==</span> <span class="st">&quot;TRUE&quot;</span>))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>n_papers_agile_post_wo_badge <span class="ot">&lt;-</span> <span class="fu">nrow</span>(<span class="fu">filter</span>(papers_agile_post, <span class="fu">is.na</span>(agile_badge)))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>papers_agile_post <span class="sc">|&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(agile_badge <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">md</span>(<span class="st">&quot;UDAO levels for AGILE papers with Reproducibility badge&quot;</span>),</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> stringr<span class="sc">::</span><span class="fu">str_glue</span>(<span class="st">&quot;N={n_papers_agile_post_with_badge}&quot;</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">cols_label</span>(</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">consolidated_data =</span> <span class="fu">md</span>(<span class="st">&quot;**Input Data**&quot;</span>),</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">consolidated_methods =</span> <span class="fu">md</span>(<span class="st">&quot;**Methods**&quot;</span>),</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">consolidated_results =</span> <span class="fu">md</span>(<span class="st">&quot;**Results**&quot;</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>papers_agile_post <span class="sc">|&gt;</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="fu">is.na</span>(agile_badge)) <span class="sc">|&gt;</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">md</span>(<span class="st">&quot;UDAO levels for AGILE papers without Reproducibility badge&quot;</span>),</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> stringr<span class="sc">::</span><span class="fu">str_glue</span>(<span class="st">&quot;N={n_papers_agile_post_wo_badge}&quot;</span>)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">cols_label</span>(</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">consolidated_data =</span> <span class="fu">md</span>(<span class="st">&quot;**Input Data**&quot;</span>),</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">consolidated_methods =</span> <span class="fu">md</span>(<span class="st">&quot;**Methods**&quot;</span>),</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">consolidated_results =</span> <span class="fu">md</span>(<span class="st">&quot;**Results**&quot;</span>)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-papers-agile-badge" class="quarto-layout-panel anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-papers-agile-badge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table 2: AGILE papers: reproducibility criteria vs badge
+</figcaption>
+<div aria-describedby="tbl-papers-agile-badge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-papers-agile-badge" style="flex-basis: 50.0%;justify-content: center;">
+<div id="uadweeweip" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uadweeweip table {
+font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+#uadweeweip thead, #uadweeweip tbody, #uadweeweip tfoot, #uadweeweip tr, #uadweeweip td, #uadweeweip th {
+border-style: none;
+}
+#uadweeweip p {
+margin: 0;
+padding: 0;
+}
+#uadweeweip .gt_table {
+display: table;
+border-collapse: collapse;
+line-height: normal;
+margin-left: auto;
+margin-right: auto;
+color: #333333;
+font-size: 16px;
+font-weight: normal;
+font-style: normal;
+background-color: #FFFFFF;
+width: auto;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #A8A8A8;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #A8A8A8;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+}
+#uadweeweip .gt_caption {
+padding-top: 4px;
+padding-bottom: 4px;
+}
+#uadweeweip .gt_title {
+color: #333333;
+font-size: 125%;
+font-weight: initial;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-color: #FFFFFF;
+border-bottom-width: 0;
+}
+#uadweeweip .gt_subtitle {
+color: #333333;
+font-size: 85%;
+font-weight: initial;
+padding-top: 3px;
+padding-bottom: 5px;
+padding-left: 5px;
+padding-right: 5px;
+border-top-color: #FFFFFF;
+border-top-width: 0;
+}
+#uadweeweip .gt_heading {
+background-color: #FFFFFF;
+text-align: center;
+border-bottom-color: #FFFFFF;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+}
+#uadweeweip .gt_bottom_border {
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}
+#uadweeweip .gt_col_headings {
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+}
+#uadweeweip .gt_col_heading {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: normal;
+text-transform: inherit;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: bottom;
+padding-top: 5px;
+padding-bottom: 6px;
+padding-left: 5px;
+padding-right: 5px;
+overflow-x: hidden;
+}
+#uadweeweip .gt_column_spanner_outer {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: normal;
+text-transform: inherit;
+padding-top: 0;
+padding-bottom: 0;
+padding-left: 4px;
+padding-right: 4px;
+}
+#uadweeweip .gt_column_spanner_outer:first-child {
+padding-left: 0;
+}
+#uadweeweip .gt_column_spanner_outer:last-child {
+padding-right: 0;
+}
+#uadweeweip .gt_column_spanner {
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+vertical-align: bottom;
+padding-top: 5px;
+padding-bottom: 5px;
+overflow-x: hidden;
+display: inline-block;
+width: 100%;
+}
+#uadweeweip .gt_spanner_row {
+border-bottom-style: hidden;
+}
+#uadweeweip .gt_group_heading {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: middle;
+text-align: left;
+}
+#uadweeweip .gt_empty_group_heading {
+padding: 0.5px;
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+vertical-align: middle;
+}
+#uadweeweip .gt_from_md > :first-child {
+margin-top: 0;
+}
+#uadweeweip .gt_from_md > :last-child {
+margin-bottom: 0;
+}
+#uadweeweip .gt_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+margin: 10px;
+border-top-style: solid;
+border-top-width: 1px;
+border-top-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: middle;
+overflow-x: hidden;
+}
+#uadweeweip .gt_stub {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-right-style: solid;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+padding-left: 5px;
+padding-right: 5px;
+}
+#uadweeweip .gt_stub_row_group {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-right-style: solid;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+padding-left: 5px;
+padding-right: 5px;
+vertical-align: top;
+}
+#uadweeweip .gt_row_group_first td {
+border-top-width: 2px;
+}
+#uadweeweip .gt_row_group_first th {
+border-top-width: 2px;
+}
+#uadweeweip .gt_summary_row {
+color: #333333;
+background-color: #FFFFFF;
+text-transform: inherit;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#uadweeweip .gt_first_summary_row {
+border-top-style: solid;
+border-top-color: #D3D3D3;
+}
+#uadweeweip .gt_first_summary_row.thick {
+border-top-width: 2px;
+}
+#uadweeweip .gt_last_summary_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}
+#uadweeweip .gt_grand_summary_row {
+color: #333333;
+background-color: #FFFFFF;
+text-transform: inherit;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#uadweeweip .gt_first_grand_summary_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-top-style: double;
+border-top-width: 6px;
+border-top-color: #D3D3D3;
+}
+#uadweeweip .gt_last_grand_summary_row_top {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: double;
+border-bottom-width: 6px;
+border-bottom-color: #D3D3D3;
+}
+#uadweeweip .gt_striped {
+background-color: rgba(128, 128, 128, 0.05);
+}
+#uadweeweip .gt_table_body {
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}
+#uadweeweip .gt_footnotes {
+color: #333333;
+background-color: #FFFFFF;
+border-bottom-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+}
+#uadweeweip .gt_footnote {
+margin: 0px;
+font-size: 90%;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#uadweeweip .gt_sourcenotes {
+color: #333333;
+background-color: #FFFFFF;
+border-bottom-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+}
+#uadweeweip .gt_sourcenote {
+font-size: 90%;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#uadweeweip .gt_left {
+text-align: left;
+}
+#uadweeweip .gt_center {
+text-align: center;
+}
+#uadweeweip .gt_right {
+text-align: right;
+font-variant-numeric: tabular-nums;
+}
+#uadweeweip .gt_font_normal {
+font-weight: normal;
+}
+#uadweeweip .gt_font_bold {
+font-weight: bold;
+}
+#uadweeweip .gt_font_italic {
+font-style: italic;
+}
+#uadweeweip .gt_super {
+font-size: 65%;
+}
+#uadweeweip .gt_footnote_marks {
+font-size: 75%;
+vertical-align: 0.4em;
+position: initial;
+}
+#uadweeweip .gt_asterisk {
+font-size: 100%;
+vertical-align: 0;
+}
+#uadweeweip .gt_indent_1 {
+text-indent: 5px;
+}
+#uadweeweip .gt_indent_2 {
+text-indent: 10px;
+}
+#uadweeweip .gt_indent_3 {
+text-indent: 15px;
+}
+#uadweeweip .gt_indent_4 {
+text-indent: 20px;
+}
+#uadweeweip .gt_indent_5 {
+text-indent: 25px;
+}
+#uadweeweip .katex-display {
+display: inline-flex !important;
+margin-bottom: 0.75em !important;
+}
+#uadweeweip div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+height: 0px !important;
+}
+</style>
+
+<div id="tbl-papers-agile-badge-1" class="gt_table do-not-create-environment quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-papers-agile-badge-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) With badge
+</figcaption>
+<div aria-describedby="tbl-papers-agile-badge-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="tbl-papers-agile-badge-1" class="gt_table do-not-create-environment caption-top table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="6" class="gt_heading gt_title gt_font_normal" style="text-align: left;"><span data-qmd-base64="VURBTyBsZXZlbHMgZm9yIEFHSUxFIHBhcGVycyB3aXRoIFJlcHJvZHVjaWJpbGl0eSBiYWRnZQ=="><span class="gt_from_md">UDAO levels for AGILE papers with Reproducibility badge</span></span></th>
+</tr>
+<tr class="odd gt_heading">
+<th colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="text-align: left;">N=43</th>
+</tr>
+<tr class="header gt_col_headings">
+<th id="year" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">year</th>
+<th id="paper" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">paper</th>
+<th id="consolidated_data" class="gt_col_heading gt_columns_bottom_border gt_center" style="text-align: left;" data-quarto-table-cell-role="th" scope="col"><span data-qmd-base64="KipJbnB1dCBEYXRhKio="><span class="gt_from_md"><strong>Input Data</strong></span></span></th>
+<th id="consolidated_methods" class="gt_col_heading gt_columns_bottom_border gt_center" style="text-align: left;" data-quarto-table-cell-role="th" scope="col"><span data-qmd-base64="KipNZXRob2RzKio="><span class="gt_from_md"><strong>Methods</strong></span></span></th>
+<th id="consolidated_results" class="gt_col_heading gt_columns_bottom_border gt_center" style="text-align: left;" data-quarto-table-cell-role="th" scope="col"><span data-qmd-base64="KipSZXN1bHRzKio="><span class="gt_from_md"><strong>Results</strong></span></span></th>
+<th id="agile_badge" class="gt_col_heading gt_columns_bottom_border gt_center" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">agile_badge</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2021</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2021_007</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2021</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2021_002</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2021</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2021_010</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">U</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2021</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2021_013</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2021</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2021_014</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2021</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2021_003</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2021</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2021_011</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2021</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2021_004</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2021</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2021_012</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_004</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_012</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_020</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_006</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_014</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_022</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">U</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_015</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_002</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_010</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_003</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">U</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_019</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_016</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_009</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_017</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_005</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_013</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2023</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2023_002</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2023</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2023_010</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2023</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2023_004</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2023</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2023_012</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2023</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2023_008</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2023</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2023_009</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2023</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2023_014</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2023</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2023_007</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2023</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2023_003</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2023</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2023_011</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2024</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2024_004</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2024</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2024_006</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">U</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2024</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2024_014</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2024</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2024_007</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2024</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2024_003</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2024</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2024_011</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2024</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2024_001</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2024</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2024_005</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">TRUE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-papers-agile-badge" style="flex-basis: 50.0%;justify-content: center;">
+<div id="aajqrcbgin" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#aajqrcbgin table {
+font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+#aajqrcbgin thead, #aajqrcbgin tbody, #aajqrcbgin tfoot, #aajqrcbgin tr, #aajqrcbgin td, #aajqrcbgin th {
+border-style: none;
+}
+#aajqrcbgin p {
+margin: 0;
+padding: 0;
+}
+#aajqrcbgin .gt_table {
+display: table;
+border-collapse: collapse;
+line-height: normal;
+margin-left: auto;
+margin-right: auto;
+color: #333333;
+font-size: 16px;
+font-weight: normal;
+font-style: normal;
+background-color: #FFFFFF;
+width: auto;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #A8A8A8;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #A8A8A8;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+}
+#aajqrcbgin .gt_caption {
+padding-top: 4px;
+padding-bottom: 4px;
+}
+#aajqrcbgin .gt_title {
+color: #333333;
+font-size: 125%;
+font-weight: initial;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-color: #FFFFFF;
+border-bottom-width: 0;
+}
+#aajqrcbgin .gt_subtitle {
+color: #333333;
+font-size: 85%;
+font-weight: initial;
+padding-top: 3px;
+padding-bottom: 5px;
+padding-left: 5px;
+padding-right: 5px;
+border-top-color: #FFFFFF;
+border-top-width: 0;
+}
+#aajqrcbgin .gt_heading {
+background-color: #FFFFFF;
+text-align: center;
+border-bottom-color: #FFFFFF;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+}
+#aajqrcbgin .gt_bottom_border {
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}
+#aajqrcbgin .gt_col_headings {
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+}
+#aajqrcbgin .gt_col_heading {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: normal;
+text-transform: inherit;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: bottom;
+padding-top: 5px;
+padding-bottom: 6px;
+padding-left: 5px;
+padding-right: 5px;
+overflow-x: hidden;
+}
+#aajqrcbgin .gt_column_spanner_outer {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: normal;
+text-transform: inherit;
+padding-top: 0;
+padding-bottom: 0;
+padding-left: 4px;
+padding-right: 4px;
+}
+#aajqrcbgin .gt_column_spanner_outer:first-child {
+padding-left: 0;
+}
+#aajqrcbgin .gt_column_spanner_outer:last-child {
+padding-right: 0;
+}
+#aajqrcbgin .gt_column_spanner {
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+vertical-align: bottom;
+padding-top: 5px;
+padding-bottom: 5px;
+overflow-x: hidden;
+display: inline-block;
+width: 100%;
+}
+#aajqrcbgin .gt_spanner_row {
+border-bottom-style: hidden;
+}
+#aajqrcbgin .gt_group_heading {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: middle;
+text-align: left;
+}
+#aajqrcbgin .gt_empty_group_heading {
+padding: 0.5px;
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+vertical-align: middle;
+}
+#aajqrcbgin .gt_from_md > :first-child {
+margin-top: 0;
+}
+#aajqrcbgin .gt_from_md > :last-child {
+margin-bottom: 0;
+}
+#aajqrcbgin .gt_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+margin: 10px;
+border-top-style: solid;
+border-top-width: 1px;
+border-top-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: middle;
+overflow-x: hidden;
+}
+#aajqrcbgin .gt_stub {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-right-style: solid;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+padding-left: 5px;
+padding-right: 5px;
+}
+#aajqrcbgin .gt_stub_row_group {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-right-style: solid;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+padding-left: 5px;
+padding-right: 5px;
+vertical-align: top;
+}
+#aajqrcbgin .gt_row_group_first td {
+border-top-width: 2px;
+}
+#aajqrcbgin .gt_row_group_first th {
+border-top-width: 2px;
+}
+#aajqrcbgin .gt_summary_row {
+color: #333333;
+background-color: #FFFFFF;
+text-transform: inherit;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#aajqrcbgin .gt_first_summary_row {
+border-top-style: solid;
+border-top-color: #D3D3D3;
+}
+#aajqrcbgin .gt_first_summary_row.thick {
+border-top-width: 2px;
+}
+#aajqrcbgin .gt_last_summary_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}
+#aajqrcbgin .gt_grand_summary_row {
+color: #333333;
+background-color: #FFFFFF;
+text-transform: inherit;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#aajqrcbgin .gt_first_grand_summary_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-top-style: double;
+border-top-width: 6px;
+border-top-color: #D3D3D3;
+}
+#aajqrcbgin .gt_last_grand_summary_row_top {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: double;
+border-bottom-width: 6px;
+border-bottom-color: #D3D3D3;
+}
+#aajqrcbgin .gt_striped {
+background-color: rgba(128, 128, 128, 0.05);
+}
+#aajqrcbgin .gt_table_body {
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}
+#aajqrcbgin .gt_footnotes {
+color: #333333;
+background-color: #FFFFFF;
+border-bottom-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+}
+#aajqrcbgin .gt_footnote {
+margin: 0px;
+font-size: 90%;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#aajqrcbgin .gt_sourcenotes {
+color: #333333;
+background-color: #FFFFFF;
+border-bottom-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+}
+#aajqrcbgin .gt_sourcenote {
+font-size: 90%;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#aajqrcbgin .gt_left {
+text-align: left;
+}
+#aajqrcbgin .gt_center {
+text-align: center;
+}
+#aajqrcbgin .gt_right {
+text-align: right;
+font-variant-numeric: tabular-nums;
+}
+#aajqrcbgin .gt_font_normal {
+font-weight: normal;
+}
+#aajqrcbgin .gt_font_bold {
+font-weight: bold;
+}
+#aajqrcbgin .gt_font_italic {
+font-style: italic;
+}
+#aajqrcbgin .gt_super {
+font-size: 65%;
+}
+#aajqrcbgin .gt_footnote_marks {
+font-size: 75%;
+vertical-align: 0.4em;
+position: initial;
+}
+#aajqrcbgin .gt_asterisk {
+font-size: 100%;
+vertical-align: 0;
+}
+#aajqrcbgin .gt_indent_1 {
+text-indent: 5px;
+}
+#aajqrcbgin .gt_indent_2 {
+text-indent: 10px;
+}
+#aajqrcbgin .gt_indent_3 {
+text-indent: 15px;
+}
+#aajqrcbgin .gt_indent_4 {
+text-indent: 20px;
+}
+#aajqrcbgin .gt_indent_5 {
+text-indent: 25px;
+}
+#aajqrcbgin .katex-display {
+display: inline-flex !important;
+margin-bottom: 0.75em !important;
+}
+#aajqrcbgin div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+height: 0px !important;
+}
+</style>
+
+<div id="tbl-papers-agile-badge-2" class="gt_table do-not-create-environment quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-papers-agile-badge-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Without badge
+</figcaption>
+<div aria-describedby="tbl-papers-agile-badge-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="tbl-papers-agile-badge-2" class="gt_table do-not-create-environment caption-top table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="6" class="gt_heading gt_title gt_font_normal" style="text-align: left;"><span data-qmd-base64="VURBTyBsZXZlbHMgZm9yIEFHSUxFIHBhcGVycyB3aXRob3V0IFJlcHJvZHVjaWJpbGl0eSBiYWRnZQ=="><span class="gt_from_md">UDAO levels for AGILE papers without Reproducibility badge</span></span></th>
+</tr>
+<tr class="odd gt_heading">
+<th colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="text-align: left;">N=15</th>
+</tr>
+<tr class="header gt_col_headings">
+<th id="year" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">year</th>
+<th id="paper" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">paper</th>
+<th id="consolidated_data" class="gt_col_heading gt_columns_bottom_border gt_center" style="text-align: left;" data-quarto-table-cell-role="th" scope="col"><span data-qmd-base64="KipJbnB1dCBEYXRhKio="><span class="gt_from_md"><strong>Input Data</strong></span></span></th>
+<th id="consolidated_methods" class="gt_col_heading gt_columns_bottom_border gt_center" style="text-align: left;" data-quarto-table-cell-role="th" scope="col"><span data-qmd-base64="KipNZXRob2RzKio="><span class="gt_from_md"><strong>Methods</strong></span></span></th>
+<th id="consolidated_results" class="gt_col_heading gt_columns_bottom_border gt_center" style="text-align: left;" data-quarto-table-cell-role="th" scope="col"><span data-qmd-base64="KipSZXN1bHRzKio="><span class="gt_from_md"><strong>Results</strong></span></span></th>
+<th id="agile_badge" class="gt_col_heading gt_columns_bottom_border gt_center" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">agile_badge</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2021</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2021_001</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2021</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2021_009</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">U</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2021</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2021_005</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2021</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2021_016</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_011</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">U</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_008</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">U</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_001</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2022</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2022_021</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2023</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2023_005</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">U</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">U</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2023</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2023_001</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2023</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2023_006</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">A</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2024</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2024_012</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">U</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">U</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2024</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2024_002</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">O</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2024</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2024_010</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">U</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="year">2024</td>
+<td class="gt_row gt_left" style="text-align: left;" headers="paper">agile_2024_013</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_data">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_methods">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="consolidated_results">D</td>
+<td class="gt_row gt_center" style="text-align: left;" headers="agile_badge">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>n_papers_agile_post_with_badge_preditor <span class="ot">&lt;-</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  papers_agile_post <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(agile_badge <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(consolidated_data <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;O&quot;</span>) <span class="sc">|</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                consolidated_methods <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;O&quot;</span>) <span class="sc">|</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                consolidated_results <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;O&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">tally</span>() <span class="sc">|&gt;</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(n)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>n_papers_agile_post_wo_badge_preditor <span class="ot">&lt;-</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  papers_agile_post <span class="sc">|&gt;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="fu">is.na</span>(agile_badge)) <span class="sc">|&gt;</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(consolidated_data <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;O&quot;</span>) <span class="sc">|</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>                consolidated_methods <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;O&quot;</span>) <span class="sc">|</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>                consolidated_results <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;O&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">tally</span>() <span class="sc">|&gt;</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Of 58 AGILE post-intervention papers, 43 earned a Reproducibility badge and 15 did get it. Interestingly, for the papers with a badge, 41 (95.3%) scored <strong>A</strong>vailable or <strong>O</strong>pen in any criteria, either <em>Input Data</em>, <em>Methods</em> or <em>Results</em>. On the contrary, for the papers without a badge, only 5 (33.3%) reached <strong>A</strong>vailable on any criteria, either <em>Input Data</em>, <em>Methods</em> or <em>Results</em>. This demonstrates that the level of reproducibility, especially for high levels (A, O), is a good predictor for determining whether an article can subsequently be reproduced computationally. `</p>
 <!-- -->
 
 </section>
@@ -4662,152 +6079,251 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
-<div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;02_research_design&quot;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> |</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Support notebook to compute basic stats related to the materials and methods used in the study, which is connected to section *Methods*. </span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#execute:</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  echo: false</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">    embed-resources: true  # Self-contained</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">    code-summary: &quot;Show the code&quot;</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-packages</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-data</span></span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>papers <span class="ot">&lt;-</span> </span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data-clean&quot;</span>, <span class="st">&quot;all-data.csv&quot;</span>))</span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>papers <span class="ot">&lt;-</span> </span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>  papers <span class="sc">|&gt;</span></span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(conf, paper, year) <span class="sc">|&gt;</span></span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(conf, year)</span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data collection and paper corpus</span></span>
-<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>Selected/relevant columns are: <span class="in">`{r} stringr::str_flatten_comma(names(papers))`</span>. More details <span class="co">[</span><span class="ot">here</span><span class="co">](https://github.com/nuest/reproducible-research-giscience-longitudinal-study/tree/main/data-clean)</span>.</span>
-<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: basic-counts</span></span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>n_papers <span class="ot">&lt;-</span> <span class="fu">nrow</span>(papers)</span>
-<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>n_papers_agile <span class="ot">&lt;-</span> </span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>  papers <span class="sc">|&gt;</span></span>
-<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(conf) <span class="sc">|&gt;</span></span>
-<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(n)</span>
-<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>n_papers_giscience <span class="ot">&lt;-</span> </span>
-<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>  papers <span class="sc">|&gt;</span></span>
-<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(conf) <span class="sc">|&gt;</span></span>
-<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(conf <span class="sc">==</span> <span class="st">&quot;giscience&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(n)</span>
-<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-papers</span></span>
-<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: &quot;Distribution of conference papers&quot;</span></span>
-<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a>papers <span class="sc">|&gt;</span></span>
-<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(conf) <span class="sc">|&gt;</span></span>
-<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">count</span>(year) <span class="sc">|&gt;</span></span>
-<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(year, <span class="fu">desc</span>(n)) <span class="sc">|&gt;</span></span>
-<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(</span>
-<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> stringr<span class="sc">::</span><span class="fu">str_glue</span>(<span class="st">&quot;Distribution of conference papers (N={n_papers})&quot;</span>),</span>
-<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">md</span>(<span class="st">&quot;(Section *Data collection process and corpus*)&quot;</span>)</span>
-<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">summary_rows</span>(</span>
-<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a>    <span class="at">groups =</span> <span class="fu">everything</span>(),</span>
-<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> n,</span>
-<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a>    <span class="at">fns =</span> <span class="fu">list</span>(</span>
-<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> <span class="fu">md</span>(<span class="st">&quot;**Total**&quot;</span>),</span>
-<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a>      <span class="at">fn =</span> <span class="st">&quot;sum&quot;</span>)</span>
-<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Draft solution Instead, create own func to give total of papers per group without transitions year</span></span>
-<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">summary_rows</span>(</span>
-<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">groups =</span> <span class="fu">c</span>(<span class="st">&quot;agile&quot;</span>),</span>
-<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> n,</span>
-<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a>    <span class="at">fns =</span> <span class="fu">list</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">&quot;**Total w/o transition year**&quot;</span>), <span class="at">id =</span> <span class="st">&quot;transition_agile&quot;</span>) <span class="sc">~</span> (<span class="fu">sum</span>(.)<span class="sc">-</span><span class="dv">22</span>)  </span>
-<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">summary_rows</span>(</span>
-<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a>    <span class="at">groups =</span> <span class="fu">c</span>(<span class="st">&quot;giscience&quot;</span>),</span>
-<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> n,</span>
-<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a>    <span class="at">fns =</span> <span class="fu">list</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">&quot;**Total w/o transition year**&quot;</span>), <span class="at">id =</span> <span class="st">&quot;transition_agile&quot;</span>) <span class="sc">~</span> (<span class="fu">sum</span>(.)<span class="sc">-</span><span class="dv">16</span>)  </span>
-<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">cols_label</span>(</span>
-<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">md</span>(<span class="st">&quot;**Year**&quot;</span>),</span>
-<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">md</span>(<span class="st">&quot;**#**&quot;</span>),</span>
-<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assessing potential reproducibility</span></span>
-<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-batches</span></span>
-<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a>papers <span class="sc">|&gt;</span></span>
-<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a>    <span class="at">batch =</span> </span>
-<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a>      dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
-<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2019</span>) <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb6-132"><a href="#cb6-132" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2021</span>)  <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb6-133"><a href="#cb6-133" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;giscience&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb6-134"><a href="#cb6-134" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;giscience&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2021</span>)  <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb6-135"><a href="#cb6-135" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2018</span>) <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb6-136"><a href="#cb6-136" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2022</span>)  <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb6-137"><a href="#cb6-137" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;giscience&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2018</span>) <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb6-138"><a href="#cb6-138" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2017</span>) <span class="sc">~</span> <span class="dv">3</span>,</span>
-<span id="cb6-139"><a href="#cb6-139" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2023</span>)  <span class="sc">~</span> <span class="dv">3</span>,</span>
-<span id="cb6-140"><a href="#cb6-140" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;giscience&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2023</span>) <span class="sc">~</span> <span class="dv">3</span>,</span>
-<span id="cb6-141"><a href="#cb6-141" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">~</span> <span class="dv">4</span>,</span>
-<span id="cb6-142"><a href="#cb6-142" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2024</span>)  <span class="sc">~</span> <span class="dv">4</span>,</span>
-<span id="cb6-143"><a href="#cb6-143" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;giscience&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2016</span>) <span class="sc">~</span> <span class="dv">4</span>,</span>
-<span id="cb6-144"><a href="#cb6-144" aria-hidden="true" tabindex="-1"></a>        <span class="cn">TRUE</span> <span class="sc">~</span> <span class="dv">0</span>)</span>
-<span id="cb6-145"><a href="#cb6-145" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb6-146"><a href="#cb6-146" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">count</span>(batch) <span class="sc">|&gt;</span></span>
-<span id="cb6-147"><a href="#cb6-147" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-148"><a href="#cb6-148" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(</span>
-<span id="cb6-149"><a href="#cb6-149" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> stringr<span class="sc">::</span><span class="fu">str_glue</span>(<span class="st">&quot;Distribution of conference papers in batches (N={n_papers})&quot;</span>),</span>
-<span id="cb6-150"><a href="#cb6-150" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">md</span>(<span class="st">&quot;(Section *Assessing potential reproducibility*)&quot;</span>)</span>
-<span id="cb6-151"><a href="#cb6-151" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb6-152"><a href="#cb6-152" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">cols_label</span>(</span>
-<span id="cb6-153"><a href="#cb6-153" aria-hidden="true" tabindex="-1"></a>    <span class="at">batch =</span> <span class="fu">md</span>(<span class="st">&quot;**Batch**&quot;</span>),</span>
-<span id="cb6-154"><a href="#cb6-154" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">md</span>(<span class="st">&quot;**#**&quot;</span>),</span>
-<span id="cb6-155"><a href="#cb6-155" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb6-156"><a href="#cb6-156" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;02_research_design&quot;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> |</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Support notebook to compute basic stats related to the materials and methods used in the study, which is connected to section *Methods*. </span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">#execute:</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  echo: false</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">    embed-resources: true  # Self-contained</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">    code-summary: &quot;Show the code&quot;</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-packages</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-data</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>papers <span class="ot">&lt;-</span> </span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data-clean&quot;</span>, <span class="st">&quot;all-data.csv&quot;</span>))</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>papers <span class="ot">&lt;-</span> </span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>  papers <span class="sc">|&gt;</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(conf, paper, year) <span class="sc">|&gt;</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(conf, year)</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data collection and paper corpus</span></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>Selected/relevant columns are: <span class="in">`{r} stringr::str_flatten_comma(names(papers))`</span>. More details <span class="co">[</span><span class="ot">here</span><span class="co">](https://github.com/nuest/reproducible-research-giscience-longitudinal-study/tree/main/data-clean)</span>.</span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: basic-counts</span></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>n_papers <span class="ot">&lt;-</span> <span class="fu">nrow</span>(papers)</span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>n_papers_agile <span class="ot">&lt;-</span> </span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>  papers <span class="sc">|&gt;</span></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(conf) <span class="sc">|&gt;</span></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(n)</span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>n_papers_giscience <span class="ot">&lt;-</span> </span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>  papers <span class="sc">|&gt;</span></span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(conf) <span class="sc">|&gt;</span></span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(conf <span class="sc">==</span> <span class="st">&quot;giscience&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(n)</span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-papers</span></span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: &quot;Distribution of conference papers&quot;</span></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a>papers <span class="sc">|&gt;</span></span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(conf) <span class="sc">|&gt;</span></span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">count</span>(year) <span class="sc">|&gt;</span></span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(year, <span class="fu">desc</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(</span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> stringr<span class="sc">::</span><span class="fu">str_glue</span>(<span class="st">&quot;Distribution of conference papers (N={n_papers})&quot;</span>),</span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">md</span>(<span class="st">&quot;(Section *Data collection process and corpus*)&quot;</span>)</span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">summary_rows</span>(</span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a>    <span class="at">groups =</span> <span class="fu">everything</span>(),</span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> n,</span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a>    <span class="at">fns =</span> <span class="fu">list</span>(</span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> <span class="fu">md</span>(<span class="st">&quot;**Total**&quot;</span>),</span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a>      <span class="at">fn =</span> <span class="st">&quot;sum&quot;</span>)</span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Dirty solution. Instead, create own func to give total of papers per group without transitions year</span></span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">summary_rows</span>(</span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">groups =</span> <span class="fu">c</span>(<span class="st">&quot;agile&quot;</span>),</span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> n,</span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a>    <span class="at">fns =</span> <span class="fu">list</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">&quot;**Total w/o transition year**&quot;</span>), <span class="at">id =</span> <span class="st">&quot;transition_agile&quot;</span>) <span class="sc">~</span> (<span class="fu">sum</span>(.)<span class="sc">-</span><span class="dv">22</span>)  </span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">summary_rows</span>(</span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a>    <span class="at">groups =</span> <span class="fu">c</span>(<span class="st">&quot;giscience&quot;</span>),</span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> n,</span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a>    <span class="at">fns =</span> <span class="fu">list</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">&quot;**Total w/o transition year**&quot;</span>), <span class="at">id =</span> <span class="st">&quot;transition_agile&quot;</span>) <span class="sc">~</span> (<span class="fu">sum</span>(.)<span class="sc">-</span><span class="dv">16</span>)  </span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">cols_label</span>(</span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">md</span>(<span class="st">&quot;**Year**&quot;</span>),</span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">md</span>(<span class="st">&quot;**#**&quot;</span>),</span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assessing potential reproducibility</span></span>
+<span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-batches</span></span>
+<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a>papers <span class="sc">|&gt;</span></span>
+<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a>    <span class="at">batch =</span> </span>
+<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a>      dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
+<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2019</span>) <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2021</span>)  <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;giscience&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;giscience&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2021</span>)  <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2018</span>) <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2022</span>)  <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;giscience&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2018</span>) <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2017</span>) <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2023</span>)  <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;giscience&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2023</span>) <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">~</span> <span class="dv">4</span>,</span>
+<span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2024</span>)  <span class="sc">~</span> <span class="dv">4</span>,</span>
+<span id="cb9-143"><a href="#cb9-143" aria-hidden="true" tabindex="-1"></a>        (conf <span class="sc">==</span> <span class="st">&quot;giscience&quot;</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2016</span>) <span class="sc">~</span> <span class="dv">4</span>,</span>
+<span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a>        <span class="cn">TRUE</span> <span class="sc">~</span> <span class="dv">0</span>)</span>
+<span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">count</span>(batch) <span class="sc">|&gt;</span></span>
+<span id="cb9-147"><a href="#cb9-147" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb9-148"><a href="#cb9-148" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(</span>
+<span id="cb9-149"><a href="#cb9-149" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> stringr<span class="sc">::</span><span class="fu">str_glue</span>(<span class="st">&quot;Distribution of conference papers in batches (N={n_papers})&quot;</span>),</span>
+<span id="cb9-150"><a href="#cb9-150" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">md</span>(<span class="st">&quot;(Section *Assessing potential reproducibility*)&quot;</span>)</span>
+<span id="cb9-151"><a href="#cb9-151" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-152"><a href="#cb9-152" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">cols_label</span>(</span>
+<span id="cb9-153"><a href="#cb9-153" aria-hidden="true" tabindex="-1"></a>    <span class="at">batch =</span> <span class="fu">md</span>(<span class="st">&quot;**Batch**&quot;</span>),</span>
+<span id="cb9-154"><a href="#cb9-154" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">md</span>(<span class="st">&quot;**#**&quot;</span>),</span>
+<span id="cb9-155"><a href="#cb9-155" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-156"><a href="#cb9-156" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-157"><a href="#cb9-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-158"><a href="#cb9-158" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assessment limitation</span></span>
+<span id="cb9-159"><a href="#cb9-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-160"><a href="#cb9-160" aria-hidden="true" tabindex="-1"></a>Here, we show that the level of potential reproducibility is a fairly good indicator (without *actually* reproducing a paper) because most articles that earned a reproducibility AGILE badge also had high levels of reproducibility scores (**Available** and above) across all criteria.</span>
+<span id="cb9-161"><a href="#cb9-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-164"><a href="#cb9-164" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-165"><a href="#cb9-165" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-papers-agile-badge</span></span>
+<span id="cb9-166"><a href="#cb9-166" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-167"><a href="#cb9-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-168"><a href="#cb9-168" aria-hidden="true" tabindex="-1"></a>udoa_levels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;U&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;O&quot;</span>, <span class="cn">NA</span>)</span>
+<span id="cb9-169"><a href="#cb9-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-170"><a href="#cb9-170" aria-hidden="true" tabindex="-1"></a>papers_agile_post <span class="ot">&lt;-</span> </span>
+<span id="cb9-171"><a href="#cb9-171" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data-clean&quot;</span>, <span class="st">&quot;all-data.csv&quot;</span>),</span>
+<span id="cb9-172"><a href="#cb9-172" aria-hidden="true" tabindex="-1"></a>                  <span class="at">col_types =</span> readr<span class="sc">::</span><span class="fu">cols</span>(</span>
+<span id="cb9-173"><a href="#cb9-173" aria-hidden="true" tabindex="-1"></a>                    <span class="at">conf =</span> readr<span class="sc">::</span><span class="fu">col_character</span>(),</span>
+<span id="cb9-174"><a href="#cb9-174" aria-hidden="true" tabindex="-1"></a>                    <span class="at">year =</span> readr<span class="sc">::</span><span class="fu">col_integer</span>(),</span>
+<span id="cb9-175"><a href="#cb9-175" aria-hidden="true" tabindex="-1"></a>                    <span class="at">paper =</span> readr<span class="sc">::</span><span class="fu">col_character</span>(),</span>
+<span id="cb9-176"><a href="#cb9-176" aria-hidden="true" tabindex="-1"></a>                    <span class="at">title =</span> readr<span class="sc">::</span><span class="fu">col_character</span>(),</span>
+<span id="cb9-177"><a href="#cb9-177" aria-hidden="true" tabindex="-1"></a>                    <span class="at">consolidated_cp =</span> readr<span class="sc">::</span><span class="fu">col_logical</span>(),</span>
+<span id="cb9-178"><a href="#cb9-178" aria-hidden="true" tabindex="-1"></a>                    <span class="at">consolidated_data =</span> readr<span class="sc">::</span><span class="fu">col_factor</span>(<span class="at">levels =</span> udoa_levels),</span>
+<span id="cb9-179"><a href="#cb9-179" aria-hidden="true" tabindex="-1"></a>                    <span class="at">consolidated_methods =</span> readr<span class="sc">::</span><span class="fu">col_factor</span>(<span class="at">levels =</span> udoa_levels),</span>
+<span id="cb9-180"><a href="#cb9-180" aria-hidden="true" tabindex="-1"></a>                    <span class="at">consolidated_results =</span> readr<span class="sc">::</span><span class="fu">col_factor</span>(<span class="at">levels =</span> udoa_levels),</span>
+<span id="cb9-181"><a href="#cb9-181" aria-hidden="true" tabindex="-1"></a>                    <span class="at">agile_badge =</span> readr<span class="sc">::</span><span class="fu">col_logical</span>()</span>
+<span id="cb9-182"><a href="#cb9-182" aria-hidden="true" tabindex="-1"></a>                  ),</span>
+<span id="cb9-183"><a href="#cb9-183" aria-hidden="true" tabindex="-1"></a>                  <span class="at">na =</span> <span class="fu">c</span>(<span class="st">&quot;NA&quot;</span>, <span class="st">&quot;Not applicable&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb9-184"><a href="#cb9-184" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(conf <span class="sc">==</span> <span class="st">&quot;agile&quot;</span> <span class="sc">&amp;</span> year <span class="sc">&gt;</span> <span class="dv">2020</span> <span class="sc">&amp;</span> consolidated_cp <span class="sc">==</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-185"><a href="#cb9-185" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(year, paper, consolidated_data, consolidated_methods, consolidated_results, agile_badge) <span class="sc">|&gt;</span></span>
+<span id="cb9-186"><a href="#cb9-186" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(year)</span>
+<span id="cb9-187"><a href="#cb9-187" aria-hidden="true" tabindex="-1"></a>              </span>
+<span id="cb9-188"><a href="#cb9-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-189"><a href="#cb9-189" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-190"><a href="#cb9-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-191"><a href="#cb9-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-194"><a href="#cb9-194" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-195"><a href="#cb9-195" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-papers-agile-badge</span></span>
+<span id="cb9-196"><a href="#cb9-196" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-197"><a href="#cb9-197" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: &quot;AGILE papers: reproducibility criteria vs badge&quot;</span></span>
+<span id="cb9-198"><a href="#cb9-198" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-subcap: </span></span>
+<span id="cb9-199"><a href="#cb9-199" aria-hidden="true" tabindex="-1"></a><span class="co">#|   - &quot;With badge&quot;</span></span>
+<span id="cb9-200"><a href="#cb9-200" aria-hidden="true" tabindex="-1"></a><span class="co">#|   - &quot;Without badge&quot;</span></span>
+<span id="cb9-201"><a href="#cb9-201" aria-hidden="true" tabindex="-1"></a><span class="co">#| layout-ncol: 2</span></span>
+<span id="cb9-202"><a href="#cb9-202" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-align: center</span></span>
+<span id="cb9-203"><a href="#cb9-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-204"><a href="#cb9-204" aria-hidden="true" tabindex="-1"></a>n_papers_agile_post_with_badge <span class="ot">&lt;-</span> <span class="fu">nrow</span>(<span class="fu">filter</span>(papers_agile_post, agile_badge <span class="sc">==</span> <span class="st">&quot;TRUE&quot;</span>))</span>
+<span id="cb9-205"><a href="#cb9-205" aria-hidden="true" tabindex="-1"></a>n_papers_agile_post_wo_badge <span class="ot">&lt;-</span> <span class="fu">nrow</span>(<span class="fu">filter</span>(papers_agile_post, <span class="fu">is.na</span>(agile_badge)))</span>
+<span id="cb9-206"><a href="#cb9-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-207"><a href="#cb9-207" aria-hidden="true" tabindex="-1"></a>papers_agile_post <span class="sc">|&gt;</span></span>
+<span id="cb9-208"><a href="#cb9-208" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(agile_badge <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-209"><a href="#cb9-209" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb9-210"><a href="#cb9-210" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(</span>
+<span id="cb9-211"><a href="#cb9-211" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">md</span>(<span class="st">&quot;UDAO levels for AGILE papers with Reproducibility badge&quot;</span>),</span>
+<span id="cb9-212"><a href="#cb9-212" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> stringr<span class="sc">::</span><span class="fu">str_glue</span>(<span class="st">&quot;N={n_papers_agile_post_with_badge}&quot;</span>)</span>
+<span id="cb9-213"><a href="#cb9-213" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-214"><a href="#cb9-214" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">cols_label</span>(</span>
+<span id="cb9-215"><a href="#cb9-215" aria-hidden="true" tabindex="-1"></a>    <span class="at">consolidated_data =</span> <span class="fu">md</span>(<span class="st">&quot;**Input Data**&quot;</span>),</span>
+<span id="cb9-216"><a href="#cb9-216" aria-hidden="true" tabindex="-1"></a>    <span class="at">consolidated_methods =</span> <span class="fu">md</span>(<span class="st">&quot;**Methods**&quot;</span>),</span>
+<span id="cb9-217"><a href="#cb9-217" aria-hidden="true" tabindex="-1"></a>    <span class="at">consolidated_results =</span> <span class="fu">md</span>(<span class="st">&quot;**Results**&quot;</span>)</span>
+<span id="cb9-218"><a href="#cb9-218" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb9-219"><a href="#cb9-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-220"><a href="#cb9-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-221"><a href="#cb9-221" aria-hidden="true" tabindex="-1"></a>papers_agile_post <span class="sc">|&gt;</span></span>
+<span id="cb9-222"><a href="#cb9-222" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="fu">is.na</span>(agile_badge)) <span class="sc">|&gt;</span></span>
+<span id="cb9-223"><a href="#cb9-223" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb9-224"><a href="#cb9-224" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(</span>
+<span id="cb9-225"><a href="#cb9-225" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">md</span>(<span class="st">&quot;UDAO levels for AGILE papers without Reproducibility badge&quot;</span>),</span>
+<span id="cb9-226"><a href="#cb9-226" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> stringr<span class="sc">::</span><span class="fu">str_glue</span>(<span class="st">&quot;N={n_papers_agile_post_wo_badge}&quot;</span>)</span>
+<span id="cb9-227"><a href="#cb9-227" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb9-228"><a href="#cb9-228" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">cols_label</span>(</span>
+<span id="cb9-229"><a href="#cb9-229" aria-hidden="true" tabindex="-1"></a>    <span class="at">consolidated_data =</span> <span class="fu">md</span>(<span class="st">&quot;**Input Data**&quot;</span>),</span>
+<span id="cb9-230"><a href="#cb9-230" aria-hidden="true" tabindex="-1"></a>    <span class="at">consolidated_methods =</span> <span class="fu">md</span>(<span class="st">&quot;**Methods**&quot;</span>),</span>
+<span id="cb9-231"><a href="#cb9-231" aria-hidden="true" tabindex="-1"></a>    <span class="at">consolidated_results =</span> <span class="fu">md</span>(<span class="st">&quot;**Results**&quot;</span>)</span>
+<span id="cb9-232"><a href="#cb9-232" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb9-233"><a href="#cb9-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-234"><a href="#cb9-234" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-235"><a href="#cb9-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-238"><a href="#cb9-238" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-239"><a href="#cb9-239" aria-hidden="true" tabindex="-1"></a>n_papers_agile_post_with_badge_preditor <span class="ot">&lt;-</span></span>
+<span id="cb9-240"><a href="#cb9-240" aria-hidden="true" tabindex="-1"></a>  papers_agile_post <span class="sc">|&gt;</span></span>
+<span id="cb9-241"><a href="#cb9-241" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(agile_badge <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-242"><a href="#cb9-242" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(consolidated_data <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;O&quot;</span>) <span class="sc">|</span></span>
+<span id="cb9-243"><a href="#cb9-243" aria-hidden="true" tabindex="-1"></a>                consolidated_methods <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;O&quot;</span>) <span class="sc">|</span></span>
+<span id="cb9-244"><a href="#cb9-244" aria-hidden="true" tabindex="-1"></a>                consolidated_results <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;O&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb9-245"><a href="#cb9-245" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">tally</span>() <span class="sc">|&gt;</span></span>
+<span id="cb9-246"><a href="#cb9-246" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(n)</span>
+<span id="cb9-247"><a href="#cb9-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-248"><a href="#cb9-248" aria-hidden="true" tabindex="-1"></a>n_papers_agile_post_wo_badge_preditor <span class="ot">&lt;-</span></span>
+<span id="cb9-249"><a href="#cb9-249" aria-hidden="true" tabindex="-1"></a>  papers_agile_post <span class="sc">|&gt;</span></span>
+<span id="cb9-250"><a href="#cb9-250" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="fu">is.na</span>(agile_badge)) <span class="sc">|&gt;</span></span>
+<span id="cb9-251"><a href="#cb9-251" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(consolidated_data <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;O&quot;</span>) <span class="sc">|</span></span>
+<span id="cb9-252"><a href="#cb9-252" aria-hidden="true" tabindex="-1"></a>                consolidated_methods <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;O&quot;</span>) <span class="sc">|</span></span>
+<span id="cb9-253"><a href="#cb9-253" aria-hidden="true" tabindex="-1"></a>                consolidated_results <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;O&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb9-254"><a href="#cb9-254" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">tally</span>() <span class="sc">|&gt;</span></span>
+<span id="cb9-255"><a href="#cb9-255" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(n)</span>
+<span id="cb9-256"><a href="#cb9-256" aria-hidden="true" tabindex="-1"></a>                       </span>
+<span id="cb9-257"><a href="#cb9-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-258"><a href="#cb9-258" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-259"><a href="#cb9-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-260"><a href="#cb9-260" aria-hidden="true" tabindex="-1"></a>Of <span class="in">`{r} n_papers_agile_post_with_badge + n_papers_agile_post_wo_badge`</span> AGILE post-intervention papers, <span class="in">`{r} n_papers_agile_post_with_badge`</span> earned a Reproducibility badge and <span class="in">`{r} n_papers_agile_post_wo_badge`</span> did get it. Interestingly, for the papers with a badge, <span class="in">`{r} n_papers_agile_post_with_badge_preditor`</span> (<span class="in">`{r} scales::label_percent(accuracy = 0.1)(n_papers_agile_post_with_badge_preditor / n_papers_agile_post_with_badge)`</span>) scored **A**vailable or **O**pen in any criteria, either *Input Data*, *Methods* or *Results*. On the contrary, for the papers without a badge, only `{r} n_papers_agile_post_wo_badge_preditor` (`{r} scales::label_percent(accuracy = 0.1)(n_papers_agile_post_wo_badge_preditor / n_papers_agile_post_wo_badge)`) reached **A**vailable on any criteria, either *Input Data*, *Methods* or *Results*. This demonstrates that the level of reproducibility, especially for high levels (A, O), is a good predictor for determining whether an article can subsequently be reproduced computationally.</span>
+<span id="cb9-261"><a href="#cb9-261" aria-hidden="true" tabindex="-1"></a>`  </span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

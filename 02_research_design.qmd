@@ -88,7 +88,7 @@ papers |>
       label = md("**Total**"),
       fn = "sum")
   ) |>
-  ## Draft solution Instead, create own func to give total of papers per group without transitions year
+  ## Dirty solution. Instead, create own func to give total of papers per group without transitions year
   gt::summary_rows(
     groups = c("agile"),
     columns = n,
@@ -144,3 +144,186 @@ papers |>
     n = md("**#**"),
   )
 ```
+
+## Assessment limitation
+
+Here, we show that the level of potential reproducibility is a fairly good indicator (without *actually* reproducing a paper) because most articles that earned a reproducibility AGILE badge also had high levels of reproducibility scores (**Available** and above) across all criteria.
+
+```{r}
+#| label: load-papers-agile-badge
+#| message: false
+
+udoa_levels <- c("U", "D", "A", "O", NA)
+
+papers_agile_post <- 
+  readr::read_csv(here::here("data-clean", "all-data.csv"),
+                  col_types = readr::cols(
+                    conf = readr::col_character(),
+                    year = readr::col_integer(),
+                    paper = readr::col_character(),
+                    title = readr::col_character(),
+                    consolidated_cp = readr::col_logical(),
+                    consolidated_data = readr::col_factor(levels = udoa_levels),
+                    consolidated_methods = readr::col_factor(levels = udoa_levels),
+                    consolidated_results = readr::col_factor(levels = udoa_levels),
+                    agile_badge = readr::col_logical()
+                  ),
+                  na = c("NA", "Not applicable")) |>
+  dplyr::filter(conf == "agile" & year > 2020 & consolidated_cp == FALSE) |>
+  dplyr::mutate(agile_badge = if_else(is.na(agile_badge), FALSE, TRUE)) |>
+  dplyr::mutate(agg_level = case_when(
+    consolidated_data %in% c("A", "O") & consolidated_methods %in% c("A", "O") & consolidated_results %in% c("A", "O") == TRUE ~"HIGH",
+    consolidated_data %in% c("U", "D") & consolidated_methods %in% c("U", "D") & consolidated_results %in% c("U", "D") == TRUE ~"LOW",
+    .default = "MIX")) |>
+  dplyr::select(year, paper, consolidated_data, consolidated_methods, consolidated_results, agg_level, agile_badge) |>
+  dplyr::arrange(year)
+              
+
+```
+
+
+```{r}
+#| label: tbl-papers-agile-badge
+#| warning: false
+#| tbl-cap: "AGILE papers: reproducibility criteria vs badge"
+#| tbl-subcap: 
+#|   - "With badge"
+#|   - "Without badge"
+#| layout-ncol: 2
+#| tbl-align: center
+
+n_papers_agile_post_with_badge <- nrow(filter(papers_agile_post, agile_badge == TRUE))
+n_papers_agile_post_wo_badge <- nrow(filter(papers_agile_post, agile_badge == FALSE))
+
+papers_agile_post |>
+  dplyr::filter(agile_badge == TRUE) |>
+  gt::gt() |>
+  gt::tab_header(
+    title = md("UDAO levels for AGILE papers with Reproducibility badge"),
+    subtitle = stringr::str_glue("N={n_papers_agile_post_with_badge}")
+  ) |>
+  gt::cols_label(
+    consolidated_data = md("**Input Data**"),
+    consolidated_methods = md("**Methods**"),
+    consolidated_results = md("**Results**")
+  ) 
+
+
+papers_agile_post |>
+  dplyr::filter(agile_badge == FALSE) |>
+  gt::gt() |>
+  gt::tab_header(
+    title = md("UDAO levels for AGILE papers without Reproducibility badge"),
+    subtitle = stringr::str_glue("N={n_papers_agile_post_wo_badge}")
+  ) |>
+  gt::cols_label(
+    consolidated_data = md("**Input Data**"),
+    consolidated_methods = md("**Methods**"),
+    consolidated_results = md("**Results**")
+  ) 
+
+```
+
+```{r}
+n_papers_agile_post_with_badge_preditor <-
+  papers_agile_post |>
+  dplyr::filter(agile_badge == TRUE) |>
+  dplyr::filter(consolidated_data %in% c("A", "O") |
+                consolidated_methods %in% c("A", "O") |
+                consolidated_results %in% c("A", "O")) |>
+  dplyr::tally() |>
+  pull(n)
+
+n_papers_agile_post_wo_badge_preditor <-
+  papers_agile_post |>
+  dplyr::filter(is.na(agile_badge)) |>
+  dplyr::filter(consolidated_data %in% c("A", "O") |
+                consolidated_methods %in% c("A", "O") |
+                consolidated_results %in% c("A", "O")) |>
+  dplyr::tally() |>
+  pull(n)
+                       
+
+```
+
+Of `{r} n_papers_agile_post_with_badge + n_papers_agile_post_wo_badge` AGILE post-intervention papers, `{r} n_papers_agile_post_with_badge` earned a Reproducibility badge and `{r} n_papers_agile_post_wo_badge` did get it. Interestingly, for the papers with a badge, `{r} n_papers_agile_post_with_badge_preditor` (`{r} scales::label_percent(accuracy = 0.1)(n_papers_agile_post_with_badge_preditor / n_papers_agile_post_with_badge)`) scored **A**vailable or **O**pen in any criteria, either *Input Data*, *Methods* or *Results*. On the contrary, for the papers without a badge, only `{r} n_papers_agile_post_wo_badge_preditor` (`{r} scales::label_percent(accuracy = 0.1)(n_papers_agile_post_wo_badge_preditor / n_papers_agile_post_wo_badge)`) reached **A**vailable on any criteria, either *Input Data*, *Methods* or *Results*. This demonstrates that the level of reproducibility, especially for high levels (A, O), is a good predictor for determining whether an article can subsequently be reproduced computationally.
+
+
+```{r}
+papers_agile_post |>
+  dplyr::group_by(agile_badge, agg_level) |>
+  dplyr::tally() |>
+  dplyr::mutate(p = n /sum(n)) |>
+  gt::gt()
+```
+
+
+```{r}
+#| label: fig-sankey
+
+papers_agile_post_sankey <-
+  papers_agile_post |>
+  dplyr::group_by(agile_badge, agg_level, year) |>
+  dplyr::tally() 
+
+ggplot2::ggplot(papers_agile_post_sankey, 
+                aes(axis1 = agile_badge, axis2 = year, axis3 = agg_level, y = n)) +
+  ggplot2::scale_x_discrete(limits = c("Reproduced", "Year", "Agg level"), expand = c(.1, .05)) +
+  ggplot2::scale_fill_brewer(type = "qual", palette = "Set1") +
+  geom_flow() +
+  # geom_alluvium = flows between nodes
+  ggalluvial::geom_alluvium(aes(fill = agile_badge), width = 1/3) +
+  # geom_stratum = nodes (boxes)
+  ggalluvial::geom_stratum(alpha = .4, width = 1/3, fill = "lightgrey", color = "black") +
+  ggplot2::geom_text(stat = "stratum", aes(label = after_stat(stratum)), size = 4) +
+  ggplot2::labs(
+    title= "Actual reproduction vs potential reproducibility",
+    subtitle = stringr::str_glue("AGILE post-intervention papers: {n_papers_agile_post_with_badge} with badge, {n_papers_agile_post_wo_badge} w/o badge"),
+    x = "",
+    y = "Number of papers", 
+    fill = "Reproducible badge?") +
+  ggplot2::theme_minimal() +
+  ggplot2::theme(plot.tag = element_text(size = 8)) +
+  ggplot2::theme(legend.position = "right")
+
+
+```
+
+```{r}
+#| label: fig-sankey-save
+#| warning: false
+
+#ggplot2::ggsave(file = here::here("figs", "GIScience_all.svg"),
+#       width = 10, height = 7, dpi = 300)
+ggplot2::ggsave(file = here::here("figs", "AGILE_sankey.png"),
+       width = 10, height = 6, dpi = 300)
+
+```
+
+
+```{r}
+install.packages("ggalluvial")
+library(ggalluvial)
+```
+
+```{r}
+# Cargamos y preparamos el dataset del Titanic
+titanic_df <- as.data.frame(Titanic)
+
+# Visualizamos cómo cambian los supervivientes según la clase y el sexo
+ggplot(data = titanic_df,
+       aes(axis1 = Class, axis2 = Sex, y = Freq)) +
+  # geom_alluvium = flows betwwen nodes
+  geom_alluvium(aes(fill = Survived), width = 1/3) +
+  # geom_stratum = nodes (boxes)
+  geom_stratum(width = 1/3, fill = "grey", color = "black") +
+  # geom_text añade las etiquetas dentro de las cajas
+  geom_text(stat = "stratum", aes(label = after_stat(stratum)), size = 3.5) +
+  labs(title = "Supervivencia en el Titanic por Clase y Sexo",
+       y = "Número de Pasajeros",
+       fill = "Supervivencia") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+

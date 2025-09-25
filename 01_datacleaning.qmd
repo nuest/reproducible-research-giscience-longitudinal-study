@@ -58,7 +58,8 @@ all_data <-
                 disagr_type,
                 AGILE_badge = `AGILE Reproducible badge`,
                 AGILE_reproreport = `AGILE Reproducible report`) |>
-  dplyr::mutate(AGILE_badge = na_if(AGILE_badge, FALSE)) |> # No badge is codified as NA and FALSE -> consolidate to FALSE
+  dplyr::mutate(AGILE_badge = na_if(AGILE_badge, FALSE)) |> # No badge is codified as NA and FALSE -> consolidate to FALSE. ERROR HERE, replace by sentence below
+  #dplyr::mutate(AGILE_badge = if_else(is.na(AGILE_badge), FALSE, TRUE)) |>
   dplyr::rename_with(tolower)
 
 ```
