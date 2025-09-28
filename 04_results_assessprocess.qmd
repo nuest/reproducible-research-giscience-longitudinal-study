@@ -1,7 +1,7 @@
 ---
-title: "04_assessment"
+title: "04_results_assessprocess"
 description: |
-    Analyzing the results of the assessment process helps uncover the reasons behind disagreements found among reviewers, so that documents such as the AGILE Guidelines and the Assessemnt Protocol can be updated accordingly. This notebook refers to section 3.2 (*Results related to the assessment process*). 
+    Analyzing the results of the assessment process helps uncover the reasons behind disagreements found among reviewers, so that documents such as the AGILE Guidelines and the Assessemnt Protocol can be updated accordingly. This notebook refers to the assessment process within the *Results* section). 
 
 #execute:
 #  echo: false

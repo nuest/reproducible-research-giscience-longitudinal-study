@@ -1,7 +1,7 @@
 ---
-title: "03_eligible_papers"
+title: "03_results_reprolevels"
 description: |
-    Support notebook to compute basic stats related to eligible papers, which is connected to section 3.1 (*Paper selection*) within results. 
+    Support notebook to compute the reproducibilty scores of the eligible papers, which is connected to section 3 (*Results*). 
 
 #execute:
 #  echo: false
@@ -52,28 +52,40 @@ criteriaBarplot = function(df, col, main, colour) {
     ggthemes::theme_tufte(base_size = 10) + ggplot2::theme(axis.ticks.x = element_blank())
 }
 
-criteriaBarplot2 = function(df, col, main, colour) {
+# Variant to add annotation (percentage) + vertical dotted line to separate high and low levels + (optional text) "HIGH" and "LOW". Note that y position  depeends on the Y-axis scale: 35 for GISciecne barcharts, 45 for AGILE barcharts
+criteriaBarplot2 = function(df, col, main, colour, agg_level=F, agg_level_y = 35) {
   col <- enquo(col)
 
-  ggplot2::ggplot(df,
+  p <- 
+    ggplot2::ggplot(df,
                     aes(x=!!col, y = n),
                     show.legend = FALSE) +
     ggplot2::geom_col(fill = colour, color = "black") +
     ggplot2::geom_text(
-      # Mapeamos la etiqueta al texto que queremos mostrar (el porcentaje)
       aes(label = scales::label_percent(accuracy = 0.1)(p)),
-      # Ajustamos la posición vertical para que esté por encima de la barra
       vjust = -0.5,
       size = 3.5,
       color = "black"
     ) +
+    ggplot2::geom_vline(xintercept = 2.5,
+                        linetype = "dotted",     
+                        color = "gray",          
+                        size = 1) +
     ggplot2::ggtitle(main) +
     ggplot2::xlab("Level") +
-    ggplot2::xlim(udoa_levels) +
+    ggplot2::xlim(c("U", "D", "A", "O")) +
     ggplot2::ylab("") +
     ggplot2::scale_y_continuous(breaks = breaks,
                                 limits = range(breaks)) +
     ggthemes::theme_tufte(base_size = 10) + ggplot2::theme(axis.ticks.x = element_blank())
+  
+    if (agg_level) {
+      p <- p +
+        ggplot2::annotate("text", x = 2:3, y = agg_level_y, label = c("LOW", "HIGH"), alpha = 0.5)
+    }
+       
+
+    return (p)
 }
 ```
 
@@ -125,6 +137,15 @@ paper_evaluation <-
 n_papers <- nrow(paper_evaluation)
 
 paper_evaluation_wo_conceptual <- filter(paper_evaluation, consolidated_cp == FALSE)
+
+# Note: we know that NA level has no entries after removing conceptual papers: `paper_evaluation_wo_conceptual`. Drop NA level to avoid an extra column in bar charts
+paper_evaluation_wo_conceptual <-
+  paper_evaluation_wo_conceptual |>
+  dplyr::mutate(consolidated_data = forcats::fct_na_level_to_value(consolidated_data)) |>
+  dplyr::mutate(consolidated_methods = forcats::fct_na_level_to_value(consolidated_methods)) |>
+  dplyr::mutate(consolidated_results = forcats::fct_na_level_to_value(consolidated_results))
+  
+
 
 n_papers_wo_conceptual <- nrow(paper_evaluation_wo_conceptual)
 
@@ -531,7 +552,7 @@ breaks <- seq(from = 0, to = 35, by = 5)
 
 
 #plot1A <- criteriaBarplot(papers_giscience_pre, col = consolidated_data, main = "Input data", colour = colours[1])
-plot1A <- criteriaBarplot2(papers_giscience_data_pre, col = consolidated_data, main = "Input data", colour = colours[1])
+plot1A <- criteriaBarplot2(papers_giscience_data_pre, col = consolidated_data, main = "Input data", colour = colours[1], agg_level = T)
 
 #plot2A <- criteriaBarplot(papers_giscience_pre, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
 plot2A <- criteriaBarplot2(papers_giscience_methods_pre, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
@@ -553,7 +574,7 @@ breaks <- seq(from = 0, to = 35, by = 5)
 
 
 #plot1B <- criteriaBarplot(papers_giscience_post, col = consolidated_data, main = "Input data", colour = colours[1])
-plot1B <- criteriaBarplot2(papers_giscience_data_post, col = consolidated_data, main = "Input data", colour = colours[1])
+plot1B <- criteriaBarplot2(papers_giscience_data_post, col = consolidated_data, main = "Input data", colour = colours[1], agg_level = T)
 
 #plot2B <- criteriaBarplot(papers_giscience_post, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
 plot2B <- criteriaBarplot2(papers_giscience_methods_post, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
@@ -870,7 +891,7 @@ breaks <- seq(from = 0, to = 45, by = 5)
 
 
 #plotA <- criteriaBarplot(papers_agile_pre, col = consolidated_data, main = "Input data", colour = colours[1])
-plotA <- criteriaBarplot2(papers_agile_data_pre, col = consolidated_data, main = "Input data", colour = colours[1])
+plotA <- criteriaBarplot2(papers_agile_data_pre, col = consolidated_data, main = "Input data", colour = colours[1], agg_level = T, agg_level_y = 45)
 
 #plotB <- criteriaBarplot(papers_agile_pre, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
 plotB <- criteriaBarplot2(papers_agile_methods_pre, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
@@ -894,7 +915,7 @@ breaks <- seq(from = 0, to = 45, by = 5)
 
 
 #plotD <- criteriaBarplot(papers_agile_post, col = consolidated_data, main = "Input data", colour = colours[1])
-plotD <- criteriaBarplot2(papers_agile_data_post, col = consolidated_data, main = "Input data", colour = colours[1])
+plotD <- criteriaBarplot2(papers_agile_data_post, col = consolidated_data, main = "Input data", colour = colours[1], agg_level = T, agg_level_y = 45)
 
 #plotE <- criteriaBarplot(papers_agile_post, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
 plotE <- criteriaBarplot2(papers_agile_methods_post, col = consolidated_methods, main = "Methods, analysis, processing", colour = colours[2])
@@ -949,5 +970,325 @@ ggplot2::ggsave(file = here::here("figs", "AGILE_pre_post.png"),
 
 ```
 
+# Transfer between the two main aggregate levels: HIGH and LOW
 
 
+```{r}
+#| label: functions-transfer
+
+percent_agg_level = function(df, col, lbl) {
+  col <- enquo(col)
+
+  df |>
+    dplyr::count(!!col) |>
+    dplyr::mutate(p = n /sum(n)) |>
+    dplyr::mutate(agg_level = case_when(
+      !!col %in% c("A", "O") ~ "HIGH",
+      !!col %in% c("U", "D") ~ "LOW")) |>
+    dplyr::group_by(agg_level) |>
+    dplyr::summarise(agg_level_n = sum(n),
+                     agg_level_p = sum(p)) |>
+    dplyr::ungroup() |>
+    dplyr::mutate(level = paste0(lbl,"-",agg_level))
+  
+}
+```
+
+
+## GIScience delta chart
+
+```{r}
+#| label: GIScience-transfer-pre-post
+#| warning: false
+
+# Recompute...
+papers_giscience_pre <-
+  papers_giscience |>  
+  dplyr::filter(year < 2020) |>
+  dplyr::select(-conf, -title, -consolidated_cp, -consolidated_ce, -agile_badge)
+
+n_papers_giscience_pre = nrow(papers_giscience_pre)
+
+
+papers_giscience_data_pre <- percent_agg_level(papers_giscience_pre, 
+                                                  col = consolidated_data,
+                                                  lbl = "Input data")
+papers_giscience_data_pre <-
+  papers_giscience_data_pre |>
+  dplyr::rename(agg_level_n_pre = "agg_level_n", agg_level_p_pre = "agg_level_p")
+
+papers_giscience_methods_pre <- percent_agg_level(papers_giscience_pre, 
+                                                  col = consolidated_methods,
+                                                  lbl = "Methods")
+papers_giscience_methods_pre <-
+  papers_giscience_methods_pre |>
+  dplyr::rename(agg_level_n_pre = "agg_level_n", agg_level_p_pre = "agg_level_p")
+
+papers_giscience_results_pre <-  percent_agg_level(papers_giscience_pre, 
+                                                  col = consolidated_results,
+                                                  lbl = "Results")
+papers_giscience_results_pre <-
+  papers_giscience_results_pre |>
+  dplyr::rename(agg_level_n_pre = "agg_level_n", agg_level_p_pre = "agg_level_p")
+
+# Recompute...
+papers_giscience_post <-
+  papers_giscience |>  
+  dplyr::filter(year > 2020) |>
+  dplyr::select(-conf, -title, -consolidated_cp, -consolidated_ce, -agile_badge)
+
+n_papers_giscience_post = nrow(papers_giscience_post)
+
+
+papers_giscience_data_post <- percent_agg_level(papers_giscience_post, 
+                                                  col = consolidated_data,
+                                                  lbl = "Input data")
+papers_giscience_data_post <-
+  papers_giscience_data_post |>
+  dplyr::rename(agg_level_n_post = "agg_level_n", agg_level_p_post = "agg_level_p")
+
+papers_giscience_methods_post <- percent_agg_level(papers_giscience_post, 
+                                                  col = consolidated_methods,
+                                                  lbl = "Methods")
+papers_giscience_methods_post <-
+  papers_giscience_methods_post |>
+  dplyr::rename(agg_level_n_post = "agg_level_n", agg_level_p_post = "agg_level_p")
+
+papers_giscience_results_post <-  percent_agg_level(papers_giscience_post, 
+                                                  col = consolidated_results,
+                                                  lbl = "Results")
+papers_giscience_results_post <-
+  papers_giscience_results_post |>
+  dplyr::rename(agg_level_n_post = "agg_level_n", agg_level_p_post = "agg_level_p")
+
+# Merge all partial datasets
+
+merged_giscience <- 
+  bind_rows(
+    dplyr::full_join(papers_giscience_data_pre, papers_giscience_data_post, by=c("agg_level", "level")),
+    dplyr::full_join(papers_giscience_methods_pre, papers_giscience_methods_post, by=c("agg_level", "level")),
+    dplyr::full_join(papers_giscience_results_pre, papers_giscience_results_post, by=c("agg_level", "level"))
+  )
+
+
+levels_ordered = c("Input data-HIGH", "Input data-LOW", "Methods-HIGH", "Methods-LOW", "Results-LOW", "Results-HIGH")
+
+# Manual trick: As there are NA values, i.e, no papers in some `level`, replaced by 0
+merged_giscience <-
+  merged_giscience |> 
+  tidyr::replace_na(list(agg_level_n_pre = 0, agg_level_p_pre = 0)) |>
+  dplyr::mutate(gap_p = agg_level_p_post - agg_level_p_pre) |>
+  dplyr::mutate(level = factor(level))
+
+  
+#merged_giscience$level <- fct_relevel(merged_giscience$level,levels_ordered)
+
+```
+
+```{r}
+
+# Same colors as per each criteriaUse s
+# colours <- RColorBrewer::brewer.pal(length(categoryColumns), "Set1")
+colours <- c("#E41A1C", "#E41A1C", "#377EB8", "#377EB8", "#4DAF4A", "#4DAF4A")
+
+merged_giscience %>% 
+  dplyr::select(-agg_level_n_pre, -agg_level_n_post, -agg_level) |>
+  ggplot2::ggplot(aes(x=gap_p, y=level)) +
+  ggplot2::geom_col(aes(fill = level,
+               alpha = ifelse(gap_p < 0, .4, .7)), 
+               show.legend = FALSE) +
+  ggplot2::geom_text(
+      aes(label = scales::label_percent(accuracy = 0.1)(gap_p),
+          hjust = ifelse(gap_p < 0, -0.1, 0.9)),
+      size = 2.5,
+      color = "black"
+    ) +
+
+  ggplot2::geom_vline(xintercept = 0, linetype = "solid", color = "grey") + # Reference line at 0%
+  ggplot2::geom_hline(yintercept = 4.5, linetype = "dashed", color = "grey") +
+  ggplot2::geom_hline(yintercept = 2.5, linetype = "dashed", color = "grey") +
+  
+  ggplot2::scale_x_continuous(labels = scales::percent_format(accuracy = 1))+
+  ggplot2::scale_fill_manual(values = colours) +
+  ggplot2::labs(
+    title = "GIScience papers",
+    x = "Percentatge diference (gap) between % post and % pre", 
+    y = "Criteria and levels grouped into HIGH (A,O) and LOW (U, D)") +
+  ggthemes::theme_tufte(base_size = 10) +
+  ggplot2::theme(plot.title = element_text(hjust = 0.5)) + # Title centered, 
+  ggplot2::theme(axis.ticks.y=element_blank()) -> plot_delta_giscience
+
+ 
+
+
+```
+
+```{r}
+plot_delta_giscience
+```
+
+
+## AGILE delta chart
+
+```{r}
+#| label: AGILE-transfer-pre-post
+#| warning: false
+
+# Recompute...
+papers_agile_pre <-
+  papers_agile |>  
+  dplyr::filter(year < 2020) |>
+  dplyr::select(-conf, -title, -consolidated_cp, -consolidated_ce, -agile_badge)
+
+n_papers_agile_pre = nrow(papers_agile_pre)
+
+
+papers_agile_data_pre <- percent_agg_level(papers_agile_pre, 
+                                                  col = consolidated_data,
+                                                  lbl = "Input data")
+papers_agile_data_pre <-
+  papers_agile_data_pre |>
+  dplyr::rename(agg_level_n_pre = "agg_level_n", agg_level_p_pre = "agg_level_p")
+
+papers_agile_methods_pre <- percent_agg_level(papers_agile_pre, 
+                                                  col = consolidated_methods,
+                                                  lbl = "Methods")
+papers_agile_methods_pre <-
+  papers_agile_methods_pre |>
+  dplyr::rename(agg_level_n_pre = "agg_level_n", agg_level_p_pre = "agg_level_p")
+
+papers_agile_results_pre <-  percent_agg_level(papers_agile_pre, 
+                                                  col = consolidated_results,
+                                                  lbl = "Results")
+papers_agile_results_pre <-
+  papers_agile_results_pre |>
+  dplyr::rename(agg_level_n_pre = "agg_level_n", agg_level_p_pre = "agg_level_p")
+
+# Recompute...
+papers_agile_post <-
+  papers_agile |>  
+  dplyr::filter(year > 2020) |>
+  dplyr::select(-conf, -title, -consolidated_cp, -consolidated_ce, -agile_badge)
+
+n_papers_agile_post = nrow(papers_agile_post)
+
+
+papers_agile_data_post <- percent_agg_level(papers_agile_post, 
+                                                  col = consolidated_data,
+                                                  lbl = "Input data")
+papers_agile_data_post <-
+  papers_agile_data_post |>
+  dplyr::rename(agg_level_n_post = "agg_level_n", agg_level_p_post = "agg_level_p")
+
+papers_agile_methods_post <- percent_agg_level(papers_agile_post, 
+                                                  col = consolidated_methods,
+                                                  lbl = "Methods")
+papers_agile_methods_post <-
+  papers_agile_methods_post |>
+  dplyr::rename(agg_level_n_post = "agg_level_n", agg_level_p_post = "agg_level_p")
+
+papers_agile_results_post <-  percent_agg_level(papers_agile_post, 
+                                                  col = consolidated_results,
+                                                  lbl = "Results")
+papers_agile_results_post <-
+  papers_agile_results_post |>
+  dplyr::rename(agg_level_n_post = "agg_level_n", agg_level_p_post = "agg_level_p")
+
+# Merge all partial datasets
+
+merged_agile <- 
+  bind_rows(
+    dplyr::full_join(papers_agile_data_pre, papers_agile_data_post, by=c("agg_level", "level")),
+    dplyr::full_join(papers_agile_methods_pre, papers_agile_methods_post, by=c("agg_level", "level")),
+    dplyr::full_join(papers_agile_results_pre, papers_agile_results_post, by=c("agg_level", "level"))
+  )
+
+
+levels_ordered = c("Input data-HIGH", "Input data-LOW", "Methods-HIGH", "Methods-LOW", "Results-LOW", "Results-HIGH")
+
+merged_agile <-
+  merged_agile |> 
+  dplyr::mutate(gap_p = agg_level_p_post - agg_level_p_pre) |>
+  dplyr::mutate(level = factor(level))
+
+  
+#merged_agile$level <- fct_relevel(merged_agile$level, levels_ordered)
+
+```
+
+
+```{r}
+
+# Same colors as per each criteriaUse s
+# colours <- RColorBrewer::brewer.pal(length(categoryColumns), "Set1")
+colours <- c("#E41A1C", "#E41A1C", "#377EB8", "#377EB8", "#4DAF4A", "#4DAF4A")
+
+merged_agile %>% 
+  dplyr::select(-agg_level_n_pre, -agg_level_n_post, -agg_level) |>
+  ggplot2::ggplot(aes(x=gap_p, y=level)) +
+  ggplot2::geom_col(aes(fill = level,
+               alpha = ifelse(gap_p < 0, .4, 1)), 
+               show.legend = FALSE) +
+  ggplot2::geom_text(
+      aes(label = scales::label_percent(accuracy = 0.1)(gap_p),
+          hjust = ifelse(gap_p < 0, -0.1, 1.1)),
+      size = 2.5,
+      color = "black"
+    ) +
+
+  ggplot2::geom_vline(xintercept = 0, linetype = "solid", color = "grey") + # Reference line at 0%
+  ggplot2::geom_hline(yintercept = 4.5, linetype = "dashed", color = "grey") +
+  ggplot2::geom_hline(yintercept = 2.5, linetype = "dashed", color = "grey") +
+  
+  ggplot2::scale_x_continuous(labels = scales::percent_format(accuracy = 1))+
+  ggplot2::scale_fill_manual(values = colours) +
+  ggplot2::labs(
+    title = "AGILE papers",
+    x = "Percentatge diference (gap) between % post and % pre") +
+  ggthemes::theme_tufte(base_size = 10) +
+  ggplot2::theme(plot.title = element_text(hjust = 0.5)) + # Title centered, 
+  ggplot2::theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) -> plot_delta_agile
+
+ 
+
+
+```
+
+```{r}
+plot_delta_agile
+```
+
+
+
+
+```{r}
+#| label: fig-delta
+#| warning: false
+#| fig-cap: "TO BE DEFINED."
+#| fig-width: 14
+#| fig-asp: 0.8
+#| out-width: 100%
+#| fig-align: center
+
+(plot_delta_giscience + plot_delta_agile)  + 
+  plot_layout(widths = c(1,1)) + 
+  plot_annotation(
+    title = "GIScience vs AGILE: Variation in  percentage of HIGH and LOW before and after the intervention.",
+    subtitle = "Assessment scores grouped into HIGH and LOW aggregation levels.")
+  theme(plot.tag = element_text(size = 10))
+
+
+```
+
+```{r}
+#| label: fig-delta-save
+#| warning: false
+
+#ggplot2::ggsave(file = here::here("figs", "AGILE_pre_post.svg"),
+#       width = 10, height = 7, dpi = 300)
+ggplot2::ggsave(file = here::here("figs", "GIScience_AGILE_delta.png"),
+       width = 10, height = 6, dpi = 300)
+
+```
