@@ -990,7 +990,6 @@ percent_agg_level = function(df, col, lbl) {
                      agg_level_p = sum(p)) |>
     dplyr::ungroup() |>
     dplyr::mutate(level = paste0(lbl,"-",agg_level))
-  
 }
 ```
 
@@ -1071,7 +1070,7 @@ merged_giscience <-
   )
 
 
-levels_ordered = c("Input data-HIGH", "Input data-LOW", "Methods-HIGH", "Methods-LOW", "Results-LOW", "Results-HIGH")
+levels_ordered = c("Input data-HIGH", "Input data-LOW", "Methods...-HIGH", "Methods...-LOW", "Results-LOW", "Results-HIGH")
 
 # Manual trick: As there are NA values, i.e, no papers in some `level`, replaced by 0
 merged_giscience <-
@@ -1114,7 +1113,7 @@ merged_giscience %>%
   ggplot2::scale_fill_manual(values = colours) +
   ggplot2::labs(
     title = "GIScience papers",
-    x = "Percentatge diference (gap) between % post and % pre", 
+    x = "Change in percentatge (gap) = % post - % pre", 
     y = "Criteria and levels grouped into HIGH (A,O) and LOW (U, D)") +
   ggthemes::theme_tufte(base_size = 10) +
   ggplot2::theme(plot.title = element_text(hjust = 0.5)) + # Title centered, 
@@ -1249,7 +1248,7 @@ merged_agile %>%
   ggplot2::scale_fill_manual(values = colours) +
   ggplot2::labs(
     title = "AGILE papers",
-    x = "Percentatge change diference (gap) between % post and % pre") +
+        x = "Change in percentatge (gap) = % post - % pre") +
   ggthemes::theme_tufte(base_size = 10) +
   ggplot2::theme(plot.title = element_text(hjust = 0.5)) + # Title centered, 
   ggplot2::theme(axis.title.y=element_blank(),
