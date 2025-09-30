@@ -185,7 +185,7 @@ ggplot2::ggplot(papers_agile_post_sankey,
     fill = "Reproducible badge?") +
   ggplot2::theme_minimal() +
   ggplot2::theme(plot.tag = element_text(size = 8)) +
-  ggplot2::theme(legend.position = "right")
+  ggplot2::theme(legend.position = "bottom")
 
 
 ```

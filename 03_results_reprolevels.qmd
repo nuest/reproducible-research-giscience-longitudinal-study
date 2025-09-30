@@ -1087,26 +1087,28 @@ merged_giscience <-
 
 ```{r}
 
-# Same colors as per each criteriaUse s
-# colours <- RColorBrewer::brewer.pal(length(categoryColumns), "Set1")
-colours <- c("#E41A1C", "#E41A1C", "#377EB8", "#377EB8", "#4DAF4A", "#4DAF4A")
+# Same colors as per each criteria used before
+colours <- RColorBrewer::brewer.pal(length(categoryColumns), "Set1")
+#colours <- c("#E41A1C", "#E41A1C", "#377EB8", "#377EB8", "#4DAF4A", "#4DAF4A")
 
 merged_giscience %>% 
+  # To avoid redundancy, keep entries with HIGH level
+  dplyr::filter(agg_level == "HIGH") |>
   dplyr::select(-agg_level_n_pre, -agg_level_n_post, -agg_level) |>
   ggplot2::ggplot(aes(x=gap_p, y=level)) +
   ggplot2::geom_col(aes(fill = level,
-               alpha = ifelse(gap_p < 0, .4, .7)), 
+               alpha = ifelse(gap_p < 0, .4, 1)), 
                show.legend = FALSE) +
   ggplot2::geom_text(
       aes(label = scales::label_percent(accuracy = 0.1)(gap_p),
-          hjust = ifelse(gap_p < 0, -0.1, 0.9)),
-      size = 2.5,
+          hjust = ifelse(gap_p < 0, -0.1, 1.2)),
+      size = 4,
       color = "black"
     ) +
 
   ggplot2::geom_vline(xintercept = 0, linetype = "solid", color = "grey") + # Reference line at 0%
-  ggplot2::geom_hline(yintercept = 4.5, linetype = "dashed", color = "grey") +
-  ggplot2::geom_hline(yintercept = 2.5, linetype = "dashed", color = "grey") +
+  #ggplot2::geom_hline(yintercept = 4.5, linetype = "dashed", color = "grey") +
+  #ggplot2::geom_hline(yintercept = 2.5, linetype = "dashed", color = "grey") +
   
   ggplot2::scale_x_continuous(labels = scales::percent_format(accuracy = 1))+
   ggplot2::scale_fill_manual(values = colours) +
@@ -1220,31 +1222,34 @@ merged_agile <-
 ```{r}
 
 # Same colors as per each criteriaUse s
-# colours <- RColorBrewer::brewer.pal(length(categoryColumns), "Set1")
-colours <- c("#E41A1C", "#E41A1C", "#377EB8", "#377EB8", "#4DAF4A", "#4DAF4A")
+colours <- RColorBrewer::brewer.pal(length(categoryColumns), "Set1")
+# colours <- c("#E41A1C", "#E41A1C", "#377EB8", "#377EB8", "#4DAF4A", "#4DAF4A")
 
 merged_agile %>% 
+  # To avoid redundancy, keep entries with HIGH level
+  dplyr::filter(agg_level == "HIGH") |>
   dplyr::select(-agg_level_n_pre, -agg_level_n_post, -agg_level) |>
   ggplot2::ggplot(aes(x=gap_p, y=level)) +
-  ggplot2::geom_col(aes(fill = level,
-               alpha = ifelse(gap_p < 0, .4, 1)), 
+  ggplot2::geom_col(aes(fill = level),
+               #alpha = ifelse(gap_p < 0, .4, 1.0)),
+               alpha = 1.0,
                show.legend = FALSE) +
   ggplot2::geom_text(
       aes(label = scales::label_percent(accuracy = 0.1)(gap_p),
           hjust = ifelse(gap_p < 0, -0.1, 1.1)),
-      size = 2.5,
+      size = 4,
       color = "black"
     ) +
 
   ggplot2::geom_vline(xintercept = 0, linetype = "solid", color = "grey") + # Reference line at 0%
-  ggplot2::geom_hline(yintercept = 4.5, linetype = "dashed", color = "grey") +
-  ggplot2::geom_hline(yintercept = 2.5, linetype = "dashed", color = "grey") +
+  #ggplot2::geom_hline(yintercept = 4.5, linetype = "dashed", color = "grey") +
+  #ggplot2::geom_hline(yintercept = 2.5, linetype = "dashed", color = "grey") +
   
   ggplot2::scale_x_continuous(labels = scales::percent_format(accuracy = 1))+
   ggplot2::scale_fill_manual(values = colours) +
   ggplot2::labs(
     title = "AGILE papers",
-    x = "Percentatge diference (gap) between % post and % pre") +
+    x = "Percentatge change diference (gap) between % post and % pre") +
   ggthemes::theme_tufte(base_size = 10) +
   ggplot2::theme(plot.title = element_text(hjust = 0.5)) + # Title centered, 
   ggplot2::theme(axis.title.y=element_blank(),
@@ -1275,8 +1280,8 @@ plot_delta_agile
 (plot_delta_giscience + plot_delta_agile)  + 
   plot_layout(widths = c(1,1)) + 
   plot_annotation(
-    title = "GIScience vs AGILE: Variation in  percentage of HIGH and LOW before and after the intervention.",
-    subtitle = "Assessment scores grouped into HIGH and LOW aggregation levels.")
+    title = "GIScience vs AGILE: Change in percentage",
+    subtitle = "Variation between HIGH and LOW before and after the intervention.")
   theme(plot.tag = element_text(size = 10))
 
 
@@ -1286,9 +1291,9 @@ plot_delta_agile
 #| label: fig-delta-save
 #| warning: false
 
-#ggplot2::ggsave(file = here::here("figs", "AGILE_pre_post.svg"),
+#ggplot2::ggsave(file = here::here("figs", "GIScience_AGILE_delta.svg"),
 #       width = 10, height = 7, dpi = 300)
 ggplot2::ggsave(file = here::here("figs", "GIScience_AGILE_delta.png"),
-       width = 10, height = 6, dpi = 300)
+       width = 10, height = 5, dpi = 300)
 
 ```
