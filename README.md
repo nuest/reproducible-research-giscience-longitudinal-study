@@ -46,8 +46,7 @@ Several options to setup a computational environment to reproduce the analyses a
 
 
 #### Reproduce online with Binder
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nuest
-reproducible-research-giscience-longitudinal-study/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nuest/reproducible-research-giscience-longitudinal-study/HEAD)
 
 > [!NOTE]
 > Building the computing enviroment in Binder can be slow.

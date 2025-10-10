@@ -19,9 +19,7 @@ library(scales)
 
 ## Goal
 
-Reads original data assessment as a CSV file (`data` folder) and creates a CSV file (`data-clean` folder):
-
-- `all-data.csv` file: all data items collected initially. Some transformations applied.
+Reads original data assessment as a CSV file (`data` folder) and creates a CSV file (`data-clean` folder) called `all-data.csv`. This file includes all data items collected initially. Some transformations are applied.
 
 
 ```{r}
@@ -58,8 +56,8 @@ all_data <-
                 disagr_type,
                 AGILE_badge = `AGILE Reproducible badge`,
                 AGILE_reproreport = `AGILE Reproducible report`) |>
-  dplyr::mutate(AGILE_badge = na_if(AGILE_badge, FALSE)) |> # No badge is codified as NA and FALSE -> consolidate to FALSE. ERROR HERE, replace by sentence below
-  #dplyr::mutate(AGILE_badge = if_else(is.na(AGILE_badge), FALSE, TRUE)) |>
+#  dplyr::mutate(AGILE_badge = na_if(AGILE_badge, FALSE)) |> # No badge is codified as NA and FALSE -> consolidate to FALSE. ERROR HERE, replace by sentence below
+  dplyr::mutate(AGILE_badge = if_else(is.na(AGILE_badge), FALSE, as.logical(AGILE_badge))) |> # No badge is codified as NA and FALSE.
   dplyr::rename_with(tolower)
 
 ```
@@ -88,7 +86,7 @@ all_data <-
     rev1_data == "1 documented" ~ "D",
     rev1_data == "2 available" ~ "A",
     rev1_data == "3 available & open" ~ "O",
-    is.na(rev1_data) ~ "Not applicable"))
+    is.na(rev1_data) ~ "NA"))
 
 
 all_data <- 
@@ -98,7 +96,7 @@ all_data <-
     rev1_methods == "1 documented" ~ "D",
     rev1_methods == "2 available" ~ "A",
     rev1_methods == "3 available & open" ~ "O",
-    is.na(rev1_methods) ~ "Not applicable"))
+    is.na(rev1_methods) ~ "NA"))
 
 all_data <- 
   all_data |>
@@ -107,7 +105,7 @@ all_data <-
     rev1_results == "1 documented" ~ "D",
     rev1_results == "2 available" ~ "A",
     rev1_results == "3 available & open" ~ "O",
-    is.na(rev1_results) ~ "Not applicable"))
+    is.na(rev1_results) ~ "NA"))
 
 all_data <- 
   all_data |>
@@ -116,7 +114,7 @@ all_data <-
     rev2_data == "1 documented" ~ "D",
     rev2_data == "2 available" ~ "A",
     rev2_data == "3 available & open" ~ "O",
-    is.na(rev2_data) ~ "Not applicable"))
+    is.na(rev2_data) ~ "NA"))
 
 all_data <- 
   all_data |>
@@ -125,7 +123,7 @@ all_data <-
     rev2_methods == "1 documented" ~ "D",
     rev2_methods == "2 available" ~ "A",
     rev2_methods == "3 available & open" ~ "O",
-    is.na(rev2_methods) ~ "Not applicable"))
+    is.na(rev2_methods) ~ "NA"))
 
 all_data <- 
   all_data |>
@@ -134,7 +132,7 @@ all_data <-
     rev2_results == "1 documented" ~ "D",
     rev2_results == "2 available" ~ "A",
     rev2_results == "3 available & open" ~ "O",
-    is.na(rev2_results) ~ "Not applicable"))
+    is.na(rev2_results) ~ "NA"))
 
 all_data <- 
   all_data |>
@@ -143,7 +141,7 @@ all_data <-
     consolidated_data == "1 documented" ~ "D",
     consolidated_data == "2 available" ~ "A",
     consolidated_data == "3 available & open" ~ "O",
-    is.na(consolidated_data) ~ "Not applicable"))
+    is.na(consolidated_data) ~ "NA"))
 
 
 all_data <- 
@@ -153,7 +151,7 @@ all_data <-
     consolidated_methods == "1 documented" ~ "D",
     consolidated_methods == "2 available" ~ "A",
     consolidated_methods == "3 available & open" ~ "O",
-    is.na(consolidated_methods) ~ "Not applicable")) 
+    is.na(consolidated_methods) ~ "NA")) 
 
 all_data <-
   all_data |>
@@ -162,7 +160,7 @@ all_data <-
     consolidated_results == "1 documented" ~ "D",
     consolidated_results == "2 available" ~ "A",
     consolidated_results == "3 available & open" ~ "O",
-    is.na(consolidated_results) ~ "Not applicable"))
+    is.na(consolidated_results) ~ "NA"))
 
 ```
 
@@ -182,13 +180,19 @@ List of disagreements during the assessment phase:
 
 - **uncertain assessment (according to protocol assessment)**: either reviewer wrote that they are unsure about level x or y, so we could just change that to the level matching the other reviewer. 
 
-- **major disagreement**: when reviewers' notes (or lack of notes) cannot explain differences in assessment and conversation to get an agreement is necessary and/or checking again the paper is required.
+- **significant disagreement**: when reviewers' notes (or lack of notes) cannot explain differences in assessment and conversation to get an agreement is necessary and/or checking again the paper is required. Initially codified as *major disagreement*; replaced by *significant disagreement*.
 
 
 
 ```{r}
 #| label: disagr-type
 #| message: false
+
+
+# "major disagreement" -> "significant disagreement"
+all_data <- 
+  all_data |>
+  dplyr::mutate(disagr_type = if_else(disagr_type == "major disagreement", "significant disagreement", disagr_type))
 
 
 all_data <- 
@@ -198,7 +202,7 @@ all_data <-
     disagr_type == "borderline conceptual paper" ~ 1,
     disagr_type == "annotation inconsistencies" ~ 2,
     disagr_type == "uncertain assessment" ~ 3,
-    disagr_type == "major disagreement" ~ 4))
+    disagr_type == "significant disagreement" ~ 4))
 
 
 ```
