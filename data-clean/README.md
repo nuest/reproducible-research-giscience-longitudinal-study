@@ -26,12 +26,12 @@ Columns of the `all-data.csv` file
 | `rev1_notes` | Assessment notes taken by A1 | String |
 | `rev2_notes` | Assessment notes taken by A2 | String |
 | `consolidated_cp` | Final value agreed between `rev1_cp` and `rev2_cp` | True/False |
-| `consolidated_data` | Final value agreed between `rev1_data` and `rev2_data` | "U", "D", "A", "O", NA" |
-| `consolidated_methods` | Final value agreed between `rev1_methods` and `rev2_methods` | "U", "D", "A", "O", NA" |
-| `consolidated_results` | Final value agreed between `rev1_results` and `rev2_results` | "U", "D", "A", "O", NA" |
+| `consolidated_data` | Final value agreed between `rev1_data` and `rev2_data` | "U", "D", "A", "O", "NA" |
+| `consolidated_methods` | Final value agreed between `rev1_methods` and `rev2_methods` | "U", "D", "A", "O", "NA" |
+| `consolidated_results` | Final value agreed between `rev1_results` and `rev2_results` | "U", "D", "A", "O", "NA" |
 | `consolidated_ce` | Final value agreed between `rev1_ce` and `rev2_ce` | True/False |
 | `consolidated_notes` | Notes related to the discussion to reach a consensus on `consolidated_*` | String |
 | `disagr_type` | Categories of disagreement between A1 and A2 | "no disagreement", "borderline conceptual paper", "annotation inconsistencies", "uncertain assessment", "significant disagreement" |
 | `disagr_id` | Numeric values associated to `disagr_type` | 0, 1, 2, 3, 4 | 
 | `agile_badge`| If an AGILE paper earned a Reprocucibility badge | True/False |
-| `agile_reproreport` | Link to AGILE Reproducibility Report | URL, `NA` | 
+| `agile_reproreport` | Link to AGILE Reproducibility Report | URL or `NA` | 
