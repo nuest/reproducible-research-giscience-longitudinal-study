@@ -1,7 +1,12 @@
 # reproducible-research-giscience-longitudinal-study
 
+<!--TODO: Linked badge to preprint-->
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XYZ.svg)](https://doi.org/10.5281/zenodo.XYZ)
+<!--TODO: Linked based to journal paper-->
+
+<!--TODO: Linked badge to Assessment Protocol-->
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XYZ.svg)](https://doi.org/)
 
 This is the data and software repo to support the computational analysis related to the paper *Impact of reproducible paper
 guidelines on computational papers: A longitudinal study on the AGILE and GIScience conference series*. 
@@ -10,8 +15,12 @@ Daniel Nüst <a href="https://orcid.org/0000-0002-0024-5046"><img alt="ORCID log
 Carlos Granell <a href="https://orcid.org/0000-0003-1004-9695"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"/></a>.
 
 
-## Study goals and methodology
+Acknowledgement: [AGILE](https://agile-gi.eu/)...
 
+## Study goals and overall methodology
+
+
+TODO: 
 
 Data...
 
@@ -42,17 +51,28 @@ So far, configuration used for Quarto documents.
 ## Reproducibility
 
 ### Reproducibility setup
-Several options to setup a computational environment to reproduce the analyses are offered: online and locally.
+
+- TODO: create one common configuration for R/Python. Now, R notebooks are based on `rocker/rstudio:4.4`, and python notebooks on conda.
 
 
 #### Reproduce online with Binder
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nuest/reproducible-research-giscience-longitudinal-study/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/)
 
 > [!NOTE]
 > Building the computing enviroment in Binder can be slow.
 
 
-### Reproduce 
+#### Reproduce locally with Docker
+
+
+## Execution sequence of scripts
+
+- Indicate here the execution sequence of scripts 
+
+- Indicate here which script generates each figure/table of the published paper:
+  - `02_methods.qmd` generates **Table 1** and **Table 2**.
+  - `03_results_reprolevels.qmd` generates...
+  - `04_results_assessprocess.qmd` generates...
 
 ## License
 
