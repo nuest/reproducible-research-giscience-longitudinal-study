@@ -1,7 +1,7 @@
 ---
 title: "02_methods"
 description: |
-    Supporting notebook for calculating basic statistics related to the papers corpus. See the "Methods" section in the final articel
+    Supporting notebook for calculating basic statistics related to the papers corpus. See the **Methods** section in the final article.
     
 #execute:
 #  echo: false

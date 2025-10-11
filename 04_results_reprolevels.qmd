@@ -1,8 +1,8 @@
 ---
 title: "03_results_reprolevels"
 description: |
-    Support notebook to compute the reproducibilty scores of the eligible papers, which is connected to section 3 (*Results*). 
-
+    Supporting notebook to compute the reproducibilty scores of the eligible papers. See the **Results** section in the final article.
+    
 #execute:
 #  echo: false
 format: 
