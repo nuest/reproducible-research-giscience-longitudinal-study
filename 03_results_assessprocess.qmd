@@ -409,9 +409,15 @@ disagr_uncertain <-
   assessment |>
   dplyr::select(-paper, -rev1, -rev2, -rev1_cp, -rev2_cp, -rev1_notes, -rev2_notes) |>
   dplyr::filter(disagr_type == curr_type) |>
-  dplyr::mutate(disagr_dat = (rev1_data != rev2_data)) |>
-  dplyr::mutate(disagr_met = (rev1_methods != rev2_methods)) |>
-  dplyr::mutate(disagr_res = case_when (
+  dplyr::mutate(disagr_dat = case_when(
+    is.na(rev1_data) ~ TRUE,
+    is.na(rev2_data) ~ TRUE,
+    .default = (rev1_data != rev2_data))) |>
+  dplyr::mutate(disagr_met = case_when(
+    is.na(rev1_methods) ~ TRUE,
+    is.na(rev2_methods) ~ TRUE,
+    .default =(rev1_methods != rev2_methods))) |>
+  dplyr::mutate(disagr_res = case_when(
     is.na(rev1_results) ~ TRUE,
     is.na(rev2_results) ~ TRUE,
     .default = (rev1_results != rev2_results)))
@@ -473,7 +479,7 @@ tbl_disagr_uncertain <-
     align = c("center"),
     columns = everything()
   ) |>
-  # Commented code for make table cell in bold. 
+  # Commented code for make table cells in bold. 
   #gt::tab_style(
   #  style = cell_text(weight = "bold"),
   #  locations = 
@@ -539,8 +545,7 @@ tbl_disagr_uncertain <-
     footnote = md("Minor disagreements at the GIScience conference."),
     locations = cells_body(columns = p_res, rows = 4)
   )
-  #gt::tab_options(footnotes.multiline = FALSE)
-  #gt::opt_all_caps()
+  #gt::tab_options(footnotes.multiline = FALSE)  # All footnotes as a single line.
 
 
 tbl_disagr_uncertain
@@ -582,11 +587,11 @@ tbl_latex |>
 
 
 
-In @fig-disagr-uncertain-heatmap, we look now at the individual scores (UDAI levels) for each of the dimensions (data, methods, results), considering AGILE (top row) and GIScience (bottom row).
+In @fig-disagr-uncertain-heatmap, we look now at the individual scores (UDAO levels) for each of the dimensions (data, methods, results), considering AGILE (top row) and GIScience (bottom row).
 
 ```{r}
 #| label: fig-disagr-uncertain-heatmap
-#| fig-cap: "Counts UDAI score for 'uncertain disagreement' between reviewers (heatmap): AGILE vs GIScience"
+#| fig-cap: "Counts of UDAO scores for 'uncertain disagreement' between assessors (heatmap): AGILE vs GIScience"
 #| fig-subcap: 
 #|     - "AGILE: Data"
 #|     - "AGILE: Methods"
@@ -679,8 +684,8 @@ heatmap_agile_met |>
   ggplot2::scale_fill_gradient(low = "blue", high = "red") + 
   ggplot2::coord_fixed() +
   ggplot2::labs(title = "AGILE: Methods disagreement",
-       x = "Reviewer 1",
-       y = "Reviewer 2") +
+       x = "Assessor 1",
+       y = "Assessor 2") +
   ggplot2::theme_minimal()
 
 
@@ -691,8 +696,8 @@ heatmap_agile_res |>
   ggplot2::scale_fill_gradient(low = "blue", high = "red") + 
   ggplot2::coord_fixed() +
   ggplot2::labs(title = "AGILE: Results disagreement",
-       x = "Reviewer 1",
-       y = "Reviewer 2") +
+       x = "Assessor 1",
+       y = "Assessor 2") +
   ggplot2::theme_minimal()
 
 
@@ -703,8 +708,8 @@ heatmap_giscience_dat |>
   ggplot2::scale_fill_gradient(low = "blue", high = "red") + 
   ggplot2::coord_fixed() +
   ggplot2::labs(title = "GIScience: Data disagreement",
-       x = "Reviewer 1",
-       y = "Reviewer 2") +
+       x = "Assessor 1",
+       y = "Assessor 2") +
   ggplot2::theme_minimal()
 
 heatmap_giscience_met |>
@@ -714,8 +719,8 @@ heatmap_giscience_met |>
   ggplot2::scale_fill_gradient(low = "blue", high = "red") + 
   ggplot2::coord_fixed() +
   ggplot2::labs(title = "GIScience: Methods disagreement",
-       x = "Reviewer 1",
-       y = "Reviewer 2") +
+       x = "Assessor 1",
+       y = "Assessor 2") +
   ggplot2::theme_minimal()
 
 
@@ -726,8 +731,8 @@ heatmap_giscience_res |>
   ggplot2::scale_fill_gradient(low = "blue", high = "red") + 
   ggplot2::coord_fixed() +
   ggplot2::labs(title = "GIScience: Results disagreement",
-       x = "Reviewer 1",
-       y = "Reviewer 2") +
+       x = "Assessor 1",
+       y = "Assessor 2") +
   ggplot2::theme_minimal()
 
 ```
@@ -760,16 +765,22 @@ n_disagr_significant_giscience <-
   dplyr::count() |>
   dplyr::pull(n)
 
-
 disagr_significant <- 
   assessment |>
   dplyr::select(-paper, -rev1, -rev2, -rev1_cp, -rev2_cp, -rev1_notes, -rev2_notes) |>
   dplyr::filter(disagr_type == curr_type) |>
-  dplyr::mutate(disagr_dat = (rev1_data != rev2_data)) |>
-  dplyr::mutate(disagr_met = (rev1_methods != rev2_methods)) |>
-  dplyr::mutate(disagr_res = (rev1_results != rev2_results)) 
-
-
+  dplyr::mutate(disagr_dat = case_when(
+    is.na(rev1_data) ~ TRUE,
+    is.na(rev2_data) ~ TRUE,
+    .default = (rev1_data != rev2_data))) |>
+  dplyr::mutate(disagr_met = case_when(
+    is.na(rev1_methods) ~ TRUE,
+    is.na(rev2_methods) ~ TRUE, 
+    .default = (rev1_methods != rev2_methods))) |>
+  dplyr::mutate(disagr_res = case_when(
+    is.na(rev1_results) ~ TRUE,
+    is.na(rev2_results) ~ TRUE,
+    .default = (rev1_results != rev2_results))) 
 ```
 
 
@@ -777,7 +788,7 @@ disagr_significant <-
 #| label: tbl-disagr-significant-conf
 #| tbl-cap: "Distribution of 'significant disagreement'"
 
-tbl_disagr_significant <-
+data_tbl_disagr_significant <-
   bind_cols(
     disagr_significant |>
     dplyr::group_by(conf, disagr_dat) |>
@@ -803,53 +814,96 @@ tbl_disagr_significant <-
     dplyr::select(-conf)
   )
 
-tbl_disagr_significant |>
+tbl_disagr_significant <-
+  data_tbl_disagr_significant |>
+  dplyr::mutate(conf = stringr::str_to_upper(conf)) |>
   gt::gt() |>
   gt::tab_header(
     title = stringr::str_glue("Significant disagreement (N={n_disagr_significant})"),
-    subtitle = md("Applied to *Data*, *Methods* and *Results* scores (of the two reviewers).<br>The lowest disagreements are in cyan, the highest disagreements in red.")
+    subtitle = md("Applied to *Input data*, *Methods,...* and *Results* dimensions.")
   ) |>
   gt::tab_spanner(
-    label = md("**Data**"),
+    label = md("**Input data**"),
     columns = ends_with("_dat"),
   ) |>
   gt::tab_spanner(
-    label = md("**Methods**"),
+    label = md("**Methods,...**"),
     columns = ends_with("_met"),
   ) |>
   gt::tab_spanner(
     label = md("**Results**"),
     columns = ends_with("_res"),
   ) |>
-  gt::tab_style(
-    style = cell_text(weight = "bold"),
-    locations = 
-      cells_body(
-        rows = disagr_dat == TRUE)
+  gt::cols_align(
+    align = c("center"),
+    columns = everything()
   ) |>
-  gt::tab_style(
-    style = list(
-      cell_fill(color = "indianred"),
-      cell_text(color = "white")
-      ),
-    locations = cells_body(
-        columns = p_dat,
-        rows = p_dat >= 0.7
-    )
-  ) |>
+  # Commented code for make table cells in bold.
+  #gt::tab_style(
+  #  style = cell_text(weight = "bold"),
+  #  locations = 
+  #    cells_body(
+  #      rows = disagr_dat == TRUE)
+  #) |>
+  # Commented code for coloring table cells. Replaced by footnotes (best for exporting to latex)
+  #gt::tab_style(
+  #  style = list(
+  #    cell_fill(color = "indianred"),
+  #    cell_text(color = "white")
+  #    ),
+  #  locations = cells_body(
+  #      columns = p_dat,
+  #      rows = p_dat >= 0.7
+  #  )
+  #) |>
   gt::fmt_percent(
     columns = c(p_dat, p_met, p_res),
     decimals = 1
   ) |>
+  gt::fmt_tf(
+    columns = c(disagr_dat, disagr_met, disagr_res),
+    tf_style = "yes-no"
+  ) |>
   gt::cols_label(
-    conf = md("**Conf Series**"),
-    disagr_dat = md("*Disagreement?*"),
-    disagr_met = md("*Disagreement?*"),
-    disagr_res = md("*Disagreement?*"))
+    conf = md("*Conf Series*"),
+    disagr_dat = md("*Disagr?*"),
+    disagr_met = md("*Disagr?*"),
+    disagr_res = md("*Disagr?*"),
+    n_dat = md("*#*"),
+    p_dat = md("*%*"),
+    n_met = md("*#*"),
+    p_met = md("*%*"),
+    n_res = md("*#*"),
+    p_res = md("*%*"),
+  ) |>
+  gt::tab_style(
+    style = cell_borders(sides = c("bottom"),  weight = px(1.5)),
+    locations = cells_body(rows = 2)
+  ) |>
+  gt::opt_align_table_header(align = "center") |>
+  gt::tab_footnote(
+    footnote = "Major disagreements at both conferences.",
+    locations = cells_body(columns = p_dat, rows = c(2, 4))
+  ) |>
+  gt::tab_footnote(
+    footnote = md("Minor disagreements at the AGILE conference."),
+    locations = cells_body(columns = p_res, rows = 2)
+  ) |>
+  gt::tab_footnote(
+    footnote = md("Minor disagreements at the GIScience conference."),
+    locations = cells_body(columns = c(p_met, p_res), rows = 4)
+  )
+  
+  #gt::tab_options(footnotes.multiline = FALSE)  # All footnotes as a single line.
+
+
+tbl_disagr_significant
 
 ```
 
-What we observe in @tbl-disagr-significant-conf (rows in **bold** only): 
+@tbl-disagr-significant-conf corresponds to the **Table 5: Distribution of "significant disagreement" (N=42) per conference and criterion** of the published paper. 
+
+What we observe in @tbl-disagr-significant-conf (only rows with `Disagr?` == `yes`) is: 
 
 - AGILE: 
   - Lowest proportion of `major disagreement` is in **Results**. 
@@ -860,6 +914,21 @@ What we observe in @tbl-disagr-significant-conf (rows in **bold** only):
   - Lowest proportion of `major disagreement` is in **Methods and Results**, same proportion. 
   - Highest proportion of `uncertain disagreement` is in **Data**.
   - From higher to lower proportion of disagreements: Data -> Methods/Results 
+
+
+```{r}
+#| label: table-disagr-significant-to-latex
+#| eval: false
+#| echo: false
+
+tbl_latex <- 
+  tbl_disagr_significant |>
+  gt::as_latex()
+
+tbl_latex |>
+  as.character() |>
+  cat()
+```
 
 
 ## Remarks
