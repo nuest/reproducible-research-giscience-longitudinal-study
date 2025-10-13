@@ -29,6 +29,7 @@ library(scales)
 library(stringr)
 library(gt)
 library(ggplot2)
+library(ggthemes)
 ```
 
 
@@ -46,8 +47,6 @@ assessment <-
                 rev2, rev2_cp, rev2_data, rev2_methods, rev2_results, rev2_notes,
                 disagr_type, disagr_id) |>
   dplyr::arrange(conf, year)
-
-
 ```
 
 Selected/relevant columns are: `{r} stringr::str_flatten_comma(names(assessment))`. More details [here](https://github.com/nuest/reproducible-research-giscience-longitudinal-study/tree/main/data-clean).
@@ -69,7 +68,6 @@ n_papers_giscience <-
   count(conf) |>
   filter(conf == "giscience") |>
   pull(n)
-
 
 ```
 
@@ -374,6 +372,85 @@ disagr_giscience |>
 -   it's pretty clear that `no disagreement` has steadily declined since the beginning of the series, reaching its lowest percentage in the final year of the series for both conferences. However this common pattern develops differently for each conference: `no dissagrement` halved in AGILE 2018 and remained stable at this trend until AGILE 2024.
 
 -   For the same year of AGILE papers, the highest percentages (in red) of `uncertain assessment` coincide with the lowest percentages (blue) of `major disagreement` (in blue). And the opposite is true too. However, this pattern, although present, is not repeated as clearly in the GIScience articles.
+
+
+```{r}
+#| label: fig-top3-disagr-types-conf-year
+#| fig-cap: "Distribution of 3-top disagreement types per conference and year"
+#| layout-ncol: 1
+#| fig-column: page
+
+top3 = c("no disagreement", "uncertain assessment", "significant disagreement")
+
+disagr_agile_top3 <-
+  disagr_agile |>
+  dplyr::filter(disagr_type %in% top3) |>
+  dplyr::mutate(conf = "AGILE")
+
+disagr_giscience_top3 <-
+  disagr_giscience |>
+  dplyr::filter(disagr_type %in% top3) |>
+  dplyr::mutate(conf = "GIScience")
+
+
+disagr_top3 <-
+  bind_rows(disagr_giscience_top3, disagr_agile_top3)
+
+disagrTop3LinePlot <- function(data) {
+  
+  x_breaks = seq(min(data$year), max(data$year), by=1)
+  y_breaks = seq(0.05, 0.7, by=.1)
+  
+  ggplot2::ggplot(data, 
+                  aes(x = year, y = p, color = disagr_type)) +
+  ggplot2::geom_line(linewidth = 1) +
+  ggplot2::geom_point(size = 7.5) +
+  ggplot2::geom_text(
+    aes(label = scales::label_percent(accuracy = 1)(p)),
+    vjust = 0.4,
+    size = 3,
+    color = "white",
+    fontface = "bold") +
+  ggplot2::facet_wrap(~conf, 
+                      nrow = 1,
+                      scales = "free_x") +
+  ggplot2::scale_y_continuous(labels = scales::label_percent(), # Format y-axis as %
+                              #breaks = seq(0,1,.1)*max(data$p)) +  
+                              breaks = y_breaks)+   
+  ggplot2::scale_x_continuous(breaks = x_breaks) +
+  ggplot2::scale_color_brewer(type = "qual", palette = "Dark2") +
+  ggplot2::guides(
+      color = guide_legend(ncol = 3, position = "bottom")) +
+  ggplot2::labs(
+    x = "Year",
+    y = "Proportion [%]",
+    color = "Disagreement type"
+  ) +
+  ggthemes::theme_tufte(base_size = 10) +
+  ggplot2::theme(
+    strip.text.x = element_text(size = 11),
+    #panel.grid.major.x = element_line( size=.1, color="black" ),
+    panel.grid.major.y = element_line( size=.1, color="black" ) 
+  )
+  
+}
+  
+
+fig_top3 <- disagrTop3LinePlot(disagr_top3)
+
+fig_top3
+```
+
+```{r}
+#| label: fig-top3-disagr-save
+#| warning: false
+
+#ggplot2::ggsave(file = here::here("figs", "GIScience_all.svg"),
+#       width = 10, height = 7, dpi = 300)
+ggplot2::ggsave(file = here::here("figs", "top3_disagr.png"),
+       width = 10, height = 6, dpi = 300)
+
+```
 
 ## Looking at individdual types of disagreements
 
