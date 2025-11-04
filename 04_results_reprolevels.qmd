@@ -365,7 +365,7 @@ ggplot2::ggsave(file = here::here("figs", "GIScience_all.png"),
 ```
 
 
-### Pre-intervention (2016, 2018)
+### Pre-guidelines (2016, 2018)
 
 ```{r}
 #| label: GIScience-globals-pre
@@ -602,7 +602,7 @@ plot3B <- criteriaBarplot2(papers_giscience_results_post, col = consolidated_res
   plot_layout(widths = c(1,1,1)) + 
   plot_annotation(
     title = "GIScience paper assessment according to the criteria 'Input data', 'Methods, analysis, processing', and 'Results'.",
-    subtitle = stringr::str_glue("Top: 2016 and 2018 papers (N={n_papers_giscience_pre}). \nBottom: 2021 and 2023 papers (N={n_papers_giscience_post})."),
+    subtitle = stringr::str_glue("Top: pre-guidelines (2026, 2018) papers (N={n_papers_giscience_pre}). Bottom: post-guidelines (2021 Part II, 2023) papers (N={n_papers_giscience_post}).\n X-axis labels: (U)ndocumented; (D)ocumented; Documented and (A)vailable; Documented, Available and (O)pen."),
     caption = "Note: GIScience 2021 Part I papers excluded (transition year).", 
     tag_levels = 'A') & 
   theme(plot.tag = element_text(size = 8))
@@ -950,7 +950,7 @@ As with *Input Data*, the most frequent level (`{r} papers_agile_methods_post[3,
   plot_layout(widths = c(1,1,1)) + 
   plot_annotation(
     title = "AGILE paper assessment according to the criteria 'Input data', 'Methods, analysis, processing', and 'Results'.",
-    subtitle = stringr::str_glue("Top: Pre-intervention papers 2017-2019 (N={n_papers_agile_pre}). \nBottom: Post-intervention papers 2021-2024 (N={n_papers_agile_post})."),
+    subtitle = stringr::str_glue("Top: pre-intervention (2017-2019) papers (N={n_papers_agile_pre}). Bottom: post-intervention (2021-2024) papers (N={n_papers_agile_post}).\n X-axis labels: (U)ndocumented; (D)ocumented; Documented and (A)vailable; Documented, Available and (O)pen."),
     caption = "Note: AGILE 2020 papers excluded (transition year).", 
     tag_levels = 'A') & 
   theme(plot.tag = element_text(size = 8))
