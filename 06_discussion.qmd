@@ -1,5 +1,5 @@
 ---
-title: "05_discussion"
+title: "06_discussion"
 description: |
     Support notebook to explore relationship between reproducibilty levels and Reproducibility badge, which is connected to section *Discussion*. 
 

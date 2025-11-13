@@ -71,8 +71,11 @@ So far, configuration used for Quarto documents.
 
 - Indicate here which script generates each figure/table of the published paper:
   - `02_methods.qmd` generates **Table 1** and **Table 2**.
-  - `03_results_assessprocess.qmd` generates **Table 3**, **Table 4**, **Table 5**, and **Figure 2**.
-  - `04_results_reprolevels.qmd` generates...
+  - `03_results_reprolevels.qmd` generates **Figure 2**, **Figure 3**, and **Table 3**.
+  - `04_results_hypotheses.ipynb`generates **Table 4**, **Table 5**, **Table 6**, and **Table 7**.
+  - `05_results_assessprocess.qmd` generates **Table 8**, **Figure 4**, **Table 9**, and **Table 10**.
+  - `06_discussion.qmd` generates **Figure 5**.
+
 
 ## License
 

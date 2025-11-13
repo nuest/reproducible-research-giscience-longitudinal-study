@@ -1296,3 +1296,67 @@ ggplot2::ggsave(file = here::here("figs", "GIScience_AGILE_delta.png"),
        width = 10, height = 5, dpi = 300)
 
 ```
+
+
+```{r}
+
+data_tbl_absolute_change <- 
+  bind_rows(
+    merged_giscience |> 
+      # To avoid redundancy, keep entries with HIGH level
+      dplyr::filter(agg_level == "HIGH") |>
+      dplyr::mutate(conf = "giscience") |>
+      dplyr::select(conf, level, gap_p),
+    
+    merged_agile |>
+      # To avoid redundancy, keep entries with HIGH level
+      dplyr::filter(agg_level == "HIGH") |>
+      dplyr::mutate(conf = "agile") |>
+      dplyr::select(conf, level, gap_p)
+  )
+
+
+tbl_absolute_change <-
+  data_tbl_absolute_change |>
+  dplyr::mutate(conf = stringr::str_to_upper(conf)) |>
+  tidyr::pivot_wider(names_from = conf, values_from = gap_p) |>
+  gt::gt() |>
+  gt::tab_header(
+    title = "GIScience vs AGILE: Absolute change in percentatge points",
+    subtitle = md("Variation between *HIGH* and *LOW* before and after the intervention.")
+  ) |>
+  gt::cols_label(
+    level = md("Aggregate level per criterion*"),
+    GISCIENCE = md("*GIScience*"),
+    AGILE = md("*AGILE*"),
+  ) |>
+  gt::cols_align(
+    align = c("center"),
+    columns = everything()
+  ) |>
+ gt::fmt_percent(
+    columns = c(GISCIENCE, AGILE),
+    decimals = 1
+  ) |>
+  gt::opt_align_table_header(align = "center")
+
+
+tbl_absolute_change
+```
+
+
+```{r}
+#| label: table-absolute_change-to-latex
+#| eval: false
+#| echo: false
+
+tbl_latex <- 
+  tbl_absolute_change |>
+  gt::as_latex()
+
+tbl_latex |>
+  as.character() |>
+  cat()
+
+
+```
