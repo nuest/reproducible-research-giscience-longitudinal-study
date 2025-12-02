@@ -13,7 +13,6 @@ This study was coordinated by Frank Ostermann <a href="https://orcid.org/0000-00
 Daniel Nüst <a href="https://orcid.org/0000-0002-0024-5046"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"/></a>, and 
 Carlos Granell <a href="https://orcid.org/0000-0003-1004-9695"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"/></a>.
 
-
 Acknowledgement: [AGILE](https://agile-gi.eu/)...
 
 ## Study goals and overall methodology
@@ -53,32 +52,37 @@ Methods...
 
 - TODO: create one common configuration for R/Python. Now, R notebooks are based on `rocker/rstudio:4.4`, and python notebooks on conda.
 
-
 #### Reproduce online with Binder
+
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/)
 
 > [!NOTE]
 > Building the computing enviroment in Binder can be slow.
 
-
 #### Reproduce locally with Docker
 
+TODO
 
-## Execution sequence of scripts
+### Mapping of code to figures and tables in the paper
 
-- Indicate here the execution sequence of scripts 
+The following scripts and notebooks each generate figures or tables in the published paper:
 
-- Indicate here which script generates each figure/table of the published paper:
-  - `02_methods.qmd` generates **Table 1** and **Table 2**.
-  - `03_results_reprolevels.qmd` generates **Figure 2**, **Figure 3**, and **Table 3**.
-  - `04_results_hypotheses.ipynb`generates **Table 4**, **Table 5**, **Table 6**, and **Table 7**.
-  - `05_results_assessprocess.qmd` generates **Table 8**, **Figure 4**, **Table 9**, and **Table 10**.
-  - `06_discussion.qmd` generates **Figure 5**.
-
+- `02_methods.qmd` generates **Table 1** and **Table 2**.
+- `03_results_reprolevels.qmd` generates **Figure 2**, **Figure 3**, and **Table 3**.
+- `04_results_hypotheses.ipynb`generates **Table 4**, **Table 5**, **Table 6**, and **Table 7**.
+- `05_results_assessprocess.qmd` generates **Table 8**, **Figure 4**, **Table 9**, and **Table 10**.
+- `06_discussion.qmd` generates **Figure 5**.
 
 ## License
 
+The **code** in this repository (notebooks, scripts) is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). See the [LICENSE](LICENSE) file for details.
+The **data** in this repository (/data, /data-clean) is licensed under [Create Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0). See the [LICENSE-DATA](LICENSE-DATA) file for details.
+The **text** and **figures** in this repository (/manuscript, /figs) are licensed under [Create Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0). See the [LICENSE-MANUSCRIPT](LICENSE-DATA) file for details.
 
 <!--
-Internal links: https://drive.google.com/drive/folders/1pD0fJ6-vOpRJpmLScFuw2QVAg8mVt7e5
+Internal links:
+
+- https://drive.google.com/drive/folders/1pD0fJ6-vOpRJpmLScFuw2QVAg8mVt7e5
+- https://www.overleaf.com/project/67407016f251c6e9fb1c3143
+
 -->
