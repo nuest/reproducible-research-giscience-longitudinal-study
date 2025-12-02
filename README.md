@@ -2,7 +2,7 @@
 
 <!--TODO: Linked badge to preprint-->
 
-<!--TODO: Linked based to journal paper-->
+<!--TODO: Linked badge to journal paper-->
 
 <!--TODO: Linked badge to Assessment Protocol-->
 
@@ -44,8 +44,8 @@ Methods...
 - `*.ipynb` files: [Jupyter notebooks](https://jupyter.org/) for data analysis.
 - `install.R`: R libraries used by Quarto documents.
 - `06_environemnt.yml`: Python libraries used by Jupyter notebooks.
-- `Dockerfile` & `compose.yml`: contains a Dockerfile to build a Docker image using [Docker Compose](https://docs.docker.com/compose/). 
-So far, configuration used for Quarto documents. 
+- `Dockerfile` & `compose.yml`: contains a Dockerfile to build a Docker image using [Docker Compose](https://docs.docker.com/compose/).
+- `manuscript`: contains the manuscript LaTeX source files.
 
 ## Reproducibility
 
@@ -78,3 +78,7 @@ So far, configuration used for Quarto documents.
 
 ## License
 
+
+<!--
+Internal links: https://drive.google.com/drive/folders/1pD0fJ6-vOpRJpmLScFuw2QVAg8mVt7e5
+-->
