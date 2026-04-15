@@ -58,3 +58,5 @@ data/authorship-cache/
 __pycache__/
 
 .claude/
+
+08_authorship.html

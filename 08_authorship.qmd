@@ -250,3 +250,177 @@ ggplot2::ggsave(
   width = 10, height = 8, dpi = 300
 )
 ```
+
+## Same six sub-figures, AGILE and GIScience stacked
+
+The previous figure pools both conferences into one bar per level. This second view
+keeps the same 2x3 layout (pre/post x *Input data* / *Methods* / *Results*) and the
+same bar heights, but splits each bar into two **stacked segments**, one per
+conference -- so the reader can see the AGILE vs. GIScience contribution at each level
+without losing the total.
+
+**Percentage baseline.** Labels inside each segment report the segment's count as a
+share of *all non-conceptual papers of both conferences in that period* -- pre-
+intervention (`year<2020`) for the top row, post-intervention (`year>2020`) for the
+bottom row. This frames cross-author papers as a fraction of the full corpus: "of the
+85 non-conceptual papers published pre-intervention across both conferences, 9.4% were
+cross-author AGILE papers at level Documented on *Methods*", for example.
+
+Conference colours match the convention used in `07_authorship.ipynb` Figure 2
+(AGILE = Brewer `Set1` red, GIScience = Brewer `Set1` blue).
+
+```{r}
+#| label: by-conf-helper
+#| warning: false
+
+criteriaBarplotByConf <- function(df, col, main, baseline_n,
+                                  agg_level = FALSE, agg_level_y = 35) {
+  col <- enquo(col)
+  counts <- df |>
+    dplyr::mutate(!!col := factor(!!col, levels = c("U", "D", "A", "O"))) |>
+    dplyr::count(conf, !!col, .drop = FALSE) |>
+    dplyr::mutate(p = n / baseline_n,
+                  conf_label = dplyr::recode(conf,
+                                             "agile" = "AGILE",
+                                             "giscience" = "GIScience"))
+
+  p <-
+    ggplot2::ggplot(counts, aes(x = !!col, y = n, fill = conf_label)) +
+    # Default geom_col position is "stack"; the two conference segments stack on top
+    # of each other per (x = level) column.
+    ggplot2::geom_col(color = "black") +
+    ggplot2::geom_text(
+      aes(label = dplyr::if_else(n > 0,
+                                 scales::label_percent(accuracy = 0.1)(p),
+                                 "")),
+      position = ggplot2::position_stack(vjust = 0.5),
+      size = 2.8,
+      color = "black"
+    ) +
+    ggplot2::geom_vline(xintercept = 2.5,
+                        linetype = "dotted",
+                        color = "gray",
+                        linewidth = 1) +
+    ggplot2::ggtitle(main) +
+    ggplot2::xlab("Level") +
+    ggplot2::ylab("") +
+    ggplot2::scale_y_continuous(breaks = breaks, limits = range(breaks)) +
+    ggplot2::scale_fill_manual(
+      values = c("AGILE" = "#E41A1C", "GIScience" = "#377EB8"),
+      name = NULL
+    ) +
+    ggthemes::theme_tufte(base_size = 10) +
+    ggplot2::theme(axis.ticks.x = element_blank())
+
+  if (agg_level) {
+    p <- p +
+      ggplot2::annotate("text", x = 2:3, y = agg_level_y,
+                        label = c("LOW", "HIGH"), alpha = 0.5)
+  }
+  return(p)
+}
+```
+
+```{r}
+#| label: by-conf-subset-stats
+
+# Cross-author per-conference counts (used in the subtitle only -- not the percentage
+# denominator).
+n_pre_agile      <- sum(papers_pre_cross$conf  == "agile")
+n_pre_giscience  <- sum(papers_pre_cross$conf  == "giscience")
+n_post_agile     <- sum(papers_post_cross$conf == "agile")
+n_post_giscience <- sum(papers_post_cross$conf == "giscience")
+
+# Percentage denominator: ALL non-conceptual papers (both conferences) per period.
+baseline_pre  <- paper_evaluation |> dplyr::filter(year <  2020) |> nrow()
+baseline_post <- paper_evaluation |> dplyr::filter(year >  2020) |> nrow()
+
+message(stringr::str_glue(
+  "Cross-author papers per conference: ",
+  "pre (AGILE={n_pre_agile}, GIScience={n_pre_giscience}); ",
+  "post (AGILE={n_post_agile}, GIScience={n_post_giscience})."
+))
+message(stringr::str_glue(
+  "Percentage baselines (all non-conceptual papers, both conferences): ",
+  "pre={baseline_pre}; post={baseline_post}."
+))
+```
+
+```{r}
+#| label: by-conf-barplots
+#| warning: false
+
+breaks <- seq(from = 0, to = 35, by = 5)
+
+plotA2 <- criteriaBarplotByConf(papers_pre_cross,
+                                consolidated_data,
+                                "Input data",
+                                baseline_n = baseline_pre,
+                                agg_level = TRUE, agg_level_y = 35)
+plotB2 <- criteriaBarplotByConf(papers_pre_cross,
+                                consolidated_methods,
+                                "Methods, analysis, processing",
+                                baseline_n = baseline_pre)
+plotC2 <- criteriaBarplotByConf(papers_pre_cross,
+                                consolidated_results,
+                                "Results",
+                                baseline_n = baseline_pre)
+
+plotD2 <- criteriaBarplotByConf(papers_post_cross,
+                                consolidated_data,
+                                "Input data",
+                                baseline_n = baseline_post,
+                                agg_level = TRUE, agg_level_y = 35)
+plotE2 <- criteriaBarplotByConf(papers_post_cross,
+                                consolidated_methods,
+                                "Methods, analysis, processing",
+                                baseline_n = baseline_post)
+plotF2 <- criteriaBarplotByConf(papers_post_cross,
+                                consolidated_results,
+                                "Results",
+                                baseline_n = baseline_post)
+```
+
+```{r}
+#| label: fig-cross-author-pre-post-by-conf
+#| warning: false
+#| fig-cap: "Same as the previous figure but with AGILE and GIScience stacked within each bar. Percentages are computed against all non-conceptual papers of both conferences in that period (pre or post)."
+#| fig-width: 10
+#| fig-asp: 0.8
+#| out-width: 100%
+#| fig-align: center
+
+(plotA2 + plotB2 + plotC2) / (plotD2 + plotE2 + plotF2) +
+  plot_layout(widths = c(1, 1, 1), guides = "collect") +
+  plot_annotation(
+    title = "Cross-conference-author papers stacked by conference, assessed per criterion.",
+    subtitle = stringr::str_glue(
+      "Top: pre-intervention (year<2020) cross-author papers ",
+      "(AGILE={n_pre_agile}, GIScience={n_pre_giscience}); ",
+      "percentages against {baseline_pre} non-conceptual papers from both conferences pre-intervention.\n",
+      "Bottom: post-intervention (year>2020) cross-author papers ",
+      "(AGILE={n_post_agile}, GIScience={n_post_giscience}); ",
+      "percentages against {baseline_post} non-conceptual papers from both conferences post-intervention.\n",
+      "X-axis labels: (U)ndocumented; (D)ocumented; Documented and (A)vailable; ",
+      "Documented, Available and (O)pen."
+    ),
+    caption = stringr::str_glue(
+      "2020 excluded (AGILE transition year). A paper counts as cross-author if at ",
+      "least one author also appears on a paper at the other conference in the corpus."
+    ),
+    tag_levels = "A"
+  ) &
+  theme(plot.tag = element_text(size = 8),
+        legend.position = "bottom")
+```
+
+```{r}
+#| label: fig-cross-author-pre-post-by-conf-save
+#| warning: false
+#| echo: false
+
+ggplot2::ggsave(
+  file = here::here("figs", "cross_author_pre_post_by_conf.png"),
+  width = 10, height = 8, dpi = 300
+)
+```
