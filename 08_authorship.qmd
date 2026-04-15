@@ -1,0 +1,252 @@
+---
+title: "08_authorship"
+description: |
+    Recreates the pre- vs post-intervention reproducibility-level distribution figure
+    from `03_results_reprolevels.qmd` (manuscript Figures 2 / 3, a.k.a. `fig:agile` and
+    `fig:giscience` in `manuscript/main.tex`; the JOSIS PDF cites the source as
+    `04_results_reprolevels.qmd`, the file's earlier name), but **pooling both
+    conferences** and restricting to papers with **at least one cross-conference
+    author** -- i.e. papers that have at least one author whose resolved identity also
+    appears on a paper at the other conference series in the corpus.
+
+    Cross-author identities are built in `07_authorship.ipynb` (section 7, two-pass
+    identity merge with ORCID-first and normalised-name fallback, plus any manual
+    resolutions in `data/orcid-resolutions.csv`) and written to `data-clean/authors.csv`.
+    This notebook consumes that file; re-run `07_authorship.ipynb` first if the
+    identity merge has changed.
+format:
+  html:
+    toc: true
+    embed-resources: true
+    code-fold: true
+    code-summary: "Show the code"
+    code-tools: true
+---
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(here)
+library(tidyverse)
+library(dplyr)
+library(scales)
+library(stringr)
+library(ggplot2)
+library(ggthemes)
+library(patchwork)
+library(RColorBrewer)
+```
+
+## Helpers
+
+Copied verbatim from `03_results_reprolevels.qmd` so this notebook is self-contained
+and the panels look identical to the manuscript figures.
+
+```{r}
+#| label: functions
+
+criteriaBarplot2 <- function(df, col, main, colour,
+                             agg_level = FALSE, agg_level_y = 35) {
+  col <- enquo(col)
+  p <-
+    ggplot2::ggplot(df, aes(x = !!col, y = n)) +
+    ggplot2::geom_col(fill = colour, color = "black") +
+    ggplot2::geom_text(
+      aes(label = scales::label_percent(accuracy = 0.1)(p)),
+      vjust = -0.5,
+      size = 3.5,
+      color = "black"
+    ) +
+    ggplot2::geom_vline(xintercept = 2.5,
+                        linetype = "dotted",
+                        color = "gray",
+                        linewidth = 1) +
+    ggplot2::ggtitle(main) +
+    ggplot2::xlab("Level") +
+    ggplot2::xlim(c("U", "D", "A", "O")) +
+    ggplot2::ylab("") +
+    ggplot2::scale_y_continuous(breaks = breaks,
+                                limits = range(breaks)) +
+    ggthemes::theme_tufte(base_size = 10) +
+    ggplot2::theme(axis.ticks.x = element_blank())
+
+  if (agg_level) {
+    p <- p +
+      ggplot2::annotate("text", x = 2:3, y = agg_level_y,
+                        label = c("LOW", "HIGH"), alpha = 0.5)
+  }
+  return(p)
+}
+
+count_pct <- function(df, col) {
+  col <- enquo(col)
+  df |>
+    dplyr::count(!!col) |>
+    dplyr::mutate(p = n / sum(n))
+}
+```
+
+## Load corpus and cross-author subset
+
+```{r}
+#| label: load-data
+#| message: false
+
+paper_evaluation <-
+  readr::read_csv(here::here("data-clean", "all-data.csv"),
+                  na = c("NA", "Not applicable")) |>
+  dplyr::filter(consolidated_cp == FALSE)
+
+authors <- readr::read_csv(
+  here::here("data-clean", "authors.csv"),
+  na = c(""),
+  show_col_types = FALSE
+)
+
+# Cross-conference identities: resolved identities that appear in BOTH conference
+# series (any year, direction pooled -- matches section 8 of 07_authorship.ipynb).
+agile_ids <- authors |>
+  dplyr::filter(conf == "agile") |>
+  dplyr::pull(identity) |>
+  unique()
+giscience_ids <- authors |>
+  dplyr::filter(conf == "giscience") |>
+  dplyr::pull(identity) |>
+  unique()
+cross_ids <- intersect(agile_ids, giscience_ids)
+
+# Papers (from either conference) with >= 1 cross-conference author.
+cross_papers <- authors |>
+  dplyr::filter(identity %in% cross_ids) |>
+  dplyr::pull(paper) |>
+  unique()
+
+paper_evaluation_cross <- paper_evaluation |>
+  dplyr::filter(paper %in% cross_papers)
+
+message(stringr::str_glue(
+  "{length(cross_ids)} cross-conference author identities; ",
+  "{length(cross_papers)} papers with at least one such author ",
+  "(of {nrow(paper_evaluation)} non-conceptual papers)."
+))
+```
+
+## Cross-author papers -- pre- vs post-intervention (both conferences pooled)
+
+The intervention split mirrors `03_results_reprolevels.qmd`: *pre* = `year < 2020`,
+*post* = `year > 2020`, with 2020 excluded as the AGILE transition year (the AGILE
+Reproducibility Guidelines were optional that year). Both AGILE and GIScience papers
+are pooled -- the question this figure answers is how the *set of cross-author papers
+as a whole* distributes across U / D / A / O for each criterion before and after the
+intervention.
+
+```{r}
+#| label: cross-subset
+
+papers_pre_cross  <- paper_evaluation_cross |> dplyr::filter(year <  2020)
+papers_post_cross <- paper_evaluation_cross |> dplyr::filter(year >  2020)
+
+n_pre  <- nrow(papers_pre_cross)
+n_post <- nrow(papers_post_cross)
+
+message(stringr::str_glue(
+  "Cross-author papers (both conferences pooled): pre={n_pre}, post={n_post}."
+))
+
+# Breakdown per conference, for transparency in the text.
+pre_by_conf  <- papers_pre_cross  |> dplyr::count(conf)
+post_by_conf <- papers_post_cross |> dplyr::count(conf)
+message("Pre by conference:")
+print(pre_by_conf)
+message("Post by conference:")
+print(post_by_conf)
+
+d_data_pre     <- count_pct(papers_pre_cross,  consolidated_data)
+d_methods_pre  <- count_pct(papers_pre_cross,  consolidated_methods)
+d_results_pre  <- count_pct(papers_pre_cross,  consolidated_results)
+d_data_post    <- count_pct(papers_post_cross, consolidated_data)
+d_methods_post <- count_pct(papers_post_cross, consolidated_methods)
+d_results_post <- count_pct(papers_post_cross, consolidated_results)
+```
+
+```{r}
+#| label: barplots
+#| warning: false
+
+colours <- RColorBrewer::brewer.pal(3, "Set1")
+
+# Pooled cross-author subset: ~29 pre, ~38 post papers. Max bin can approach ~20.
+# The y-axis is fixed to 0--35 so this figure is visually comparable to the GIScience
+# pre-vs-post figure in 03_results_reprolevels.qmd, which uses the same scale.
+breaks <- seq(from = 0, to = 35, by = 5)
+
+plotA <- criteriaBarplot2(d_data_pre,
+                          col = consolidated_data,
+                          main = "Input data",
+                          colour = colours[1],
+                          agg_level = TRUE, agg_level_y = 35)
+plotB <- criteriaBarplot2(d_methods_pre,
+                          col = consolidated_methods,
+                          main = "Methods, analysis, processing",
+                          colour = colours[2])
+plotC <- criteriaBarplot2(d_results_pre,
+                          col = consolidated_results,
+                          main = "Results",
+                          colour = colours[3])
+
+plotD <- criteriaBarplot2(d_data_post,
+                          col = consolidated_data,
+                          main = "Input data",
+                          colour = colours[1],
+                          agg_level = TRUE, agg_level_y = 35)
+plotE <- criteriaBarplot2(d_methods_post,
+                          col = consolidated_methods,
+                          main = "Methods, analysis, processing",
+                          colour = colours[2])
+plotF <- criteriaBarplot2(d_results_post,
+                          col = consolidated_results,
+                          main = "Results",
+                          colour = colours[3])
+```
+
+```{r}
+#| label: fig-cross-author-pre-post
+#| warning: false
+#| fig-cap: "Evaluation of the potential reproducibility level of cross-conference-author papers (both AGILE and GIScience pooled) pre- vs post-intervention, for each criterion: Data (A, D), Methods (B, E) and Results (C, F)."
+#| fig-width: 10
+#| fig-asp: 0.8
+#| out-width: 100%
+#| fig-align: center
+
+(plotA + plotB + plotC) / (plotD + plotE + plotF) +
+  plot_layout(widths = c(1, 1, 1)) +
+  plot_annotation(
+    title = "Cross-conference-author papers (both conferences pooled), assessed per criterion.",
+    subtitle = stringr::str_glue(
+      "Top: pre-intervention (year<2020) papers (N={n_pre}). ",
+      "Bottom: post-intervention (year>2020) papers (N={n_post}).\n ",
+      "X-axis labels: (U)ndocumented; (D)ocumented; Documented and (A)vailable; ",
+      "Documented, Available and (O)pen."
+    ),
+    caption = stringr::str_glue(
+      "2020 excluded (AGILE transition year). A paper counts as cross-author if at ",
+      "least one of its authors (resolved identity, pooling all years) also appears ",
+      "on a paper at the other conference. Cross-conference authors in the corpus: ",
+      "{length(cross_ids)}."
+    ),
+    tag_levels = "A"
+  ) &
+  theme(plot.tag = element_text(size = 8))
+```
+
+```{r}
+#| label: fig-cross-author-pre-post-save
+#| warning: false
+#| echo: false
+
+ggplot2::ggsave(
+  file = here::here("figs", "cross_author_pre_post.png"),
+  width = 10, height = 8, dpi = 300
+)
+```

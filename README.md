@@ -90,6 +90,7 @@ The following scripts and notebooks each generate figures or tables in the publi
 - `05_results_assessprocess.qmd` generates **Table 8**, **Figure 4**, **Table 9**, and **Table 10**.
 - `06_discussion.qmd` generates **Figure 5**.
 - `07_authorship.ipynb` generates the supplementary authorship-overlap figures and tables (not part of the main paper tables/figures).
+- `08_authorship.qmd` generates a supplementary figure recreating the pre- vs post-intervention reproducibility level distribution (analogous to the manuscript's Figures 2 & 3) restricted to papers with at least one cross-conference author, pooled across both AGILE and GIScience (not part of the main paper tables/figures).
 
 ## License
 

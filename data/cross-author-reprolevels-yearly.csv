@@ -1,0 +1,153 @@
+criterion,subset,year,level,n
+Input Data,all-papers,2016,A,4
+Input Data,all-papers,2016,D,5
+Input Data,all-papers,2016,U,8
+Input Data,all-papers,2017,A,2
+Input Data,all-papers,2017,D,5
+Input Data,all-papers,2017,U,9
+Input Data,all-papers,2018,A,6
+Input Data,all-papers,2018,D,10
+Input Data,all-papers,2018,U,18
+Input Data,all-papers,2019,A,6
+Input Data,all-papers,2019,D,4
+Input Data,all-papers,2019,U,8
+Input Data,all-papers,2020,A,8
+Input Data,all-papers,2020,D,12
+Input Data,all-papers,2020,O,2
+Input Data,all-papers,2020,U,14
+Input Data,all-papers,2021,A,1
+Input Data,all-papers,2021,D,10
+Input Data,all-papers,2021,O,5
+Input Data,all-papers,2021,U,10
+Input Data,all-papers,2022,A,9
+Input Data,all-papers,2022,D,5
+Input Data,all-papers,2022,O,2
+Input Data,all-papers,2022,U,4
+Input Data,all-papers,2023,A,11
+Input Data,all-papers,2023,D,5
+Input Data,all-papers,2023,O,3
+Input Data,all-papers,2023,U,5
+Input Data,all-papers,2024,A,1
+Input Data,all-papers,2024,D,4
+Input Data,all-papers,2024,O,4
+Input Data,all-papers,2024,U,3
+Input Data,cross-author,2016,D,1
+Input Data,cross-author,2016,U,3
+Input Data,cross-author,2017,D,2
+Input Data,cross-author,2017,U,3
+Input Data,cross-author,2018,A,3
+Input Data,cross-author,2018,D,2
+Input Data,cross-author,2018,U,7
+Input Data,cross-author,2019,A,3
+Input Data,cross-author,2019,D,2
+Input Data,cross-author,2019,U,3
+Input Data,cross-author,2020,A,3
+Input Data,cross-author,2020,D,4
+Input Data,cross-author,2020,O,1
+Input Data,cross-author,2020,U,4
+Input Data,cross-author,2021,A,1
+Input Data,cross-author,2021,D,7
+Input Data,cross-author,2021,O,2
+Input Data,cross-author,2021,U,4
+Input Data,cross-author,2022,A,2
+Input Data,cross-author,2022,D,3
+Input Data,cross-author,2022,O,1
+Input Data,cross-author,2022,U,1
+Input Data,cross-author,2023,A,5
+Input Data,cross-author,2023,D,2
+Input Data,cross-author,2023,O,1
+Input Data,cross-author,2023,U,4
+Input Data,cross-author,2024,D,2
+Input Data,cross-author,2024,O,2
+Input Data,cross-author,2024,U,1
+Methods,all-papers,2016,D,17
+Methods,all-papers,2017,A,1
+Methods,all-papers,2017,D,14
+Methods,all-papers,2017,U,1
+Methods,all-papers,2018,A,3
+Methods,all-papers,2018,D,26
+Methods,all-papers,2018,U,5
+Methods,all-papers,2019,A,3
+Methods,all-papers,2019,D,15
+Methods,all-papers,2020,A,13
+Methods,all-papers,2020,D,20
+Methods,all-papers,2020,O,1
+Methods,all-papers,2020,U,2
+Methods,all-papers,2021,A,7
+Methods,all-papers,2021,D,11
+Methods,all-papers,2021,O,7
+Methods,all-papers,2021,U,1
+Methods,all-papers,2022,A,14
+Methods,all-papers,2022,D,5
+Methods,all-papers,2022,O,1
+Methods,all-papers,2023,A,10
+Methods,all-papers,2023,D,9
+Methods,all-papers,2023,O,4
+Methods,all-papers,2023,U,1
+Methods,all-papers,2024,A,4
+Methods,all-papers,2024,D,2
+Methods,all-papers,2024,O,5
+Methods,all-papers,2024,U,1
+Methods,cross-author,2016,D,4
+Methods,cross-author,2017,D,5
+Methods,cross-author,2018,A,1
+Methods,cross-author,2018,D,10
+Methods,cross-author,2018,U,1
+Methods,cross-author,2019,A,2
+Methods,cross-author,2019,D,6
+Methods,cross-author,2020,A,5
+Methods,cross-author,2020,D,6
+Methods,cross-author,2020,U,1
+Methods,cross-author,2021,A,6
+Methods,cross-author,2021,D,5
+Methods,cross-author,2021,O,2
+Methods,cross-author,2021,U,1
+Methods,cross-author,2022,A,7
+Methods,cross-author,2023,A,7
+Methods,cross-author,2023,D,5
+Methods,cross-author,2024,A,2
+Methods,cross-author,2024,O,3
+Results,all-papers,2016,D,16
+Results,all-papers,2016,U,1
+Results,all-papers,2017,D,15
+Results,all-papers,2017,U,1
+Results,all-papers,2018,A,2
+Results,all-papers,2018,D,29
+Results,all-papers,2018,U,3
+Results,all-papers,2019,A,2
+Results,all-papers,2019,D,16
+Results,all-papers,2020,A,4
+Results,all-papers,2020,D,30
+Results,all-papers,2020,O,1
+Results,all-papers,2020,U,1
+Results,all-papers,2021,A,2
+Results,all-papers,2021,D,18
+Results,all-papers,2021,O,6
+Results,all-papers,2022,A,10
+Results,all-papers,2022,D,8
+Results,all-papers,2022,O,2
+Results,all-papers,2023,A,8
+Results,all-papers,2023,D,13
+Results,all-papers,2023,O,3
+Results,all-papers,2024,A,3
+Results,all-papers,2024,D,6
+Results,all-papers,2024,O,3
+Results,cross-author,2016,D,4
+Results,cross-author,2017,D,5
+Results,cross-author,2018,A,1
+Results,cross-author,2018,D,11
+Results,cross-author,2019,A,1
+Results,cross-author,2019,D,7
+Results,cross-author,2020,A,2
+Results,cross-author,2020,D,10
+Results,cross-author,2021,A,2
+Results,cross-author,2021,D,10
+Results,cross-author,2021,O,2
+Results,cross-author,2022,A,3
+Results,cross-author,2022,D,3
+Results,cross-author,2022,O,1
+Results,cross-author,2023,A,5
+Results,cross-author,2023,D,7
+Results,cross-author,2024,A,1
+Results,cross-author,2024,D,2
+Results,cross-author,2024,O,2
