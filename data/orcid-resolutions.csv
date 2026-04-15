@@ -1,0 +1,5 @@
+name_key,name_seen,chosen_orcid,candidate_orcids,decided_at,notes
+arthur goethem van,Arthur van Goethem,NONE,,2026-04-14T14:54:29,ORCID record exists but is empty
+ashwin shashidharan,Ashwin Shashidharan,NONE,,2026-04-14T14:55:22,manual search also found no record
+david jonietz,David Jonietz,NONE,,2026-04-14T14:56:23,author affiliation is with commercial business (HERE Switzerland)
+haiqi xu,Haiqi Xu,NONE,0000-0003-1751-7447;0000-0002-9778-0992;0009-0003-0356-3810;0000-0002-6150-8540;0009-0002-8033-482X,2026-04-15T09:58:11,to many candidates with too little information

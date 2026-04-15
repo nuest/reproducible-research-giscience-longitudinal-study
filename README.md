@@ -36,15 +36,32 @@ Methods...
 
 ## Contents
 
-- `data`: contains several CSV files that contained assessment data of the eligible conference papers.
-- `data-clean`: contains a processed CSV file ready for analysis and a `README` file (data sheet) to describe each column.
+- `data`: raw assessment CSVs from the Google-Sheet exports, plus intermediate / aggregate artefacts produced by the analysis notebooks (e.g. derived authorship tables and the cached OpenAlex responses).
+- `data-clean`: the curated, authoritative tables used as inputs to the analysis -- `all-data.csv` (paper-level reproducibility assessments) and `authors.csv` (per-author-per-paper enriched view from `07_authorship.ipynb`). A `README` file documents the schema of both.
 - `figs`: contains generated figures from notebooks.
 - `*.qmd` files: [Quarto](https://quarto.org/) documents for data preparation and analysis.
 - `*.ipynb` files: [Jupyter notebooks](https://jupyter.org/) for data analysis.
+- `authorship_utils.py`: helper functions used by `07_authorship.ipynb` (DOI extraction, CrossRef/OpenAlex fetching with on-disk caching, author/identity resolution).
 - `install.R`: R libraries used by Quarto documents.
 - `06_environemnt.yml`: Python libraries used by Jupyter notebooks.
 - `Dockerfile` & `compose.yml`: contains a Dockerfile to build a Docker image using [Docker Compose](https://docs.docker.com/compose/).
 - `manuscript`: contains the manuscript LaTeX source files.
+
+### Supplementary authorship analysis
+
+`07_authorship.ipynb` is a supplementary notebook that enriches the corpus with authorship
+metadata from [OpenAlex](https://openalex.org/) (via the
+[`pyalex`](https://pypi.org/project/pyalex/) library), reconciles authors by ORCID with a
+normalised-name fallback, and reports the overlap of authors between the AGILE and GIScience
+conference series — both over the whole corpus (Part A) and restricted to same-year overlap
+(Part B, which correctly yields zero for years without a GIScience conference). For the few DOIs
+not indexed by OpenAlex (notably Dagstuhl LIPIcs entries) the notebook falls back to
+schema.org JSON-LD scraped from the publisher's landing page. The notebook and its helper
+module `authorship_utils.py` were created with the assistance of an AI coding assistant
+(Anthropic Claude, via Claude Code) and reviewed by the repository maintainers; raw JSON
+responses from OpenAlex and scraped landing pages are cached on disk under
+`data-clean/authorship-cache/` (git-ignored) so the analysis is reproducible offline after a
+first run.
 
 ## Reproducibility
 
@@ -72,6 +89,7 @@ The following scripts and notebooks each generate figures or tables in the publi
 - `04_results_hypotheses.ipynb`generates **Table 4**, **Table 5**, **Table 6**, and **Table 7**.
 - `05_results_assessprocess.qmd` generates **Table 8**, **Figure 4**, **Table 9**, and **Table 10**.
 - `06_discussion.qmd` generates **Figure 5**.
+- `07_authorship.ipynb` generates the supplementary authorship-overlap figures and tables (not part of the main paper tables/figures).
 
 ## License
 

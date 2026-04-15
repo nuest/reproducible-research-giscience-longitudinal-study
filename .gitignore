@@ -51,3 +51,10 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Cached API responses from 07_authorship.ipynb
+data/authorship-cache/
+
+__pycache__/
+
+.claude/
