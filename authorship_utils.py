@@ -7,6 +7,7 @@ inputs as arguments and returns plain Python / pandas values.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import time
@@ -524,6 +525,65 @@ def _orcid_employments(orcid: str, user_agent: str) -> list[dict]:
     return out
 
 
+def _orcid_cache_file(cache_dir: Path, kind: str, key: str) -> Path:
+    """Resolve a filename inside ``cache_dir/orcid/{kind}/`` for a given cache key.
+
+    The key is sanitised to the ASCII subset that's safe on every filesystem; if the
+    result is longer than 120 chars, a short SHA-1 suffix is appended so long queries
+    (names with many Unicode characters, for example) still round-trip.
+    """
+    safe = re.sub(r"[^A-Za-z0-9_\-.]", "_", key).strip("_") or "_empty"
+    if len(safe) > 120:
+        h = hashlib.sha1(key.encode()).hexdigest()[:8]
+        safe = safe[:100] + "_" + h
+    return cache_dir / "orcid" / kind / f"{safe}.json"
+
+
+def _orcid_search_cached(
+    name: str, user_agent: str, rows: int, cache_dir: Path | None, sleep_s: float,
+) -> list[dict]:
+    if cache_dir is None:
+        return _orcid_search(name, user_agent, rows=rows)
+    p = _orcid_cache_file(cache_dir, "search", f"rows={rows}|{name}")
+    if p.exists():
+        return json.loads(p.read_text())
+    results = _orcid_search(name, user_agent, rows=rows)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(results))
+    time.sleep(sleep_s)  # sleep only after a real API call, not on cache hits
+    return results
+
+
+def _orcid_employments_cached(
+    orcid: str, user_agent: str, cache_dir: Path | None, sleep_s: float,
+) -> list[dict]:
+    if cache_dir is None:
+        return _orcid_employments(orcid, user_agent)
+    p = _orcid_cache_file(cache_dir, "employments", orcid)
+    if p.exists():
+        return json.loads(p.read_text())
+    results = _orcid_employments(orcid, user_agent)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(results))
+    time.sleep(sleep_s)
+    return results
+
+
+def _orcid_recent_works_cached(
+    orcid: str, user_agent: str, n: int, cache_dir: Path | None, sleep_s: float,
+) -> list[dict]:
+    if cache_dir is None:
+        return _orcid_recent_works(orcid, user_agent, n=n)
+    p = _orcid_cache_file(cache_dir, "works", f"n={n}|{orcid}")
+    if p.exists():
+        return json.loads(p.read_text())
+    results = _orcid_recent_works(orcid, user_agent, n=n)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(results))
+    time.sleep(sleep_s)
+    return results
+
+
 def _orcid_recent_works(orcid: str, user_agent: str, n: int = 5) -> list[dict]:
     headers = {"Accept": "application/json", "User-Agent": user_agent}
     r = requests.get(f"{ORCID_API}/{orcid}/works", headers=headers, timeout=30)
@@ -572,6 +632,7 @@ def prepare_orcid_resolution(
     candidates_path: Path,
     user_agent: str,
     *,
+    cache_dir: Path | None = None,
     only_cross_year: bool = True,
     rows_per_search: int = 5,
     sleep_s: float = 0.3,
@@ -594,6 +655,13 @@ def prepare_orcid_resolution(
     Already-decided identities (present in ``decisions_path``) are omitted.
     ``only_cross_year=True`` restricts the queue to identities that appear in
     more than one year, matching the cross-conference focus of the analysis.
+
+    If ``cache_dir`` is given, ORCID API responses (the name search plus each
+    candidate's employments and recent works) are cached as JSON under
+    ``cache_dir/orcid/{search,employments,works}/``. A re-run of this function
+    then reads from disk instead of hitting the API again — delete the cache
+    directory (or the specific file) to force a refresh. Recommended: pass the
+    same ``CACHE_DIR`` the notebook uses for OpenAlex (``data/authorship-cache``).
     """
     import pandas as pd
 
@@ -640,7 +708,9 @@ def prepare_orcid_resolution(
         papers_for_name.sort(key=lambda p: (p["year"] or 0, p["conf"] or ""))
 
         try:
-            hits = _orcid_search(row["name"], user_agent, rows=rows_per_search)
+            hits = _orcid_search_cached(
+                row["name"], user_agent, rows_per_search, cache_dir, sleep_s=sleep_s,
+            )
         except Exception as exc:
             print(f"  ORCID search error for {row['name']!r}: {exc}")
             hits = []
@@ -651,10 +721,8 @@ def prepare_orcid_resolution(
             if not orcid:
                 continue
             try:
-                emp = _orcid_employments(orcid, user_agent)
-                time.sleep(sleep_s)
-                works = _orcid_recent_works(orcid, user_agent)
-                time.sleep(sleep_s)
+                emp = _orcid_employments_cached(orcid, user_agent, cache_dir, sleep_s=sleep_s)
+                works = _orcid_recent_works_cached(orcid, user_agent, 5, cache_dir, sleep_s=sleep_s)
             except Exception as exc:
                 print(f"  ORCID profile fetch error for {orcid}: {exc}")
                 emp, works = [], []
@@ -696,16 +764,20 @@ def prepare_orcid_resolution(
 
     # If a template already exists, preserve any partially-filled-in values so
     # a re-run of the preparation step doesn't clobber in-progress work.
+    # Read as strings so that an index like ``"1"`` survives the round-trip
+    # (pandas would otherwise infer it as float and drop the preservation check).
     if candidates_path.exists():
         try:
-            prior = pd.read_csv(candidates_path)
+            prior = pd.read_csv(candidates_path, dtype=str, keep_default_na=False)
             prior_by_key = prior.set_index("name_key")
             for i, r in template_df.iterrows():
                 k = r["name_key"]
                 if k in prior_by_key.index:
                     for col in ("chosen_orcid", "notes"):
-                        v = prior_by_key.at[k, col] if col in prior_by_key.columns else ""
-                        if isinstance(v, str) and v.strip():
+                        if col not in prior_by_key.columns:
+                            continue
+                        v = str(prior_by_key.at[k, col]).strip()
+                        if v:
                             template_df.at[i, col] = v
         except Exception as exc:
             print(f"  could not merge existing template {candidates_path}: {exc}")
@@ -866,14 +938,6 @@ def _resolve_chosen(chosen: str, candidate_orcids: str, key: str) -> str:
     return validated
 
 
-def _cell_str(v) -> str:
-    """Coerce a CSV cell value (which pandas may surface as ``NaN``) to a stripped string."""
-    import pandas as pd
-    if v is None or (isinstance(v, float) and pd.isna(v)):
-        return ""
-    return str(v).strip()
-
-
 def apply_orcid_resolutions(
     candidates_path: Path, decisions_path: Path
 ) -> "pd.DataFrame":
@@ -900,7 +964,11 @@ def apply_orcid_resolutions(
             "prepare_orcid_resolution first."
         )
 
-    template = pd.read_csv(candidates_path)
+    # ``dtype=str, keep_default_na=False`` preserves values exactly as the
+    # operator typed them: an index ``"1"`` stays ``"1"`` (pandas would otherwise
+    # infer the column as float and surface it as ``"1.0"`` when other rows are
+    # blank), and empty cells stay as empty strings rather than ``NaN``.
+    template = pd.read_csv(candidates_path, dtype=str, keep_default_na=False)
     decisions = _load_decisions(decisions_path)
     existing = set(decisions["name_key"].astype(str))
 
@@ -909,23 +977,23 @@ def apply_orcid_resolutions(
     unresolved: list[str] = []
 
     for _, row in template.iterrows():
-        key = _cell_str(row.get("name_key"))
-        chosen = _cell_str(row.get("chosen_orcid"))
+        key = str(row.get("name_key", "")).strip()
+        chosen = str(row.get("chosen_orcid", "")).strip()
         if not chosen:
             unresolved.append(key)
             continue
         if key in existing:
             skipped_recorded.append((key, "already in decisions file"))
             continue
-        candidate_orcids = _cell_str(row.get("candidate_orcids"))
+        candidate_orcids = str(row.get("candidate_orcids", "")).strip()
         validated = _resolve_chosen(chosen, candidate_orcids, key)
         applied.append({
             "name_key": key,
-            "name_seen": _cell_str(row.get("name_seen")),
+            "name_seen": str(row.get("name_seen", "")).strip(),
             "chosen_orcid": validated,
             "candidate_orcids": candidate_orcids,
             "decided_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
-            "notes": _cell_str(row.get("notes")),
+            "notes": str(row.get("notes", "")).strip(),
         })
 
     if applied:
