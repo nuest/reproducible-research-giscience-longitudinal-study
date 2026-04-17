@@ -1,0 +1,13 @@
+criterion,conf,subset,pct_HIGH_pre,n_pre,pct_HIGH_post,n_post,delta_pp
+Input Data,GISCIENCE,all papers,20.6,34,16.7,24,-3.9
+Methods,GISCIENCE,all papers,2.9,34,45.8,24,42.9
+Results,GISCIENCE,all papers,0.0,34,25.0,24,25.0
+Input Data,GISCIENCE,cross-author only,15.4,13,12.5,16,-2.9
+Methods,GISCIENCE,cross-author only,0.0,13,43.8,16,43.8
+Results,GISCIENCE,cross-author only,0.0,13,31.2,16,31.2
+Input Data,AGILE,all papers,21.6,51,55.2,58,33.6
+Methods,AGILE,all papers,11.8,51,70.7,58,58.9
+Results,AGILE,all papers,7.8,51,53.4,58,45.6
+Input Data,AGILE,cross-author only,25.0,16,54.5,22,29.5
+Methods,AGILE,cross-author only,18.8,16,90.9,22,72.2
+Results,AGILE,cross-author only,12.5,16,50.0,22,37.5
