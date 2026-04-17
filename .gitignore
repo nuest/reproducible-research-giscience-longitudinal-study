@@ -60,3 +60,5 @@ __pycache__/
 .claude/
 
 08_authorship.html
+
+figs/*.pdf
