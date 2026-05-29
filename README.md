@@ -68,10 +68,10 @@ TODO
 The following scripts and notebooks each generate figures or tables in the published paper:
 
 - `02_methods.qmd` generates **Table 1**.
-- `03_results_reprolevels.qmd` generates **Figure 1** and **Figure 3**.
-- `04_results_hypotheses.ipynb`generates **Table 4**, **Table 5**, **Table 6**, and **Table 7**.
-- `05_results_assessprocess.qmd` generates **Table 8**, **Figure 4**, **Table 9**, and **Table 10**.
-- `06_discussion.qmd` generates **Figure 5**.
+- `03_results_reprolevels.qmd` generates **Figure 1**, **Figure 3**, and **Table 5**.
+- `04_results_hypotheses.ipynb`generates **Table 3** and **Table 4**.
+- `05_results_assessprocess.qmd` generates **Table 6** and **Table 7**.
+- `06_discussion.qmd` generates **Figure 2**.
 
 ## License
 
