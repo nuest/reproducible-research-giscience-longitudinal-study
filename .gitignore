@@ -51,3 +51,9 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+__pycache__/
+
+data/authorship-cache/
+
+08_authorship.html
