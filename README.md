@@ -84,11 +84,11 @@ TODO
 
 The following scripts and notebooks each generate figures or tables in the published paper:
 
-- `02_methods.qmd` generates **Table 1** and **Table 2**.
-- `03_results_reprolevels.qmd` generates **Figure 2**, **Figure 3**, and **Table 3**.
-- `04_results_hypotheses.ipynb`generates **Table 4**, **Table 5**, **Table 6**, and **Table 7**.
-- `05_results_assessprocess.qmd` generates **Table 8**, **Figure 4**, **Table 9**, and **Table 10**.
-- `06_discussion.qmd` generates **Figure 5**.
+- `02_methods.qmd` generates **Table 1**.
+- `03_results_reprolevels.qmd` generates **Figure 1**, **Figure 3**, and **Table 5**.
+- `04_results_hypotheses.ipynb`generates **Table 3** and **Table 4**.
+- `05_results_assessprocess.qmd` generates **Table 6** and **Table 7**.
+- `06_discussion.qmd` generates **Figure 2**.
 - `07_authorship.ipynb` generates the supplementary authorship-overlap figures and tables (not part of the main paper tables/figures).
 - `08_authorship.qmd` generates a supplementary figure recreating the pre- vs post-intervention reproducibility level distribution (analogous to the manuscript's Figures 2 & 3) restricted to papers with at least one cross-conference author, pooled across both AGILE and GIScience (not part of the main paper tables/figures).
 
