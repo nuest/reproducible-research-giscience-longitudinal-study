@@ -1,38 +1,23 @@
-# reproducible-research-giscience-longitudinal-study
+# Reproducible research in GIScience - longitudinal study
 
-<!--TODO: Linked badge to preprint-->
+[![EarthArXiv Preprint](https://img.shields.io/badge/EarthArXiv%20Preprint-10.31223/X5RJ3W-FC7E2A)](https://doi.org/10.31223/X5RJ3W)
 
 <!--TODO: Linked badge to journal paper-->
 
-<!--TODO: Linked badge to Assessment Protocol-->
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17733628.svg)](https://doi.org/10.5281/zenodo.17733628)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17733627.svg)](https://doi.org/10.5281/zenodo.17733627)
 
 This is the data and software repo to support the computational analysis related to the paper *Longitudinal assessment of research in GIScience domain shows a positive impact of reproducible research practices*. 
 This study was coordinated by Frank Ostermann <a href="https://orcid.org/0000-0002-9317-8291"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"/></a>,
 Daniel Nüst <a href="https://orcid.org/0000-0002-0024-5046"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"/></a>, and 
 Carlos Granell <a href="https://orcid.org/0000-0003-1004-9695"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"/></a>.
 
-Acknowledgement: [AGILE](https://agile-gi.eu/)...
-
 ## Study goals and overall methodology
 
-
-TODO: 
-
-Data...
-
-- AGILE "averages" dataset as csv from previous paper
-- AGILE dataset, full papers for years ... - ...
-- GIScience dataset, full papers for years xxxx, yyyy, ...
-- citation data?
-
-Methods...
-
-- alluvial plot for both pre and post intervention AGILE
-- alluvial plot for GIScience matching pre/post years
-- timeline plot of actual data points and averages, wich old AGILE dataset in light colour for loose reference
-
+This study investigates the effect of revised author guidelines and reproducibility badges on the potential reproducibility of articles published in GIScience conference proceedings over the past decade.
+The work systematically compares AGILE findings against the GIScience conference series.
+The latter acts as a control group that has not undergone similar changes to its author guidelines or review process.
+The results show that reproducibility guidelines and an updated review process measurably improved the potential reproducibility of AGILE publications.
+The study thereby demonstrates the value of institutional and community policies in fostering reproducible research in GIScience and identifies pathways for ongoing improvement.
 
 ## Contents
 
@@ -72,18 +57,48 @@ maintainers.
 
 ### Reproducibility setup
 
-- TODO: create one common configuration for R/Python. Now, R notebooks are based on `rocker/rstudio:4.4`, and python notebooks on conda.
+- R notebooks are based on `rocker/rstudio:4.4`, see `Dockerfile`
+- Python notebooks rely on conda environment, see `environment.yml`
 
 #### Reproduce online with Binder
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nuest/reproducible-research-giscience-longitudinal-study/HEAD)
 
-> [!NOTE]
+> [NOTE]
 > Building the computing enviroment in Binder can be slow.
 
 #### Reproduce locally with Docker
 
-TODO
+For the Quarto (`.qmd`) notebooks:
+
+```bash
+docker compose up
+```
+
+Login at <http://localhost:8787> with user `rstudio` and password `q`.
+Then render the notebooks in order of their file name, starting with `01_...` in the RStudio UI.
+
+For the Jupyter (`.ipynb`) notebooks, using conda:
+
+```bash
+conda env create -f 04_environment.yml
+conda activate agilegisc
+jupyter lab
+```
+
+Alternatively, using [uv](https://docs.astral.sh/uv/):
+
+```bash
+uv venv .venv --python 3.10
+source .venv/bin/activate
+uv pip install pandas numpy scipy statsmodels jupyterlab matplotlib matplotlib-venn pyalex
+jupyter lab
+```
+
+> [NOTE]
+> `04_environment.yml` is the authoritative specification of the computing environment; the inline package list above captures the top-level dependencies only.
+
+Open `04_results_hypotheses.ipynb` and `07_authorship.ipynb` and run all cells.
 
 ### Mapping of code to figures and tables in the paper
 
