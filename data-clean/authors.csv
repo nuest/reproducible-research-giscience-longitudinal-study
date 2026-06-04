@@ -1,0 +1,716 @@
+paper,conf,year,doi,position,name,orcid,identity
+agile_2017_006,agile,2017,10.1007/978-3-319-56759-4_6,1,Markus Konkol,0000-0001-6651-0976,orcid:0000-0001-6651-0976
+agile_2017_006,agile,2017,10.1007/978-3-319-56759-4_6,2,Christian Kray,0000-0002-4199-8976,orcid:0000-0002-4199-8976
+agile_2017_006,agile,2017,10.1007/978-3-319-56759-4_6,3,Morin Ostkamp,,name:morin ostkamp
+agile_2017_014,agile,2017,10.1007/978-3-319-56759-4_14,1,Grant McKenzie,0000-0003-3247-2777,orcid:0000-0003-3247-2777
+agile_2017_014,agile,2017,10.1007/978-3-319-56759-4_14,2,Krzysztof Janowicz,,orcid:0009-0003-1968-887X
+agile_2019_003,agile,2019,10.1007/978-3-030-14745-7_3,1,Federico Dassereto,,name:dassereto federico
+agile_2019_003,agile,2019,10.1007/978-3-030-14745-7_3,2,Laura Rocco,0000-0002-8134-909X,orcid:0000-0002-8134-909X
+agile_2019_003,agile,2019,10.1007/978-3-030-14745-7_3,3,Giovanna Guerrini,0000-0001-9125-9867,orcid:0000-0001-9125-9867
+agile_2019_003,agile,2019,10.1007/978-3-030-14745-7_3,4,Michela Bertolotto,0000-0003-0122-7656,orcid:0000-0003-0122-7656
+agile_2019_011,agile,2019,10.1007/978-3-030-14745-7_11,1,Toshihiro Osaragi,0000-0002-6327-3976,orcid:0000-0002-6327-3976
+agile_2019_011,agile,2019,10.1007/978-3-030-14745-7_11,2,Ryo Kudo,,name:kudo ryo
+agile_2021_007,agile,2021,10.5194/agile-giss-2-7-2021,1,Pei‐Chun Lai,0000-0003-2799-4781,orcid:0000-0003-2799-4781
+agile_2021_007,agile,2021,10.5194/agile-giss-2-7-2021,2,Auriol Degbelo,0000-0001-5087-8776,orcid:0000-0001-5087-8776
+agile_2018_004,agile,2018,10.1007/978-3-319-78208-9_4,1,Haicheng Liu,0000-0002-6734-820X,orcid:0000-0002-6734-820X
+agile_2018_012,agile,2018,10.1007/978-3-319-78208-9_12,1,Denis Evangelista Sanches,,name:denis evangelista sanches
+agile_2018_012,agile,2018,10.1007/978-3-319-78208-9_12,2,Luís Otávio Álvares,0000-0003-2372-4995,orcid:0000-0003-2372-4995
+agile_2018_012,agile,2018,10.1007/978-3-319-78208-9_12,3,Vânia Bogorny,0000-0002-0159-4643,orcid:0000-0002-0159-4643
+agile_2018_012,agile,2018,10.1007/978-3-319-78208-9_12,4,Marcos R. Vieira,0000-0003-3502-8014,orcid:0000-0003-3502-8014
+agile_2018_012,agile,2018,10.1007/978-3-319-78208-9_12,5,Daniel S. Kaster,0000-0001-9628-3313,orcid:0000-0001-9628-3313
+agile_2019_019,agile,2019,10.1007/978-3-030-14745-7_19,1,Barbara Hofer,0000-0001-7078-3766,orcid:0000-0001-7078-3766
+agile_2019_019,agile,2019,10.1007/978-3-030-14745-7_19,2,Stefan Lang,0000-0003-0619-0098,orcid:0000-0003-0619-0098
+agile_2019_019,agile,2019,10.1007/978-3-030-14745-7_19,3,Nicole Ferber,,name:ferber nicole
+agile_2020_006,agile,2020,10.5194/agile-giss-1-7-2020,1,Steffen Illium,0000-0003-0021-436X,orcid:0000-0003-0021-436X
+agile_2020_006,agile,2020,10.5194/agile-giss-1-7-2020,2,Philipp A. Friese,0000-0002-3124-5364,orcid:0000-0002-3124-5364
+agile_2020_006,agile,2020,10.5194/agile-giss-1-7-2020,3,Robert Müller,0000-0003-3108-713X,orcid:0000-0003-3108-713X
+agile_2020_006,agile,2020,10.5194/agile-giss-1-7-2020,4,Sebastian Feld,0000-0003-2782-1469,orcid:0000-0003-2782-1469
+agile_2020_014,agile,2020,10.5194/agile-giss-1-15-2020,1,Amine Medad,,name:amine medad
+agile_2020_014,agile,2020,10.5194/agile-giss-1-15-2020,2,Mauro Gaio,0000-0002-8041-4240,orcid:0000-0002-8041-4240
+agile_2020_014,agile,2020,10.5194/agile-giss-1-15-2020,3,Ludovic Moncla,0000-0002-1590-9546,orcid:0000-0002-1590-9546
+agile_2020_014,agile,2020,10.5194/agile-giss-1-15-2020,4,Sébastien Mustière,0000-0002-0272-3320,orcid:0000-0002-0272-3320
+agile_2020_014,agile,2020,10.5194/agile-giss-1-15-2020,5,Yannick Le Nir,,name:le nir yannick
+agile_2020_022,agile,2020,10.5194/agile-giss-1-23-2020,1,Haiqi Xu,,name:haiqi xu
+agile_2020_022,agile,2020,10.5194/agile-giss-1-23-2020,2,Ehsan Hamzei,0000-0002-4712-230X,orcid:0000-0002-4712-230X
+agile_2020_022,agile,2020,10.5194/agile-giss-1-23-2020,3,Enkhbold Nyamsuren,0000-0002-3680-9907,orcid:0000-0002-3680-9907
+agile_2020_022,agile,2020,10.5194/agile-giss-1-23-2020,4,Han Kruiger,,orcid:0000-0002-0901-202X
+agile_2020_022,agile,2020,10.5194/agile-giss-1-23-2020,5,Stephan Winter,0000-0002-3403-6939,orcid:0000-0002-3403-6939
+agile_2020_022,agile,2020,10.5194/agile-giss-1-23-2020,6,Martin Tomko,0000-0002-5736-4679,orcid:0000-0002-5736-4679
+agile_2020_022,agile,2020,10.5194/agile-giss-1-23-2020,7,Simon Scheider,0000-0002-2267-4810,orcid:0000-0002-2267-4810
+agile_2022_004,agile,2022,10.5194/agile-giss-3-4-2022,1,Jean-Marie Favreau,0000-0002-2460-6336,orcid:0000-0002-2460-6336
+agile_2022_004,agile,2022,10.5194/agile-giss-3-4-2022,2,Jérémy Kalsron,,name:jeremy kalsron
+agile_2022_012,agile,2022,10.5194/agile-giss-3-12-2022,1,Eva Nuhn,0000-0003-2443-8122,orcid:0000-0003-2443-8122
+agile_2022_012,agile,2022,10.5194/agile-giss-3-12-2022,2,Franziska König,,name:franziska konig
+agile_2022_012,agile,2022,10.5194/agile-giss-3-12-2022,3,Sabine Timpf,0000-0002-7964-4110,orcid:0000-0002-7964-4110
+agile_2022_020,agile,2022,10.5194/agile-giss-3-20-2022,1,Pengxiang Zhao,0000-0002-5279-9331,orcid:0000-0002-5279-9331
+agile_2022_020,agile,2022,10.5194/agile-giss-3-20-2022,2,Aoyong Li,0000-0001-8032-5881,orcid:0000-0001-8032-5881
+agile_2022_020,agile,2022,10.5194/agile-giss-3-20-2022,3,Petter Pilesjö,0000-0001-7963-4548,orcid:0000-0001-7963-4548
+agile_2022_020,agile,2022,10.5194/agile-giss-3-20-2022,4,Ali Mansourian,0000-0001-6812-4307,orcid:0000-0001-6812-4307
+agile_2023_002,agile,2023,10.5194/agile-giss-4-3-2023,1,Raphaël Bres,,orcid:0000-0001-5597-8602
+agile_2023_002,agile,2023,10.5194/agile-giss-4-3-2023,2,Verónika Peralta,0000-0002-9236-9088,orcid:0000-0002-9236-9088
+agile_2023_002,agile,2023,10.5194/agile-giss-4-3-2023,3,Arnaud Le-Guilcher,,orcid:0000-0001-6673-6158
+agile_2023_002,agile,2023,10.5194/agile-giss-4-3-2023,4,Thomas Devogele,0000-0001-9187-8385,orcid:0000-0001-9187-8385
+agile_2023_002,agile,2023,10.5194/agile-giss-4-3-2023,5,Ana-Maria Olteanu-Raimond,,orcid:0000-0002-1101-1333
+agile_2023_002,agile,2023,10.5194/agile-giss-4-3-2023,6,Cyril de Runz,0000-0002-5951-6859,orcid:0000-0002-5951-6859
+agile_2023_010,agile,2023,10.5194/agile-giss-4-11-2023,1,Carolina Pereira Marghidan,0000-0003-4427-4065,orcid:0000-0003-4427-4065
+agile_2023_010,agile,2023,10.5194/agile-giss-4-11-2023,2,Maarten van Aalst,0000-0003-0319-5627,orcid:0000-0003-0319-5627
+agile_2023_010,agile,2023,10.5194/agile-giss-4-11-2023,3,Justine I. Blanford,0000-0003-0844-9390,orcid:0000-0003-0844-9390
+agile_2023_010,agile,2023,10.5194/agile-giss-4-11-2023,4,Genito Maúre,0000-0002-9089-1905,orcid:0000-0002-9089-1905
+agile_2023_010,agile,2023,10.5194/agile-giss-4-11-2023,5,Tatiana Marrufo,0000-0003-3903-1368,orcid:0000-0003-3903-1368
+agile_2024_004,agile,2024,10.5194/agile-giss-5-5-2024,1,Dagoberto José Herrera-Murillo,0000-0002-8000-628X,orcid:0000-0002-8000-628X
+agile_2024_004,agile,2024,10.5194/agile-giss-5-5-2024,2,Héctor Ochoa-Ortiz,0000-0002-6477-0683,orcid:0000-0002-6477-0683
+agile_2024_004,agile,2024,10.5194/agile-giss-5-5-2024,3,Umair Ahmed,0000-0001-9130-5210,orcid:0000-0001-9130-5210
+agile_2024_004,agile,2024,10.5194/agile-giss-5-5-2024,4,Francisco J. López-Pellicer,0000-0001-6491-7430,orcid:0000-0001-6491-7430
+agile_2024_004,agile,2024,10.5194/agile-giss-5-5-2024,5,Barbara Re,0000-0003-1692-2053,orcid:0000-0003-1692-2053
+agile_2024_004,agile,2024,10.5194/agile-giss-5-5-2024,6,Andrea Polini,0000-0002-2840-7561,orcid:0000-0002-2840-7561
+agile_2024_004,agile,2024,10.5194/agile-giss-5-5-2024,7,Javier Nogueras-Iso,,orcid:0000-0002-1279-0367
+agile_2024_012,agile,2024,10.5194/agile-giss-5-13-2024,1,Manuel Soares,,name:manuel soares
+agile_2024_012,agile,2024,10.5194/agile-giss-5-13-2024,2,Teresa Romão,0000-0002-3678-5626,orcid:0000-0002-3678-5626
+agile_2024_012,agile,2024,10.5194/agile-giss-5-13-2024,3,Armanda Rodrigues,0000-0002-7080-5512,orcid:0000-0002-7080-5512
+giscience_2016_001,giscience,2016,10.1007/978-3-319-45738-3_1,1,Cici Alexander,0000-0002-1671-6770,orcid:0000-0002-1671-6770
+giscience_2016_001,giscience,2016,10.1007/978-3-319-45738-3_1,2,Lars Arge,,name:arge lars
+giscience_2016_001,giscience,2016,10.1007/978-3-319-45738-3_1,3,Peder Klith Bøcher,0000-0002-3045-4607,orcid:0000-0002-3045-4607
+giscience_2016_001,giscience,2016,10.1007/978-3-319-45738-3_1,4,Morten Revsbæk,,name:morten revsbk
+giscience_2016_001,giscience,2016,10.1007/978-3-319-45738-3_1,5,Brody Sandel,0000-0003-2162-6902,orcid:0000-0003-2162-6902
+giscience_2016_001,giscience,2016,10.1007/978-3-319-45738-3_1,6,Jens‐Christian Svenning,0000-0002-3415-0862,orcid:0000-0002-3415-0862
+giscience_2016_001,giscience,2016,10.1007/978-3-319-45738-3_1,7,Constantinos Tsirogiannis,0000-0003-2823-6827,orcid:0000-0003-2823-6827
+giscience_2016_001,giscience,2016,10.1007/978-3-319-45738-3_1,8,Jungwoo Yang,,name:jungwoo yang
+giscience_2016_009,giscience,2016,10.1007/978-3-319-45738-3_9,1,Jiaoli Chen,,name:chen jiaoli
+giscience_2016_009,giscience,2016,10.1007/978-3-319-45738-3_9,2,Shih‐Lung Shaw,0000-0001-6157-5519,orcid:0000-0001-6157-5519
+giscience_2016_017,giscience,2016,10.1007/978-3-319-45738-3_17,1,Christopher Allen,,name:allen christopher
+giscience_2016_017,giscience,2016,10.1007/978-3-319-45738-3_17,2,Thomas Hervey,0000-0003-3803-0937,orcid:0000-0003-3803-0937
+giscience_2016_017,giscience,2016,10.1007/978-3-319-45738-3_17,3,Sara Lafia,0000-0002-5896-7295,orcid:0000-0002-5896-7295
+giscience_2016_017,giscience,2016,10.1007/978-3-319-45738-3_17,4,Daniel W. Phillips,0000-0001-9602-3773,orcid:0000-0001-9602-3773
+giscience_2016_017,giscience,2016,10.1007/978-3-319-45738-3_17,5,Behzad Vahedi,0000-0001-5782-3831,orcid:0000-0001-5782-3831
+giscience_2016_017,giscience,2016,10.1007/978-3-319-45738-3_17,6,W. Kühn,0000-0002-4491-0132,orcid:0000-0002-4491-0132
+giscience_2018_008,giscience,2018,10.4230/LIPIcs.GIScience.2018.8,1,Filip Krumpe,,name:filip krumpe
+giscience_2018_016,giscience,2018,10.4230/LIPIcs.GIScience.2018.16,1,Ashwin Shashidharan,,name:ashwin shashidharan
+giscience_2018_016,giscience,2018,10.4230/LIPIcs.GIScience.2018.16,2,Ranga Raju Vatsavai,0000-0002-7083-0267,orcid:0000-0002-7083-0267
+giscience_2018_016,giscience,2018,10.4230/LIPIcs.GIScience.2018.16,3,Derek Van Berkel,0000-0002-1001-783X,orcid:0000-0002-1001-783X
+giscience_2018_016,giscience,2018,10.4230/LIPIcs.GIScience.2018.16,4,Ross K. Meentemeyer,0000-0002-1247-6212,orcid:0000-0002-1247-6212
+giscience_2021_008,giscience,2020,10.4230/lipics.giscience.2021.i.8,1,Bartosz Mazurkiewicz,0000-0001-9400-0084,orcid:0000-0001-9400-0084
+giscience_2021_008,giscience,2020,10.4230/lipics.giscience.2021.i.8,2,Markus Kattenbeck,0000-0001-6028-0428,orcid:0000-0001-6028-0428
+giscience_2021_008,giscience,2020,10.4230/lipics.giscience.2021.i.8,3,Peter Kiefer,0000-0003-4457-0438,orcid:0000-0003-4457-0438
+giscience_2021_008,giscience,2020,10.4230/lipics.giscience.2021.i.8,4,Ioannis Giannopoulos,0000-0002-2556-5230,orcid:0000-0002-2556-5230
+giscience_2021_016,giscience,2020,10.4230/lipics.giscience.2021.i.17,1,Piyush Yadav,0000-0002-4872-0205,orcid:0000-0002-4872-0205
+giscience_2021_016,giscience,2020,10.4230/lipics.giscience.2021.i.17,2,Dipto Sarkar,0000-0003-2254-049X,orcid:0000-0003-2254-049X
+giscience_2021_016,giscience,2020,10.4230/lipics.giscience.2021.i.17,3,Dhaval Salwala,,orcid:0000-0001-9787-4844
+giscience_2021_016,giscience,2020,10.4230/lipics.giscience.2021.i.17,4,Edward Curry,0000-0001-8236-6433,orcid:0000-0001-8236-6433
+giscience_2021_024,giscience,2021,10.4230/lipics.giscience.2021.ii.8,1,Arthur van Goethem,,name:arthur goethem van
+giscience_2021_024,giscience,2021,10.4230/lipics.giscience.2021.ii.8,2,Wouter Meulemans,0000-0002-4978-3400,orcid:0000-0002-4978-3400
+giscience_2021_024,giscience,2021,10.4230/lipics.giscience.2021.ii.8,3,Andreas Reimer,,name:andreas reimer
+giscience_2021_024,giscience,2021,10.4230/lipics.giscience.2021.ii.8,4,Bettina Speckmann,0000-0002-8514-7858,orcid:0000-0002-8514-7858
+giscience_2023_007,giscience,2023,10.4230/LIPIcs.GIScience.2023.7,1,"Li, Hao",,name:hao li
+giscience_2023_007,giscience,2023,10.4230/LIPIcs.GIScience.2023.7,2,"Yuan, Zhendong",,orcid:0000-0003-3326-5243
+giscience_2023_007,giscience,2023,10.4230/LIPIcs.GIScience.2023.7,3,"Dax, Gabriel",,orcid:0000-0002-1511-5770
+giscience_2023_007,giscience,2023,10.4230/LIPIcs.GIScience.2023.7,4,"Kong, Gefei",,orcid:0000-0002-4641-7456
+giscience_2023_007,giscience,2023,10.4230/LIPIcs.GIScience.2023.7,5,"Fan, Hongchao",,orcid:0000-0002-0051-7451
+giscience_2023_007,giscience,2023,10.4230/LIPIcs.GIScience.2023.7,6,"Zipf, Alexander",,orcid:0000-0003-4916-9838
+giscience_2023_007,giscience,2023,10.4230/LIPIcs.GIScience.2023.7,7,"Werner, Martin",,orcid:0000-0002-6951-8022
+agile_2017_016,agile,2017,10.1007/978-3-319-56759-4_16,1,Ricardo Silva,0000-0001-5187-8604,orcid:0000-0001-5187-8604
+agile_2017_016,agile,2017,10.1007/978-3-319-56759-4_16,2,João Moura Pires,0000-0001-9933-936X,orcid:0000-0001-9933-936X
+agile_2017_016,agile,2017,10.1007/978-3-319-56759-4_16,3,Maribel Yasmina Santos,0000-0002-3249-6229,orcid:0000-0002-3249-6229
+agile_2019_005,agile,2019,10.1007/978-3-030-14745-7_5,1,Pengxiang Zhao,0000-0002-5279-9331,orcid:0000-0002-5279-9331
+agile_2019_005,agile,2019,10.1007/978-3-030-14745-7_5,2,Dominik Bucher,0000-0001-9824-5388,orcid:0000-0001-9824-5388
+agile_2019_005,agile,2019,10.1007/978-3-030-14745-7_5,3,Henry Martin,0000-0002-0456-8539,orcid:0000-0002-0456-8539
+agile_2019_005,agile,2019,10.1007/978-3-030-14745-7_5,4,Martin Raubal,0000-0001-5951-6835,orcid:0000-0001-5951-6835
+agile_2019_013,agile,2019,10.1007/978-3-030-14745-7_13,1,Nikos Patias,0000-0002-6542-2330,orcid:0000-0002-6542-2330
+agile_2019_013,agile,2019,10.1007/978-3-030-14745-7_13,2,Francisco Rowe,0000-0003-4137-0246,orcid:0000-0003-4137-0246
+agile_2019_013,agile,2019,10.1007/978-3-030-14745-7_13,3,Stefano Cavazzi,0000-0003-3575-0365,orcid:0000-0003-3575-0365
+agile_2021_001,agile,2021,10.5194/agile-giss-2-1-2021,1,Gabriel Dax,0000-0002-1511-5770,orcid:0000-0002-1511-5770
+agile_2021_001,agile,2021,10.5194/agile-giss-2-1-2021,2,Martin Werner,0000-0002-6951-8022,orcid:0000-0002-6951-8022
+agile_2021_009,agile,2021,10.5194/agile-giss-2-9-2021,1,Alec Parise,0009-0007-2303-3760,orcid:0009-0007-2303-3760
+agile_2021_009,agile,2021,10.5194/agile-giss-2-9-2021,2,Miguel Ángel Manso Callejo,0000-0003-2307-8639,orcid:0000-0003-2307-8639
+agile_2021_009,agile,2021,10.5194/agile-giss-2-9-2021,3,Hung Cao,0000-0002-0788-4377,orcid:0000-0002-0788-4377
+agile_2021_009,agile,2021,10.5194/agile-giss-2-9-2021,4,Mónica Wachowicz,0000-0002-4659-0101,orcid:0000-0002-4659-0101
+agile_2018_006,agile,2018,10.1007/978-3-319-78208-9_6,1,Timothée Produit,,name:produit timothee
+agile_2018_006,agile,2018,10.1007/978-3-319-78208-9_6,2,Jens Ingensand,0000-0003-3330-4986,orcid:0000-0003-3330-4986
+agile_2018_014,agile,2018,10.1007/978-3-319-78208-9_14,1,Samira Khoshahval,,name:khoshahval samira
+agile_2018_014,agile,2018,10.1007/978-3-319-78208-9_14,2,Mahdi Farnaghi,0000-0002-3071-5563,orcid:0000-0002-3071-5563
+agile_2018_014,agile,2018,10.1007/978-3-319-78208-9_14,3,Mohammad Taleai,0000-0002-8419-4425,orcid:0000-0002-8419-4425
+agile_2018_014,agile,2018,10.1007/978-3-319-78208-9_14,4,Ali Mansourian,0000-0001-6812-4307,orcid:0000-0001-6812-4307
+agile_2020_008,agile,2020,10.5194/agile-giss-1-9-2020,1,Hiroyuki Kaneko,0000-0002-8213-8948,orcid:0000-0002-8213-8948
+agile_2020_008,agile,2020,10.5194/agile-giss-1-9-2020,2,Toshihiro Osaragi,0000-0002-6327-3976,orcid:0000-0002-6327-3976
+agile_2020_016,agile,2020,10.5194/agile-giss-1-17-2020,1,Yoshiki Ogawa,0000-0002-1987-4520,orcid:0000-0002-1987-4520
+agile_2020_016,agile,2020,10.5194/agile-giss-1-17-2020,2,Taisei Sato,,name:sato taisei
+agile_2020_016,agile,2020,10.5194/agile-giss-1-17-2020,3,Yoshihide Sekimoto,0000-0003-0305-7056,orcid:0000-0003-0305-7056
+agile_2022_006,agile,2022,10.5194/agile-giss-3-6-2022,1,Ditsuhi Iskandaryan,0000-0001-6668-2700,orcid:0000-0001-6668-2700
+agile_2022_006,agile,2022,10.5194/agile-giss-3-6-2022,2,Silvana Di Sabatino,0000-0003-2716-9247,orcid:0000-0003-2716-9247
+agile_2022_006,agile,2022,10.5194/agile-giss-3-6-2022,3,Francisco Ramos,0000-0003-2540-4741,orcid:0000-0003-2540-4741
+agile_2022_006,agile,2022,10.5194/agile-giss-3-6-2022,4,Sergio Trilles,0000-0002-9304-0719,orcid:0000-0002-9304-0719
+agile_2022_014,agile,2022,10.5194/agile-giss-3-14-2022,1,Arun Sharma,0000-0002-6908-6960,orcid:0000-0002-6908-6960
+agile_2022_014,agile,2022,10.5194/agile-giss-3-14-2022,2,Majid Farhadloo,0000-0001-8602-0165,orcid:0000-0001-8602-0165
+agile_2022_014,agile,2022,10.5194/agile-giss-3-14-2022,3,Yan Li,0000-0001-6155-0389,orcid:0000-0001-6155-0389
+agile_2022_014,agile,2022,10.5194/agile-giss-3-14-2022,4,Jayant Gupta,0000-0001-7028-9928,orcid:0000-0001-7028-9928
+agile_2022_014,agile,2022,10.5194/agile-giss-3-14-2022,5,A.R. Kulkarni,0000-0001-8981-6417,orcid:0000-0001-8981-6417
+agile_2022_014,agile,2022,10.5194/agile-giss-3-14-2022,6,Shashi Shekhar,0000-0002-3191-3879,orcid:0000-0002-3191-3879
+agile_2022_022,agile,2022,10.5194/agile-giss-3-22-2022,1,Stefania Zourlidou,0000-0003-1759-7379,orcid:0000-0003-1759-7379
+agile_2022_022,agile,2022,10.5194/agile-giss-3-22-2022,2,Jens Golze,0000-0001-7355-351X,orcid:0000-0001-7355-351X
+agile_2022_022,agile,2022,10.5194/agile-giss-3-22-2022,3,Monika Sester,0000-0002-6656-8809,orcid:0000-0002-6656-8809
+agile_2023_004,agile,2023,10.5194/agile-giss-4-5-2023,1,Simon Groß,0009-0002-2813-0811,orcid:0009-0002-2813-0811
+agile_2023_004,agile,2023,10.5194/agile-giss-4-5-2023,2,Benjamin Herfort,0000-0001-9738-4060,orcid:0000-0001-9738-4060
+agile_2023_004,agile,2023,10.5194/agile-giss-4-5-2023,3,Sabrina Marx,0000-0002-8465-6589,orcid:0000-0002-8465-6589
+agile_2023_004,agile,2023,10.5194/agile-giss-4-5-2023,4,Alexander Zipf,0000-0003-4916-9838,orcid:0000-0003-4916-9838
+agile_2023_012,agile,2023,10.5194/agile-giss-4-13-2023,1,Eleni Tomai,0000-0003-1162-7389,orcid:0000-0003-1162-7389
+agile_2023_012,agile,2023,10.5194/agile-giss-4-13-2023,2,Margarita Kokla,0000-0002-0369-7099,orcid:0000-0002-0369-7099
+agile_2023_012,agile,2023,10.5194/agile-giss-4-13-2023,3,Christos Charcharos,0000-0002-1328-9603,orcid:0000-0002-1328-9603
+agile_2023_012,agile,2023,10.5194/agile-giss-4-13-2023,4,Marinos Kavouras,0000-0001-7563-0793,orcid:0000-0001-7563-0793
+agile_2024_006,agile,2024,10.5194/agile-giss-5-7-2024,1,J. Hurst,0009-0000-0004-0051,orcid:0009-0000-0004-0051
+agile_2024_006,agile,2024,10.5194/agile-giss-5-7-2024,2,Auriol Degbelo,0000-0001-5087-8776,orcid:0000-0001-5087-8776
+agile_2024_006,agile,2024,10.5194/agile-giss-5-7-2024,3,Christian Kray,0000-0002-4199-8976,orcid:0000-0002-4199-8976
+agile_2024_014,agile,2024,10.5194/agile-giss-5-15-2024,1,Balthasar Teuscher,,orcid:0000-0002-2811-1920
+agile_2024_014,agile,2024,10.5194/agile-giss-5-15-2024,2,Martin Werner,0000-0002-6951-8022,orcid:0000-0002-6951-8022
+giscience_2016_003,giscience,2016,10.1007/978-3-319-45738-3_3,1,Carson Farmer,0000-0003-1643-5976,orcid:0000-0003-1643-5976
+giscience_2016_003,giscience,2016,10.1007/978-3-319-45738-3_3,2,Carsten Keßler,0000-0002-9724-820X,orcid:0000-0002-9724-820X
+giscience_2016_011,giscience,2016,10.1007/978-3-319-45738-3_11,1,Ashwin Shashidharan,,name:ashwin shashidharan
+giscience_2016_011,giscience,2016,10.1007/978-3-319-45738-3_11,2,Derek Van Berkel,0000-0002-1001-783X,orcid:0000-0002-1001-783X
+giscience_2016_011,giscience,2016,10.1007/978-3-319-45738-3_11,3,Ranga Raju Vatsavai,0000-0002-7083-0267,orcid:0000-0002-7083-0267
+giscience_2016_011,giscience,2016,10.1007/978-3-319-45738-3_11,4,Ross K. Meentemeyer,0000-0002-1247-6212,orcid:0000-0002-1247-6212
+giscience_2016_019,giscience,2016,10.1007/978-3-319-45738-3_19,1,Arthur van Goethem,,name:arthur goethem van
+giscience_2016_019,giscience,2016,10.1007/978-3-319-45738-3_19,2,Marc van Kreveld,0000-0001-8208-3468,orcid:0000-0001-8208-3468
+giscience_2016_019,giscience,2016,10.1007/978-3-319-45738-3_19,3,Bettina Speckmann,0000-0002-8514-7858,orcid:0000-0002-8514-7858
+giscience_2018_002,giscience,2018,10.4230/LIPIcs.GIScience.2018.2,1,Alberto Belussi,0000-0003-3023-8020,orcid:0000-0003-3023-8020
+giscience_2018_002,giscience,2018,10.4230/LIPIcs.GIScience.2018.2,2,Damiano Carra,0000-0002-3467-1166,orcid:0000-0002-3467-1166
+giscience_2018_002,giscience,2018,10.4230/LIPIcs.GIScience.2018.2,3,Sara Migliorini,0000-0003-3675-7243,orcid:0000-0003-3675-7243
+giscience_2018_002,giscience,2018,10.4230/LIPIcs.GIScience.2018.2,4,Mauro Negri,0000-0001-9560-0575,orcid:0000-0001-9560-0575
+giscience_2018_002,giscience,2018,10.4230/LIPIcs.GIScience.2018.2,5,Giuseppe Pelagatti,,name:giuseppe pelagatti
+giscience_2018_010,giscience,2018,10.4230/LIPIcs.GIScience.2018.10,1,Yan Li,0000-0001-6018-6538,orcid:0000-0001-6018-6538
+giscience_2018_010,giscience,2018,10.4230/LIPIcs.GIScience.2018.10,2,Shashi Shekhar,0000-0001-8837-192X,orcid:0000-0001-8837-192X
+giscience_2021_002,giscience,2020,10.4230/lipics.giscience.2021.i.2,1,"Bucher, Dominik",0000-0001-9824-5388,orcid:0000-0001-9824-5388
+giscience_2021_002,giscience,2020,10.4230/lipics.giscience.2021.i.2,2,"Martin, Henry",,orcid:0000-0002-0456-8539
+giscience_2021_002,giscience,2020,10.4230/lipics.giscience.2021.i.2,3,"Jonietz, David",,name:david jonietz
+giscience_2021_002,giscience,2020,10.4230/lipics.giscience.2021.i.2,4,"Raubal, Martin",0000-0001-5951-6835,orcid:0000-0001-5951-6835
+giscience_2021_002,giscience,2020,10.4230/lipics.giscience.2021.i.2,5,"Westerholt, René",0000-0001-8228-3814,orcid:0000-0001-8228-3814
+giscience_2021_010,giscience,2020,10.4230/lipics.giscience.2021.i.10,1,Jaehee Park,0000-0002-2640-4148,orcid:0000-0002-2640-4148
+giscience_2021_010,giscience,2020,10.4230/lipics.giscience.2021.i.10,2,Hao Zhang,0000-0001-6522-1566,orcid:0000-0001-6522-1566
+giscience_2021_010,giscience,2020,10.4230/lipics.giscience.2021.i.10,3,Su Yeon Han,0000-0002-3906-4533,orcid:0000-0002-3906-4533
+giscience_2021_010,giscience,2020,10.4230/lipics.giscience.2021.i.10,4,Atsushi Nara,0000-0003-4173-7773,orcid:0000-0003-4173-7773
+giscience_2021_010,giscience,2020,10.4230/lipics.giscience.2021.i.10,5,Ming‐Hsiang Tsou,0000-0003-3421-486X,orcid:0000-0003-3421-486X
+giscience_2021_017,giscience,2021,10.4230/lipics.giscience.2021.ii.1,1,Fiona Polzin,,name:fiona polzin
+giscience_2021_017,giscience,2021,10.4230/lipics.giscience.2021.ii.1,2,Ourania Kounadi,0000-0002-5998-7343,orcid:0000-0002-5998-7343
+giscience_2021_026,giscience,2021,10.4230/lipics.giscience.2021.ii.10,1,Ankush Acharyya,0000-0001-5432-7568,orcid:0000-0001-5432-7568
+giscience_2021_026,giscience,2021,10.4230/lipics.giscience.2021.ii.10,2,Ramesh K. Jallu,0000-0001-8811-5694,orcid:0000-0001-8811-5694
+giscience_2021_026,giscience,2021,10.4230/lipics.giscience.2021.ii.10,3,Maarten Löffler,,name:loffler maarten
+giscience_2021_026,giscience,2021,10.4230/lipics.giscience.2021.ii.10,4,Gert G.T. Meijer,,name:gert meijer
+giscience_2021_026,giscience,2021,10.4230/lipics.giscience.2021.ii.10,5,Maria Saumell,0000-0002-4704-2609,orcid:0000-0002-4704-2609
+giscience_2021_026,giscience,2021,10.4230/lipics.giscience.2021.ii.10,6,Rodrigo I. Silveira,0000-0003-0202-4543,orcid:0000-0003-0202-4543
+giscience_2021_026,giscience,2021,10.4230/lipics.giscience.2021.ii.10,7,Frank Staals,,orcid:0009-0004-8522-1351
+giscience_2023_001,giscience,2023,10.4230/LIPIcs.GIScience.2023.1,1,"Alinaghi, Negar",0000-0001-6594-4481,orcid:0000-0001-6594-4481
+giscience_2023_001,giscience,2023,10.4230/LIPIcs.GIScience.2023.1,2,"Kwok, Tiffany C. K.",0000-0001-9782-4847,orcid:0000-0001-9782-4847
+giscience_2023_001,giscience,2023,10.4230/LIPIcs.GIScience.2023.1,3,"Kiefer, Peter",0000-0003-4457-0438,orcid:0000-0003-4457-0438
+giscience_2023_001,giscience,2023,10.4230/LIPIcs.GIScience.2023.1,4,"Giannopoulos, Ioannis",0000-0002-2556-5230,orcid:0000-0002-2556-5230
+giscience_2023_009,giscience,2023,10.4230/LIPIcs.GIScience.2023.9,1,"McKenzie, Grant",0000-0003-3247-2777,orcid:0000-0003-3247-2777
+giscience_2023_009,giscience,2023,10.4230/LIPIcs.GIScience.2023.9,2,"Zhang, Hongyu",0000-0002-5137-6177,orcid:0000-0002-5137-6177
+agile_2017_001,agile,2017,10.1007/978-3-319-56759-4_1,1,Vanessa Joy A. Anacta,0000-0002-6224-8541,orcid:0000-0002-6224-8541
+agile_2017_001,agile,2017,10.1007/978-3-319-56759-4_1,2,Mohammed Imaduddin Humayun,,name:humayun imaduddin mohammed
+agile_2017_001,agile,2017,10.1007/978-3-319-56759-4_1,3,Angela Schwering,0000-0002-4185-1464,orcid:0000-0002-4185-1464
+agile_2017_001,agile,2017,10.1007/978-3-319-56759-4_1,4,Jakub Krukar,0000-0003-2615-8757,orcid:0000-0003-2615-8757
+agile_2017_009,agile,2017,10.1007/978-3-319-56759-4_9,1,Colin Robertson,0000-0003-0998-2971,orcid:0000-0003-0998-2971
+agile_2017_009,agile,2017,10.1007/978-3-319-56759-4_9,2,Rob Feick,0000-0003-1061-9045,orcid:0000-0003-1061-9045
+agile_2017_009,agile,2017,10.1007/978-3-319-56759-4_9,3,Martin Sýkora,0000-0002-5363-5857,orcid:0000-0002-5363-5857
+agile_2017_009,agile,2017,10.1007/978-3-319-56759-4_9,4,Ketan Shankardass,0000-0002-8410-2201,orcid:0000-0002-8410-2201
+agile_2017_009,agile,2017,10.1007/978-3-319-56759-4_9,5,Krystelle Shaughnessy,0000-0002-4609-0799,orcid:0000-0002-4609-0799
+agile_2017_017,agile,2017,10.1007/978-3-319-56759-4_17,1,Fabio Veronesi,0000-0002-3105-7275,orcid:0000-0002-3105-7275
+agile_2017_017,agile,2017,10.1007/978-3-319-56759-4_17,2,Athina Korfiati,,name:athina korfiati
+agile_2017_017,agile,2017,10.1007/978-3-319-56759-4_17,3,René Buffat,,name:buffat rene
+agile_2017_017,agile,2017,10.1007/978-3-319-56759-4_17,4,Martin Raubal,0000-0001-5951-6835,orcid:0000-0001-5951-6835
+agile_2019_006,agile,2019,10.1007/978-3-030-14745-7_6,1,Gerhard Navratil,0000-0002-2978-5724,orcid:0000-0002-2978-5724
+agile_2019_006,agile,2019,10.1007/978-3-030-14745-7_6,2,Ioannis Giannopoulos,0000-0002-2556-5230,orcid:0000-0002-2556-5230
+agile_2019_006,agile,2019,10.1007/978-3-030-14745-7_6,3,Gilbert Kotzbek,,name:gilbert kotzbek
+agile_2019_014,agile,2019,10.1007/978-3-030-14745-7_14,1,Romain Mejean,0000-0003-2194-3107,orcid:0000-0003-2194-3107
+agile_2019_014,agile,2019,10.1007/978-3-030-14745-7_14,2,Martin Paegelow,,name:martin paegelow
+agile_2019_014,agile,2019,10.1007/978-3-030-14745-7_14,3,Mehdi Saqalli,0000-0001-5405-466X,orcid:0000-0001-5405-466X
+agile_2019_014,agile,2019,10.1007/978-3-030-14745-7_14,4,Doryan Kaced,,name:doryan kaced
+agile_2018_007,agile,2018,10.1007/978-3-319-78208-9_7,1,Andrea Ballatore,0000-0003-3477-7654,orcid:0000-0003-3477-7654
+agile_2018_007,agile,2018,10.1007/978-3-319-78208-9_7,2,Simon Scheider,0000-0002-2267-4810,orcid:0000-0002-2267-4810
+agile_2018_007,agile,2018,10.1007/978-3-319-78208-9_7,3,Rob Lemmens,0000-0001-5269-6343,orcid:0000-0001-5269-6343
+agile_2018_015,agile,2018,10.1007/978-3-319-78208-9_15,1,David Jonietz,,name:david jonietz
+agile_2018_015,agile,2018,10.1007/978-3-319-78208-9_15,2,Dominik Bucher,0000-0001-9824-5388,orcid:0000-0001-9824-5388
+agile_2018_015,agile,2018,10.1007/978-3-319-78208-9_15,3,Henry Martin,0000-0002-0456-8539,orcid:0000-0002-0456-8539
+agile_2018_015,agile,2018,10.1007/978-3-319-78208-9_15,4,Martin Raubal,0000-0001-5951-6835,orcid:0000-0001-5951-6835
+agile_2021_002,agile,2021,10.5194/agile-giss-2-2-2021,1,Rémy Decoupes,0000-0003-0863-9581,orcid:0000-0003-0863-9581
+agile_2021_002,agile,2021,10.5194/agile-giss-2-2-2021,2,Rodrique Kafando,0000-0002-7190-9225,orcid:0000-0002-7190-9225
+agile_2021_002,agile,2021,10.5194/agile-giss-2-2-2021,3,Mathieu Roche,0000-0003-3272-8568,orcid:0000-0003-3272-8568
+agile_2021_002,agile,2021,10.5194/agile-giss-2-2-2021,4,Maguelonne Teisseire,0000-0001-9313-6414,orcid:0000-0001-9313-6414
+agile_2021_010,agile,2021,10.5194/agile-giss-2-10-2021,1,F. Politz,,name:politz
+agile_2021_010,agile,2021,10.5194/agile-giss-2-10-2021,2,Monika Sester,0000-0002-6656-8809,orcid:0000-0002-6656-8809
+agile_2021_010,agile,2021,10.5194/agile-giss-2-10-2021,3,Claus Brenner,0000-0002-6459-0682,orcid:0000-0002-6459-0682
+agile_2020_001,agile,2020,10.5194/agile-giss-1-2-2020,1,Dominik Bucher,0000-0001-9824-5388,orcid:0000-0001-9824-5388
+agile_2020_001,agile,2020,10.5194/agile-giss-1-2-2020,2,Henry Martin,0000-0002-0456-8539,orcid:0000-0002-0456-8539
+agile_2020_001,agile,2020,10.5194/agile-giss-1-2-2020,3,Jannik Hamper,,name:hamper jannik
+agile_2020_001,agile,2020,10.5194/agile-giss-1-2-2020,4,Atefeh Jaleh,,name:atefeh jaleh
+agile_2020_001,agile,2020,10.5194/agile-giss-1-2-2020,5,Henrik Becker,0000-0002-0376-4802,orcid:0000-0002-0376-4802
+agile_2020_001,agile,2020,10.5194/agile-giss-1-2-2020,6,Pengxiang Zhao,0000-0002-5279-9331,orcid:0000-0002-5279-9331
+agile_2020_001,agile,2020,10.5194/agile-giss-1-2-2020,7,Martin Raubal,0000-0001-5951-6835,orcid:0000-0001-5951-6835
+agile_2020_009,agile,2020,10.5194/agile-giss-1-10-2020,1,Michel Krämer,0000-0003-2775-5844,orcid:0000-0003-2775-5844
+agile_2020_009,agile,2020,10.5194/agile-giss-1-10-2020,2,Ralf Gutbell,,name:gutbell ralf
+agile_2020_009,agile,2020,10.5194/agile-giss-1-10-2020,3,Hendrik M. Würz,0000-0002-4664-953X,orcid:0000-0002-4664-953X
+agile_2020_009,agile,2020,10.5194/agile-giss-1-10-2020,4,Jannis Weil,0000-0001-5439-9131,orcid:0000-0001-5439-9131
+agile_2020_017,agile,2020,10.5194/agile-giss-1-18-2020,1,Toshihiro Osaragi,0000-0002-6327-3976,orcid:0000-0002-6327-3976
+agile_2022_015,agile,2022,10.5194/agile-giss-3-15-2022,1,Hyesop Shin,0000-0003-2637-7933,orcid:0000-0003-2637-7933
+agile_2022_015,agile,2022,10.5194/agile-giss-3-15-2022,2,Costanza Cagnina,0009-0008-9899-8388,orcid:0009-0008-9899-8388
+agile_2022_015,agile,2022,10.5194/agile-giss-3-15-2022,3,Anahid Basiri,0000-0002-2399-1797,orcid:0000-0002-2399-1797
+agile_2023_005,agile,2023,10.5194/agile-giss-4-6-2023,1,Falko Krügel,0009-0000-9858-7230,orcid:0009-0000-9858-7230
+agile_2023_005,agile,2023,10.5194/agile-giss-4-6-2023,2,Stephan Mäs,0000-0002-9016-1996,orcid:0000-0002-9016-1996
+agile_2024_007,agile,2024,10.5194/agile-giss-5-8-2024,1,Irada Ismayilova,,orcid:0000-0003-4414-4084
+agile_2024_007,agile,2024,10.5194/agile-giss-5-8-2024,2,Sabine Timpf,0000-0002-7964-4110,orcid:0000-0002-7964-4110
+giscience_2016_004,giscience,2016,10.1007/978-3-319-45738-3_4,1,Emre Eftelioglu,0000-0002-5551-0046,orcid:0000-0002-5551-0046
+giscience_2016_004,giscience,2016,10.1007/978-3-319-45738-3_4,2,Yan Li,0000-0001-6682-0456,orcid:0000-0001-6682-0456
+giscience_2016_004,giscience,2016,10.1007/978-3-319-45738-3_4,3,Xun Tang,0000-0003-0274-0312,orcid:0000-0003-0274-0312
+giscience_2016_004,giscience,2016,10.1007/978-3-319-45738-3_4,4,Shashi Shekhar,0000-0001-8837-192X,orcid:0000-0001-8837-192X
+giscience_2016_004,giscience,2016,10.1007/978-3-319-45738-3_4,5,James M. Kang,,name:james kang
+giscience_2016_004,giscience,2016,10.1007/978-3-319-45738-3_4,6,Christopher Farah,,name:christopher farah
+giscience_2016_020,giscience,2016,10.1007/978-3-319-45738-3_20,1,Benjamin Niedermann,0000-0001-6638-7250,orcid:0000-0001-6638-7250
+giscience_2016_020,giscience,2016,10.1007/978-3-319-45738-3_20,2,Martin Nöllenburg,0000-0003-0454-3937,orcid:0000-0003-0454-3937
+giscience_2018_003,giscience,2018,10.4230/LIPIcs.GIScience.2018.3,1,"Fogliaroni, Paolo",,orcid:0000-0002-0578-8904
+giscience_2018_003,giscience,2018,10.4230/LIPIcs.GIScience.2018.3,2,"Bucher, Dominik",,orcid:0000-0001-9824-5388
+giscience_2018_003,giscience,2018,10.4230/LIPIcs.GIScience.2018.3,3,"Jankovic, Nikola",,name:jankovic nikola
+giscience_2018_003,giscience,2018,10.4230/LIPIcs.GIScience.2018.3,4,"Giannopoulos, Ioannis",,orcid:0000-0002-2556-5230
+giscience_2018_011,giscience,2018,10.4230/LIPIcs.GIScience.2018.11,1,Yann Méneroux,0000-0001-9126-7496,orcid:0000-0001-9126-7496
+giscience_2018_011,giscience,2018,10.4230/LIPIcs.GIScience.2018.11,2,Hiroshi Kanasugi,0000-0001-6503-1842,orcid:0000-0001-6503-1842
+giscience_2018_011,giscience,2018,10.4230/LIPIcs.GIScience.2018.11,3,Guillaume Saint Pierre,0000-0003-2375-3649,orcid:0000-0003-2375-3649
+giscience_2018_011,giscience,2018,10.4230/LIPIcs.GIScience.2018.11,4,Arnaud Le Guilcher,0000-0001-6673-6158,orcid:0000-0001-6673-6158
+giscience_2018_011,giscience,2018,10.4230/LIPIcs.GIScience.2018.11,5,Sébastien Mustière,0000-0002-0272-3320,orcid:0000-0002-0272-3320
+giscience_2018_011,giscience,2018,10.4230/LIPIcs.GIScience.2018.11,6,Ryosuke Shibasaki,0000-0001-8760-244X,orcid:0000-0001-8760-244X
+giscience_2018_011,giscience,2018,10.4230/LIPIcs.GIScience.2018.11,7,Yugo Kato,,name:kato yugo
+giscience_2021_003,giscience,2020,10.4230/lipics.giscience.2021.i.3,1,Xueqing Deng,0000-0003-0991-6966,orcid:0000-0003-0991-6966
+giscience_2021_003,giscience,2020,10.4230/lipics.giscience.2021.i.3,2,Yuxin Tian,0000-0002-3056-5753,orcid:0000-0002-3056-5753
+giscience_2021_003,giscience,2020,10.4230/lipics.giscience.2021.i.3,3,Shawn Newsam,0000-0001-6803-5291,orcid:0000-0001-6803-5291
+giscience_2021_011,giscience,2020,10.4230/lipics.giscience.2021.i.11,1,"Qutbuddin, Ahmad",0000-0002-1401-5532,orcid:0000-0002-1401-5532
+giscience_2021_011,giscience,2020,10.4230/lipics.giscience.2021.i.11,2,"Yang, KwangSoo",0000-0003-4293-9908,orcid:0000-0003-4293-9908
+giscience_2021_019,giscience,2021,10.4230/lipics.giscience.2021.ii.3,1,Christina Ludwig,0000-0003-4669-3298,orcid:0000-0003-4669-3298
+giscience_2021_019,giscience,2021,10.4230/lipics.giscience.2021.ii.3,2,Sven Lautenbach,,orcid:0000-0003-1825-9996
+giscience_2021_019,giscience,2021,10.4230/lipics.giscience.2021.ii.3,3,Eva-Marie Schömann,,name:eva marie schomann
+giscience_2021_019,giscience,2021,10.4230/lipics.giscience.2021.ii.3,4,Alexander Zipf,0000-0003-4916-9838,orcid:0000-0003-4916-9838
+giscience_2021_027,giscience,2021,10.4230/lipics.giscience.2021.ii.11,1,Isabella Kreller,,orcid:0009-0003-3603-9791
+giscience_2021_027,giscience,2021,10.4230/lipics.giscience.2021.ii.11,2,Bernd Ludwig,0000-0003-3599-2081,orcid:0000-0003-3599-2081
+giscience_2023_002,giscience,2023,10.4230/LIPIcs.GIScience.2023.2,1,Thomas Depian,0009-0003-7498-6271,orcid:0009-0003-7498-6271
+giscience_2023_002,giscience,2023,10.4230/LIPIcs.GIScience.2023.2,2,Guangping Li,0000-0002-7966-076X,orcid:0000-0002-7966-076X
+giscience_2023_002,giscience,2023,10.4230/LIPIcs.GIScience.2023.2,3,Martin Nöllenburg,0000-0003-0454-3937,orcid:0000-0003-0454-3937
+giscience_2023_002,giscience,2023,10.4230/LIPIcs.GIScience.2023.2,4,Jules Wulms,0000-0002-9314-8260,orcid:0000-0002-9314-8260
+giscience_2023_010,giscience,2023,10.4230/LIPIcs.GIScience.2023.10,1,"van Beusekom, Nathan",0000-0003-1813-5299,orcid:0000-0003-1813-5299
+giscience_2023_010,giscience,2023,10.4230/LIPIcs.GIScience.2023.10,2,"Meulemans, Wouter",0000-0002-4978-3400,orcid:0000-0002-4978-3400
+giscience_2023_010,giscience,2023,10.4230/LIPIcs.GIScience.2023.10,3,"Speckmann, Bettina",0000-0002-8514-7858,orcid:0000-0002-8514-7858
+giscience_2023_010,giscience,2023,10.4230/LIPIcs.GIScience.2023.10,4,"Wood, Jo",0000-0001-9270-247X,orcid:0000-0001-9270-247X
+agile_2018_002,agile,2018,10.1007/978-3-319-78208-9_2,1,Syed Monjur Murshed,0000-0002-6786-9881,orcid:0000-0002-6786-9881
+agile_2018_002,agile,2018,10.1007/978-3-319-78208-9_2,2,A. Lindsay,,name:lindsay
+agile_2018_002,agile,2018,10.1007/978-3-319-78208-9_2,3,Solène Picard,,name:picard solene
+agile_2018_002,agile,2018,10.1007/978-3-319-78208-9_2,4,Alexander Simons,,orcid:0000-0001-9269-2152
+agile_2017_004,agile,2017,10.1007/978-3-319-56759-4_4,1,Jana Götze,,name:gotze jana
+agile_2017_004,agile,2017,10.1007/978-3-319-56759-4_4,2,Johan Boye,0000-0003-2600-7668,orcid:0000-0003-2600-7668
+agile_2017_012,agile,2017,10.1007/978-3-319-56759-4_12,1,Hai Huang,0000-0001-8745-8142,orcid:0000-0001-8745-8142
+agile_2017_012,agile,2017,10.1007/978-3-319-56759-4_12,2,Helmut Mayer,0000-0002-9439-2695,orcid:0000-0002-9439-2695
+agile_2019_001,agile,2019,10.1007/978-3-030-14745-7_1,1,Ehsan Hamzei,0000-0002-4712-230X,orcid:0000-0002-4712-230X
+agile_2019_001,agile,2019,10.1007/978-3-030-14745-7_1,2,Haonan Li,0000-0002-6993-7948,orcid:0000-0002-6993-7948
+agile_2019_001,agile,2019,10.1007/978-3-030-14745-7_1,3,Maria Vasardani,0000-0003-0208-0561,orcid:0000-0003-0208-0561
+agile_2019_001,agile,2019,10.1007/978-3-030-14745-7_1,4,Timothy Baldwin,0000-0003-4525-6950,orcid:0000-0003-4525-6950
+agile_2019_001,agile,2019,10.1007/978-3-030-14745-7_1,5,Stephan Winter,0000-0002-3403-6939,orcid:0000-0002-3403-6939
+agile_2019_001,agile,2019,10.1007/978-3-030-14745-7_1,6,Martin Tomko,0000-0002-5736-4679,orcid:0000-0002-5736-4679
+agile_2019_009,agile,2019,10.1007/978-3-030-14745-7_9,1,Andrea Ballatore,0000-0003-3477-7654,orcid:0000-0003-3477-7654
+agile_2019_009,agile,2019,10.1007/978-3-030-14745-7_9,2,Simon Scheider,0000-0002-2267-4810,orcid:0000-0002-2267-4810
+agile_2019_009,agile,2019,10.1007/978-3-030-14745-7_9,3,Bas Spierings,,orcid:0009-0002-6935-1231
+agile_2019_017,agile,2019,10.1007/978-3-030-14745-7_17,1,Stefan Kern,,name:kern stefan
+agile_2019_017,agile,2019,10.1007/978-3-030-14745-7_17,2,Johannes Scholz,0000-0002-3212-8864,orcid:0000-0002-3212-8864
+agile_2021_005,agile,2021,10.5194/agile-giss-2-5-2021,1,Monika Kopecká,0000-0002-8191-0393,orcid:0000-0002-8191-0393
+agile_2021_005,agile,2021,10.5194/agile-giss-2-5-2021,2,Daniel Szatmári,0000-0001-8065-0625,orcid:0000-0001-8065-0625
+agile_2021_005,agile,2021,10.5194/agile-giss-2-5-2021,3,Juraj Holec,0000-0001-8355-7477,orcid:0000-0001-8355-7477
+agile_2021_005,agile,2021,10.5194/agile-giss-2-5-2021,4,Ján Feranec,0000-0001-7859-3983,orcid:0000-0001-7859-3983
+agile_2021_013,agile,2021,10.5194/agile-giss-2-13-2021,1,Martin Schmidl,,name:martin schmidl
+agile_2021_013,agile,2021,10.5194/agile-giss-2-13-2021,2,Gerhard Navratil,0000-0002-2978-5724,orcid:0000-0002-2978-5724
+agile_2021_013,agile,2021,10.5194/agile-giss-2-13-2021,3,Ioannis Giannopoulos,0000-0002-2556-5230,orcid:0000-0002-2556-5230
+agile_2020_004,agile,2020,10.5194/agile-giss-1-5-2020,1,Thomas Gründemann,,name:grundemann thomas
+agile_2020_004,agile,2020,10.5194/agile-giss-1-5-2020,2,Dirk Burghardt,0000-0003-2949-4887,orcid:0000-0003-2949-4887
+agile_2020_012,agile,2020,10.5194/agile-giss-1-13-2020,1,Gengchen Mai,0000-0002-7818-7309,orcid:0000-0002-7818-7309
+agile_2020_012,agile,2020,10.5194/agile-giss-1-13-2020,2,Krzysztof Janowicz,,orcid:0009-0003-1968-887X
+agile_2020_012,agile,2020,10.5194/agile-giss-1-13-2020,3,Sathya Prasad,,name:prasad sathya
+agile_2020_012,agile,2020,10.5194/agile-giss-1-13-2020,4,Meilin Shi,0000-0001-6039-7810,orcid:0000-0001-6039-7810
+agile_2020_012,agile,2020,10.5194/agile-giss-1-13-2020,5,Ling Cai,0000-0001-7106-4907,orcid:0000-0001-7106-4907
+agile_2020_012,agile,2020,10.5194/agile-giss-1-13-2020,6,Rui Zhu,0000-0002-8910-9445,orcid:0000-0002-8910-9445
+agile_2020_012,agile,2020,10.5194/agile-giss-1-13-2020,7,Blake Regalia,0000-0001-9303-1591,orcid:0000-0001-9303-1591
+agile_2020_012,agile,2020,10.5194/agile-giss-1-13-2020,8,Ni Lao,0000-0002-4034-7784,orcid:0000-0002-4034-7784
+agile_2020_020,agile,2020,10.5194/agile-giss-1-21-2020,1,Tobias Werner,0009-0008-2747-5168,orcid:0009-0008-2747-5168
+agile_2020_020,agile,2020,10.5194/agile-giss-1-21-2020,2,Thomas Brinkhoff,0000-0002-5692-7855,orcid:0000-0002-5692-7855
+agile_2022_002,agile,2022,10.5194/agile-giss-3-2-2022,1,Guoray Cai,0000-0002-5189-8442,orcid:0000-0002-5189-8442
+agile_2022_002,agile,2022,10.5194/agile-giss-3-2-2022,2,Yimu Pan,,name:pan yimu
+agile_2022_010,agile,2022,10.5194/agile-giss-3-10-2022,1,Tom Niers,0000-0002-5746-8590,orcid:0000-0002-5746-8590
+agile_2022_010,agile,2022,10.5194/agile-giss-3-10-2022,2,Jan Stenkamp,0000-0003-1100-4907,orcid:0000-0003-1100-4907
+agile_2022_010,agile,2022,10.5194/agile-giss-3-10-2022,3,Nick Pascal Jakuschona,0000-0001-6286-8022,orcid:0000-0001-6286-8022
+agile_2022_010,agile,2022,10.5194/agile-giss-3-10-2022,4,Thomas Bartoschek,0000-0002-0882-1036,orcid:0000-0002-0882-1036
+agile_2022_010,agile,2022,10.5194/agile-giss-3-10-2022,5,Sven Schade,0000-0001-5677-5209,orcid:0000-0001-5677-5209
+agile_2023_008,agile,2023,10.5194/agile-giss-4-9-2023,1,Eva Nuhn,0000-0003-2443-8122,orcid:0000-0003-2443-8122
+agile_2023_008,agile,2023,10.5194/agile-giss-4-9-2023,2,Kai Hamburger,,name:hamburger kai
+agile_2023_008,agile,2023,10.5194/agile-giss-4-9-2023,3,Sabine Timpf,0000-0002-7964-4110,orcid:0000-0002-7964-4110
+agile_2024_002,agile,2024,10.5194/agile-giss-5-3-2024,1,Clément Colin,0000-0003-4786-9080,orcid:0000-0003-4786-9080
+agile_2024_002,agile,2024,10.5194/agile-giss-5-3-2024,2,Diego Vinasco-Alvarez,0000-0002-7171-5754,orcid:0000-0002-7171-5754
+agile_2024_002,agile,2024,10.5194/agile-giss-5-3-2024,3,John Samuel,0000-0001-8721-7007,orcid:0000-0001-8721-7007
+agile_2024_002,agile,2024,10.5194/agile-giss-5-3-2024,4,Sylvie Servigne,,name:servigne sylvie
+agile_2024_002,agile,2024,10.5194/agile-giss-5-3-2024,5,Christophe Bortolaso,,name:bortolaso christophe
+agile_2024_002,agile,2024,10.5194/agile-giss-5-3-2024,6,Gilles Gesquière,0000-0001-7088-1067,orcid:0000-0001-7088-1067
+agile_2024_010,agile,2024,10.5194/agile-giss-5-11-2024,1,Daniela F. Milon-Flores,0000-0002-3587-4838,orcid:0000-0002-3587-4838
+agile_2024_010,agile,2024,10.5194/agile-giss-5-11-2024,2,Camille Bernard,0000-0003-2246-6568,orcid:0000-0003-2246-6568
+agile_2024_010,agile,2024,10.5194/agile-giss-5-11-2024,3,Jérôme Gensel,0000-0003-1398-7118,orcid:0000-0003-1398-7118
+agile_2024_010,agile,2024,10.5194/agile-giss-5-11-2024,4,Grégory Giuliani,0000-0002-1825-8865,orcid:0000-0002-1825-8865
+agile_2024_010,agile,2024,10.5194/agile-giss-5-11-2024,5,Bruno Chatenoux,0000-0001-9947-2945,orcid:0000-0001-9947-2945
+agile_2024_010,agile,2024,10.5194/agile-giss-5-11-2024,6,Hy Dao,0000-0002-0779-8110,orcid:0000-0002-0779-8110
+giscience_2016_007,giscience,2016,10.1007/978-3-319-45738-3_7,1,Takeshi Shirabe,0000-0001-5572-7395,orcid:0000-0001-5572-7395
+giscience_2016_015,giscience,2016,10.1007/978-3-319-45738-3_15,1,Matt Duckham,0000-0002-7249-6709,orcid:0000-0002-7249-6709
+giscience_2016_015,giscience,2016,10.1007/978-3-319-45738-3_15,2,Marc van Kreveld,0000-0001-8208-3468,orcid:0000-0001-8208-3468
+giscience_2016_015,giscience,2016,10.1007/978-3-319-45738-3_15,3,Ross S. Purves,0000-0002-9878-9243,orcid:0000-0002-9878-9243
+giscience_2016_015,giscience,2016,10.1007/978-3-319-45738-3_15,4,Bettina Speckmann,0000-0002-8514-7858,orcid:0000-0002-8514-7858
+giscience_2016_015,giscience,2016,10.1007/978-3-319-45738-3_15,5,Yaguang Tao,0000-0002-6335-1452,orcid:0000-0002-6335-1452
+giscience_2016_015,giscience,2016,10.1007/978-3-319-45738-3_15,6,Kevin Verbeek,0000-0003-3052-4844,orcid:0000-0003-3052-4844
+giscience_2016_015,giscience,2016,10.1007/978-3-319-45738-3_15,7,Jo Wood,0000-0001-9270-247X,orcid:0000-0001-9270-247X
+giscience_2018_006,giscience,2018,10.4230/LIPIcs.GIScience.2018.6,1,Myeong‐Hun Jeong,0000-0003-4850-8121,orcid:0000-0003-4850-8121
+giscience_2018_006,giscience,2018,10.4230/LIPIcs.GIScience.2018.6,2,Junjun Yin,0000-0002-4196-2439,orcid:0000-0002-4196-2439
+giscience_2018_006,giscience,2018,10.4230/LIPIcs.GIScience.2018.6,3,Shaowen Wang,0000-0001-5848-590X,orcid:0000-0001-5848-590X
+giscience_2018_014,giscience,2018,10.4230/LIPIcs.GIScience.2018.14,1,Rudra Ranajee Saha,,name:ranajee rudra saha
+giscience_2018_014,giscience,2018,10.4230/LIPIcs.GIScience.2018.14,2,Tanzima Hashem,0000-0003-1288-5785,orcid:0000-0003-1288-5785
+giscience_2018_014,giscience,2018,10.4230/LIPIcs.GIScience.2018.14,3,Tasmia Shahriar,0000-0003-0199-7757,orcid:0000-0003-0199-7757
+giscience_2018_014,giscience,2018,10.4230/LIPIcs.GIScience.2018.14,4,Lars Kulik,,name:kulik lars
+giscience_2021_006,giscience,2020,10.4230/lipics.giscience.2021.i.6,1,"Hu, Yingjie",0000-0002-5515-4125,orcid:0000-0002-5515-4125
+giscience_2021_006,giscience,2020,10.4230/lipics.giscience.2021.i.6,2,"Wang, Jimin",,name:jimin wang
+giscience_2021_014,giscience,2020,10.4230/lipics.giscience.2021.i.14,1,Fateme Teimouri,,name:fateme teimouri
+giscience_2021_014,giscience,2020,10.4230/lipics.giscience.2021.i.14,2,Kai‐Florian Richter,0000-0001-5629-0981,orcid:0000-0001-5629-0981
+giscience_2021_022,giscience,2021,10.4230/lipics.giscience.2021.ii.6,1,Peter Rottmann,0000-0003-3926-4938,orcid:0000-0003-3926-4938
+giscience_2021_022,giscience,2021,10.4230/lipics.giscience.2021.ii.6,2,Anne Driemel,0000-0002-1943-2589,orcid:0000-0002-1943-2589
+giscience_2021_022,giscience,2021,10.4230/lipics.giscience.2021.ii.6,3,Herman Haverkort,,name:haverkort herman
+giscience_2021_022,giscience,2021,10.4230/lipics.giscience.2021.ii.6,4,Heiko Röglin,0009-0006-8438-3986,orcid:0009-0006-8438-3986
+giscience_2021_022,giscience,2021,10.4230/lipics.giscience.2021.ii.6,5,Jan‐Henrik Haunert,0000-0001-8005-943X,orcid:0000-0001-8005-943X
+giscience_2023_005,giscience,2023,10.4230/LIPIcs.GIScience.2023.5,1,Jonathan Klawitter,0000-0001-8917-5269,orcid:0000-0001-8917-5269
+giscience_2023_005,giscience,2023,10.4230/LIPIcs.GIScience.2023.5,2,Felix Klesen,0000-0003-1136-5673,orcid:0000-0003-1136-5673
+giscience_2023_005,giscience,2023,10.4230/LIPIcs.GIScience.2023.5,3,Joris Y. Scholl,,name:joris scholl
+giscience_2023_005,giscience,2023,10.4230/LIPIcs.GIScience.2023.5,4,Thomas C. van Dijk,,orcid:0000-0001-6553-7317
+giscience_2023_005,giscience,2023,10.4230/LIPIcs.GIScience.2023.5,5,Alexander Zaft,,name:alexander zaft
+agile_2017_005,agile,2017,10.1007/978-3-319-56759-4_5,1,Laura Knoth,0000-0002-0708-8549,orcid:0000-0002-0708-8549
+agile_2017_005,agile,2017,10.1007/978-3-319-56759-4_5,2,Manfred Mittlboeck,0000-0002-6562-7889,orcid:0000-0002-6562-7889
+agile_2017_005,agile,2017,10.1007/978-3-319-56759-4_5,3,Bernhard Vockner,0000-0003-0026-3778,orcid:0000-0003-0026-3778
+agile_2018_003,agile,2018,10.1007/978-3-319-78208-9_3,1,Matteo Gentilucci,0000-0002-5826-5031,orcid:0000-0002-5826-5031
+agile_2018_003,agile,2018,10.1007/978-3-319-78208-9_3,2,Carlo Bisci,0000-0002-7701-5708,orcid:0000-0002-7701-5708
+agile_2018_003,agile,2018,10.1007/978-3-319-78208-9_3,3,Peter Burt,,name:burt peter
+agile_2018_003,agile,2018,10.1007/978-3-319-78208-9_3,4,Massimilano Fazzini,,name:fazzini massimilano
+agile_2018_003,agile,2018,10.1007/978-3-319-78208-9_3,5,Carmela Vaccaro,0000-0002-4954-8697,orcid:0000-0002-4954-8697
+agile_2018_011,agile,2018,10.1007/978-3-319-78208-9_11,1,Toshihiro Osaragi,0000-0002-6327-3976,orcid:0000-0002-6327-3976
+agile_2018_011,agile,2018,10.1007/978-3-319-78208-9_11,2,Ikki Niwa,,name:ikki niwa
+agile_2018_019,agile,2018,10.1007/978-3-319-78208-9_19,1,Carsten Keßler,0000-0002-9724-820X,orcid:0000-0002-9724-820X
+agile_2018_019,agile,2018,10.1007/978-3-319-78208-9_19,2,Enid L. Lotstein,,name:enid lotstein
+agile_2017_013,agile,2017,10.1007/978-3-319-56759-4_13,1,Thomas Liebig,0000-0002-9841-1101,orcid:0000-0002-9841-1101
+agile_2017_013,agile,2017,10.1007/978-3-319-56759-4_13,2,Sebastian Peter,,orcid:0000-0001-6311-6113
+agile_2017_013,agile,2017,10.1007/978-3-319-56759-4_13,3,Maciej Grzenda,0000-0002-5440-4954,orcid:0000-0002-5440-4954
+agile_2017_013,agile,2017,10.1007/978-3-319-56759-4_13,4,Konstanty Junosza-Szaniawski,0000-0003-0352-8583,orcid:0000-0003-0352-8583
+agile_2019_002,agile,2019,10.1007/978-3-030-14745-7_2,1,Gengchen Mai,0000-0002-7818-7309,orcid:0000-0002-7818-7309
+agile_2019_002,agile,2019,10.1007/978-3-030-14745-7_2,2,Bo Yan,0000-0002-4248-7203,orcid:0000-0002-4248-7203
+agile_2019_002,agile,2019,10.1007/978-3-030-14745-7_2,3,Krzysztof Janowicz,0009-0003-1968-887X,orcid:0009-0003-1968-887X
+agile_2019_002,agile,2019,10.1007/978-3-030-14745-7_2,4,Rui Zhu,0000-0002-8910-9445,orcid:0000-0002-8910-9445
+agile_2019_010,agile,2019,10.1007/978-3-030-14745-7_10,1,Yuki Akiyama,0000-0002-8790-0364,orcid:0000-0002-8790-0364
+agile_2019_010,agile,2019,10.1007/978-3-030-14745-7_10,2,Akihiro Ueda,,name:akihiro ueda
+agile_2019_010,agile,2019,10.1007/978-3-030-14745-7_10,3,Kenta Ouchi,,name:kenta ouchi
+agile_2019_010,agile,2019,10.1007/978-3-030-14745-7_10,4,Natsuki Ito,,name:ito natsuki
+agile_2019_010,agile,2019,10.1007/978-3-030-14745-7_10,5,Yoshiya Ono,,name:ono yoshiya
+agile_2019_010,agile,2019,10.1007/978-3-030-14745-7_10,6,Hideo Takaoka,,name:hideo takaoka
+agile_2019_010,agile,2019,10.1007/978-3-030-14745-7_10,7,Kohta Hisadomi,,name:hisadomi kohta
+agile_2019_018,agile,2019,10.1007/978-3-030-14745-7_18,1,Andrea Ballatore,0000-0003-3477-7654,orcid:0000-0003-3477-7654
+agile_2019_018,agile,2019,10.1007/978-3-030-14745-7_18,2,Will McClintock,0000-0002-6807-7608,orcid:0000-0002-6807-7608
+agile_2019_018,agile,2019,10.1007/978-3-030-14745-7_18,3,Grace Goldberg,,name:goldberg grace
+agile_2019_018,agile,2019,10.1007/978-3-030-14745-7_18,4,W. Kühn,0000-0002-4491-0132,orcid:0000-0002-4491-0132
+agile_2021_014,agile,2021,10.5194/agile-giss-2-14-2021,1,Meilin Shi,0000-0001-6039-7810,orcid:0000-0001-6039-7810
+agile_2021_014,agile,2021,10.5194/agile-giss-2-14-2021,2,Krzysztof Janowicz,,orcid:0009-0003-1968-887X
+agile_2021_014,agile,2021,10.5194/agile-giss-2-14-2021,3,Ling Cai,0000-0001-7106-4907,orcid:0000-0001-7106-4907
+agile_2021_014,agile,2021,10.5194/agile-giss-2-14-2021,4,Gengchen Mai,0000-0002-7818-7309,orcid:0000-0002-7818-7309
+agile_2021_014,agile,2021,10.5194/agile-giss-2-14-2021,5,Rui Zhu,0000-0001-8790-4712,orcid:0000-0001-8790-4712
+agile_2020_005,agile,2020,10.5194/agile-giss-1-6-2020,1,Majid Hojati,0000-0001-7350-0055,orcid:0000-0001-7350-0055
+agile_2020_005,agile,2020,10.5194/agile-giss-1-6-2020,2,Colin Robertson,0000-0003-0998-2971,orcid:0000-0003-0998-2971
+agile_2020_013,agile,2020,10.5194/agile-giss-1-14-2020,1,Grant McKenzie,0000-0003-3247-2777,orcid:0000-0003-3247-2777
+agile_2020_013,agile,2020,10.5194/agile-giss-1-14-2020,2,Krzysztof Janowicz,,orcid:0009-0003-1968-887X
+agile_2020_013,agile,2020,10.5194/agile-giss-1-14-2020,3,Carsten Keßler,0000-0002-9724-820X,orcid:0000-0002-9724-820X
+agile_2020_021,agile,2020,10.5194/agile-giss-1-22-2020,1,Jingyi Xiao,0000-0001-8328-6363,orcid:0000-0001-8328-6363
+agile_2020_021,agile,2020,10.5194/agile-giss-1-22-2020,2,Rongxiang Su,0000-0003-1966-7289,orcid:0000-0003-1966-7289
+agile_2020_021,agile,2020,10.5194/agile-giss-1-22-2020,3,Elizabeth C. McBride,0000-0002-8692-5869,orcid:0000-0002-8692-5869
+agile_2020_021,agile,2020,10.5194/agile-giss-1-22-2020,4,Konstadinos G. Goulias,0000-0002-7436-9447,orcid:0000-0002-7436-9447
+agile_2022_003,agile,2022,10.5194/agile-giss-3-3-2022,1,Haojun Cai,,name:cai haojun
+agile_2022_003,agile,2022,10.5194/agile-giss-3-3-2022,2,Yanan Xin,0000-0003-3866-821X,orcid:0000-0003-3866-821X
+agile_2022_003,agile,2022,10.5194/agile-giss-3-3-2022,3,Henry Martin,0000-0002-0456-8539,orcid:0000-0002-0456-8539
+agile_2022_003,agile,2022,10.5194/agile-giss-3-3-2022,4,Martin Raubal,,orcid:0000-0001-5951-6835
+agile_2022_011,agile,2022,10.5194/agile-giss-3-11-2022,1,Lasith Niroshan,0000-0002-9868-8338,orcid:0000-0002-9868-8338
+agile_2022_011,agile,2022,10.5194/agile-giss-3-11-2022,2,James D. Carswell,0000-0002-4766-7297,orcid:0000-0002-4766-7297
+agile_2022_019,agile,2022,10.5194/agile-giss-3-19-2022,1,Nina Wiedemann,0000-0002-8160-7634,orcid:0000-0002-8160-7634
+agile_2022_019,agile,2022,10.5194/agile-giss-3-19-2022,2,Henry Martin,0000-0002-0456-8539,orcid:0000-0002-0456-8539
+agile_2022_019,agile,2022,10.5194/agile-giss-3-19-2022,3,Martin Raubal,0000-0001-5951-6835,orcid:0000-0001-5951-6835
+agile_2023_001,agile,2023,10.5194/agile-giss-4-2-2023,1,Reza Arabsheibani,0000-0003-2224-3823,orcid:0000-0003-2224-3823
+agile_2023_001,agile,2023,10.5194/agile-giss-4-2-2023,2,Ehsan Hamzei,0000-0002-4712-230X,orcid:0000-0002-4712-230X
+agile_2023_001,agile,2023,10.5194/agile-giss-4-2-2023,3,Kimia Amoozandeh,0000-0001-7749-0966,orcid:0000-0001-7749-0966
+agile_2023_001,agile,2023,10.5194/agile-giss-4-2-2023,4,Stephan Winter,0000-0002-3403-6939,orcid:0000-0002-3403-6939
+agile_2023_001,agile,2023,10.5194/agile-giss-4-2-2023,5,Martin Tomko,0000-0002-5736-4679,orcid:0000-0002-5736-4679
+agile_2023_009,agile,2023,10.5194/agile-giss-4-10-2023,1,Enkhbold Nyamsuren,0000-0002-3680-9907,orcid:0000-0002-3680-9907
+agile_2023_009,agile,2023,10.5194/agile-giss-4-10-2023,2,Haiqi Xu,,name:haiqi xu
+agile_2023_009,agile,2023,10.5194/agile-giss-4-10-2023,3,Eric Top,0000-0002-7748-7326,orcid:0000-0002-7748-7326
+agile_2023_009,agile,2023,10.5194/agile-giss-4-10-2023,4,Simon Scheider,0000-0002-2267-4810,orcid:0000-0002-2267-4810
+agile_2023_009,agile,2023,10.5194/agile-giss-4-10-2023,5,Niels Steenbergen,,name:niels steenbergen
+agile_2024_003,agile,2024,10.5194/agile-giss-5-4-2024,1,Ioanna Gogousou,0009-0001-3200-7202,orcid:0009-0001-3200-7202
+agile_2024_003,agile,2024,10.5194/agile-giss-5-4-2024,2,Manuela Canestrini,0009-0005-1501-8398,orcid:0009-0005-1501-8398
+agile_2024_003,agile,2024,10.5194/agile-giss-5-4-2024,3,Negar Alinaghi,0000-0001-6594-4481,orcid:0000-0001-6594-4481
+agile_2024_003,agile,2024,10.5194/agile-giss-5-4-2024,4,Dimitrios Michail,0000-0002-5316-6704,orcid:0000-0002-5316-6704
+agile_2024_003,agile,2024,10.5194/agile-giss-5-4-2024,5,Ioannis Giannopoulos,0000-0002-2556-5230,orcid:0000-0002-2556-5230
+agile_2024_011,agile,2024,10.5194/agile-giss-5-12-2024,1,Joseph Shingleton,0000-0002-1628-3231,orcid:0000-0002-1628-3231
+agile_2024_011,agile,2024,10.5194/agile-giss-5-12-2024,2,Anahid Basiri,0000-0002-2399-1797,orcid:0000-0002-2399-1797
+giscience_2016_008,giscience,2016,10.1007/978-3-319-45738-3_8,1,Joe Tuccillo,0000-0002-5930-0943,orcid:0000-0002-5930-0943
+giscience_2016_008,giscience,2016,10.1007/978-3-319-45738-3_8,2,Barbara P. Buttenfield,0000-0001-5961-5809,orcid:0000-0001-5961-5809
+giscience_2016_016,giscience,2016,10.1007/978-3-319-45738-3_16,1,Benjamin Adams,0000-0002-1657-9809,orcid:0000-0002-1657-9809
+giscience_2016_016,giscience,2016,10.1007/978-3-319-45738-3_16,2,Mark Gahegan,0000-0001-7209-8156,orcid:0000-0001-7209-8156
+giscience_2018_007,giscience,2018,10.4230/LIPIcs.GIScience.2018.7,1,Markus Kattenbeck,0000-0001-6028-0428,orcid:0000-0001-6028-0428
+giscience_2018_007,giscience,2018,10.4230/LIPIcs.GIScience.2018.7,2,Eva Nuhn,0000-0003-2443-8122,orcid:0000-0003-2443-8122
+giscience_2018_007,giscience,2018,10.4230/LIPIcs.GIScience.2018.7,3,Sabine Timpf,0000-0002-7964-4110,orcid:0000-0002-7964-4110
+giscience_2018_015,giscience,2018,10.4230/LIPIcs.GIScience.2018.15,1,Joram Schito,0000-0003-1138-8496,orcid:0000-0003-1138-8496
+giscience_2018_015,giscience,2018,10.4230/LIPIcs.GIScience.2018.15,2,Ulrike Wissen Hayek,0000-0002-6314-5018,orcid:0000-0002-6314-5018
+giscience_2018_015,giscience,2018,10.4230/LIPIcs.GIScience.2018.15,3,Martin Raubal,0000-0001-5951-6835,orcid:0000-0001-5951-6835
+giscience_2021_007,giscience,2020,10.4230/lipics.giscience.2021.i.7,1,D. Sinclair,0000-0002-6125-8430,orcid:0000-0002-6125-8430
+giscience_2021_015,giscience,2020,10.4230/lipics.giscience.2021.i.16,1,Marc van Kreveld,0000-0001-8208-3468,orcid:0000-0001-8208-3468
+giscience_2021_015,giscience,2020,10.4230/lipics.giscience.2021.i.16,2,Tim Ophelders,0000-0002-9570-024X,orcid:0000-0002-9570-024X
+giscience_2021_015,giscience,2020,10.4230/lipics.giscience.2021.i.16,3,Willem Sonke,0000-0001-9553-7385,orcid:0000-0001-9553-7385
+giscience_2021_015,giscience,2020,10.4230/lipics.giscience.2021.i.16,4,Bettina Speckmann,0000-0002-8514-7858,orcid:0000-0002-8514-7858
+giscience_2021_015,giscience,2020,10.4230/lipics.giscience.2021.i.16,5,Kevin Verbeek,0000-0003-3052-4844,orcid:0000-0003-3052-4844
+giscience_2021_023,giscience,2021,10.4230/lipics.giscience.2021.ii.7,1,Bram Custers,,orcid:0000-0001-9342-319X
+giscience_2021_023,giscience,2021,10.4230/lipics.giscience.2021.ii.7,2,Wouter Meulemans,0000-0002-4978-3400,orcid:0000-0002-4978-3400
+giscience_2021_023,giscience,2021,10.4230/lipics.giscience.2021.ii.7,3,Bettina Speckmann,0000-0002-8514-7858,orcid:0000-0002-8514-7858
+giscience_2021_023,giscience,2021,10.4230/lipics.giscience.2021.ii.7,4,Kevin Verbeek,0000-0003-3052-4844,orcid:0000-0003-3052-4844
+giscience_2023_006,giscience,2023,10.4230/LIPIcs.GIScience.2023.6,1,"Koukouraki, Eftychia",0000-0003-0928-1139,orcid:0000-0003-0928-1139
+giscience_2023_006,giscience,2023,10.4230/LIPIcs.GIScience.2023.6,2,"Kray, Christian",0000-0002-4199-8976,orcid:0000-0002-4199-8976
+agile_2018_008,agile,2018,10.1007/978-3-319-78208-9_8,1,Andrea Ballatore,0000-0003-3477-7654,orcid:0000-0003-3477-7654
+agile_2018_008,agile,2018,10.1007/978-3-319-78208-9_8,2,Stefano De Sabbata,0000-0002-2750-7579,orcid:0000-0002-2750-7579
+agile_2018_016,agile,2018,10.1007/978-3-319-78208-9_16,1,Hao Cheng,0000-0002-3254-4796,orcid:0000-0002-3254-4796
+agile_2018_016,agile,2018,10.1007/978-3-319-78208-9_16,2,Monika Sester,0000-0002-6656-8809,orcid:0000-0002-6656-8809
+agile_2017_002,agile,2017,10.1007/978-3-319-56759-4_2,1,Sidgley Camargo de Andrade,0000-0003-0371-7835,orcid:0000-0003-0371-7835
+agile_2017_002,agile,2017,10.1007/978-3-319-56759-4_2,2,Camilo Restrepo‐Estrada,0000-0001-7953-1768,orcid:0000-0001-7953-1768
+agile_2017_002,agile,2017,10.1007/978-3-319-56759-4_2,3,Alexandre C. B. Delbem,0000-0003-1810-1742,orcid:0000-0003-1810-1742
+agile_2017_002,agile,2017,10.1007/978-3-319-56759-4_2,4,Eduardo Mário Mendiondo,0000-0003-2319-2773,orcid:0000-0003-2319-2773
+agile_2017_002,agile,2017,10.1007/978-3-319-56759-4_2,5,João Porto de Albuquerque,0000-0002-3160-3168,orcid:0000-0002-3160-3168
+agile_2017_010,agile,2017,10.1007/978-3-319-56759-4_10,1,Fabian Bock,,name:bock fabian
+agile_2017_010,agile,2017,10.1007/978-3-319-56759-4_10,2,Yuri Attanasio,,name:attanasio yuri
+agile_2017_010,agile,2017,10.1007/978-3-319-56759-4_10,3,Sergio Di Martino,0000-0002-1019-9004,orcid:0000-0002-1019-9004
+agile_2020_002,agile,2020,10.5194/agile-giss-1-3-2020,1,José Duarte,0000-0002-7552-1551,orcid:0000-0002-7552-1551
+agile_2020_002,agile,2020,10.5194/agile-giss-1-3-2020,2,Paulo Dias,0000-0002-3754-2749,orcid:0000-0002-3754-2749
+agile_2020_002,agile,2020,10.5194/agile-giss-1-3-2020,3,José Moreira,0000-0003-4633-6944,orcid:0000-0003-4633-6944
+agile_2020_010,agile,2020,10.5194/agile-giss-1-11-2020,1,Pauline Krieger,,orcid:0000-0002-7808-0448
+agile_2020_010,agile,2020,10.5194/agile-giss-1-11-2020,2,Markus Kattenbeck,0000-0001-6028-0428,orcid:0000-0001-6028-0428
+agile_2020_010,agile,2020,10.5194/agile-giss-1-11-2020,3,Bernd Ludwig,0000-0003-3599-2081,orcid:0000-0003-3599-2081
+agile_2020_010,agile,2020,10.5194/agile-giss-1-11-2020,4,Johannes Helmbrecht,,name:helmbrecht johannes
+agile_2020_010,agile,2020,10.5194/agile-giss-1-11-2020,5,Ioannis Giannopoulos,0000-0002-2556-5230,orcid:0000-0002-2556-5230
+agile_2020_018,agile,2020,10.5194/agile-giss-1-19-2020,1,INNOCENSIA OWUOR,0000-0001-8976-1823,orcid:0000-0001-8976-1823
+agile_2020_018,agile,2020,10.5194/agile-giss-1-19-2020,2,Hartwig H. Hochmair,0000-0002-7064-8238,orcid:0000-0002-7064-8238
+agile_2020_018,agile,2020,10.5194/agile-giss-1-19-2020,3,Sreten Cvetojevic,0000-0001-6069-5324,orcid:0000-0001-6069-5324
+agile_2019_007,agile,2019,10.1007/978-3-030-14745-7_7,1,Gamze Dane,0000-0001-6107-2727,orcid:0000-0001-6107-2727
+agile_2019_007,agile,2019,10.1007/978-3-030-14745-7_7,2,Tao Feng,0000-0002-5759-3164,orcid:0000-0002-5759-3164
+agile_2019_007,agile,2019,10.1007/978-3-030-14745-7_7,3,Floor Luub,,name:floor luub
+agile_2019_007,agile,2019,10.1007/978-3-030-14745-7_7,4,Theo Arentze,0000-0003-2551-8650,orcid:0000-0003-2551-8650
+agile_2019_015,agile,2019,10.1007/978-3-030-14745-7_15,1,Carmen Huber,0000-0002-3744-4663,orcid:0000-0002-3744-4663
+agile_2019_015,agile,2019,10.1007/978-3-030-14745-7_15,2,Claus Rinner,0000-0002-3847-5664,orcid:0000-0002-3847-5664
+agile_2021_003,agile,2021,10.5194/agile-giss-2-3-2021,1,Dafni Karkasina,,name:dafni karkasina
+agile_2021_003,agile,2021,10.5194/agile-giss-2-3-2021,2,Margarita Kokla,0000-0002-0369-7099,orcid:0000-0002-0369-7099
+agile_2021_003,agile,2021,10.5194/agile-giss-2-3-2021,3,Eleni Tomai,0000-0003-1162-7389,orcid:0000-0003-1162-7389
+agile_2021_011,agile,2021,10.5194/agile-giss-2-11-2021,1,Ramish Satari,0009-0009-1663-3172,orcid:0009-0009-1663-3172
+agile_2021_011,agile,2021,10.5194/agile-giss-2-11-2021,2,Bashir Kazimi,0000-0003-1802-7511,orcid:0000-0003-1802-7511
+agile_2021_011,agile,2021,10.5194/agile-giss-2-11-2021,3,Monika Sester,0000-0002-6656-8809,orcid:0000-0002-6656-8809
+agile_2022_008,agile,2022,10.5194/agile-giss-3-8-2022,1,Hiroyuki Kaneko,0000-0002-8644-0933,orcid:0000-0002-8644-0933
+agile_2022_008,agile,2022,10.5194/agile-giss-3-8-2022,2,Toshihiro Osaragi,0000-0002-6327-3976,orcid:0000-0002-6327-3976
+agile_2022_016,agile,2022,10.5194/agile-giss-3-16-2022,1,Mehtab Alam Syed,0000-0003-3696-0030,orcid:0000-0003-3696-0030
+agile_2022_016,agile,2022,10.5194/agile-giss-3-16-2022,2,Elena Arsevska,0000-0002-6693-2316,orcid:0000-0002-6693-2316
+agile_2022_016,agile,2022,10.5194/agile-giss-3-16-2022,3,Mathieu Roche,0000-0003-3272-8568,orcid:0000-0003-3272-8568
+agile_2022_016,agile,2022,10.5194/agile-giss-3-16-2022,4,Maguelonne Teisseire,0000-0001-9313-6414,orcid:0000-0001-9313-6414
+agile_2023_006,agile,2023,10.5194/agile-giss-4-7-2023,1,Paul Mattes,,name:mattes paul
+agile_2023_006,agile,2023,10.5194/agile-giss-4-7-2023,2,Rico Richter,0000-0001-5523-3694,orcid:0000-0001-5523-3694
+agile_2023_006,agile,2023,10.5194/agile-giss-4-7-2023,3,Jürgen Döllner,,orcid:0000-0002-8981-8583
+agile_2023_014,agile,2023,10.5194/agile-giss-4-15-2023,1,Raphael Zürcher,,name:raphael zurcher
+agile_2023_014,agile,2023,10.5194/agile-giss-4-15-2023,2,Jiayan Zhao,0000-0002-8533-6042,orcid:0000-0002-8533-6042
+agile_2023_014,agile,2023,10.5194/agile-giss-4-15-2023,3,Alvaro Lau Sarmiento,,name:alvaro lau sarmiento
+agile_2023_014,agile,2023,10.5194/agile-giss-4-15-2023,4,Benjamin Brede,0000-0001-9253-4517,orcid:0000-0001-9253-4517
+agile_2023_014,agile,2023,10.5194/agile-giss-4-15-2023,5,Alexander Klippel,0000-0002-7171-492X,orcid:0000-0002-7171-492X
+giscience_2016_005,giscience,2016,10.1007/978-3-319-45738-3_5,1,KwangSoo Yang,0000-0003-4293-9908,orcid:0000-0003-4293-9908
+giscience_2016_021,giscience,2016,10.1007/978-3-319-45738-3_21,1,Peter Kiefer,0000-0003-4457-0438,orcid:0000-0003-4457-0438
+giscience_2016_021,giscience,2016,10.1007/978-3-319-45738-3_21,2,Ioannis Giannopoulos,0000-0002-2556-5230,orcid:0000-0002-2556-5230
+giscience_2016_021,giscience,2016,10.1007/978-3-319-45738-3_21,3,Andrew T. Duchowski,0000-0003-1681-7878,orcid:0000-0003-1681-7878
+giscience_2016_021,giscience,2016,10.1007/978-3-319-45738-3_21,4,Martin Raubal,0000-0001-5951-6835,orcid:0000-0001-5951-6835
+giscience_2018_004,giscience,2018,10.4230/LIPIcs.GIScience.2018.4,1,Francis Harvey,0000-0003-0027-8320,orcid:0000-0003-0027-8320
+giscience_2018_012,giscience,2018,10.4230/LIPIcs.GIScience.2018.12,1,Alan T. Murray,0000-0003-2674-6110,orcid:0000-0003-2674-6110
+giscience_2018_012,giscience,2018,10.4230/LIPIcs.GIScience.2018.12,2,"Feng, Xin",0000-0001-6434-3895,orcid:0000-0001-6434-3895
+giscience_2018_012,giscience,2018,10.4230/LIPIcs.GIScience.2018.12,3,Ali Shokoufandeh,,orcid:0000-0002-3729-4490
+giscience_2021_004,giscience,2020,10.4230/lipics.giscience.2021.i.4,1,Anika Graupner,,name:anika graupner
+giscience_2021_004,giscience,2020,10.4230/lipics.giscience.2021.i.4,2,Daniel Nüst,0000-0002-0024-5046,orcid:0000-0002-0024-5046
+giscience_2021_012,giscience,2020,10.4230/lipics.giscience.2021.i.12,1,Jinmeng Rao,0000-0003-2370-5129,orcid:0000-0003-2370-5129
+giscience_2021_012,giscience,2020,10.4230/lipics.giscience.2021.i.12,2,Song Gao,0000-0003-4359-6302,orcid:0000-0003-4359-6302
+giscience_2021_012,giscience,2020,10.4230/lipics.giscience.2021.i.12,3,Yuhao Kang,0000-0003-3810-9450,orcid:0000-0003-3810-9450
+giscience_2021_012,giscience,2020,10.4230/lipics.giscience.2021.i.12,4,Qunying Huang,0000-0003-3499-7294,orcid:0000-0003-3499-7294
+giscience_2021_020,giscience,2021,10.4230/lipics.giscience.2021.ii.4,1,Ye Hong,0000-0002-8996-3748,orcid:0000-0002-8996-3748
+giscience_2021_020,giscience,2021,10.4230/lipics.giscience.2021.ii.4,2,Yanan Xin,0000-0003-3866-821X,orcid:0000-0003-3866-821X
+giscience_2021_020,giscience,2021,10.4230/lipics.giscience.2021.ii.4,3,Henry Martin,0000-0002-0456-8539,orcid:0000-0002-0456-8539
+giscience_2021_020,giscience,2021,10.4230/lipics.giscience.2021.ii.4,4,Dominik Bucher,0000-0001-9824-5388,orcid:0000-0001-9824-5388
+giscience_2021_020,giscience,2021,10.4230/lipics.giscience.2021.ii.4,5,Martin Raubal,0000-0001-5951-6835,orcid:0000-0001-5951-6835
+giscience_2021_028,giscience,2021,10.4230/lipics.giscience.2021.ii.12,1,Timon Behr,,name:behr timon
+giscience_2021_028,giscience,2021,10.4230/lipics.giscience.2021.ii.12,2,Thomas C. van Dijk,0000-0001-6553-7317,orcid:0000-0001-6553-7317
+giscience_2021_028,giscience,2021,10.4230/lipics.giscience.2021.ii.12,3,Axel Forsch,0000-0002-3849-4865,orcid:0000-0002-3849-4865
+giscience_2021_028,giscience,2021,10.4230/lipics.giscience.2021.ii.12,4,Jan‐Henrik Haunert,0000-0001-8005-943X,orcid:0000-0001-8005-943X
+giscience_2021_028,giscience,2021,10.4230/lipics.giscience.2021.ii.12,5,Sabine Storandt,0000-0001-5411-3834,orcid:0000-0001-5411-3834
+giscience_2023_003,giscience,2023,10.4230/LIPIcs.GIScience.2023.3,1,Subhankar Ghosh,0000-0003-3242-3406,orcid:0000-0003-3242-3406
+giscience_2023_003,giscience,2023,10.4230/LIPIcs.GIScience.2023.3,2,Jayant Gupta,,orcid:0000-0001-7028-9928
+giscience_2023_003,giscience,2023,10.4230/LIPIcs.GIScience.2023.3,3,Arun Sharma,0000-0002-6908-6960,orcid:0000-0002-6908-6960
+giscience_2023_003,giscience,2023,10.4230/LIPIcs.GIScience.2023.3,4,Shuai An,0000-0001-5477-3437,orcid:0000-0001-5477-3437
+giscience_2023_003,giscience,2023,10.4230/LIPIcs.GIScience.2023.3,5,Shashi Shekhar,0000-0001-8837-192X,orcid:0000-0001-8837-192X
+giscience_2023_011,giscience,2023,10.4230/LIPIcs.GIScience.2023.11,1,"Wiedemann, Nina",0000-0002-8160-7634,orcid:0000-0002-8160-7634
+giscience_2023_011,giscience,2023,10.4230/LIPIcs.GIScience.2023.11,2,"Martin, Henry",0000-0002-0456-8539,orcid:0000-0002-0456-8539
+giscience_2023_011,giscience,2023,10.4230/LIPIcs.GIScience.2023.11,3,"Westerholt, René",0000-0001-8228-3814,orcid:0000-0001-8228-3814
+agile_2018_001,agile,2018,10.1007/978-3-319-78208-9_1,1,Robert Krüger,0000-0002-2813-1323,orcid:0000-0002-2813-1323
+agile_2018_001,agile,2018,10.1007/978-3-319-78208-9_1,2,Pierre Karrasch,0000-0001-5285-8920,orcid:0000-0001-5285-8920
+agile_2018_001,agile,2018,10.1007/978-3-319-78208-9_1,3,Lars Bernard,0000-0002-3085-7457,orcid:0000-0002-3085-7457
+agile_2018_009,agile,2018,10.1007/978-3-319-78208-9_9,1,Jan Jedersberger,,name:jan jedersberger
+agile_2018_009,agile,2018,10.1007/978-3-319-78208-9_9,2,Christian Stern,0009-0002-7254-5248,orcid:0009-0002-7254-5248
+agile_2018_009,agile,2018,10.1007/978-3-319-78208-9_9,3,Mary Wykstra,0000-0001-5778-0448,orcid:0000-0001-5778-0448
+agile_2018_009,agile,2018,10.1007/978-3-319-78208-9_9,4,Gertrud Schaab,0000-0002-1515-5051,orcid:0000-0002-1515-5051
+agile_2018_017,agile,2018,10.1007/978-3-319-78208-9_17,1,José Duarte,0000-0002-7552-1551,orcid:0000-0002-7552-1551
+agile_2018_017,agile,2018,10.1007/978-3-319-78208-9_17,2,Paulo Dias,0000-0002-3754-2749,orcid:0000-0002-3754-2749
+agile_2018_017,agile,2018,10.1007/978-3-319-78208-9_17,3,José Moreira,0000-0003-4633-6944,orcid:0000-0003-4633-6944
+agile_2020_011,agile,2020,10.5194/agile-giss-1-12-2020,1,Aoyong Li,0000-0001-8032-5881,orcid:0000-0001-8032-5881
+agile_2020_011,agile,2020,10.5194/agile-giss-1-12-2020,2,Kay W. Axhausen,,name:axhausen kay
+agile_2020_019,agile,2020,10.5194/agile-giss-1-20-2020,1,Mariana Vallejo Velázquez,0000-0003-3838-5957,orcid:0000-0003-3838-5957
+agile_2020_019,agile,2020,10.5194/agile-giss-1-20-2020,2,Ourania Kounadi,0000-0002-5998-7343,orcid:0000-0002-5998-7343
+agile_2020_019,agile,2020,10.5194/agile-giss-1-20-2020,3,Andrea Pődör,0000-0002-8534-9361,orcid:0000-0002-8534-9361
+agile_2017_003,agile,2017,10.1007/978-3-319-56759-4_3,1,Shlomit Flint,,orcid:0000-0002-1361-7910
+agile_2017_019,agile,2017,10.1007/978-3-319-56759-4_19,1,Rui Zhu,0000-0002-8910-9445,orcid:0000-0002-8910-9445
+agile_2017_019,agile,2017,10.1007/978-3-319-56759-4_19,2,Phaedon Kyriakidis,0000-0003-4222-8567,orcid:0000-0003-4222-8567
+agile_2017_019,agile,2017,10.1007/978-3-319-56759-4_19,3,Krzysztof Janowicz,,orcid:0009-0003-1968-887X
+agile_2019_008,agile,2019,10.1007/978-3-030-14745-7_8,1,Nikmal Raghestani,,name:nikmal raghestani
+agile_2019_008,agile,2019,10.1007/978-3-030-14745-7_8,2,Carsten Keßler,0000-0002-9724-820X,orcid:0000-0002-9724-820X
+agile_2021_004,agile,2021,10.5194/agile-giss-2-4-2021,1,Isabell G. Klipper,,name:isabell klipper
+agile_2021_004,agile,2021,10.5194/agile-giss-2-4-2021,2,Alexander Zipf,0000-0003-4916-9838,orcid:0000-0003-4916-9838
+agile_2021_004,agile,2021,10.5194/agile-giss-2-4-2021,3,Sven Lautenbach,0000-0003-1825-9996,orcid:0000-0003-1825-9996
+agile_2021_012,agile,2021,10.5194/agile-giss-2-12-2021,1,Inga Schlegel,0000-0003-1468-4944,orcid:0000-0003-1468-4944
+agile_2022_001,agile,2022,10.5194/agile-giss-3-1-2022,1,Thomas Bartoschek,0000-0002-0882-1036,orcid:0000-0002-0882-1036
+agile_2022_001,agile,2022,10.5194/agile-giss-3-1-2022,2,Angela Schwering,0000-0002-4185-1464,orcid:0000-0002-4185-1464
+agile_2022_009,agile,2022,10.5194/agile-giss-3-9-2022,1,Zilong Liu,0000-0003-3637-1586,orcid:0000-0003-3637-1586
+agile_2022_009,agile,2022,10.5194/agile-giss-3-9-2022,2,Krzysztof Janowicz,,orcid:0009-0003-1968-887X
+agile_2022_009,agile,2022,10.5194/agile-giss-3-9-2022,3,Ling Cai,0000-0001-7106-4907,orcid:0000-0001-7106-4907
+agile_2022_009,agile,2022,10.5194/agile-giss-3-9-2022,4,Rui Zhu,0000-0001-7631-3589,orcid:0000-0001-7631-3589
+agile_2022_009,agile,2022,10.5194/agile-giss-3-9-2022,5,Gengchen Mai,0000-0002-7818-7309,orcid:0000-0002-7818-7309
+agile_2022_009,agile,2022,10.5194/agile-giss-3-9-2022,6,Meilin Shi,0000-0001-6039-7810,orcid:0000-0001-6039-7810
+agile_2022_017,agile,2022,10.5194/agile-giss-3-17-2022,1,Marie-Dominique Van Damme,0000-0002-0007-5972,orcid:0000-0002-0007-5972
+agile_2022_017,agile,2022,10.5194/agile-giss-3-17-2022,2,Ana‐Maria Olteanu‐Raimond,0000-0002-1101-1333,orcid:0000-0002-1101-1333
+agile_2023_007,agile,2023,10.5194/agile-giss-4-8-2023,1,Vasileios Milias,0000-0003-1022-4465,orcid:0000-0003-1022-4465
+agile_2023_007,agile,2023,10.5194/agile-giss-4-8-2023,2,Shahin Sharifi Noorian,0000-0001-6211-1871,orcid:0000-0001-6211-1871
+agile_2023_007,agile,2023,10.5194/agile-giss-4-8-2023,3,Alessandro Bozzon,0000-0002-3300-2913,orcid:0000-0002-3300-2913
+agile_2023_007,agile,2023,10.5194/agile-giss-4-8-2023,4,Achilleas Psyllidis,0000-0002-3918-1545,orcid:0000-0002-3918-1545
+agile_2024_001,agile,2024,10.5194/agile-giss-5-2-2024,1,Matias Cardoso,,orcid:0009-0003-9939-108X
+agile_2024_001,agile,2024,10.5194/agile-giss-5-2-2024,2,Vasileios Milias,0000-0003-1022-4465,orcid:0000-0003-1022-4465
+agile_2024_001,agile,2024,10.5194/agile-giss-5-2-2024,3,M.G.A.D. Harteveld,0000-0001-7164-6165,orcid:0000-0001-7164-6165
+giscience_2016_014,giscience,2016,10.1007/978-3-319-45738-3_14,1,Xiaoxiao Liu,0000-0003-2479-897X,orcid:0000-0003-2479-897X
+giscience_2016_014,giscience,2016,10.1007/978-3-319-45738-3_14,2,Stefania Bertazzon,0000-0002-1292-5348,orcid:0000-0002-1292-5348
+giscience_2018_005,giscience,2018,10.4230/LIPIcs.GIScience.2018.5,1,Yingjie Hu,0000-0002-5515-4125,orcid:0000-0002-5515-4125
+giscience_2018_005,giscience,2018,10.4230/LIPIcs.GIScience.2018.5,2,Krzysztof Janowicz,,orcid:0009-0003-1968-887X
+giscience_2018_013,giscience,2018,10.4230/LIPIcs.GIScience.2018.13,1,Benjamin Niedermann,0000-0001-6638-7250,orcid:0000-0001-6638-7250
+giscience_2018_013,giscience,2018,10.4230/LIPIcs.GIScience.2018.13,2,Johannes Oehrlein,0000-0003-0478-4298,orcid:0000-0003-0478-4298
+giscience_2018_013,giscience,2018,10.4230/LIPIcs.GIScience.2018.13,3,Sven Lautenbach,,orcid:0000-0003-1825-9996
+giscience_2018_013,giscience,2018,10.4230/LIPIcs.GIScience.2018.13,4,Jan‐Henrik Haunert,0000-0001-8005-943X,orcid:0000-0001-8005-943X
+giscience_2021_013,giscience,2020,10.4230/lipics.giscience.2021.i.13,1,Arun Sharma,0000-0002-6908-6960,orcid:0000-0002-6908-6960
+giscience_2021_013,giscience,2020,10.4230/lipics.giscience.2021.i.13,2,Xun Tang,0000-0003-0317-9176,orcid:0000-0003-0317-9176
+giscience_2021_013,giscience,2020,10.4230/lipics.giscience.2021.i.13,3,Jayant Gupta,,orcid:0000-0001-7028-9928
+giscience_2021_013,giscience,2020,10.4230/lipics.giscience.2021.i.13,4,Majid Farhadloo,0000-0001-8602-0165,orcid:0000-0001-8602-0165
+giscience_2021_013,giscience,2020,10.4230/lipics.giscience.2021.i.13,5,Shashi Shekhar,0000-0002-3191-3879,orcid:0000-0002-3191-3879
+giscience_2021_021,giscience,2021,10.4230/lipics.giscience.2021.ii.5,1,Negar Alinaghi,0000-0001-6594-4481,orcid:0000-0001-6594-4481
+giscience_2021_021,giscience,2021,10.4230/lipics.giscience.2021.ii.5,2,Markus Kattenbeck,0000-0001-6028-0428,orcid:0000-0001-6028-0428
+giscience_2021_021,giscience,2021,10.4230/lipics.giscience.2021.ii.5,3,Antonia Golab,0000-0001-9307-6669,orcid:0000-0001-9307-6669
+giscience_2021_021,giscience,2021,10.4230/lipics.giscience.2021.ii.5,4,Ioannis Giannopoulos,0000-0002-2556-5230,orcid:0000-0002-2556-5230
+giscience_2021_029,giscience,2021,10.4230/lipics.giscience.2021.ii.13,1,"Scott, Jamie",0000-0001-5232-1613,orcid:0000-0001-5232-1613
+giscience_2021_029,giscience,2021,10.4230/lipics.giscience.2021.ii.13,2,"Stock, Kristin",0000-0002-5828-6430,orcid:0000-0002-5828-6430
+giscience_2021_029,giscience,2021,10.4230/lipics.giscience.2021.ii.13,3,"Morgan, Fraser",0000-0002-7964-3361,orcid:0000-0002-7964-3361
+giscience_2021_029,giscience,2021,10.4230/lipics.giscience.2021.ii.13,4,"Whitehead, Brandon",0000-0002-0337-8610,orcid:0000-0002-0337-8610
+giscience_2021_029,giscience,2021,10.4230/lipics.giscience.2021.ii.13,5,"Medyckyj-Scott, David",0000-0001-5234-9923,orcid:0000-0001-5234-9923
+giscience_2023_004,giscience,2023,10.4230/LIPIcs.GIScience.2023.4,1,"Hildemann, Moritz J.",0000-0001-6520-8820,orcid:0000-0001-6520-8820
+giscience_2023_004,giscience,2023,10.4230/LIPIcs.GIScience.2023.4,2,"Murray, Alan T.",0000-0003-2674-6110,orcid:0000-0003-2674-6110
+giscience_2023_004,giscience,2023,10.4230/LIPIcs.GIScience.2023.4,3,"Verstegen, Judith A.",0000-0002-9082-4323,orcid:0000-0002-9082-4323
+agile_2017_007,agile,2017,10.1007/978-3-319-56759-4_7,1,Hartmut Löwen,0000-0001-5376-8062,orcid:0000-0001-5376-8062
+agile_2017_007,agile,2017,10.1007/978-3-319-56759-4_7,2,Angela Schwering,0000-0002-4185-1464,orcid:0000-0002-4185-1464
+agile_2017_007,agile,2017,10.1007/978-3-319-56759-4_7,3,Jakub Krukar,0000-0003-2615-8757,orcid:0000-0003-2615-8757
+agile_2017_007,agile,2017,10.1007/978-3-319-56759-4_7,4,Stephan Winter,0000-0002-3403-6939,orcid:0000-0002-3403-6939
+agile_2018_005,agile,2018,10.1007/978-3-319-78208-9_5,1,Biswajit Mondal,0000-0002-7041-5207,orcid:0000-0002-7041-5207
+agile_2018_005,agile,2018,10.1007/978-3-319-78208-9_5,2,Ashis Kumar Saha,0000-0002-8184-0495,orcid:0000-0002-8184-0495
+agile_2018_013,agile,2018,10.1007/978-3-319-78208-9_13,1,Karl Rehrl,0000-0003-4052-5867,orcid:0000-0003-4052-5867
+agile_2018_013,agile,2018,10.1007/978-3-319-78208-9_13,2,Simon Gröchenig,0000-0003-3546-1627,orcid:0000-0003-3546-1627
+agile_2018_013,agile,2018,10.1007/978-3-319-78208-9_13,3,Michael Wimmer,0000-0002-9370-2663,orcid:0000-0002-9370-2663
+agile_2020_007,agile,2020,10.5194/agile-giss-1-8-2020,1,Rodrique Kafando,0000-0002-7190-9225,orcid:0000-0002-7190-9225
+agile_2020_007,agile,2020,10.5194/agile-giss-1-8-2020,2,Rémy Decoupes,0000-0003-0863-9581,orcid:0000-0003-0863-9581
+agile_2020_007,agile,2020,10.5194/agile-giss-1-8-2020,3,Lucile Sautot,0000-0002-4204-7427,orcid:0000-0002-4204-7427
+agile_2020_007,agile,2020,10.5194/agile-giss-1-8-2020,4,Maguelonne Teisseire,0000-0001-9313-6414,orcid:0000-0001-9313-6414
+agile_2020_015,agile,2020,10.5194/agile-giss-1-16-2020,1,Matan Mor,0000-0003-4658-2328,orcid:0000-0003-4658-2328
+agile_2020_015,agile,2020,10.5194/agile-giss-1-16-2020,2,Johannes Oehrlein,0000-0003-0478-4298,orcid:0000-0003-0478-4298
+agile_2020_015,agile,2020,10.5194/agile-giss-1-16-2020,3,Jan‐Henrik Haunert,0000-0001-8005-943X,orcid:0000-0001-8005-943X
+agile_2020_015,agile,2020,10.5194/agile-giss-1-16-2020,4,Sagi Dalyot,0000-0002-5639-8009,orcid:0000-0002-5639-8009
+agile_2017_015,agile,2017,10.1007/978-3-319-56759-4_15,1,Toshihiro Osaragi,0000-0002-6327-3976,orcid:0000-0002-6327-3976
+agile_2017_015,agile,2017,10.1007/978-3-319-56759-4_15,2,Ayaka Murakami,,name:ayaka murakami
+agile_2019_004,agile,2019,10.1007/978-3-030-14745-7_4,1,Florian Zouhar,0000-0002-9277-6492,orcid:0000-0002-9277-6492
+agile_2019_004,agile,2019,10.1007/978-3-030-14745-7_4,2,Julia Senner,,name:julia senner
+agile_2019_012,agile,2019,10.1007/978-3-030-14745-7_12,1,Stefan Ivanovic,0000-0001-8147-6200,orcid:0000-0001-8147-6200
+agile_2019_012,agile,2019,10.1007/978-3-030-14745-7_12,2,Ana‐Maria Olteanu‐Raimond,0000-0002-1101-1333,orcid:0000-0002-1101-1333
+agile_2019_012,agile,2019,10.1007/978-3-030-14745-7_12,3,Sébastien Mustière,0000-0002-0272-3320,orcid:0000-0002-0272-3320
+agile_2019_012,agile,2019,10.1007/978-3-030-14745-7_12,4,Thomas Devogèle,,orcid:0000-0001-9187-8385
+agile_2021_016,agile,2021,10.5194/agile-giss-2-16-2021,1,René Unrau,0000-0003-2536-9747,orcid:0000-0003-2536-9747
+agile_2021_016,agile,2021,10.5194/agile-giss-2-16-2021,2,Christian Kray,0000-0002-4199-8976,orcid:0000-0002-4199-8976
+agile_2022_005,agile,2022,10.5194/agile-giss-3-5-2022,1,Marina Georgati,0000-0001-7794-8308,orcid:0000-0001-7794-8308
+agile_2022_005,agile,2022,10.5194/agile-giss-3-5-2022,2,João Monteiro,,orcid:0000-0003-4491-3744
+agile_2022_005,agile,2022,10.5194/agile-giss-3-5-2022,3,Bruno Martins,0000-0002-3856-2936,orcid:0000-0002-3856-2936
+agile_2022_005,agile,2022,10.5194/agile-giss-3-5-2022,4,Carsten Keßler,0000-0002-9724-820X,orcid:0000-0002-9724-820X
+agile_2022_013,agile,2022,10.5194/agile-giss-3-13-2022,1,Yousef Qamaz,,name:qamaz yousef
+agile_2022_013,agile,2022,10.5194/agile-giss-3-13-2022,2,Angela Schwering,0000-0002-4185-1464,orcid:0000-0002-4185-1464
+agile_2022_013,agile,2022,10.5194/agile-giss-3-13-2022,3,Janina Bistron,,name:bistron janina
+agile_2022_021,agile,2022,10.5194/agile-giss-3-21-2022,1,Rui Zhu,0000-0001-8790-4712,orcid:0000-0001-8790-4712
+agile_2022_021,agile,2022,10.5194/agile-giss-3-21-2022,2,Krzysztof Janowicz,,orcid:0009-0003-1968-887X
+agile_2022_021,agile,2022,10.5194/agile-giss-3-21-2022,3,Gengchen Mai,0000-0002-7818-7309,orcid:0000-0002-7818-7309
+agile_2022_021,agile,2022,10.5194/agile-giss-3-21-2022,4,Ling Cai,0000-0001-7106-4907,orcid:0000-0001-7106-4907
+agile_2022_021,agile,2022,10.5194/agile-giss-3-21-2022,5,Meilin Shi,0000-0001-6039-7810,orcid:0000-0001-6039-7810
+agile_2023_003,agile,2023,10.5194/agile-giss-4-4-2023,1,Ioannis Dardavesis,0000-0002-6960-7893,orcid:0000-0002-6960-7893
+agile_2023_003,agile,2023,10.5194/agile-giss-4-4-2023,2,E. Verbree,0000-0002-6892-6702,orcid:0000-0002-6892-6702
+agile_2023_003,agile,2023,10.5194/agile-giss-4-4-2023,3,Azarakhsh Rafiee,0000-0002-2609-2674,orcid:0000-0002-2609-2674
+agile_2023_011,agile,2023,10.5194/agile-giss-4-12-2023,1,Adrian Sarbach,,name:adrian sarbach
+agile_2023_011,agile,2023,10.5194/agile-giss-4-12-2023,2,T. Weber,,orcid:0009-0009-8357-7836
+agile_2023_011,agile,2023,10.5194/agile-giss-4-12-2023,3,Katharina Henggeler,0000-0002-8381-0863,orcid:0000-0002-8381-0863
+agile_2023_011,agile,2023,10.5194/agile-giss-4-12-2023,4,Luis Lutnyk,0000-0002-9458-8575,orcid:0000-0002-9458-8575
+agile_2023_011,agile,2023,10.5194/agile-giss-4-12-2023,5,Martin Raubal,0000-0001-5951-6835,orcid:0000-0001-5951-6835
+agile_2024_005,agile,2024,10.5194/agile-giss-5-6-2024,1,Samuel Hollendonner,0009-0000-7923-3357,orcid:0009-0000-7923-3357
+agile_2024_005,agile,2024,10.5194/agile-giss-5-6-2024,2,Negar Alinaghi,0000-0001-6594-4481,orcid:0000-0001-6594-4481
+agile_2024_005,agile,2024,10.5194/agile-giss-5-6-2024,3,Ioannis Giannopoulos,0000-0002-2556-5230,orcid:0000-0002-2556-5230
+agile_2024_013,agile,2024,10.5194/agile-giss-5-14-2024,1,Guy Solomon,0000-0002-4394-1498,orcid:0000-0002-4394-1498
+agile_2024_013,agile,2024,10.5194/agile-giss-5-14-2024,2,Dominick Sutton,0000-0003-4881-4380,orcid:0000-0003-4881-4380
+agile_2024_013,agile,2024,10.5194/agile-giss-5-14-2024,3,Merve Polat Kayali,0009-0009-6949-4284,orcid:0009-0009-6949-4284
+agile_2024_013,agile,2024,10.5194/agile-giss-5-14-2024,4,Xinyi Yuan,0009-0003-7790-3662,orcid:0009-0003-7790-3662
+agile_2024_013,agile,2024,10.5194/agile-giss-5-14-2024,5,Zöe Gardner,0000-0002-4099-1633,orcid:0000-0002-4099-1633
+agile_2024_013,agile,2024,10.5194/agile-giss-5-14-2024,6,Anahid Basiri,0000-0002-2399-1797,orcid:0000-0002-2399-1797
+giscience_2016_002,giscience,2016,10.1007/978-3-319-45738-3_2,1,Jan‐Henrik Haunert,0000-0001-8005-943X,orcid:0000-0001-8005-943X
+giscience_2016_002,giscience,2016,10.1007/978-3-319-45738-3_2,2,Wouter Meulemans,0000-0002-4978-3400,orcid:0000-0002-4978-3400
+giscience_2016_010,giscience,2016,10.1007/978-3-319-45738-3_10,1,Tuhin Paul,0000-0001-8969-670X,orcid:0000-0001-8969-670X
+giscience_2016_010,giscience,2016,10.1007/978-3-319-45738-3_10,2,Kevin G. Stanley,0009-0006-6170-3916,orcid:0009-0006-6170-3916
+giscience_2016_010,giscience,2016,10.1007/978-3-319-45738-3_10,3,Nathaniel Osgood,0000-0002-3994-3298,orcid:0000-0002-3994-3298
+giscience_2016_010,giscience,2016,10.1007/978-3-319-45738-3_10,4,Scott Bell,0000-0003-4713-4084,orcid:0000-0003-4713-4084
+giscience_2016_010,giscience,2016,10.1007/978-3-319-45738-3_10,5,Nazeem Muhajarine,0000-0001-6781-5421,orcid:0000-0001-6781-5421
+giscience_2018_001,giscience,2018,10.4230/LIPIcs.GIScience.2018.1,1,David Amores,0000-0002-6728-6344,orcid:0000-0002-6728-6344
+giscience_2018_001,giscience,2018,10.4230/LIPIcs.GIScience.2018.1,2,Maria Vasardani,0000-0003-0208-0561,orcid:0000-0003-0208-0561
+giscience_2018_001,giscience,2018,10.4230/LIPIcs.GIScience.2018.1,3,Egemen Tanin,0000-0001-5014-1969,orcid:0000-0001-5014-1969
+giscience_2018_009,giscience,2018,10.4230/LIPIcs.GIScience.2018.9,1,Sara Lafia,0000-0002-5896-7295,orcid:0000-0002-5896-7295
+giscience_2018_009,giscience,2018,10.4230/LIPIcs.GIScience.2018.9,2,Andrew Turner,0000-0003-3821-7400,orcid:0000-0003-3821-7400
+giscience_2018_009,giscience,2018,10.4230/LIPIcs.GIScience.2018.9,3,W. Kühn,0000-0002-4491-0132,orcid:0000-0002-4491-0132
+giscience_2018_017,giscience,2018,10.4230/LIPIcs.GIScience.2018.17,1,Bo Yan,0000-0002-4248-7203,orcid:0000-0002-4248-7203
+giscience_2018_017,giscience,2018,10.4230/LIPIcs.GIScience.2018.17,2,Krzysztof Janowicz,0009-0003-1968-887X,orcid:0009-0003-1968-887X
+giscience_2018_017,giscience,2018,10.4230/LIPIcs.GIScience.2018.17,3,Gengchen Mai,0000-0002-7818-7309,orcid:0000-0002-7818-7309
+giscience_2018_017,giscience,2018,10.4230/LIPIcs.GIScience.2018.17,4,Rui Zhu,0000-0002-8910-9445,orcid:0000-0002-8910-9445
+giscience_2021_001,giscience,2020,10.4230/lipics.giscience.2021.i.1,1,Debjit Bhowmick,0000-0002-4877-0990,orcid:0000-0002-4877-0990
+giscience_2021_001,giscience,2020,10.4230/lipics.giscience.2021.i.1,2,Stephan Winter,0000-0002-3403-6939,orcid:0000-0002-3403-6939
+giscience_2021_001,giscience,2020,10.4230/lipics.giscience.2021.i.1,3,Mark Stevenson,0000-0003-3166-5876,orcid:0000-0003-3166-5876
+giscience_2021_009,giscience,2020,10.4230/lipics.giscience.2021.i.9,1,Sadegh Motallebi,0000-0002-4192-5670,orcid:0000-0002-4192-5670
+giscience_2021_009,giscience,2020,10.4230/lipics.giscience.2021.i.9,2,Hairuo Xie,0000-0002-9085-2041,orcid:0000-0002-9085-2041
+giscience_2021_009,giscience,2020,10.4230/lipics.giscience.2021.i.9,3,Egemen Tanin,0000-0001-5014-1969,orcid:0000-0001-5014-1969
+giscience_2021_009,giscience,2020,10.4230/lipics.giscience.2021.i.9,4,Kotagiri Ramamohanarao,0000-0003-3304-9268,orcid:0000-0003-3304-9268
+giscience_2021_018,giscience,2021,10.4230/lipics.giscience.2021.ii.2,1,"Ostermann, Frank O.",0000-0002-9317-8291,orcid:0000-0002-9317-8291
+giscience_2021_018,giscience,2021,10.4230/lipics.giscience.2021.ii.2,2,"Nüst, Daniel",0000-0002-0024-5046,orcid:0000-0002-0024-5046
+giscience_2021_018,giscience,2021,10.4230/lipics.giscience.2021.ii.2,3,"Granell, Carlos",0000-0003-1004-9695,orcid:0000-0003-1004-9695
+giscience_2021_018,giscience,2021,10.4230/lipics.giscience.2021.ii.2,4,"Hofer, Barbara",0000-0001-7078-3766,orcid:0000-0001-7078-3766
+giscience_2021_018,giscience,2021,10.4230/lipics.giscience.2021.ii.2,5,"Konkol, Markus",0000-0001-6651-0976,orcid:0000-0001-6651-0976
+giscience_2021_025,giscience,2021,10.4230/lipics.giscience.2021.ii.9,1,Bartosz Mazurkiewicz,0000-0001-9400-0084,orcid:0000-0001-9400-0084
+giscience_2021_025,giscience,2021,10.4230/lipics.giscience.2021.ii.9,2,Markus Kattenbeck,0000-0001-6028-0428,orcid:0000-0001-6028-0428
+giscience_2021_025,giscience,2021,10.4230/lipics.giscience.2021.ii.9,3,Ioannis Giannopoulos,0000-0002-2556-5230,orcid:0000-0002-2556-5230
+giscience_2023_008,giscience,2023,10.4230/LIPIcs.GIScience.2023.8,1,"Lotfian, Maryam",0000-0003-3196-0373,orcid:0000-0003-3196-0373
+giscience_2023_008,giscience,2023,10.4230/LIPIcs.GIScience.2023.8,2,"Ingensand, Jens",0000-0003-3330-4986,orcid:0000-0003-3330-4986
+giscience_2023_008,giscience,2023,10.4230/LIPIcs.GIScience.2023.8,3,"Claramunt, Christophe",0000-0002-5586-1997,orcid:0000-0002-5586-1997

@@ -157,4 +157,8 @@ dependencies:
   - zeromq=4.3.5=h3b0a872_7
   - zipp=3.21.0=pyhd8ed1ab_1
   - zstandard=0.23.0=py313h536fd9c_2
+  - matplotlib-base=3.10.0
+  - matplotlib-venn=1.1.2
+  - pip:
+      - pyalex==0.21
 prefix: /home/frank/miniconda3/envs/agilegisc
