@@ -1,0 +1,93 @@
+{
+  "title": "Reproducibility Package for 'Longitudinal assessment of research in GIScience domain shows a positive impact of reproducible research practices'",
+  "description": "<p>This is the data and software repository to support the computational analysis related to the paper <em>Longitudinal assessment of research in GIScience domain shows a positive impact of reproducible research practices</em></p>",
+  "upload_type": "software",
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Granell, Carlos",
+      "affiliation": "Universitat Jaume I, Castellón, Spain",
+      "orcid": "0000-0003-1004-9695",
+      "affiliation_identifier": "https://ror.org/02ws1xc11"
+    },
+    {
+      "name": "Ostermann, Frank O.",
+      "affiliation": "Faculty of Geo-Information Science and Earth Observation (ITC), University of Twente, Enschede, The Netherlands",
+      "orcid": "0000-0002-9317-8291",
+      "affiliation_identifier": "https://ror.org/006hf6230"
+    },
+    {
+      "name": "Nüst, Daniel",
+      "affiliation": "Department of Geosciences, TUD Dresden University of Technology, Dresden, Germany",
+      "orcid": "0000-0002-0024-5046",
+      "affiliation_identifier": "https://ror.org/042aqky30"
+    },
+    {
+      "name": "Kedron, Peter",
+      "affiliation": "Center for Spatial Studies and Data Science, University of California, Santa Barbara, USA",
+      "orcid": "0000-0002-1093-3416",
+      "affiliation_identifier": "https://ror.org/02t274463"
+    },
+    {
+      "name": "Koukouraki, Eftychia",
+      "affiliation": "Institute for Geoinformatics (ifgi), University of Münster, Münster, Germany",
+      "orcid": "0000-0003-0928-1139",
+      "affiliation_identifier": "https://ror.org/00pd74e08"
+    },
+    {
+      "name": "Matey-Sanz, Miguel",
+      "affiliation": "Institute of New Imaging Technologies, Universitat Jaume I, Castellón, Spain",
+      "orcid": "0000-0002-1189-5079",
+      "affiliation_identifier": "https://ror.org/02ws1xc11"
+    },
+    {
+      "name": "Decoupes, Remy",
+      "affiliation": "INRAE, Montpellier, France",
+      "orcid": "0000-0003-0863-9581",
+      "affiliation_identifier": "https://ror.org/003vg9w96"
+    },
+    {
+      "name": "Trilles, Sergio",
+      "affiliation": "Institute of New Imaging Technologies, Universitat Jaume I, Castellón, Spain",
+      "orcid": "0000-0002-9304-0719",
+      "affiliation_identifier": "https://ror.org/02ws1xc11"
+    },
+    {
+      "name": "Graser, Anita",
+      "affiliation": "AIT Austrian Institute of Technology, Vienna, Austria",
+      "orcid": "0000-0001-5361-2885",
+      "affiliation_identifier": "https://ror.org/04knbh022"
+    },
+    {
+      "name": "Niers, Tom",
+      "affiliation": "Department of Geosciences, TUD Dresden University of Technology, Dresden, Germany",
+      "orcid": "0000-0002-5746-8590",
+      "affiliation_identifier": "https://ror.org/042aqky30"
+    }
+  ],
+  "keywords": [
+    "reproducible research",
+    "GIScience",
+    "AGILE",
+    "longitudinal study",
+    "open science",
+    "reproducibility assessment",
+    "geospatial research"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.31223/X5RJ3W",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/nuest/reproducible-research-giscience-longitudinal-study",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    }
+  ]
+}
