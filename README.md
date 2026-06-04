@@ -49,19 +49,29 @@ Methods...
 
 ### Supplementary authorship analysis
 
-`07_authorship.ipynb` is a supplementary notebook that enriches the corpus with authorship
-metadata from [OpenAlex](https://openalex.org/) (via the
-[`pyalex`](https://pypi.org/project/pyalex/) library), reconciles authors by ORCID with a
-normalised-name fallback, and reports the overlap of authors between the AGILE and GIScience
-conference series — both over the whole corpus (Part A) and restricted to same-year overlap
-(Part B, which correctly yields zero for years without a GIScience conference). For the few DOIs
-not indexed by OpenAlex (notably Dagstuhl LIPIcs entries) the notebook falls back to
-schema.org JSON-LD scraped from the publisher's landing page. The notebook and its helper
-module `authorship_utils.py` were created with the assistance of an AI coding assistant
-(Anthropic Claude, via Claude Code) and reviewed by the repository maintainers; raw JSON
-responses from OpenAlex and scraped landing pages are cached on disk under
-`data-clean/authorship-cache/` (git-ignored) so the analysis is reproducible offline after a
-first run.
+`07_authorship.ipynb` enriches the corpus with authorship metadata from
+[OpenAlex](https://openalex.org/) (via the [`pyalex`](https://pypi.org/project/pyalex/)
+library), reconciles authors by ORCID with a normalised-name fallback, and reports the
+overlap of authors between the AGILE and GIScience conference series over the whole corpus
+(Part A). For the few DOIs not indexed by OpenAlex (notably Dagstuhl LIPIcs entries) the
+notebook falls back to schema.org JSON-LD scraped from the publisher's landing page. Raw JSON
+responses are cached on disk under `data/authorship-cache/` (git-ignored) so the analysis is
+reproducible offline after a first run. The notebook writes the authoritative
+`data-clean/authors.csv` table (one row per author-paper with resolved identities).
+
+`08_authorship.qmd` (R/Quarto) recreates the pre- vs. post-intervention reproducibility-level
+distribution figures from `03_results_reprolevels.qmd`, but restricted to papers with at least
+one cross-conference author and pooled across both conferences. It reads
+`data-clean/authors.csv` produced by `07_authorship.ipynb`.
+
+`09_authorship-historic.ipynb` extends the authorship analysis with temporal dimensions,
+reading `data-clean/authors.csv` as its input. It covers: year-by-year same-year overlap
+(Part B, which correctly yields zero for GIScience off-years), reproducibility trends for
+cross-conference-author papers compared to the full corpus, and a cross-group non-independence
+check for the four analytical groups used in `04_results_hypotheses.ipynb`.
+
+Both notebooks and `authorship_utils.py` were created with the assistance of an AI coding
+assistant (Anthropic Claude, via Claude Code) and reviewed by the repository maintainers.
 
 ## Reproducibility
 

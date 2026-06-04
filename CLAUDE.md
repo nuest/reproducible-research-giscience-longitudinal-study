@@ -11,7 +11,7 @@ Data and analysis repository for the paper *Longitudinal assessment of research 
 Two parallel runtimes are used. There is currently **no single unified environment** (see README TODO).
 
 - **R / Quarto** (`*.qmd` files): built on `rocker/rstudio:4.4`. Dependencies installed via `install.R` (`here`, `tidyverse`, `gt`, `ggthemes`, `patchwork`, `ggalluvial`).
-- **Python / Jupyter** (`04_results_hypotheses.ipynb`, `07_authorship.ipynb`): conda env `agilegisc` defined in `04_environment.yml` (pandas, numpy, scipy, statsmodels, jupyterlab; plus `matplotlib`, `matplotlib-venn`, and `pyalex` via pip for notebook 07).
+- **Python / Jupyter** (`04_results_hypotheses.ipynb`, `07_authorship.ipynb`, `09_authorship-historic.ipynb`): conda env `agilegisc` defined in `04_environment.yml` (pandas, numpy, scipy, statsmodels, jupyterlab; plus `matplotlib`, `matplotlib-venn`, and `pyalex` via pip for notebooks 07/09).
 
 Run the RStudio container locally:
 
@@ -42,13 +42,12 @@ Numeric prefixes define execution order. Outputs flow: `data/` → `data-clean/a
 4. `04_results_hypotheses.ipynb` — Tables 4–7 (Python; the only non-R step).
 5. `05_results_assessprocess.qmd` — Table 8, Figure 4, Tables 9–10.
 6. `06_discussion.qmd` — Figure 5.
-7. `07_authorship.ipynb` — supplementary authorship analysis (Python). Resolves a DOI per paper from the `link` column, fetches metadata from OpenAlex (cached under `data/authorship-cache/`, git-ignored), falls back to schema.org JSON-LD scraped from the publisher landing page when OpenAlex does not index the DOI, and reports cross-conference author overlap keyed on ORCID with a normalised-name fallback. Heavy helpers (DOI extraction, OpenAlex fetcher with title-search and landing-page fallbacks, normalisation, identity resolution) live in [authorship_utils.py](authorship_utils.py) so the notebook stays light.
+7. `07_authorship.ipynb` — supplementary authorship analysis (Python). Resolves a DOI per paper from the `link` column, fetches metadata from OpenAlex (cached under `data/authorship-cache/`, git-ignored), falls back to schema.org JSON-LD scraped from the publisher landing page when OpenAlex does not index the DOI, and reports corpus-wide cross-conference author overlap (Part A: Venn, counts, author table) keyed on ORCID with a normalised-name fallback. Writes the authoritative `data-clean/authors.csv`. Heavy helpers live in [authorship_utils.py](authorship_utils.py) so the notebook stays light.
+8. `09_authorship-historic.ipynb` — temporal authorship analysis (Python). Reads `data-clean/authors.csv` from step 7. Covers year-by-year same-year overlap (Part B; GIScience off-years correctly yield zero), reproducibility trends for cross-conference-author papers vs. the full corpus, and a cross-group non-independence check for the four analytical groups used in step 4.
 
-`data-clean/` holds only the two authoritative tables — `all-data.csv` and `authors.csv` (the per-author-per-paper enriched view from notebook 07). All derived / aggregate / debug artefacts (`authors-overlap.csv`, `authors-cross-conference.csv`, `authors-cross-conference-yearly.csv`, `authors-title-verification.csv`, the OpenAlex JSON cache, the optional `orcid-resolutions.csv`) live under `data/`. When extending the notebook, write the one canonical curated table to `data-clean/` and put intermediate / regenerable outputs in `data/`.
+`data-clean/` holds only the two authoritative tables — `all-data.csv` and `authors.csv` (the per-author-per-paper enriched view from notebook 07). All derived / aggregate / debug artefacts (`authors-overlap.csv`, `authors-cross-conference.csv`, `authors-cross-conference-yearly.csv`, `authors-title-verification.csv`, the OpenAlex JSON cache, the optional `orcid-resolutions.csv`) live under `data/`. When extending a notebook, write the one canonical curated table to `data-clean/` and put intermediate / regenerable outputs in `data/`.
 
 All downstream `.qmd` / `.ipynb` files read `data-clean/all-data.csv`; do not consume raw `data/` CSVs from downstream steps. Figures are written to `figs/`.
-
-Notebook 07 is structured as two parts: **Part A** pools all years (corpus-wide overlap — Venn, counts, author table), **Part B** restricts to same-year overlap (so GIScience off-years 2017/2019/2022/2024 correctly show zero). Keep the two questions separate when extending the analysis.
 
 ## Data model
 
