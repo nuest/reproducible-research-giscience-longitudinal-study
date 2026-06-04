@@ -8,15 +8,15 @@ Data and analysis repository for the paper *Longitudinal assessment of research 
 
 ## Environment & commands
 
-Two parallel runtimes are used. There is currently **no single unified environment** (see README TODO).
+Both runtimes are unified in the Docker image (`rocker/binder:4.4`), which provides RStudio Server and JupyterLab in a single container.
 
-- **R / Quarto** (`*.qmd` files): built on `rocker/rstudio:4.4`. Dependencies installed via `install.R` (`here`, `tidyverse`, `gt`, `ggthemes`, `patchwork`, `ggalluvial`).
-- **Python / Jupyter** (`04_results_hypotheses.ipynb`, `07_authorship.ipynb`): conda env `agilegisc` defined in `04_environment.yml` (pandas, numpy, scipy, statsmodels, jupyterlab; plus `matplotlib`, `matplotlib-venn`, and `pyalex` via pip for notebook 07).
+- **R / Quarto** (`*.qmd` files): built on `rocker/binder:4.4`. Dependencies installed via `install.R` (`here`, `tidyverse`, `gt`, `ggthemes`, `patchwork`, `ggalluvial`).
+- **Python / Jupyter** (`04_results_hypotheses.ipynb`, `07_authorship.ipynb`): dependencies in `requirements.txt` (pandas, numpy, scipy, statsmodels, jupyterlab, matplotlib, matplotlib-venn, pyalex).
 
-Run the RStudio container locally:
+Run the unified container locally:
 
 ```sh
-docker compose up          # RStudio at http://localhost:8787, user: rstudio, pass: q
+docker compose up   # JupyterLab at http://localhost:8888, RStudio at http://localhost:8787
 ```
 
 Render a single Quarto document:
@@ -25,10 +25,11 @@ Render a single Quarto document:
 quarto render 03_results_reprolevels.qmd
 ```
 
-Execute the Python notebook:
+Execute the Python notebook locally without Docker:
 
 ```sh
-conda env create -f 04_environment.yml && conda activate agilegisc
+uv venv .venv --python 3.10 && source .venv/bin/activate
+uv pip install -r requirements.txt
 jupyter lab 04_results_hypotheses.ipynb
 ```
 

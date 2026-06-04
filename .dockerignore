@@ -1,0 +1,6 @@
+.venv/
+.git/
+__pycache__/
+data/authorship-cache/
+*.html
+01_datacleaning_files/

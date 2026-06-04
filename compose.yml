@@ -1,13 +1,12 @@
-# RStudio Server: https://rocker-project.org/images/versioned/rstudio.html
-# Open browser tab: http://localhost:8787/
-# USER: rstudio
-# PASS: q
+# JupyterLab: http://localhost:8888 (token printed to console on startup)
+# RStudio Server: http://localhost:8787 — user: rstudio, password: q
+# RStudio is also accessible as a tab inside JupyterLab via jupyter-rsession-proxy.
 services:
-  rstudio:
-    #image: rocker/rstudio:4.4 # https://hub.docker.com/r/rocker/rstudio/tags
+  jupyter:
     build:
       dockerfile: Dockerfile
     ports:
+      - '8888:8888'
       - '8787:8787'
     volumes:
       - ./:/home/rstudio

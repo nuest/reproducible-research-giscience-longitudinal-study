@@ -1,23 +1,27 @@
-# This Dockerfile is based on https://rocker-project.org/images/
-FROM rocker/rstudio:4.4
+# Based on https://rocker-project.org/images/ — rocker/binder ships R + RStudio Server
+# + a Python venv at /opt/venv + JupyterLab + IRkernel + jupyter-rsession-proxy
+# (RStudio is accessible as a tab inside JupyterLab via the proxy).
+FROM rocker/binder:4.4
 
-## Declares build arguments
-#ARG NB_USER
-
-## Declares ENV values
-ENV USER=rstudio
 ENV HOME=/home/rstudio
 
-## Copies all repo files into the Docker Container
 USER root
-COPY . ${HOME}
-RUN chown -R ${USER} ${HOME}
 
-## Become normal user again
-USER ${NB_USER}
-
-# run install.R script if any
-RUN echo 'Install R packages...'   
+# Install R packages
+COPY install.R ${HOME}/install.R
 RUN R --quiet -f ${HOME}/install.R
 
-# --- Metadata ---
+# Install Python dependencies into the venv rocker/binder provides at /opt/venv
+COPY requirements.txt ${HOME}/requirements.txt
+RUN /opt/venv/bin/pip install --no-cache-dir -r ${HOME}/requirements.txt
+
+# Copy repo and fix ownership, see also .dockerignore for excluded files
+COPY . ${HOME}
+RUN chown -R rstudio:rstudio ${HOME}
+
+USER rstudio
+WORKDIR ${HOME}
+
+# JupyterLab is the primary entry point; RStudio is available on port 8787 directly
+# or via the RStudio launcher tile in JupyterLab.
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser"]

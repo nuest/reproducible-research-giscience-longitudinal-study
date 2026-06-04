@@ -28,7 +28,7 @@ The study thereby demonstrates the value of institutional and community policies
 - `*.ipynb` files: [Jupyter notebooks](https://jupyter.org/) for data analysis.
 - `authorship_utils.py`: helper functions used by `07_authorship.ipynb` (DOI extraction, OpenAlex fetching with on-disk caching, author/identity resolution).
 - `install.R`: R libraries used by Quarto documents.
-- `04_environment.yml`: Python conda environment used by Jupyter notebooks.
+- `requirements.txt`: Python dependencies for the Jupyter notebooks.
 - `Dockerfile` & `compose.yml`: contains a Dockerfile to build a Docker image using [Docker Compose](https://docs.docker.com/compose/).
 - `manuscript`: contains the manuscript LaTeX source files.
 
@@ -57,48 +57,36 @@ maintainers.
 
 ### Reproducibility setup
 
-- R notebooks are based on `rocker/rstudio:4.4`, see `Dockerfile`
-- Python notebooks rely on conda environment, see `environment.yml`
+A containerised environment is based on `rocker/rstudio:4.4`, see `Dockerfile`, with `install.R` for dependencies of Quarto notebooks and `requirements.txt` for Jupyter notebooks.
+You may also run the files in a local environment:
+
+For the Quarto (`.qmd`) notebooks, use the RStudio interface and render them in order of their file name, starting with `01_...`.
+
+For the Jupyter (`.ipynb`) notebooks, using [uv](https://docs.astral.sh/uv/):
+
+```bash
+uv venv .venv --python 3.10
+source .venv/bin/activate
+uv pip install -r requirements.txt
+jupyter lab
+```
+
+Open `04_results_hypotheses.ipynb` and `07_authorship.ipynb` and run all cells.
 
 #### Reproduce online with Binder
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nuest/reproducible-research-giscience-longitudinal-study/HEAD)
 
-> [NOTE]
-> Building the computing enviroment in Binder can be slow.
-
 #### Reproduce locally with Docker
 
-For the Quarto (`.qmd`) notebooks:
+The Docker image is based on `rocker/binder:4.4` and provides both JupyterLab and RStudio Server.
 
 ```bash
 docker compose up
 ```
 
-Login at <http://localhost:8787> with user `rstudio` and password `q`.
-Then render the notebooks in order of their file name, starting with `01_...` in the RStudio UI.
-
-For the Jupyter (`.ipynb`) notebooks, using conda:
-
-```bash
-conda env create -f 04_environment.yml
-conda activate agilegisc
-jupyter lab
-```
-
-Alternatively, using [uv](https://docs.astral.sh/uv/):
-
-```bash
-uv venv .venv --python 3.10
-source .venv/bin/activate
-uv pip install pandas numpy scipy statsmodels jupyterlab matplotlib matplotlib-venn pyalex
-jupyter lab
-```
-
-> [NOTE]
-> `04_environment.yml` is the authoritative specification of the computing environment; the inline package list above captures the top-level dependencies only.
-
-Open `04_results_hypotheses.ipynb` and `07_authorship.ipynb` and run all cells.
+Open JupyterLab at <http://localhost:8888> (token printed to the console).
+RStudio Server is available at <http://localhost:8787> (user: `rstudio`, password: `q`) and also as a tab inside JupyterLab via the launcher.
 
 ### Mapping of code to figures and tables in the paper
 
