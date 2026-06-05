@@ -6,4 +6,4 @@ jupyterlab
 matplotlib
 matplotlib-venn
 pyalex
-rpy2
+rpy2==3.5.17

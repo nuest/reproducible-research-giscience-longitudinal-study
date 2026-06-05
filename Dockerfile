@@ -11,7 +11,10 @@ USER root
 COPY install.R ${HOME}/install.R
 RUN R --quiet -f ${HOME}/install.R
 
-# Install Python dependencies into the venv rocker/binder provides at /opt/venv
+# Install Python dependencies into the venv rocker/binder provides at /opt/venv.
+# rpy2 is pinned to 3.5.17 in requirements.txt — the last release using Rf_findVar
+# (present in all R versions). rpy2 >=3.6 switched to R_getVar, which was only
+# introduced in R 4.5, and therefore fails with an ffi.error on R 4.4.
 COPY requirements.txt ${HOME}/requirements.txt
 RUN /opt/venv/bin/pip install --no-cache-dir -r ${HOME}/requirements.txt
 
