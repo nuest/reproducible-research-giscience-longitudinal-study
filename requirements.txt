@@ -6,3 +6,4 @@ jupyterlab
 matplotlib
 matplotlib-venn
 pyalex
+rpy2
