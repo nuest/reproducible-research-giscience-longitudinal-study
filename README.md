@@ -57,10 +57,19 @@ maintainers.
 
 ### Reproducibility setup
 
-A containerised environment is based on `rocker/rstudio:4.4`, see `Dockerfile`, with `install.R` for dependencies of Quarto notebooks and `requirements.txt` for Jupyter notebooks.
-You may also run the files in a local environment:
+A **containerised environment** is based on `rocker/binder:4.4`, see `Dockerfile`, with `install.R` for dependencies of Quarto notebooks and `requirements.txt` for Jupyter notebooks.
+The Docker image provides both JupyterLab and RStudio Server.
 
-For the Quarto (`.qmd`) notebooks, use the RStudio interface and render them in order of their file name, starting with `01_...`.
+```bash
+docker compose up
+```
+
+Open JupyterLab at <http://localhost:8888> (token printed to the console).
+RStudio Server is available at <http://localhost:8787> (user: `rstudio`, password: `q`) or as a tab inside Jupyter Lab via the launcher/start page.
+
+You may also run the files in a **local environment**:
+
+For the Quarto (`.qmd`) notebooks, use a local RStudio Desktop or R installation, using `install.R` for dependencies, to render the notebooks.
 
 For the Jupyter (`.ipynb`) notebooks, using [uv](https://docs.astral.sh/uv/):
 
@@ -73,20 +82,9 @@ jupyter lab
 
 Open `04_results_hypotheses.ipynb` and `07_authorship.ipynb` and run all cells.
 
-#### Reproduce online with Binder
+You can also try to reproduce **online with Binder**, though the complex container configuration leads to failing builds regularly.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nuest/reproducible-research-giscience-longitudinal-study/HEAD)
-
-#### Reproduce locally with Docker
-
-The Docker image is based on `rocker/binder:4.4` and provides both JupyterLab and RStudio Server.
-
-```bash
-docker compose up
-```
-
-Open JupyterLab at <http://localhost:8888> (token printed to the console).
-RStudio Server is available at <http://localhost:8787> (user: `rstudio`, password: `q`) and also as a tab inside JupyterLab via the launcher.
 
 ### Mapping of code to figures and tables in the paper
 
