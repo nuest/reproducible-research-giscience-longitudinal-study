@@ -4,9 +4,11 @@
 
 <!--TODO: Linked badge to journal paper-->
 
-[![Zenodo deposit](https://zenodo.org/badge/DOI/10.5281/zenodo.17733627.svg)](https://doi.org/10.5281/zenodo.17733627)
+[![Zenodo deposit](https://zenodo.org/badge/DOI/10.5281/zenodo.20699084.svg)](https://doi.org/10.5281/zenodo.20699084)
+[![Software Heritage deposit](https://img.shields.io/badge/Software%20Heritage-swh:1:rev:ec0bd7a2c0b60e290b6183d3e073d992d901b827-e20026?labelColor=737373)](https://archive.softwareheritage.org/swh:1:rev:ec0bd7a2c0b60e290b6183d3e073d992d901b827)
 
-This is the data and software repo to support the computational analysis related to the paper *Longitudinal assessment of research in GIScience domain shows a positive impact of reproducible research practices*.
+This is the data and software repo to support the computational analysis related to the paper *Improving reproducibility of GIScience publications through
+novel reproducibility guidelines and revised review procedures*.
 This study was coordinated by Frank Ostermann <a href="https://orcid.org/0000-0002-9317-8291"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"/></a>,
 Daniel Nüst <a href="https://orcid.org/0000-0002-0024-5046"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"/></a>, and
 Carlos Granell <a href="https://orcid.org/0000-0003-1004-9695"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"/></a>.
