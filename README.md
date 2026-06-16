@@ -51,7 +51,9 @@ year-by-year same-year overlap, reproducibility trends for cross-conference-auth
 and a cross-group non-independence check. It is a starting point for more detailed
 authorship analysis.
 
-Both `07_authorship.ipynb` and `authorship_utils.py` were created with the assistance of an
+## Generative AI statement
+
+`04_results_hypotheses.ipynb`, `07_authorship.ipynb`, and `authorship_utils.py` were created with the assistance of an
 AI coding assistant (Anthropic Claude, via Claude Code) and reviewed by the repository
 maintainers.
 
