@@ -58,9 +58,7 @@ authorship analysis.
 
 ## Generative AI statement
 
-`04_results_hypotheses.ipynb`, `07_authorship.ipynb`, and `authorship_utils.py` were created with the assistance of an
-AI coding assistant (Anthropic Claude, via Claude Code) and reviewed by the repository
-maintainers.
+`04_results_hypotheses.ipynb`, `07_authorship.ipynb`, and `authorship_utils.py` were created with the assistance of an AI coding assistant (Anthropic Claude, via Claude Code) and reviewed by the repository maintainers.
 
 ## Reproducibility
 
