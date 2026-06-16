@@ -7,21 +7,26 @@
 [![Zenodo deposit](https://zenodo.org/badge/DOI/10.5281/zenodo.20699084.svg)](https://doi.org/10.5281/zenodo.20699084)
 [![Software Heritage deposit](https://img.shields.io/badge/Software%20Heritage-swh:1:rev:ec0bd7a2c0b60e290b6183d3e073d992d901b827-e20026?labelColor=737373)](https://archive.softwareheritage.org/swh:1:rev:ec0bd7a2c0b60e290b6183d3e073d992d901b827)
 
+## About
+
 This is the data and software repo to support the computational analysis related to the paper *Improving reproducibility of GIScience publications through
 novel reproducibility guidelines and revised review procedures*.
 This study was coordinated by Frank Ostermann <a href="https://orcid.org/0000-0002-9317-8291"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"/></a>,
 Daniel Nüst <a href="https://orcid.org/0000-0002-0024-5046"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"/></a>, and
-Carlos Granell <a href="https://orcid.org/0000-0003-1004-9695"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"/></a>.
+Carlos Granell <a href="https://orcid.org/0000-0003-1004-9695"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"/></a>, with several contributors.
+See the paper for all co-authors and the paper section "Authorship contributions" for detailed contribution statements.
 
 ## Study goals and overall methodology
 
-This study investigates the effect of revised author guidelines and reproducibility badges on the potential reproducibility of articles published in GIScience conference proceedings over the past decade.
-The work systematically compares AGILE findings against the GIScience conference series.
+This study investigates the effect of revised author guidelines and reproducibility reviews on the potential reproducibility of articles published in two conference's proceedings in the area of GIScience over the past decade.
+The work systematically compares AGILE conference series findings against the GIScience conference series.
 The latter acts as a control group that has not undergone similar changes to its author guidelines or review process.
 The results show that reproducibility guidelines and an updated review process measurably improved the potential reproducibility of AGILE publications.
 The study thereby demonstrates the value of institutional and community policies in fostering reproducible research in GIScience and identifies pathways for ongoing improvement.
 
 ## Contents
+
+### Files and folders
 
 - `data`: raw assessment CSVs from the Google-Sheet exports, plus intermediate / aggregate artefacts produced by the analysis notebooks (e.g. derived authorship tables and the cached OpenAlex responses).
 - `data-clean`: the curated, authoritative tables used as inputs to the analysis — `all-data.csv` (paper-level reproducibility assessments) and `authors.csv` (per-author-per-paper enriched view from `07_authorship.ipynb`). A `README` file documents the schema of both.
@@ -101,7 +106,7 @@ The following scripts and notebooks each generate figures or tables in the publi
 - `06_discussion.qmd` generates **Figure 2**.
 - `07_authorship.ipynb` generates the supplementary authorship-overlap figures and tables (not part of the main paper tables/figures).
 
-## License
+## Licenses
 
 The **code** in this repository (notebooks, scripts) is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). See the [LICENSE](LICENSE) file for details.
 The **data** in this repository (/data, /data-clean) is licensed under [Create Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0). See the [LICENSE-DATA](LICENSE-DATA) file for details.

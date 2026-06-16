@@ -1,6 +1,6 @@
 {
   "title": "Reproducibility Package for 'Longitudinal assessment of research in GIScience domain shows a positive impact of reproducible research practices'",
-  "description": "<p>This is the data and software repository to support the computational analysis related to the paper <em>Longitudinal assessment of research in GIScience domain shows a positive impact of reproducible research practices</em></p>",
+  "description": "<p>This is the data and software repository to support the computational analysis related to the paper <em>Improving reproducibility of GIScience publications through novel reproducibility guidelines and revised review procedures</em>. All contributors are listed in this deposition's metadata. See the paper section \"Authorship contributions\" for detailed contribution statements.</p>",
   "notes": "<p>This repository uses a split license:</p><ul><li><strong>Code</strong> (notebooks, scripts): <a href=\"https://www.apache.org/licenses/LICENSE-2.0\">Apache License 2.0</a></li><li><strong>Data</strong> (<code>data/</code>, <code>data-clean/</code>): <a href=\"https://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution 4.0 International (CC BY 4.0)</a></li><li><strong>Text and figures</strong> (<code>manuscript/</code>, <code>figs/</code>): <a href=\"https://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution 4.0 International (CC BY 4.0)</a></li></ul>",
   "upload_type": "software",
   "license": "other-open",
