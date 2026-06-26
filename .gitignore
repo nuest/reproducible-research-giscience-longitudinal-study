@@ -79,3 +79,6 @@ data/authorship-cache/
 05_results_assessprocess_files/
 
 06_discussion.html
+
+.ipynb_checkpoints/
+
