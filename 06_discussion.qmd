@@ -14,7 +14,6 @@ format:
     code-tools: true
 ---
 
-
 ```{r}
 #| label: load-packages
 #| message: false
@@ -29,18 +28,15 @@ library(ggplot2)
 library(ggalluvial)
 ```
 
-
-
 ## Potential reproducibility vs AGILE badges
 
 Here, we show that the level of potential reproducibility is a fairly good indicator (without *actually* reproducing a paper) because most articles that earned a reproducibility AGILE badge also had in general high levels of reproducibility scores (**Available** and above) across all criteria.
 
 So, here, we explore the potential reproducibility of our assessment with actual reproductions of AGILE papers as reported over the period 2021-2024 by the AGILE Conference Series Reproducibility Committee.
 
+### First version  
 
-### Firt version  
-
-We aggregate reproducibility levels in 3 groups: All High, All Low, and High/Low 
+We aggregate reproducibility levels in 3 groups: All High, All Low, and High/Low.
 
 - **ALL HIGH** when a paper scores A or O in all criteria 
 - **ALL LOW** when a paper scores U or D in all criteria 
@@ -143,8 +139,6 @@ n_papers_agile_post_wo_badge_preditor <-
                 consolidated_results %in% c("A", "O")) |>
   dplyr::tally() |>
   pull(n)
-                       
-
 ```
 
 Of `{r} n_papers_agile_post_with_badge + n_papers_agile_post_wo_badge` AGILE post-intervention papers, `{r} n_papers_agile_post_with_badge` earned a Reproducibility badge and `{r} n_papers_agile_post_wo_badge` did get it. Interestingly, for the papers with a badge, `{r} n_papers_agile_post_with_badge_preditor` (`{r} scales::label_percent(accuracy = 0.1)(n_papers_agile_post_with_badge_preditor / n_papers_agile_post_with_badge)`) scored **A**vailable or **O**pen in any criteria, either *Input Data*, *Methods* or *Results*. On the contrary, for the papers without a badge, only `{r} n_papers_agile_post_wo_badge_preditor` (`{r} scales::label_percent(accuracy = 0.1)(n_papers_agile_post_wo_badge_preditor / n_papers_agile_post_wo_badge)`) reached **A**vailable on any criteria, either *Input Data*, *Methods* or *Results*. This demonstrates that the level of reproducibility, especially for high levels (A, O), is a good predictor for determining whether an article can subsequently be reproduced computationally.
@@ -154,10 +148,9 @@ Of `{r} n_papers_agile_post_with_badge + n_papers_agile_post_wo_badge` AGILE pos
 papers_agile_post |>
   dplyr::group_by(agile_badge, agg_level) |>
   dplyr::tally() |>
-  dplyr::mutate(p = n /sum(n)) |>
+  dplyr::mutate(proportion = round(n / sum(n) * 100, digits = 1)) |>
   gt::gt()
 ```
-
 
 ```{r}
 #| label: fig-sankey-year
@@ -206,13 +199,9 @@ ggplot2::ggsave(file = here::here("figs", "AGILE_sankey_year.png"),
 
 ```
 
-
-
-
 ### Second version
 
-Used criteria instead of year, and aggregate level is only High (A,O) and LOW (U, D)
-
+Used criteria instead of year, and aggregate level is only High (A,O) and LOW (U, D).
 
 ```{r}
 #| label: load-papers-agile-badge-criteria
@@ -300,4 +289,3 @@ ggplot2::ggsave(file = here::here("figs", "AGILE_sankey_criteria.png"),
        width = 10, height = 6, dpi = 300)
 
 ```
-

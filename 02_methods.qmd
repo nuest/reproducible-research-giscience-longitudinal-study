@@ -84,7 +84,6 @@ n_papers_giscience_eligible <-
   dplyr::pull(n)
 
 n_papers_eligible = n_papers_agile_eligible + n_papers_giscience_eligible 
-
 ```
 
 Total number of papers: **`{r} n_papers`**: `{r} n_papers_agile` AGILE papers and `{r} n_papers_giscience` GIScience papers.
@@ -101,7 +100,7 @@ Total number of eligible papers: **`{r} n_papers_eligible`**: `{r} n_papers_agil
 
 papers_all <- 
   papers |>
-    dplyr::filter(year != "2020") |> # exclude transition year 
+    #dplyr::filter(year != "2020") |> # exclude transition year
     dplyr::group_by(conf) |>
     dplyr::count(year) |>
     dplyr::arrange(conf, year)
@@ -110,10 +109,12 @@ papers_all <-
 papers_eligible <- 
   papers |>
     dplyr::filter(year != "2020") |> # exclude transition year
-    dplyr::filter(consolidated_cp == FALSE) |>
+    dplyr::filter(consolidated_cp == FALSE) |> # exclude conceptual papers
     dplyr::group_by(conf) |>
     dplyr::count(year) |>
     dplyr::rename(n_eligible = n) |>
+    dplyr::rows_append(tibble(conf = "agile", year = 2020, n_eligible = 0)) |> # add 0 for transition years
+    dplyr::rows_append(tibble(conf = "giscience", year = 2020, n_eligible = 0)) |> # add 0 for transition years
     dplyr::arrange(conf, year)
 
 papers_all |>

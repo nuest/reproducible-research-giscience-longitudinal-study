@@ -32,7 +32,13 @@ The study thereby demonstrates the value of institutional and community policies
 - `data-clean`: the curated, authoritative tables used as inputs to the analysis — `all-data.csv` (paper-level reproducibility assessments) and `authors.csv` (per-author-per-paper enriched view from `07_authorship.ipynb`). A `README` file documents the schema of both.
 - `figs`: contains generated figures from notebooks.
 - `*.qmd` files: [Quarto](https://quarto.org/) documents for data preparation and analysis.
-- `*.ipynb` files: [Jupyter notebooks](https://jupyter.org/) for data analysis.
+- `*.html` files: HTML rendering of the Quarto notebooks, preview them online with 
+    - [01_datacleaning.html](https://htmlpreview.github.io/?https://github.com/nuest/reproducible-research-giscience-longitudinal-study/blob/main/01_datacleaning.html)
+    - [02_methods.html](https://htmlpreview.github.io/?https://github.com/nuest/reproducible-research-giscience-longitudinal-study/blob/main/02_methods.html)
+    - [03_results_reprolevels.html](https://htmlpreview.github.io/?https://github.com/nuest/reproducible-research-giscience-longitudinal-study/blob/main/03_results_reprolevels.html)
+    - [05_results_assessprocess.html](https://htmlpreview.github.io/?https://github.com/nuest/reproducible-research-giscience-longitudinal-study/blob/main/05_results_assessprocess.html)
+    - [06_discussion.html](https://htmlpreview.github.io/?https://github.com/nuest/reproducible-research-giscience-longitudinal-study/blob/main/06_discussion.html)
+- `*.ipynb` files: [Jupyter notebooks](https://jupyter.org/) for data analysis, open the preview directly in GitHub.
 - `authorship_utils.py`: helper functions used by `07_authorship.ipynb` (DOI extraction, OpenAlex fetching with on-disk caching, author/identity resolution).
 - `install.R`: R libraries used by Quarto documents.
 - `requirements.txt`: Python dependencies for the Jupyter notebooks.
@@ -71,8 +77,8 @@ The Docker image provides both JupyterLab and RStudio Server.
 docker compose up
 ```
 
-Open JupyterLab at <http://localhost:8888> (token printed to the console).
-RStudio Server is available at <http://localhost:8787> (user: `rstudio`, password: `q`) or as a tab inside Jupyter Lab via the launcher/start page.
+Open Jupyter Lab at <http://localhost:8888> (token printed to the console).
+RStudio Server is available from the start page of Jupyter Lab.
 
 You may also run the files in a **local environment**:
 

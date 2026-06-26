@@ -2,6 +2,7 @@
 title: "01_datacleaning"
 format: 
   html:
+    embed-resources: true  # Self-contained
     code-fold: true
     code-summary: "Show the code"
     code-tools: true

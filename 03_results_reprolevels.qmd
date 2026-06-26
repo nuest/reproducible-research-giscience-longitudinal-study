@@ -30,7 +30,6 @@ library(patchwork)
 #library(svglite)
 ```
 
-
 ```{r}
 #| label: functions
 
@@ -83,7 +82,6 @@ criteriaBarplot2 = function(df, col, main, colour, agg_level=F, agg_level_y = 35
       p <- p +
         ggplot2::annotate("text", x = 2:3, y = agg_level_y, label = c("LOW", "HIGH"), alpha = 0.5)
     }
-       
 
     return (p)
 }
@@ -93,9 +91,7 @@ criteriaBarplot2 = function(df, col, main, colour, agg_level=F, agg_level_y = 35
 #| label: load-data
 #| message: false
 
-
 udoa_levels <- c("U", "D", "A", "O", NA)
-
 
 paper_evaluation <- 
   readr::read_csv(here::here("data-clean", "all-data.csv"),
@@ -113,7 +109,6 @@ paper_evaluation <-
                   na = c("NA", "Not applicable")) |>
   dplyr::arrange(conf, year)
                     
-
 paper_evaluation <- 
   paper_evaluation |>
   dplyr::select(conf, year, paper, title,
@@ -124,8 +119,6 @@ paper_evaluation <-
                 consolidated_ce,
                 agile_badge) |>
   dplyr::arrange(conf, year)
-
-
 ```
 
 # Introduction
@@ -144,8 +137,6 @@ paper_evaluation_wo_conceptual <-
   dplyr::mutate(consolidated_data = forcats::fct_na_level_to_value(consolidated_data)) |>
   dplyr::mutate(consolidated_methods = forcats::fct_na_level_to_value(consolidated_methods)) |>
   dplyr::mutate(consolidated_results = forcats::fct_na_level_to_value(consolidated_results))
-  
-
 
 n_papers_wo_conceptual <- nrow(paper_evaluation_wo_conceptual)
 
@@ -157,20 +148,17 @@ n_papers_conceptual <- nrow(paper_evaluation_conceptual)
 # Assessment of conceptual papers
 
 ```{r}
-
 paper_evaluation_conceptual |> 
   dplyr::count(conf) |>
   dplyr::mutate(p = n /sum(n)) |>
   dplyr::filter(conf == "agile") |>
   dplyr::select(n, p) -> agile_conceptual
   
-
 paper_evaluation_conceptual |> 
   dplyr::count(conf) |>
   dplyr::mutate(p = n /sum(n)) |>
   dplyr::filter(conf == "giscience") |>
   dplyr::select(n, p) -> giscience_conceptual
-
 ```
 
 Out of the `{r} n_papers`, **`{r} n_papers_conceptual`** were assigned as conceptual papers and they were  excluded from the reproducibility analysis. This represents
@@ -199,7 +187,6 @@ paper_evaluation_conceptual |>
     ggplot2::theme_bw()
 
 ```
-
 
 # Reproducibility assessment of non-conceptual papers
 
@@ -235,7 +222,6 @@ papers_giscience |>
 papers_giscience |>
   dplyr::count(consolidated_results) |>
   dplyr::mutate(p = n /sum(n)) -> papers_giscience_results
-
 ```
 
 
@@ -954,8 +940,6 @@ As with *Input Data*, the most frequent level (`{r} papers_agile_methods_post[3,
     caption = "Note: AGILE 2020 papers excluded (transition year).", 
     tag_levels = 'A') & 
   theme(plot.tag = element_text(size = 8))
-
-
 ```
 
 
@@ -1069,7 +1053,6 @@ merged_giscience <-
     dplyr::full_join(papers_giscience_results_pre, papers_giscience_results_post, by=c("agg_level", "level"))
   )
 
-
 levels_ordered = c("Input data-HIGH", "Input data-LOW", "Methods...-HIGH", "Methods...-LOW", "Results-LOW", "Results-HIGH")
 
 # Manual trick: As there are NA values, i.e, no papers in some `level`, replaced by 0
@@ -1079,13 +1062,10 @@ merged_giscience <-
   dplyr::mutate(gap_p = agg_level_p_post - agg_level_p_pre) |>
   dplyr::mutate(level = factor(level))
 
-  
 #merged_giscience$level <- fct_relevel(merged_giscience$level,levels_ordered)
-
 ```
 
 ```{r}
-
 # Same colors as per each criteria used before
 colours <- RColorBrewer::brewer.pal(length(categoryColumns), "Set1")
 #colours <- c("#E41A1C", "#E41A1C", "#377EB8", "#377EB8", "#4DAF4A", "#4DAF4A")
@@ -1113,21 +1093,16 @@ merged_giscience %>%
   ggplot2::scale_fill_manual(values = colours) +
   ggplot2::labs(
     title = "GIScience papers",
-    x = "Change in percentatge (gap) = % post - % pre", 
+    x = "Change in percentage (gap) = % post - % pre", 
     y = "Criteria and levels grouped into HIGH (A,O) and LOW (U, D)") +
   ggthemes::theme_tufte(base_size = 10) +
   ggplot2::theme(plot.title = element_text(hjust = 0.5)) + # Title centered, 
   ggplot2::theme(axis.ticks.y=element_blank()) -> plot_delta_giscience
-
- 
-
-
 ```
 
 ```{r}
 plot_delta_giscience
 ```
-
 
 ## AGILE delta chart
 
@@ -1204,7 +1179,6 @@ merged_agile <-
     dplyr::full_join(papers_agile_results_pre, papers_agile_results_post, by=c("agg_level", "level"))
   )
 
-
 levels_ordered = c("Input data-HIGH", "Input data-LOW", "Methods-HIGH", "Methods-LOW", "Results-LOW", "Results-HIGH")
 
 merged_agile <-
@@ -1212,14 +1186,10 @@ merged_agile <-
   dplyr::mutate(gap_p = agg_level_p_post - agg_level_p_pre) |>
   dplyr::mutate(level = factor(level))
 
-  
 #merged_agile$level <- fct_relevel(merged_agile$level, levels_ordered)
-
 ```
 
-
 ```{r}
-
 # Same colors as per each criteriaUse s
 colours <- RColorBrewer::brewer.pal(length(categoryColumns), "Set1")
 # colours <- c("#E41A1C", "#E41A1C", "#377EB8", "#377EB8", "#4DAF4A", "#4DAF4A")
@@ -1248,24 +1218,17 @@ merged_agile %>%
   ggplot2::scale_fill_manual(values = colours) +
   ggplot2::labs(
     title = "AGILE papers",
-        x = "Change in percentatge (gap) = % post - % pre") +
+        x = "Change in percentage (gap) = % post - % pre") +
   ggthemes::theme_tufte(base_size = 10) +
   ggplot2::theme(plot.title = element_text(hjust = 0.5)) + # Title centered, 
   ggplot2::theme(axis.title.y=element_blank(),
         axis.text.y=element_blank(),
         axis.ticks.y=element_blank()) -> plot_delta_agile
-
- 
-
-
 ```
 
 ```{r}
 plot_delta_agile
 ```
-
-
-
 
 ```{r}
 #| label: fig-delta
@@ -1282,8 +1245,6 @@ plot_delta_agile
     title = "GIScience vs AGILE: Change in percentage",
     subtitle = "Variation between HIGH and LOW before and after the intervention.")
   theme(plot.tag = element_text(size = 10))
-
-
 ```
 
 ```{r}
@@ -1297,9 +1258,7 @@ ggplot2::ggsave(file = here::here("figs", "GIScience_AGILE_delta.png"),
 
 ```
 
-
 ```{r}
-
 data_tbl_absolute_change <- 
   bind_rows(
     merged_giscience |> 
@@ -1322,7 +1281,7 @@ tbl_absolute_change <-
   tidyr::pivot_wider(names_from = conf, values_from = gap_p) |>
   gt::gt() |>
   gt::tab_header(
-    title = "GIScience vs AGILE: Absolute change in percentatge points",
+    title = "GIScience vs AGILE: Absolute change in percentage points",
     subtitle = md("Variation between *HIGH* and *LOW* before and after the intervention.")
   ) |>
   gt::cols_label(
@@ -1344,7 +1303,6 @@ tbl_absolute_change <-
 tbl_absolute_change
 ```
 
-
 ```{r}
 #| label: table-absolute_change-to-latex
 #| eval: false
@@ -1357,6 +1315,4 @@ tbl_latex <-
 tbl_latex |>
   as.character() |>
   cat()
-
-
 ```
