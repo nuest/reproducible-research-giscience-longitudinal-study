@@ -4,8 +4,8 @@
 
 <!--TODO: Linked badge to journal paper-->
 
-[![Zenodo deposit](https://zenodo.org/badge/DOI/10.5281/zenodo.20699084.svg)](https://doi.org/10.5281/zenodo.20699084)
-[![Software Heritage deposit](https://img.shields.io/badge/Software%20Heritage-swh:1:rev:ec0bd7a2c0b60e290b6183d3e073d992d901b827-e20026?labelColor=737373)](https://archive.softwareheritage.org/swh:1:rev:ec0bd7a2c0b60e290b6183d3e073d992d901b827)
+[![Zenodo deposit](https://zenodo.org/badge/DOI/10.5281/zenodo.21097308.svg)](https://doi.org/10.5281/zenodo.21097308)
+[![Software Heritage deposit](https://img.shields.io/badge/Software%20Heritage-swh:1:rev:58195b1cbb06688dd219c8187a7db990899b840d-e20026?labelColor=737373)](https://archive.softwareheritage.org/swh:1:rev:58195b1cbb06688dd219c8187a7db990899b840d)
 
 ## About
 
